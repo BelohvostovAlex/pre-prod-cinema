@@ -1,0 +1,31 @@
+name: lint & test on every push
+on:
+  push:
+    branches: [main, dev]
+  pull-request:
+    branches: [main, dev]
+jobs:
+  init:
+    runs-on: ubuntu-latest
+    strategy:
+    matrix:
+      node-version: [18.x.x]
+      os: [ubuntu-latest, macos-latest]
+    steps:
+      - name: actions-checkout
+        uses: actions/checkout@v3
+      - name: setup-node ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: npm
+      - name: install modules
+        run: yarn install
+      - name: build project
+        run: yarn run build
+      - name: unit tests
+        run: yarn run test
+      - name: lint code
+        run: yarn run lint
+      - name: format code with prettier
+        run: yarn run format
