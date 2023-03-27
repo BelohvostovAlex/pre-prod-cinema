@@ -1,4 +1,4 @@
-name: lint & test on every push
+name: lint & test on push & pull request
 on:
   push:
     branches: [main, dev]
@@ -8,9 +8,9 @@ jobs:
   init:
     runs-on: ubuntu-latest
     strategy:
-    matrix:
-      node-version: [18.x.x]
-      os: [ubuntu-latest, macos-latest]
+      matrix:
+        node-version: [18.x.x]
+        os: [ubuntu-latest, macos-latest]
     steps:
       - name: actions-checkout
         uses: actions/checkout@v3
