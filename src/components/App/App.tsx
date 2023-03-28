@@ -1,7 +1,14 @@
-import React from "react";
+import { FunctionComponent } from "react";
 
-const App = () => {
-  return <div>App</div>;
+import AppRouter from "../AppRouter";
+
+const App: FunctionComponent = () => {
+  return (
+    <div>
+      <h1>App</h1>
+      <AppRouter />
+    </div>
+  );
 };
 
 export default App;
