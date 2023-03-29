@@ -5,7 +5,7 @@ import { PortalContainer } from "./styles";
 import { PortalProps } from "./interfaces";
 
 const Portal: FunctionComponent<PortalProps> = ({
-  element,
+  element = document.body,
   showContent,
   children,
 }) => {

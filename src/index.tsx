@@ -8,8 +8,7 @@ import reportWebVitals from "./reportWebVitals";
 import ReduxProvider from "./components/ReduxProvider";
 import App from "./components/App/App";
 
-import "./index.css";
-import AppLayout from "./layouts/AppLayout";
+import GlobalStyle from "./styles/global";
 
 const rootDomNode = document.getElementById("root") as HTMLElement;
 const root = createRoot(rootDomNode);
@@ -18,9 +17,8 @@ root.render(
   <StrictMode>
     <ReduxProvider>
       <BrowserRouter>
-        <AppLayout>
-          <App />
-        </AppLayout>
+        <GlobalStyle />
+        <App />
       </BrowserRouter>
     </ReduxProvider>
   </StrictMode>,
