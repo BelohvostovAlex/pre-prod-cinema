@@ -8,9 +8,9 @@ import AppRouter from "../AppRouter";
 import { useActions } from "../../hooks/useActionts";
 
 const Box = styled.div`
-  color: ${(props) => props.theme.colors.primary};
-  background-color: ${(props) => props.theme.colors.backgroundColor};
-  ${(props) => props.theme.typography.inria_l_ital_32};
+  color: ${({ theme }) => theme.colors.primary};
+  background-color: ${({ theme }) => theme.colors.backgroundColor};
+  ${({ theme }) => theme.typography.inria_l_ital_32};
 `;
 
 const App: FunctionComponent = () => {

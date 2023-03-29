@@ -1,7 +1,7 @@
 import commonTheme from "../common";
-import { ITheme, CommonThemeType } from "../interfaces";
+import { ITheme, MergedTheme } from "../interfaces";
 
-export const mergeThemes = (theme: ITheme): ITheme & CommonThemeType => {
+export const mergeThemes = (theme: ITheme): MergedTheme => {
   return {
     ...commonTheme,
     ...theme,

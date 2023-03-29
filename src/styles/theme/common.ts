@@ -1,9 +1,10 @@
 import { css } from "styled-components";
+
 import { Colors } from "../../constants/styles/colors";
-
 import { FontFamily, FontWeight } from "../../constants/styles/fonts";
+import { ICommonTheme } from "./interfaces";
 
-const commonTheme = {
+const commonTheme: ICommonTheme = {
   typography: {
     poppins_l_14: css`
       font-family: ${FontFamily.POPPINS};
