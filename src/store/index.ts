@@ -1,5 +1,5 @@
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
-
+import { getPersistConfig } from "redux-deep-persist";
 import {
   persistStore,
   persistReducer,
@@ -16,10 +16,12 @@ import { allReducers } from "./slices";
 
 const rootReducer = combineReducers(allReducers);
 
-const persistConfig = {
+const persistConfig = getPersistConfig({
   key: "root",
   storage,
-};
+  blacklist: ["portal", "user.isError", "alert"],
+  rootReducer,
+});
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 

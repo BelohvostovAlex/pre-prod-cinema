@@ -1,1 +1,52 @@
-{}
+{
+  "Nav_menu": {
+    "Home": "Главная",
+    "Bookings": "Бронирование"
+  },
+  "AuthForm": {
+    "title": {
+      "signin": "Мы рады видеть вас снова! ",
+      "signup": "Отличные фильмы в лучшем кинотеатре! Мы заботимся о вашем комфорте. "
+    },
+    "titleSpan": {
+      "signin": "Наслаждайтесь просмотром фильмов вместе с нами!",
+      "signup": "Присоединяйтесь к нам прямо сейчас!"
+    },
+    "usernameField": {
+      "label": "Имя",
+      "placeholder": "Введите ваше имя",
+      "required": "Имя обязательно"
+    },
+    "surnameField": {
+      "label": "Фамилия",
+      "placeholder": "Введите вашу фамилию",
+      "required": "Фамилия обязательна"
+    },
+    "emailField": {
+      "label": "Эл.почта",
+      "placeholder": "Введите вашу эл.почту",
+      "required": "Эл.почта обязательна"
+    },
+    "passwordField": {
+      "label": "Пароль",
+      "placeholder": "Введите ваш пароль",
+      "required": "Пароль обязателен"
+    },
+    "signInWithGoogle": "Войти с Google",
+    "signInWithGithub": "Войти с Github",
+    "signInWithFacebook": "Войти с Facebook",
+    "needAcc": "Нет аккаунта? ",
+    "alreadyHaveAcc": "Уже есть аккаунт? ",
+    "linkToSignIn": "Войдите, пожалуйста.",
+    "linkToSignUp": "Зарегистрируйтесь, пожалуйста.",
+    "signInBtn": "Войти",
+    "signUpBtn": "Зарегистрироваться"
+  },
+  "Errors": {
+    "userAlreadyExistsViaSocial": "Пользователь с данным эл.адресом уже существует, пожалуйста, попробуйте другой метод войти",
+    "popupClosedByUser": "Вход был отменен",
+    "emailAlreadyInUse": "Данный эл.адрес уже используется",
+    "wrongPassword": "Неверный пароль",
+    "userNotFound": "Пользователь не найден"
+  }
+}

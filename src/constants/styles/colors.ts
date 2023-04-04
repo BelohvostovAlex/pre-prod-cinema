@@ -12,4 +12,6 @@ export enum Colors {
   ASPHALT_COLOR = "#313131",
   WET_ASPHALT_COLOR = "rgba(79, 79, 79, 0.3)",
   LIGHT_ORANGE = "#DBA758",
+  RED = "#ff4242",
+  GREEN = "#36e353",
 }

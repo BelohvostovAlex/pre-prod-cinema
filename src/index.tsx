@@ -3,6 +3,7 @@ import { createRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 
 import "./i18n";
+import "./lib/firebase.prod";
 import reportWebVitals from "./reportWebVitals";
 
 import ReduxProvider from "./components/ReduxProvider";

@@ -1,10 +1,14 @@
 import { FunctionComponent, useRef } from "react";
 
+import RoundButton from "../UI/Buttons/RoundButton";
+
 import useOnClickOutside from "../../hooks/useOnClickOutside";
 
-import { ModalProps } from "./interfaces";
+import { Colors } from "../../constants/styles/colors";
+
 import { ReactComponent as Close } from "../../assets/svg/tools/Close.svg";
-import { ModalContainer } from "./styles";
+import { ModalProps } from "./interfaces";
+import { ModalButton, ModalContainer } from "./styles";
 
 const Modal: FunctionComponent<ModalProps> = ({
   children,
@@ -18,7 +22,13 @@ const Modal: FunctionComponent<ModalProps> = ({
   return (
     <ModalContainer height={height} width={width} ref={ref}>
       {children}
-      <Close onClick={onClose} />
+      <ModalButton>
+        <RoundButton
+          icon={<Close />}
+          onClick={onClose}
+          background={Colors.DARK_GRAY}
+        />
+      </ModalButton>
     </ModalContainer>
   );
 };

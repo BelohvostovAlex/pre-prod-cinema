@@ -74,6 +74,6 @@
     "react/destructuring-assignment": "off",
     "default-param-last": "off",
     "@typescript-eslint/default-param-last": "off",
-    "no-console": "error"
+    "no-console": "warn"
   }
 }

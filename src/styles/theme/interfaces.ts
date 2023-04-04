@@ -5,45 +5,19 @@ import { TThemeType } from "../../constants/styles/theme";
 
 export interface ICommonTheme {
   typography: {
-    poppins_l_14: FlattenSimpleInterpolation;
-    poppins_m_15: FlattenSimpleInterpolation;
-    poppins_m_18: FlattenSimpleInterpolation;
-    poppins_l_18: FlattenSimpleInterpolation;
-    poppins_sb_20: FlattenSimpleInterpolation;
-    poppins_r_20: FlattenSimpleInterpolation;
-    poppins_b_21: FlattenSimpleInterpolation;
-    poppins_l_21: FlattenSimpleInterpolation;
-    poppins_b_23: FlattenSimpleInterpolation;
-    poppins_r_23: FlattenSimpleInterpolation;
-    poppins_l_24: FlattenSimpleInterpolation;
-    poppins_r_24: FlattenSimpleInterpolation;
-    poppins_b_26: FlattenSimpleInterpolation;
-    poppins_sb_26: FlattenSimpleInterpolation;
-    poppins_m_32: FlattenSimpleInterpolation;
-    poppins_b_35: FlattenSimpleInterpolation;
-    poppins_m_36: FlattenSimpleInterpolation;
-    poppins_sb_36: FlattenSimpleInterpolation;
-    poppins_l_40: FlattenSimpleInterpolation;
-    poppins_m_42: FlattenSimpleInterpolation;
-    poppins_b_48: FlattenSimpleInterpolation;
-    poppins_l_48: FlattenSimpleInterpolation;
-    poppins_l_55: FlattenSimpleInterpolation;
-    nunito_l_16: FlattenSimpleInterpolation;
-    nunito_l_ital_16: FlattenSimpleInterpolation;
-    nunito_l_32: FlattenSimpleInterpolation;
-    nunito_r_32: FlattenSimpleInterpolation;
-    nunito_b_32: FlattenSimpleInterpolation;
-    nunito_l_48: FlattenSimpleInterpolation;
-    nunito_l_ital_48: FlattenSimpleInterpolation;
-    nunito_r_48: FlattenSimpleInterpolation;
-    nunito_b_48: FlattenSimpleInterpolation;
-    inter_sb_14: FlattenSimpleInterpolation;
-    inter_r_14: FlattenSimpleInterpolation;
-    inter_b_16: FlattenSimpleInterpolation;
-    inter_r_16: FlattenSimpleInterpolation;
-    inria_l_ital_18: FlattenSimpleInterpolation;
-    inria_l_ital_32: FlattenSimpleInterpolation;
-    inria_l_ital_40: FlattenSimpleInterpolation;
+    poppins_r: FlattenSimpleInterpolation;
+    poppins_sb: FlattenSimpleInterpolation;
+    poppins_m: FlattenSimpleInterpolation;
+    poppins_b: FlattenSimpleInterpolation;
+    poppins_l: FlattenSimpleInterpolation;
+    nunito_l: FlattenSimpleInterpolation;
+    nunito_l_ital: FlattenSimpleInterpolation;
+    nunito_r: FlattenSimpleInterpolation;
+    nunito_b: FlattenSimpleInterpolation;
+    inter_sb: FlattenSimpleInterpolation;
+    inter_b: FlattenSimpleInterpolation;
+    inter_r: FlattenSimpleInterpolation;
+    inria_l_ital: FlattenSimpleInterpolation;
   };
   box_shadows: {
     main_content_inset: string;
@@ -57,6 +31,7 @@ export interface ICommonTheme {
     40: string;
     circle: string;
   };
+  hover: string;
   colors: {
     extraDarkGray: Colors.EXTRA_DARK_GRAY;
     darkGray: Colors.DARK_GRAY;
@@ -66,6 +41,8 @@ export interface ICommonTheme {
     asphaltColor: Colors.ASPHALT_COLOR;
     wetAsphaltColor: Colors.WET_ASPHALT_COLOR;
     lightOrange: Colors.LIGHT_ORANGE;
+    red: Colors.RED;
+    green: Colors.GREEN;
   };
 }
 

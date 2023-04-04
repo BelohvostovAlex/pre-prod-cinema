@@ -1,29 +1,19 @@
-import { FunctionComponent } from "react";
-import styled from "styled-components";
+import { FunctionComponent, Suspense, lazy } from "react";
 
 import ThemeProvider from "../ThemeProvider";
-import AppLayout from "../../layouts/AppLayout";
-import AppRouter from "../AppRouter";
+import Loader from "../Loader";
 
-import { useActions } from "../../hooks/useActionts";
-
-const Box = styled.div`
-  color: ${({ theme }) => theme.colors.primary};
-  background-color: ${({ theme }) => theme.colors.backgroundColor};
-  ${({ theme }) => theme.typography.inria_l_ital_32};
-`;
+const AppLayout = lazy(() => import("../../layouts/AppLayout"));
+const AppRouter = lazy(() => import("../AppRouter"));
 
 const App: FunctionComponent = () => {
-  const { changeTheme } = useActions();
-  const changeThemeHandler = () => changeTheme();
   return (
     <ThemeProvider>
-      <h1>App</h1>
-      <Box>hello</Box>
-      <button onClick={changeThemeHandler}>change theme</button>
-      <AppLayout>
-        <AppRouter />
-      </AppLayout>
+      <Suspense fallback={<Loader />}>
+        <AppLayout>
+          <AppRouter />
+        </AppLayout>
+      </Suspense>
     </ThemeProvider>
   );
 };

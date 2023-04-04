@@ -15,7 +15,7 @@ describe("should recieve merged theme", () => {
     );
     expect(mergedTheme).toHaveProperty("colors.lightGray", Colors.LIGHT_GRAY);
     expect(mergedTheme).toHaveProperty("border_radius.8", "8px");
-    expect(mergedTheme).toHaveProperty("typography.poppins_r_24");
+    expect(mergedTheme).toHaveProperty("typography.poppins_r");
   });
 
   it("should be merged common and dark theme", () => {
@@ -29,6 +29,6 @@ describe("should recieve merged theme", () => {
     );
     expect(mergedTheme).toHaveProperty("colors.lightGray", Colors.LIGHT_GRAY);
     expect(mergedTheme).toHaveProperty("border_radius.8", "8px");
-    expect(mergedTheme).toHaveProperty("typography.poppins_r_24");
+    expect(mergedTheme).toHaveProperty("typography.poppins_r");
   });
 });
