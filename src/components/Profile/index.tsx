@@ -3,7 +3,7 @@ import { FunctionComponent } from "react";
 import { useAppSelector } from "../../hooks/useAppSelector";
 import { useSignOut } from "../../hooks/authBySocial/useSignOut";
 
-import { ReactComponent as ProfileIcon } from "../../assets/svg/profile/profile-full.svg";
+// import { ReactComponent as ProfileIcon } from "../../assets/svg/profile/profile-full.svg";
 import {
   ProfileGender,
   ProfileIconWrapper,
@@ -23,9 +23,7 @@ const Profile: FunctionComponent = () => {
   return (
     <ProfileWrapper>
       <ProfileInfo>
-        <ProfileIconWrapper>
-          <ProfileIcon />
-        </ProfileIconWrapper>
+        <ProfileIconWrapper>{/* <ProfileIcon /> */}</ProfileIconWrapper>
         <ProfileName>{user.username}</ProfileName>
         <ProfileId>user id: {user.id}</ProfileId>
         <ProfileGender>{user.gender}</ProfileGender>
