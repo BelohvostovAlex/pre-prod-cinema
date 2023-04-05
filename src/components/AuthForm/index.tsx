@@ -74,7 +74,7 @@ const AuthForm: FunctionComponent<AuthFormProps> = ({
     register,
     handleSubmit,
     reset,
-    formState: { errors, isValid },
+    formState: { isValid },
   } = useForm<AuthFormInputProps>({ mode: "onBlur" });
 
   const onSubmitHandler: SubmitHandler<AuthFormInputProps> = (data) => {
@@ -83,8 +83,6 @@ const AuthForm: FunctionComponent<AuthFormProps> = ({
       reset();
     }
   };
-  console.log(errors);
-  console.log(isValid);
 
   return (
     <div>
