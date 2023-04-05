@@ -42,6 +42,17 @@
     "signInBtn": "Войти",
     "signUpBtn": "Зарегистрироваться"
   },
+  "Drawer": {
+    "title": "Профайл пользователя"
+  },
+  "Profile": {
+    "userId": "ID Пользователя",
+    "editProfile": "Изменить Профиль",
+    "logOut": "Выйти",
+    "settings": "Настройки",
+    "altImgText": "Фото пользователя",
+    "headerBtnText": "Профиль"
+  },
   "Errors": {
     "userAlreadyExistsViaSocial": "Пользователь с данным эл.адресом уже существует, пожалуйста, попробуйте другой метод войти",
     "popupClosedByUser": "Вход был отменен",

@@ -6,7 +6,6 @@ export interface RouterLinkProps {
   $active?: boolean;
   typography: TypographyVariant;
   fontSize?: string;
-  borderBottom?: boolean;
   extra?: string;
 }
 

@@ -6,5 +6,7 @@ export const useHeaderText = () => {
   return {
     signInBtn: t("AuthForm.signInBtn"),
     signUpBtn: t("AuthForm.signUpBtn"),
+    drawerTitle: t("Drawer.title"),
+    profileBtnText: t("Profile.headerBtnText"),
   };
 };

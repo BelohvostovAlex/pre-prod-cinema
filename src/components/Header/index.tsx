@@ -10,8 +10,13 @@ import Navigation from "../Navigation";
 import Drawer from "../Drawer";
 
 import { useAppSelector } from "../../hooks/useAppSelector";
+import { useOpenPortal } from "../../hooks/portal/useOpenPortal";
+import { useClosePortal } from "../../hooks/portal/useClosePortal";
 import { isAuthSelector } from "../../store/slices/userSlice/selectors";
-import { isPortalOpenSelector } from "../../store/slices/portalSlice/selectors";
+import {
+  isPortalOpenSelector,
+  portalVariantSelector,
+} from "../../store/slices/portalSlice/selectors";
 import { useHeaderText } from "./config/useHeaderText";
 
 import { ButtonTypes } from "../../constants/buttons";
@@ -29,22 +34,27 @@ import {
   ProfileBtn,
   ProfileBtnText,
 } from "./styles";
-import { useActions } from "../../hooks/useActionts";
+import { PortalVariant } from "../../constants/portal";
+import EditProfile from "../EditProfile";
+import Settings from "../Settings";
 
 const Header: FunctionComponent = () => {
-  const { signInBtn, signUpBtn } = useHeaderText();
+  const { signInBtn, signUpBtn, drawerTitle, profileBtnText } = useHeaderText();
   const isAuth = useAppSelector(isAuthSelector);
   const isPortalOpen = useAppSelector(isPortalOpenSelector);
-  const { setIsOpenPortal } = useActions();
+  const portalVariant = useAppSelector(portalVariantSelector);
+  const openSignInPortal = useOpenPortal(PortalVariant.SIGN_IN);
+  const openSignUpPortal = useOpenPortal(PortalVariant.SIGN_UP);
+  const closePortal = useClosePortal();
   const [isDrawerOpen, setIsDrawerOpen] = useState<boolean>(false);
   const [isSignUp, setIsSignUp] = useState<boolean>(true);
 
   const onOpenSignUpModal = () => {
-    setIsOpenPortal(true);
+    openSignUpPortal();
     setIsSignUp(true);
   };
   const onOpenSignInModal = () => {
-    setIsOpenPortal(true);
+    openSignInPortal();
     setIsSignUp(false);
   };
 
@@ -64,10 +74,6 @@ const Header: FunctionComponent = () => {
     setIsDrawerOpen(false);
   };
 
-  const onClosePortal = () => {
-    setIsOpenPortal(false);
-  };
-
   return (
     <HeaderWrapper>
       <NavWrapper>
@@ -79,13 +85,13 @@ const Header: FunctionComponent = () => {
       {isAuth ? (
         <>
           <ProfileBtn onClick={onOpenDrawer}>
-            <ProfileBtnText>Profile</ProfileBtnText>
+            <ProfileBtnText>{profileBtnText}</ProfileBtnText>
             <ProfileIcon />
           </ProfileBtn>
           <Drawer
             isOpen={isDrawerOpen}
             onClose={onCloseDrawer}
-            title="User profile"
+            title={drawerTitle}
           >
             <Profile />
           </Drawer>
@@ -113,12 +119,15 @@ const Header: FunctionComponent = () => {
         </HeaderButtonGroup>
       )}
       <Portal showContent={isPortalOpen}>
-        <Modal onClose={onClosePortal} width="500px">
-          {isSignUp ? (
+        <Modal onClose={closePortal} width="500px">
+          {portalVariant === PortalVariant.SIGN_UP && (
             <SignUp onFormTypeChange={onFormTypeChange} signUp={isSignUp} />
-          ) : (
+          )}
+          {portalVariant === PortalVariant.SIGN_IN && (
             <SignIn onFormTypeChange={onFormTypeChange} signUp={isSignUp} />
           )}
+          {portalVariant === PortalVariant.EDIT_PROFILE && <EditProfile />}
+          {portalVariant === PortalVariant.SETTING && <Settings />}
         </Modal>
       </Portal>
     </HeaderWrapper>

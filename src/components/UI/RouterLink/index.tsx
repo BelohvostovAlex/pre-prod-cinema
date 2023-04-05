@@ -11,7 +11,6 @@ const RouterLink: FunctionComponent<RouterLinkProps> = ({
   $active = false,
   typography = TypographyVariant.poppins_l,
   fontSize = "14px",
-  borderBottom,
   extra,
 }) => {
   return (
@@ -21,7 +20,6 @@ const RouterLink: FunctionComponent<RouterLinkProps> = ({
       $active={$active}
       fontSize={fontSize}
       extra={extra}
-      borderBottom={borderBottom}
     >
       {text}
     </StyledLink>

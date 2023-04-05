@@ -6,15 +6,15 @@ export const StyledDrawer = styled.div`
   right: 0px;
   bottom: 0px;
   height: 100%;
-  width: 32%;
+  width: 28%;
   z-index: 100;
-  padding: 40px 40px 20px 40px;
+  padding: 50px 40px 20px 40px;
   background: ${({ theme }) => theme.colors.backgroundColor};
 `;
 
 export const DrawerTitle = styled.h3`
   ${({ theme }) => theme.typography.poppins_l}
-  font-size: 30px;
+  font-size: 21px;
   color: ${({ theme }) => theme.colors.primary};
   position: relative;
   width: 100%;
@@ -27,11 +27,15 @@ export const DrawerArrowWrapper = styled.div`
   left: 0;
   top: 50%;
   transform: translate(0%, -50%);
-  width: 40px;
+  width: 36px;
   cursor: pointer;
   svg {
     display: block;
     width: 100%;
     height: auto;
+  }
+  svg:hover path {
+    fill: ${({ theme }) => theme.colors.secondary};
+    transition-duration: 0.3s;
   }
 `;

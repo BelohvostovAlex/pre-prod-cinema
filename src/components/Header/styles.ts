@@ -33,6 +33,10 @@ export const HeaderButtonGroup = styled.div`
 export const ProfileBtn = styled.div`
   display: flex;
   align-items: center;
+  &:hover svg path {
+    fill: ${({ theme }) => theme.colors.secondary};
+    transition-duration: 0.3s;
+  }
 
   svg {
     width: 30px;

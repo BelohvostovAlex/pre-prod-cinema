@@ -3,6 +3,7 @@ import { FirebaseError } from "firebase/app";
 import { auth } from "../../lib/firebase.prod";
 
 import { useActions } from "../useActionts";
+import { useClosePortal } from "../portal/useClosePortal";
 import { useErrorTranslation } from "../errorTranslation/useErrorTranslation";
 
 import { getDocument } from "../../api/firebase/getDocument";
@@ -19,8 +20,8 @@ import { FirebaseErrorsTypes } from "../../constants/errors/firebaseErrors";
 
 export const useAuthBySocialNetwork = (options: UseAuthBySocialNetwork) => {
   const { ClassProvider, provider } = options;
-  const { setUser, setIsOpenPortal, setUserError, setIsAlertOpen } =
-    useActions();
+  const { setUser, setUserError, setIsAlertOpen } = useActions();
+  const closePortal = useClosePortal();
   const { userAlreadyExistsViaSocialError, popupClosedByUser } =
     useErrorTranslation();
 
@@ -61,7 +62,7 @@ export const useAuthBySocialNetwork = (options: UseAuthBySocialNetwork) => {
           newDoc: newUserDoc,
         });
         setUser(newUserDoc);
-        setIsOpenPortal(false);
+        closePortal();
       } else {
         await createDocument({
           collection: FirebaseCollections.USERS,
@@ -70,7 +71,7 @@ export const useAuthBySocialNetwork = (options: UseAuthBySocialNetwork) => {
         });
 
         setUser(newUser);
-        setIsOpenPortal(false);
+        closePortal();
       }
     } catch (e) {
       if (

@@ -11,15 +11,14 @@ export const StyledLink = styled(Link)<StyledLinkProps>`
   &:after {
     position: absolute;
     content: "";
-    bottom: ${({ $active }) => ($active ? "2px" : "6px")};
+    bottom: 2px;
     left: 0;
     right: 0;
     height: 1px;
     background-color: ${({ theme, $active }) =>
       $active ? theme.colors.secondary : theme.colors.primary};
     z-index: 1;
-    display: ${({ $active, borderBottom }) =>
-      $active || borderBottom ? "block" : "none"};
+    display: ${({ $active }) => ($active ? "block" : "none")};
   }
   cursor: pointer;
   ${({ extra }) => extra};

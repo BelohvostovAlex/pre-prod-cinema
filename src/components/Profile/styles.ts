@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
-export const ProfileWrapper = styled.div``;
+export const ProfileWrapper = styled.div`
+  position: relative;
+  height: 100%;
+`;
 
 export const ProfileIconWrapper = styled.div`
   width: 35%;
@@ -9,6 +12,11 @@ export const ProfileIconWrapper = styled.div`
     width: 100%;
     height: auto;
   }
+`;
+
+export const ProfileImg = styled.img`
+  width: 100%;
+  border-radius: 100%;
 `;
 
 export const ProfileInfo = styled.div`
@@ -44,4 +52,16 @@ export const ProfileMenu = styled.div`
   flex-direction: column;
   align-items: center;
   margin-top: 20px;
+`;
+
+export const ProfileLogoWrapper = styled.div`
+  position: absolute;
+  bottom: 100px;
+  left: 50%;
+  height: 20px;
+  transform: translateX(-50%);
+  svg {
+    width: 100%;
+    height: 100%;
+  }
 `;

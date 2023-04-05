@@ -42,6 +42,17 @@
     "signInBtn": "Sign In",
     "signUpBtn": "Sign Up"
   },
+  "Drawer": {
+    "title": "User profile"
+  },
+  "Profile": {
+    "userId": "USER ID",
+    "editProfile": "Edit profile",
+    "logOut": "Log Out",
+    "settings": "Settings",
+    "altImgText": "Profile photo",
+    "headerBtnText": "Profile"
+  },
   "Errors": {
     "userAlreadyExistsViaSocial": "Account with dat email is already exists, please try another method to log in",
     "popupClosedByUser": "Sign in has been cancelled",

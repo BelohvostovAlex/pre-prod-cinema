@@ -1,5 +1,6 @@
 import { FunctionComponent } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
+import { FirebaseError } from "firebase/app";
 import { auth } from "../../lib/firebase.prod";
 
 import AuthForm from "../AuthForm";
@@ -7,23 +8,23 @@ import AuthForm from "../AuthForm";
 import { useActions } from "../../hooks/useActionts";
 import { getDocument } from "../../api/firebase/getDocument";
 import { FirebaseCollections } from "../../constants/firebase/collections";
-
-import { SignInProps } from "./interfaces";
-import { IUser } from "../../models/IUser";
-import { FirebaseError } from "firebase/app";
-import { isStrIncludesValueHandler } from "../../helpers/isStrIncludeValueHandler";
-import { FirebaseErrorsTypes } from "../../constants/errors/firebaseErrors";
 import { useErrorTranslation } from "../../hooks/errorTranslation/useErrorTranslation";
+import { useClosePortal } from "../../hooks/portal/useClosePortal";
 import { AlertTypes } from "../../constants/alert";
 import { updateDocument } from "../../api/firebase/updateDocument";
+import { isStrIncludesValueHandler } from "../../helpers/isStrIncludeValueHandler";
+import { FirebaseErrorsTypes } from "../../constants/errors/firebaseErrors";
+
+import { IUser } from "../../models/IUser";
+import { SignInProps } from "./interfaces";
 
 const SignIn: FunctionComponent<SignInProps> = ({
   onFormTypeChange,
   signUp,
 }) => {
-  const { setLoading, setUser, setUserError, setIsAlertOpen, setIsOpenPortal } =
-    useActions();
+  const { setLoading, setUser, setUserError, setIsAlertOpen } = useActions();
   const { wrongPassword, userNotFound } = useErrorTranslation();
+  const closePortal = useClosePortal();
 
   const handleSignIn = async (email: string, password: string) => {
     try {
@@ -44,7 +45,7 @@ const SignIn: FunctionComponent<SignInProps> = ({
           newDoc: newUserDoc,
         });
         setUser(newUserDoc);
-        setIsOpenPortal(false);
+        closePortal();
       }
     } catch (e) {
       if (
