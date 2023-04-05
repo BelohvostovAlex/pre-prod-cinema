@@ -1,4 +1,4 @@
-import { FunctionComponent, useState, FormEvent } from "react";
+import { FunctionComponent } from "react";
 import {
   GoogleAuthProvider,
   FacebookAuthProvider,
@@ -6,12 +6,13 @@ import {
 } from "firebase/auth";
 
 import Button from "../UI/Buttons/Button";
+import ModalTitle from "../Modal/ModalTitle";
 
 import { useAuthBySocialNetwork } from "../../hooks/authBySocial/useAuthBySocialNetworks";
 import { useAuthFormText } from "./config/useAuthFormText";
 
 import { TypographyVariant } from "../../constants/styles/typography";
-import { ButtonTypes } from "../../constants/buttons";
+import { ButtonTypes, ButtonVariants } from "../../constants/buttons";
 import { ReactComponent as ProfileIcon } from "../../assets/svg/form/account.svg";
 import { ReactComponent as EmailIcon } from "../../assets/svg/form/email.svg";
 import { ReactComponent as PasswordIcon } from "../../assets/svg/form/password.svg";
@@ -19,18 +20,19 @@ import { ReactComponent as SurnamIcon } from "../../assets/svg/form/surname.svg"
 import { ReactComponent as GoogleIcon } from "../../assets/svg/social/google.svg";
 import { ReactComponent as FacebookIcon } from "../../assets/svg/social/facebook.svg";
 import { ReactComponent as GithubIcon } from "../../assets/svg/social/github.svg";
-import { AuthFormProps } from "./interfaces";
+import { AuthFormInputProps, AuthFormProps } from "./interfaces";
 import {
   BottomInfoWrapper,
-  Box,
   ButtonGroup,
   Form,
-  FormTitle,
-  Input,
   Link,
-  Span,
   Typography,
 } from "./styles";
+import InputWithIcon from "../InputWithIcon";
+import { InputTypes } from "../Input/interfaces";
+import { useForm, SubmitHandler } from "react-hook-form";
+import { AuthFormInputsPossibleNames } from "../../constants/authForm";
+import { handleValidationType } from "./config/validation";
 
 const AuthForm: FunctionComponent<AuthFormProps> = ({
   signUp = true,
@@ -40,10 +42,10 @@ const AuthForm: FunctionComponent<AuthFormProps> = ({
   const {
     title,
     titleSpan,
-    username,
-    surname,
-    email,
-    password,
+    usernameText,
+    surnameText,
+    emailText,
+    passwordText,
     alreadyHaveAcc,
     linkToSignIn,
     googleBtn,
@@ -54,10 +56,7 @@ const AuthForm: FunctionComponent<AuthFormProps> = ({
     signInBtn,
     signUpBtn,
   } = useAuthFormText(signUp);
-  const [name, setName] = useState("");
-  const [sur, setSur] = useState("");
-  const [pass, setPass] = useState("");
-  const [em, setEm] = useState("");
+
   const googleSignIn = useAuthBySocialNetwork({
     ClassProvider: GoogleAuthProvider,
     provider: new GoogleAuthProvider(),
@@ -71,81 +70,88 @@ const AuthForm: FunctionComponent<AuthFormProps> = ({
     provider: new GithubAuthProvider(),
   });
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    onSubmit(em, pass, name, sur);
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors, isValid },
+  } = useForm<AuthFormInputProps>({ mode: "onBlur" });
+
+  const onSubmitHandler: SubmitHandler<AuthFormInputProps> = (data) => {
+    if (isValid) {
+      onSubmit(data);
+      reset();
+    }
   };
+  console.log(errors);
+  console.log(isValid);
 
   return (
     <div>
-      <FormTitle>
-        {title}
-        <Span>{titleSpan}</Span>
-      </FormTitle>
-      <Form onSubmit={handleSubmit}>
+      <ModalTitle text={title} spanText={titleSpan} />
+      <Form onSubmit={handleSubmit(onSubmitHandler)}>
         {signUp && (
           <>
-            <Box>
-              <ProfileIcon />
-              <Input
-                type="text"
-                name="username"
-                id="username"
-                placeholder={username.placeholder}
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-              />
-            </Box>
-            <Box>
-              <SurnamIcon />
-              <Input
-                type="text"
-                name="surname"
-                id="surname"
-                placeholder={surname.placeholder}
-                value={sur}
-                onChange={(e) => setSur(e.target.value)}
-              />
-            </Box>
+            <InputWithIcon
+              id="username"
+              placeholder={usernameText.placeholder}
+              icon={<ProfileIcon />}
+              register={register}
+              inputName={AuthFormInputsPossibleNames.USERNAME}
+              validateOptions={handleValidationType(
+                AuthFormInputsPossibleNames.USERNAME,
+              )}
+            />
+
+            <InputWithIcon
+              id="surname"
+              placeholder={surnameText.placeholder}
+              icon={<SurnamIcon />}
+              register={register}
+              inputName={AuthFormInputsPossibleNames.SURNAME}
+              validateOptions={handleValidationType(
+                AuthFormInputsPossibleNames.SURNAME,
+              )}
+            />
           </>
         )}
-        <Box>
-          <EmailIcon />
-          <Input
-            type="email"
-            name="email"
-            id="email"
-            placeholder={email.placeholder}
-            value={em}
-            onChange={(e) => setEm(e.target.value)}
-          />
-        </Box>
-        <Box>
-          <PasswordIcon />
-          <Input
-            type="password"
-            name="password"
-            id="password"
-            placeholder={password.placeholder}
-            value={pass}
-            onChange={(e) => setPass(e.target.value)}
-          />
-        </Box>
+        <InputWithIcon
+          type={InputTypes.EMAIL}
+          id="email"
+          placeholder={emailText.placeholder}
+          icon={<EmailIcon />}
+          register={register}
+          inputName={AuthFormInputsPossibleNames.EMAIL}
+          validateOptions={handleValidationType(
+            AuthFormInputsPossibleNames.EMAIL,
+          )}
+        />
+        <InputWithIcon
+          type={InputTypes.PASSWORD}
+          id="password"
+          placeholder={passwordText.placeholder}
+          icon={<PasswordIcon />}
+          register={register}
+          inputName={AuthFormInputsPossibleNames.PASSWORD}
+          validateOptions={handleValidationType(
+            AuthFormInputsPossibleNames.PASSWORD,
+          )}
+        />
         {signUp ? (
           <Button
-            buttonType={ButtonTypes.PRIMARY}
+            variant={ButtonVariants.PRIMARY}
             typography={TypographyVariant.poppins_l}
-            onClick={() => handleSubmit}
             width="100%"
+            buttonTypes={ButtonTypes.SUBMIT}
           >
             {signUpBtn}
           </Button>
         ) : (
           <Button
-            buttonType={ButtonTypes.PRIMARY}
+            variant={ButtonVariants.PRIMARY}
             typography={TypographyVariant.poppins_l}
-            onClick={() => handleSubmit}
             width="100%"
+            buttonTypes={ButtonTypes.SUBMIT}
           >
             {signInBtn}
           </Button>

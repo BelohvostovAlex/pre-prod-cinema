@@ -1,10 +1,12 @@
+export interface AuthFormInputProps {
+  email: string;
+  password: string;
+  surname: string;
+  username: string;
+}
+
 export interface AuthFormProps {
   signUp?: boolean;
   onFormTypeChange: () => void;
-  onSubmit: (
-    email: string,
-    password: string,
-    username: string,
-    surname: string,
-  ) => void;
+  onSubmit: (options: AuthFormInputProps) => void;
 }

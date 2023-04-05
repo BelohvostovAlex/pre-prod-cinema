@@ -15,6 +15,7 @@ import { AlertTypes } from "../../constants/alert";
 import { FirebaseCollections } from "../../constants/firebase/collections";
 
 import { SignUpProps } from "./interfaces";
+import { AuthFormInputProps } from "../AuthForm/interfaces";
 
 const SignUp: FunctionComponent<SignUpProps> = ({
   onFormTypeChange,
@@ -24,28 +25,23 @@ const SignUp: FunctionComponent<SignUpProps> = ({
   const { emailAlreadyInUse } = useErrorTranslation();
   const closePortal = useClosePortal();
 
-  const handleSignUp = async (
-    email: string,
-    password: string,
-    username: string,
-    surname: string,
-  ) => {
+  const handleSignUp = async (options: AuthFormInputProps) => {
     try {
       setLoading(true);
       const { user } = await createUserWithEmailAndPassword(
         auth,
-        email,
-        password,
+        options.email,
+        options.password,
       );
       const token = await user.getIdToken();
 
       const newUser = {
         id: user.uid,
-        username,
-        surname,
+        username: options.username,
+        surname: options.surname,
         photo: user.photoURL || "",
         gender: "male",
-        password,
+        password: options.password,
         email: user.email,
         token,
       };

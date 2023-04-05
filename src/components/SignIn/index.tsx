@@ -26,10 +26,14 @@ const SignIn: FunctionComponent<SignInProps> = ({
   const { wrongPassword, userNotFound } = useErrorTranslation();
   const closePortal = useClosePortal();
 
-  const handleSignIn = async (email: string, password: string) => {
+  const handleSignIn = async (option: { email: string; password: string }) => {
     try {
       setLoading(true);
-      const { user } = await signInWithEmailAndPassword(auth, email, password);
+      const { user } = await signInWithEmailAndPassword(
+        auth,
+        option.email,
+        option.password,
+      );
       const id = user.uid;
       const token = await user.getIdToken();
       const isUserExists = (await getDocument(

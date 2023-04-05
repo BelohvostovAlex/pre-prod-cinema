@@ -53,6 +53,10 @@
     "altImgText": "Profile photo",
     "headerBtnText": "Profile"
   },
+  "EditProfile": {
+    "title": "Here you can change your profile",
+    "titleSpan": "information and password."
+  },
   "Errors": {
     "userAlreadyExistsViaSocial": "Account with dat email is already exists, please try another method to log in",
     "popupClosedByUser": "Sign in has been cancelled",

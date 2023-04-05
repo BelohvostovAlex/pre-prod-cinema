@@ -1,21 +1,21 @@
 import styled from "styled-components";
 
-import { ButtonTypes } from "../../../../constants/buttons";
+import { ButtonVariants } from "../../../../constants/buttons";
 import { ButtonStyleProps } from "./interfaces";
 
 export const StyledButton = styled.button<ButtonStyleProps>`
   ${({ theme, typography }) => theme.typography[typography]}
   font-size: ${({ fontSize }) => fontSize};
-  background: ${({ theme, buttonType, backgroundColor }) =>
-    buttonType === ButtonTypes.PRIMARY
+  background: ${({ theme, variant, backgroundColor }) =>
+    variant === ButtonVariants.PRIMARY
       ? theme.colors.primary
-      : buttonType === ButtonTypes.SECONDARY
+      : variant === ButtonVariants.SECONDARY
       ? theme.colors.secondary
       : backgroundColor};
-  color: ${({ theme, buttonType, color }) =>
-    buttonType === ButtonTypes.PRIMARY
+  color: ${({ theme, variant, color }) =>
+    variant === ButtonVariants.PRIMARY
       ? theme.colors.secondary
-      : buttonType === ButtonTypes.SECONDARY
+      : variant === ButtonVariants.SECONDARY
       ? theme.colors.primary
       : color};
   border-radius: ${({ theme }) => theme.border_radius[10]};

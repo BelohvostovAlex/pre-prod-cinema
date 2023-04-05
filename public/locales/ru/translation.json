@@ -53,6 +53,10 @@
     "altImgText": "Фото пользователя",
     "headerBtnText": "Профиль"
   },
+  "EditProfile": {
+    "title": "Здесь вы можете поменять вашу",
+    "titleSpan": "информацию и пароль."
+  },
   "Errors": {
     "userAlreadyExistsViaSocial": "Пользователь с данным эл.адресом уже существует, пожалуйста, попробуйте другой метод войти",
     "popupClosedByUser": "Вход был отменен",

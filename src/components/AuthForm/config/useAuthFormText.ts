@@ -8,22 +8,22 @@ export const useAuthFormText = (signUp: boolean) => {
     titleSpan: signUp
       ? t("AuthForm.titleSpan.signup")
       : t("AuthForm.titleSpan.signin"),
-    username: {
+    usernameText: {
       label: t("AuthForm.usernameField.label"),
       placeholder: t("AuthForm.usernameField.placeholder"),
       required: t("AuthForm.usernameField.required"),
     },
-    surname: {
+    surnameText: {
       label: t("AuthForm.surnameField.label"),
       placeholder: t("AuthForm.surnameField.placeholder"),
       required: t("AuthForm.surnameField.required"),
     },
-    email: {
+    emailText: {
       label: t("AuthForm.emailField.label"),
       placeholder: t("AuthForm.emailField.placeholder"),
       required: t("AuthForm.emailField.required"),
     },
-    password: {
+    passwordText: {
       label: t("AuthForm.passwordField.label"),
       placeholder: t("AuthForm.passwordField.placeholder"),
       required: t("AuthForm.passwordField.required"),

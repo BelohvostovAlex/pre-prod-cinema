@@ -19,7 +19,7 @@ import {
 } from "../../store/slices/portalSlice/selectors";
 import { useHeaderText } from "./config/useHeaderText";
 
-import { ButtonTypes } from "../../constants/buttons";
+import { ButtonVariants } from "../../constants/buttons";
 import { TypographyVariant } from "../../constants/styles/typography";
 import { AppPathes } from "../../constants/routes";
 
@@ -100,7 +100,7 @@ const Header: FunctionComponent = () => {
         <HeaderButtonGroup>
           <Button
             typography={TypographyVariant.poppins_l}
-            buttonType={ButtonTypes.SECONDARY}
+            variant={ButtonVariants.SECONDARY}
             fontSize="14px"
             onClick={onOpenSignUpModal}
           >
@@ -108,7 +108,7 @@ const Header: FunctionComponent = () => {
           </Button>
           <Button
             typography={TypographyVariant.poppins_l}
-            buttonType={ButtonTypes.PRIMARY}
+            variant={ButtonVariants.PRIMARY}
             margin="0px 35px 0px 20px"
             fontSize="14px"
             onClick={onOpenSignInModal}

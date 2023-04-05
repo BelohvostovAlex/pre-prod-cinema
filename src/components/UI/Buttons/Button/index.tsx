@@ -5,7 +5,7 @@ import { StyledButton } from "./styles";
 
 const Button: FunctionComponent<ButtonProps> = ({
   children,
-  buttonType,
+  variant,
   height,
   width,
   onClick,
@@ -14,10 +14,12 @@ const Button: FunctionComponent<ButtonProps> = ({
   backgroundColor,
   color,
   margin,
+  buttonTypes,
 }) => {
   return (
     <StyledButton
-      buttonType={buttonType}
+      variant={variant}
+      buttonTypes={buttonTypes}
       onClick={onClick}
       height={height}
       width={width}
