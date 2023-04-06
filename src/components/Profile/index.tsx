@@ -8,8 +8,8 @@ import { useProfileText } from "./config/useProfileText";
 
 import { TypographyVariant } from "../../constants/styles/typography";
 
-// import { ReactComponent as ProfileIcon } from "../../assets/svg/profile/profile-full.svg";
 import { ReactComponent as LogoIcon } from "../../assets/svg/logo/logo.svg";
+import { ReactComponent as ProfileIcon } from "../../assets/svg/profile/profile-big.svg";
 import {
   ProfileGender,
   ProfileIconWrapper,
@@ -42,8 +42,7 @@ const Profile: FunctionComponent = () => {
           {photo ? (
             <ProfileImg src={photo} alt={altImgText} />
           ) : (
-            // <ProfileIcon />
-            ""
+            <ProfileIcon />
           )}
         </ProfileIconWrapper>
         <ProfileName>
