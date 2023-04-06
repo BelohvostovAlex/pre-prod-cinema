@@ -12,5 +12,6 @@ export enum AuthFormInputsErrors {
   REQUIRED = "field is required",
   INVALID_EMAIL = "invalid email address",
   PASSWORD_MIN = "at least 6 symbols",
+  PASSWORD_MAX = "should't be over 16 symbols",
   PASSWORD_MUST_INCLUDE = "must include lower, upper, number, and special chars",
 }

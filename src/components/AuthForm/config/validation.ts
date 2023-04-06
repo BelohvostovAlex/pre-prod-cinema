@@ -26,10 +26,14 @@ export const handleValidationType = (type: AuthFormInputsPossibleNames) => {
           value: 6,
           message: AuthFormInputsErrors.PASSWORD_MIN,
         },
+        maxLength: {
+          value: 15,
+          message: AuthFormInputsErrors.PASSWORD_MAX,
+        },
         validate: (value: string) => {
           return (
-            [/[a-z]/, /[A-Z]/, /[0-9]/, /[^a-zA-Z0-9]/].every((pattern) =>
-              pattern.test(value),
+            [/[a-zа-я\d]/, /[A-ZА-Я]/, /[0-9]/, /[^a-zа-яA-ZА-Я0-9]/].every(
+              (pattern) => pattern.test(value) && value.length < 16,
             ) || AuthFormInputsErrors.PASSWORD_MUST_INCLUDE
           );
         },
@@ -37,7 +41,7 @@ export const handleValidationType = (type: AuthFormInputsPossibleNames) => {
     case AuthFormInputsPossibleNames.SURNAME:
       return {
         pattern: {
-          value: /^[A-Za-z]+$/i,
+          value: /^[a-zа-яA-ZА-Я]+$/i,
           message: AuthFormInputsErrors.TEXT_ONLY_LETTER,
         },
         required: {
@@ -53,7 +57,7 @@ export const handleValidationType = (type: AuthFormInputsPossibleNames) => {
     case AuthFormInputsPossibleNames.USERNAME:
       return {
         pattern: {
-          value: /^[A-Za-z]+$/i,
+          value: /^[a-zа-яA-ZА-Я]+$/i,
           message: AuthFormInputsErrors.TEXT_ONLY_LETTER,
         },
         required: {

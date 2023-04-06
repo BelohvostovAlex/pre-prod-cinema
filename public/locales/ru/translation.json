@@ -63,5 +63,15 @@
     "emailAlreadyInUse": "Данный эл.адрес уже используется",
     "wrongPassword": "Неверный пароль",
     "userNotFound": "Пользователь не найден"
+  },
+  "AuthInputErrors": {
+    "invalidEmail": "неверный эл.адрес",
+    "passwordMin": "мин. 6 символов",
+    "passwordMax": "макс. 16 символов",
+    "passwordMustInclude": "как минимум одна большая, маленькая буква, цифра, спец.символ",
+    "required": "поле обязательно",
+    "textOnlyLetter": "только буквы",
+    "textMaxLength": "не больше 20 символов",
+    "textMinLength": "не меньше 2 символов"
   }
 }

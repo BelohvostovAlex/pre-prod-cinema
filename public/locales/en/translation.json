@@ -63,5 +63,15 @@
     "emailAlreadyInUse": "Email is already in use",
     "wrongPassword": "Wrong password",
     "userNotFound": "User not found"
+  },
+  "AuthInputErrors": {
+    "invalidEmail": "invalid email",
+    "passwordMin": "min 6 symbols",
+    "passwordMax": "max 16 symbols",
+    "passwordMustInclude": "must include lower, upper, number, and special chars",
+    "required": "field is required",
+    "textOnlyLetter": "only letters",
+    "textMaxLength": "should't be over 20 symbols",
+    "textMinLength": "at least 2 sybmols"
   }
 }

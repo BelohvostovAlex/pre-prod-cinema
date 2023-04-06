@@ -33,6 +33,8 @@ import { InputTypes } from "../Input/interfaces";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { AuthFormInputsPossibleNames } from "../../constants/authForm";
 import { handleValidationType } from "./config/validation";
+import PasswordStrengthMeter from "../PasswordStrengthMeter";
+import { Colors } from "../../constants/styles/colors";
 
 const AuthForm: FunctionComponent<AuthFormProps> = ({
   signUp = true,
@@ -74,8 +76,9 @@ const AuthForm: FunctionComponent<AuthFormProps> = ({
     register,
     handleSubmit,
     reset,
+    watch,
     formState: { isValid, errors },
-  } = useForm<AuthFormInputProps>({ mode: "onBlur" });
+  } = useForm<AuthFormInputProps>({ mode: "onChange" });
 
   const onSubmitHandler: SubmitHandler<AuthFormInputProps> = (data) => {
     if (isValid) {
@@ -138,6 +141,7 @@ const AuthForm: FunctionComponent<AuthFormProps> = ({
           )}
           error={errors.password?.message}
         />
+        <PasswordStrengthMeter value={watch().password} />
         {signUp ? (
           <Button
             variant={ButtonVariants.PRIMARY}
@@ -164,8 +168,8 @@ const AuthForm: FunctionComponent<AuthFormProps> = ({
           width="174px"
           height="28px"
           fontSize="8px"
-          backgroundColor="#ffff"
-          color="black"
+          backgroundColor={Colors.WHITE}
+          color={Colors.BLACK}
           onClick={googleSignIn}
         >
           <GoogleIcon />
@@ -177,7 +181,7 @@ const AuthForm: FunctionComponent<AuthFormProps> = ({
           height="28px"
           fontSize="8px"
           backgroundColor="#1877F2"
-          color="#fff"
+          color={Colors.WHITE}
           onClick={facebookSignIn}
         >
           <FacebookIcon />
@@ -188,8 +192,8 @@ const AuthForm: FunctionComponent<AuthFormProps> = ({
           width="174px"
           height="28px"
           fontSize="8px"
-          backgroundColor="black"
-          color="#fff"
+          backgroundColor={Colors.BLACK}
+          color={Colors.WHITE}
           margin="10px 0px"
           onClick={githubSignIn}
         >
