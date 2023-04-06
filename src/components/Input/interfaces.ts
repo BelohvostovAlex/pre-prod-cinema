@@ -18,6 +18,7 @@ export interface InputProps {
   htmlFor?: string;
   register: UseFormRegister<AuthFormInputProps>;
   inputName: AuthFormInputsPossibleNames;
+  error?: string;
   validateOptions?:
     | RegisterOptions<AuthFormInputProps, AuthFormInputsPossibleNames>
     | undefined;

@@ -1,6 +1,6 @@
 import { FunctionComponent } from "react";
 
-import { InoutLabel, InputWrapper, StyledInput } from "./styles";
+import { ErrorText, InoutLabel, InputWrapper, StyledInput } from "./styles";
 import { InputProps, InputTypes } from "./interfaces";
 
 const Input: FunctionComponent<InputProps> = ({
@@ -12,6 +12,7 @@ const Input: FunctionComponent<InputProps> = ({
   register,
   inputName,
   validateOptions,
+  error,
 }) => {
   return (
     <InputWrapper>
@@ -24,6 +25,7 @@ const Input: FunctionComponent<InputProps> = ({
           {...register(inputName, validateOptions)}
         />
       </InoutLabel>
+      <ErrorText>{error}</ErrorText>
     </InputWrapper>
   );
 };

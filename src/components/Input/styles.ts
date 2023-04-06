@@ -18,3 +18,10 @@ export const StyledInput = styled.input`
     color: ${({ theme }) => theme.colors.primary};
   }
 `;
+
+export const ErrorText = styled.p`
+  color: ${({ theme }) => theme.colors.red};
+  ${({ theme }) => theme.typography.poppins_l};
+  font-size: 10px;
+  text-align: start;
+`;

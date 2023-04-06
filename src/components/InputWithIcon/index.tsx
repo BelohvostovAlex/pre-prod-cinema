@@ -16,6 +16,7 @@ const InputWithIcon: FunctionComponent<InputWithIconProps> = ({
   register,
   inputName,
   validateOptions,
+  error,
 }) => {
   return (
     <Box>
@@ -29,6 +30,7 @@ const InputWithIcon: FunctionComponent<InputWithIconProps> = ({
         register={register}
         inputName={inputName}
         validateOptions={validateOptions}
+        error={error}
       />
     </Box>
   );

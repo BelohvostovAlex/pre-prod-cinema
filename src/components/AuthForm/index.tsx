@@ -74,7 +74,7 @@ const AuthForm: FunctionComponent<AuthFormProps> = ({
     register,
     handleSubmit,
     reset,
-    formState: { isValid },
+    formState: { isValid, errors },
   } = useForm<AuthFormInputProps>({ mode: "onBlur" });
 
   const onSubmitHandler: SubmitHandler<AuthFormInputProps> = (data) => {
@@ -99,8 +99,8 @@ const AuthForm: FunctionComponent<AuthFormProps> = ({
               validateOptions={handleValidationType(
                 AuthFormInputsPossibleNames.USERNAME,
               )}
+              error={errors.username?.message}
             />
-
             <InputWithIcon
               id="surname"
               placeholder={surnameText.placeholder}
@@ -110,6 +110,7 @@ const AuthForm: FunctionComponent<AuthFormProps> = ({
               validateOptions={handleValidationType(
                 AuthFormInputsPossibleNames.SURNAME,
               )}
+              error={errors.surname?.message}
             />
           </>
         )}
@@ -123,6 +124,7 @@ const AuthForm: FunctionComponent<AuthFormProps> = ({
           validateOptions={handleValidationType(
             AuthFormInputsPossibleNames.EMAIL,
           )}
+          error={errors.email?.message}
         />
         <InputWithIcon
           type={InputTypes.PASSWORD}
@@ -134,6 +136,7 @@ const AuthForm: FunctionComponent<AuthFormProps> = ({
           validateOptions={handleValidationType(
             AuthFormInputsPossibleNames.PASSWORD,
           )}
+          error={errors.password?.message}
         />
         {signUp ? (
           <Button
