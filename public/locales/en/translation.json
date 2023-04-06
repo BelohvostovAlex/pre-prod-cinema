@@ -55,7 +55,12 @@
   },
   "EditProfile": {
     "title": "Here you can change your profile",
-    "titleSpan": "information and password."
+    "titleSpan": "information and password.",
+    "submitBtn": "Submit",
+    "male": "male",
+    "female": "female",
+    "uploadImg": "Upload img",
+    "newPass": "Your new pass"
   },
   "Errors": {
     "userAlreadyExistsViaSocial": "Account with dat email is already exists, please try another method to log in",

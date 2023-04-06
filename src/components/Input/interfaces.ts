@@ -14,11 +14,12 @@ export interface InputProps {
   type?: InputTypes;
   label?: string;
   id?: string;
-  placeholder: string;
+  placeholder?: string;
   htmlFor?: string;
   register: UseFormRegister<AuthFormInputProps>;
   inputName: AuthFormInputsPossibleNames;
   error?: string;
+  defaultValue?: string;
   validateOptions?:
     | RegisterOptions<AuthFormInputProps, AuthFormInputsPossibleNames>
     | undefined;

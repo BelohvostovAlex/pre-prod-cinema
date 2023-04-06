@@ -4,14 +4,20 @@ import {
   FacebookAuthProvider,
   GithubAuthProvider,
 } from "firebase/auth";
+import { useForm, SubmitHandler } from "react-hook-form";
 
 import Button from "../UI/Buttons/Button";
 import ModalTitle from "../Modal/ModalTitle";
+import InputWithIcon from "../InputWithIcon";
+import PasswordStrengthMeter from "../PasswordStrengthMeter";
 
 import { useAuthBySocialNetwork } from "../../hooks/authBySocial/useAuthBySocialNetworks";
 import { useAuthFormText } from "./config/useAuthFormText";
+import { AuthFormInputsPossibleNames } from "../../constants/authForm";
+import { handleValidationType } from "./config/validation";
 
 import { TypographyVariant } from "../../constants/styles/typography";
+import { Colors } from "../../constants/styles/colors";
 import { ButtonTypes, ButtonVariants } from "../../constants/buttons";
 import { ReactComponent as ProfileIcon } from "../../assets/svg/form/account.svg";
 import { ReactComponent as EmailIcon } from "../../assets/svg/form/email.svg";
@@ -21,6 +27,7 @@ import { ReactComponent as GoogleIcon } from "../../assets/svg/social/google.svg
 import { ReactComponent as FacebookIcon } from "../../assets/svg/social/facebook.svg";
 import { ReactComponent as GithubIcon } from "../../assets/svg/social/github.svg";
 import { AuthFormInputProps, AuthFormProps } from "./interfaces";
+import { InputTypes } from "../Input/interfaces";
 import {
   BottomInfoWrapper,
   ButtonGroup,
@@ -28,13 +35,6 @@ import {
   Link,
   Typography,
 } from "./styles";
-import InputWithIcon from "../InputWithIcon";
-import { InputTypes } from "../Input/interfaces";
-import { useForm, SubmitHandler } from "react-hook-form";
-import { AuthFormInputsPossibleNames } from "../../constants/authForm";
-import { handleValidationType } from "./config/validation";
-import PasswordStrengthMeter from "../PasswordStrengthMeter";
-import { Colors } from "../../constants/styles/colors";
 
 const AuthForm: FunctionComponent<AuthFormProps> = ({
   signUp = true,
