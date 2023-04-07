@@ -24,7 +24,7 @@ const Modal: FunctionComponent<ModalProps> = ({
       {children}
       <ModalButton>
         <RoundButton
-          icon={<Close />}
+          children={<Close />}
           onClick={onClose}
           background={Colors.DARK_GRAY}
         />

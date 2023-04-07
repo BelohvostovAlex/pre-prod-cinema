@@ -8,6 +8,8 @@ import SignIn from "../SignIn";
 import Profile from "../Profile";
 import Navigation from "../Navigation";
 import Drawer from "../Drawer";
+import EditProfile from "../EditProfile";
+import Settings from "../Settings";
 
 import { useAppSelector } from "../../hooks/useAppSelector";
 import { useOpenPortal } from "../../hooks/portal/useOpenPortal";
@@ -22,6 +24,7 @@ import { useHeaderText } from "./config/useHeaderText";
 import { ButtonVariants } from "../../constants/buttons";
 import { TypographyVariant } from "../../constants/styles/typography";
 import { AppPathes } from "../../constants/routes";
+import { PortalVariant } from "../../constants/portal";
 
 import { ReactComponent as Logo } from "../../assets/svg/logo/logo.svg";
 import { ReactComponent as SettingsIcon } from "../../assets/svg/tools/settings.svg";
@@ -34,9 +37,6 @@ import {
   ProfileBtn,
   ProfileBtnText,
 } from "./styles";
-import { PortalVariant } from "../../constants/portal";
-import EditProfile from "../EditProfile";
-import Settings from "../Settings";
 
 const Header: FunctionComponent = () => {
   const { signInBtn, signUpBtn, drawerTitle, profileBtnText } = useHeaderText();
@@ -45,6 +45,7 @@ const Header: FunctionComponent = () => {
   const portalVariant = useAppSelector(portalVariantSelector);
   const openSignInPortal = useOpenPortal(PortalVariant.SIGN_IN);
   const openSignUpPortal = useOpenPortal(PortalVariant.SIGN_UP);
+  const openSettingsPortal = useOpenPortal(PortalVariant.SETTING);
   const closePortal = useClosePortal();
   const [isDrawerOpen, setIsDrawerOpen] = useState<boolean>(false);
   const [isSignUp, setIsSignUp] = useState<boolean>(true);
@@ -115,7 +116,12 @@ const Header: FunctionComponent = () => {
           >
             {signInBtn}
           </Button>
-          <SettingsIcon height="25px" width="25px" cursor="pointer" />
+          <SettingsIcon
+            height="25px"
+            width="25px"
+            cursor="pointer"
+            onClick={openSettingsPortal}
+          />
         </HeaderButtonGroup>
       )}
       <Portal showContent={isPortalOpen}>

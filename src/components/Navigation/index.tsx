@@ -8,10 +8,23 @@ import { APP_NAV_MENU } from "../../constants/nav";
 import { TypographyVariant } from "../../constants/styles/typography";
 
 import { Nav } from "./styles";
+import { useAppSelector } from "../../hooks/useAppSelector";
+import { userTokenSelector } from "../../store/slices/userSlice/selectors";
+import { useOpenPortal } from "../../hooks/portal/useOpenPortal";
+import { PortalVariant } from "../../constants/portal";
+import { AppPathes } from "../../constants/routes";
 
 const Navigation: FunctionComponent = () => {
   const { t } = useTranslation();
-  const location = useLocation();
+  const { pathname } = useLocation();
+  const token = useAppSelector(userTokenSelector);
+  const openSignUpPortal = useOpenPortal(PortalVariant.SIGN_UP);
+
+  const onClick = (to: string) => {
+    if (!token && to === AppPathes.BOOKINGS) {
+      openSignUpPortal();
+    }
+  };
   return (
     <Nav>
       {APP_NAV_MENU.map(({ text, path }) => (
@@ -21,7 +34,8 @@ const Navigation: FunctionComponent = () => {
           to={path}
           typography={TypographyVariant.poppins_l}
           extra={":first-of-type {margin-right: 30px;}"}
-          $active={location.pathname === path}
+          $active={pathname === path}
+          onClick={onClick}
         />
       ))}
     </Nav>

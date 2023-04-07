@@ -5,6 +5,7 @@ export interface RouterLinkProps {
   to: string;
   $active?: boolean;
   typography: TypographyVariant;
+  onClick?: (to: string) => void;
   fontSize?: string;
   extra?: string;
 }

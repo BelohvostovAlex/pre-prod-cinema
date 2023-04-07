@@ -62,6 +62,16 @@
     "uploadImg": "Upload img",
     "newPass": "Your new pass"
   },
+  "Settings": {
+    "title": "Here you can change ",
+    "titleSpan": "language and theme!",
+    "chooseLang": "Choose language",
+    "ru": "RU",
+    "en": "EN",
+    "changeTheme": "Change theme",
+    "dark": "dark",
+    "light": "light"
+  },
   "Errors": {
     "userAlreadyExistsViaSocial": "Account with dat email is already exists, please try another method to log in",
     "popupClosedByUser": "Sign in has been cancelled",

@@ -64,4 +64,7 @@ export const ProfileLogoWrapper = styled.div`
     width: 100%;
     height: 100%;
   }
-`;
+  svg path {
+    fill: ${({ theme }) => theme.colors.primary};
+  }
+`; //поменять цвет лого

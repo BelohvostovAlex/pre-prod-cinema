@@ -12,7 +12,11 @@ const RouterLink: FunctionComponent<RouterLinkProps> = ({
   typography = TypographyVariant.poppins_l,
   fontSize = "14px",
   extra,
+  onClick,
 }) => {
+  const clickHandler = () => {
+    if (onClick) onClick(to);
+  };
   return (
     <StyledLink
       to={to}
@@ -20,6 +24,7 @@ const RouterLink: FunctionComponent<RouterLinkProps> = ({
       $active={$active}
       fontSize={fontSize}
       extra={extra}
+      onClick={clickHandler}
     >
       {text}
     </StyledLink>

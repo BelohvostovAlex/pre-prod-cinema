@@ -34,6 +34,9 @@ export const DrawerArrowWrapper = styled.div`
     width: 100%;
     height: auto;
   }
+  svg path {
+    fill: ${({ theme }) => theme.colors.primary};
+  }
   svg:hover path {
     fill: ${({ theme }) => theme.colors.secondary};
     transition-duration: 0.3s;

@@ -1,15 +1,16 @@
 import { FunctionComponent, Suspense } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 
+import Loader from "../Loader";
+
 import { useAppSelector } from "../../hooks/useAppSelector";
-import { isAuthSelector } from "../../store/slices/userSlice/selectors";
+import { userTokenSelector } from "../../store/slices/userSlice/selectors";
 
 import { AppPathes } from "../../constants/routes";
 import { privateRoutes, publicRoutes } from "./routes";
-import Loader from "../Loader";
 
 const AppRouter: FunctionComponent = () => {
-  const isAuth = useAppSelector(isAuthSelector);
+  const token = useAppSelector(userTokenSelector);
   return (
     <Suspense fallback={<Loader />}>
       <Routes>
@@ -20,7 +21,7 @@ const AppRouter: FunctionComponent = () => {
             element={<route.element />}
           />
         ))}
-        {isAuth &&
+        {token &&
           privateRoutes.map((route) => (
             <Route
               key={route.path}

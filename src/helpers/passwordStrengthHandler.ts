@@ -22,7 +22,7 @@ export const passwordStrengthHandler = (value: string) => {
         color: Colors.RED,
       };
     }
-    if (length >= 8 && length < 12 && !!/^[a-zа-я\d]*$/.test(value)) {
+    if (length >= 8 && length < 16 && !!/^[a-zа-я\d]*$/.test(value)) {
       return {
         width: "30%",
         color: Colors.RED,

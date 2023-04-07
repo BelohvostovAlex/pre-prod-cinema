@@ -32,6 +32,7 @@ export const InputUploadFileLabel = styled.label`
     ${({ theme }) => theme.hover};
   }
   margin-right: 10px;
+  color: ${({ theme }) => theme.colors.primary};
 `;
 
 export const InputGenderWrapper = styled.div`

@@ -23,11 +23,21 @@ export const LogoWrapper = styled(Link)`
   }
   margin-right: 50px;
   cursor: pointer;
-`;
+  svg path {
+    fill: ${({ theme }) => theme.colors.primary};
+  }
+`; // поменять цвет лого
 
 export const HeaderButtonGroup = styled.div`
   display: flex;
   align-items: center;
+  svg path {
+    fill: ${({ theme }) => theme.colors.primary};
+  }
+  &:hover svg path {
+    fill: ${({ theme }) => theme.colors.secondary};
+    transition-duration: 0.3s;
+  }
 `;
 
 export const ProfileBtn = styled.div`
@@ -37,9 +47,11 @@ export const ProfileBtn = styled.div`
     fill: ${({ theme }) => theme.colors.secondary};
     transition-duration: 0.3s;
   }
-
   svg {
     width: 30px;
+  }
+  svg path {
+    fill: ${({ theme }) => theme.colors.primary};
   }
   cursor: pointer;
   :hover {
