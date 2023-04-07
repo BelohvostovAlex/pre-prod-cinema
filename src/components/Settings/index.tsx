@@ -34,7 +34,6 @@ const Settings: FunctionComponent = () => {
   const handleLangEng = () => {
     i18n.changeLanguage("en");
   };
-  const a;
   return (
     <SettingsWrapper>
       <ModalTitle text={title} spanText={titleSpan} />
