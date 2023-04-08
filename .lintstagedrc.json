@@ -1,4 +1,4 @@
 {
-  "*.+(js|jsx|ts|tsx)": ["lint"],
-  "*.+(js|jsx|ts|tsx|css|scss|md)": ["format"]
+  "*.+(js|jsx|ts|tsx)": ["yarn lint"],
+  "*.+(js|jsx|ts|tsx|css|scss|md)": ["yarn format"]
 }
