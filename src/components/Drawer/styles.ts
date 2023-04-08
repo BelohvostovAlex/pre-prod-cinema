@@ -1,25 +1,31 @@
 import styled from "styled-components";
 
+const StyledDrawerHeightPercent = 100;
+const StyledDrawerWidthPercent = 100;
+const DrawerTitleWidthPercent = 100;
+const DrawerArrowWrapperWidth = 36;
+const DrawerArrowWrapperSvgWidth = 100;
+
 export const StyledDrawer = styled.div`
   position: fixed;
   top: 0px;
   right: 0px;
   bottom: 0px;
-  height: 100%;
-  width: 28%;
-  z-index: 100;
-  padding: 50px 40px 20px 40px;
+  height: ${StyledDrawerHeightPercent}%;
+  width: ${StyledDrawerWidthPercent}%;
+  z-index: ${({ theme }) => theme.zIndex[100]};
+  padding: ${({ theme }) => theme.padding.drawer};
   background: ${({ theme }) => theme.colors.backgroundColor};
 `;
 
 export const DrawerTitle = styled.h3`
   ${({ theme }) => theme.typography.poppins_l}
-  font-size: 21px;
+  font-size: ${({ theme }) => theme.fontSize[21]};
   color: ${({ theme }) => theme.colors.primary};
   position: relative;
-  width: 100%;
+  width: ${DrawerTitleWidthPercent}%;
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: ${({ theme }) => theme.margin.mb50};
 `;
 
 export const DrawerArrowWrapper = styled.div`
@@ -27,11 +33,11 @@ export const DrawerArrowWrapper = styled.div`
   left: 0;
   top: 50%;
   transform: translate(0%, -50%);
-  width: 36px;
+  width: ${DrawerArrowWrapperWidth}px;
   cursor: pointer;
   svg {
     display: block;
-    width: 100%;
+    width: ${DrawerArrowWrapperSvgWidth}%;
     height: auto;
   }
   svg path {

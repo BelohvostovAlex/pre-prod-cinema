@@ -15,3 +15,8 @@ export enum AuthFormInputsErrors {
   PASSWORD_MAX = "should't be over 16 symbols",
   PASSWORD_MUST_INCLUDE = "must include lower, upper, number, and special chars",
 }
+
+export enum Gender {
+  MALE = "male",
+  FEMALE = "female",
+}

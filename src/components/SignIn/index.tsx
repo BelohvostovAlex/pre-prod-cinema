@@ -1,6 +1,7 @@
 import { FunctionComponent } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { FirebaseError } from "firebase/app";
+import { SignInProps } from "./interfaces";
 import { auth } from "../../lib/firebase.prod";
 
 import AuthForm from "../AuthForm";
@@ -16,7 +17,6 @@ import { isStrIncludesValueHandler } from "../../helpers/isStrIncludeValueHandle
 import { FirebaseErrorsTypes } from "../../constants/errors/firebaseErrors";
 
 import { IUser } from "../../models/IUser";
-import { SignInProps } from "./interfaces";
 
 const SignIn: FunctionComponent<SignInProps> = ({
   onFormTypeChange,

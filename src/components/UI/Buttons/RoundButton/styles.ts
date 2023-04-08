@@ -2,6 +2,9 @@ import styled from "styled-components";
 
 import { StyledRoundButtonProps } from "./interfaces";
 
+const styledRoundButtonSVGWidthPercent = 100;
+const styledRoundButtonSVGHeightPercent = 100;
+
 export const StyledRoundButton = styled.div<StyledRoundButtonProps>`
   width: ${({ width }) => width || "36px"};
   height: ${({ height }) => height || "36px"};
@@ -13,11 +16,10 @@ export const StyledRoundButton = styled.div<StyledRoundButtonProps>`
     ${({ theme }) => theme.hover}
   }
   svg {
-    width: 100%;
-    height: 100%;
+    width: ${styledRoundButtonSVGWidthPercent}%;
+    height: ${styledRoundButtonSVGHeightPercent}%;
   }
-  display: flex;
-  align-items: center;
+  ${({ theme }) => theme.flexAlignCenter}
   justify-content: center;
   cursor: pointer;
   ${({ extra }) => extra}

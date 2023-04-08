@@ -7,7 +7,6 @@ export interface ButtonProps {
   children?: ReactNode;
   variant?: ButtonVariants;
   buttonTypes?: ButtonTypes;
-  onClick?: () => void;
   width?: string;
   height?: string;
   margin?: string;
@@ -15,6 +14,8 @@ export interface ButtonProps {
   fontSize?: string;
   backgroundColor?: string;
   color?: string;
+
+  onClick?: () => void;
 }
 
 export type ButtonStyleProps = Omit<ButtonProps, "children" | "onClick">;

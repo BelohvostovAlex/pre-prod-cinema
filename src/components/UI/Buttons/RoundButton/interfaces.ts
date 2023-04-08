@@ -2,12 +2,13 @@ import { ReactNode } from "react";
 
 export interface RounduttonProps {
   children?: ReactNode;
-  onClick: () => void;
   width?: string;
   height?: string;
   background?: string;
   color?: string;
   extra?: string;
+
+  onClick: () => void;
 }
 
 export type StyledRoundButtonProps = Omit<

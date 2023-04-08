@@ -1,6 +1,7 @@
 import { FunctionComponent } from "react";
 import { FirebaseError } from "firebase/app";
 import { createUserWithEmailAndPassword } from "firebase/auth";
+import { SignUpProps } from "./interfaces";
 import { auth } from "../../lib/firebase.prod";
 
 import AuthForm from "../AuthForm";
@@ -14,7 +15,6 @@ import { isStrIncludesValueHandler } from "../../helpers/isStrIncludeValueHandle
 import { AlertTypes } from "../../constants/alert";
 import { FirebaseCollections } from "../../constants/firebase/collections";
 
-import { SignUpProps } from "./interfaces";
 import { AuthFormInputProps } from "../AuthForm/interfaces";
 
 const SignUp: FunctionComponent<SignUpProps> = ({

@@ -31,6 +31,15 @@ export interface ICommonTheme {
     40: string;
     circle: string;
   };
+  fontSize: {
+    8: string;
+    10: string;
+    12: string;
+    14: string;
+    16: string;
+    18: string;
+    21: string;
+  };
   hover: string;
   colors: {
     extraDarkGray: Colors.EXTRA_DARK_GRAY;
@@ -42,8 +51,30 @@ export interface ICommonTheme {
     wetAsphaltColor: Colors.WET_ASPHALT_COLOR;
     lightOrange: Colors.LIGHT_ORANGE;
     red: Colors.RED;
+    white: Colors.WHITE;
+    black: Colors.BLACK;
     green: Colors.GREEN;
+    facebookColor: Colors.FACEBOOK;
   };
+  zIndex: {
+    1: string;
+    10: string;
+    100: string;
+    1000: string;
+  };
+  padding: {
+    drawer: string;
+    header: string;
+    modal: string;
+  };
+  margin: {
+    mb10: string;
+    mb14: string;
+    mb20: string;
+    mb30: string;
+    mb50: string;
+  };
+  flexAlignCenter: string;
 }
 
 export interface ITheme {

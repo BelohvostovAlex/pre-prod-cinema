@@ -10,7 +10,7 @@ const Button: FunctionComponent<ButtonProps> = ({
   width,
   onClick,
   typography,
-  fontSize = "16px",
+  fontSize,
   backgroundColor,
   color,
   margin,

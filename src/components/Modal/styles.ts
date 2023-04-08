@@ -9,9 +9,9 @@ export const ModalContainer = styled.div<ModalContainerProps>`
   transform: translate(-50%, -50%);
   width: ${({ width }) => width || "fit-content"};
   height: ${({ height }) => height || "fit-content"};
-  padding: 30px 55px;
+  padding: ${({ theme }) => theme.padding.modal};
   background: ${({ theme }) => theme.colors.backgroundColor};
-  color: #ffffff;
+  color: ${({ theme }) => theme.colors.white};
 `;
 
 export const ModalButton = styled.div`

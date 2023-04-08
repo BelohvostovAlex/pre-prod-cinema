@@ -14,4 +14,5 @@ export enum Colors {
   LIGHT_ORANGE = "#DBA758",
   RED = "#ff4242",
   GREEN = "#36e353",
+  FACEBOOK = "#1877F2",
 }

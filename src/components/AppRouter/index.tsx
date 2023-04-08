@@ -1,13 +1,13 @@
 import { FunctionComponent, Suspense } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 
+import { privateRoutes, publicRoutes } from "./routes";
 import Loader from "../Loader";
 
 import { useAppSelector } from "../../hooks/useAppSelector";
 import { userTokenSelector } from "../../store/slices/userSlice/selectors";
 
 import { AppPathes } from "../../constants/routes";
-import { privateRoutes, publicRoutes } from "./routes";
 
 const AppRouter: FunctionComponent = () => {
   const token = useAppSelector(userTokenSelector);

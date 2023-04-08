@@ -1,14 +1,17 @@
 import styled from "styled-components";
 
+const svgHeight = 40;
+const svgWidth = 40;
+
 export const EditProfileWrapper = styled.div``;
 
 export const EditProfileForm = styled.form``;
 
 export const InputFileWrapper = styled.div`
-  margin-bottom: 20px;
+  ${({ theme }) => theme.margin.mb20}
   svg {
-    height: 40px;
-    width: 40px;
+    height: ${svgHeight}px;
+    width: ${svgWidth}px;
     margin-right: 16px;
   }
   svg path {
@@ -22,12 +25,11 @@ export const InputRadio = styled.input`
 `;
 
 export const InputUploadFileLabel = styled.label`
-  display: flex;
-  align-items: center;
+  ${({ theme }) => theme.flexAlignCenter};
   justify-content: start;
   cursor: pointer;
   ${({ theme }) => theme.typography.poppins_l};
-  font-size: 14px;
+  font-size: ${({ theme }) => theme.fontSize[14]};
   &:hover {
     ${({ theme }) => theme.hover};
   }
@@ -36,13 +38,12 @@ export const InputUploadFileLabel = styled.label`
 `;
 
 export const InputGenderWrapper = styled.div`
-  display: flex;
-  align-items: center;
+  ${({ theme }) => theme.flexAlignCenter};
   justify-content: start;
-  margin-bottom: 20px;
+  margin-bottom: ${({ theme }) => theme.margin.mb20};
   svg {
-    height: 40px;
-    width: 40px;
+    height: ${svgHeight}px;
+    width: ${svgWidth}px;
     margin-right: 16px;
   }
   svg path {

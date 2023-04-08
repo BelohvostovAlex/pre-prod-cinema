@@ -1,8 +1,8 @@
 import { css } from "styled-components";
 
+import { ICommonTheme } from "./interfaces";
 import { Colors } from "../../constants/styles/colors";
 import { FontFamily, FontWeight } from "../../constants/styles/fonts";
-import { ICommonTheme } from "./interfaces";
 
 const commonTheme: ICommonTheme = {
   typography: {
@@ -74,6 +74,33 @@ const commonTheme: ICommonTheme = {
     40: "40px",
     circle: "100%",
   },
+  fontSize: {
+    8: "8px",
+    10: "10px",
+    12: "12px",
+    14: "14px",
+    16: "16px",
+    18: "18px",
+    21: "21px",
+  },
+  zIndex: {
+    1: "1",
+    10: "10",
+    100: "100",
+    1000: "1000",
+  },
+  padding: {
+    drawer: "50px 40px 20px 40px",
+    header: "20px 55px",
+    modal: "30px 55px",
+  },
+  margin: {
+    mb10: "margin-bottom: 10px",
+    mb14: "margin-bottom: 14px",
+    mb20: "margin-bottom: 20px",
+    mb30: "margin-bottom: 30px",
+    mb50: "margin-bottom: 50px",
+  },
   hover: "filter: brightness(90%)",
   colors: {
     extraDarkGray: Colors.EXTRA_DARK_GRAY,
@@ -86,7 +113,11 @@ const commonTheme: ICommonTheme = {
     lightOrange: Colors.LIGHT_ORANGE,
     red: Colors.RED,
     green: Colors.GREEN,
+    white: Colors.WHITE,
+    black: Colors.BLACK,
+    facebookColor: Colors.FACEBOOK,
   },
+  flexAlignCenter: "display: flex; align-items: center;",
 };
 
 export default commonTheme;

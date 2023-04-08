@@ -1,5 +1,6 @@
 import { signInWithPopup } from "firebase/auth";
 import { FirebaseError } from "firebase/app";
+import { UseAuthBySocialNetwork } from "./interfaces";
 import { auth } from "../../lib/firebase.prod";
 
 import { useActions } from "../useActionts";
@@ -13,7 +14,6 @@ import { updateDocument } from "../../api/firebase/updateDocument";
 import { FirebaseCollections } from "../../constants/firebase/collections";
 import { AlertTypes } from "../../constants/alert";
 
-import { UseAuthBySocialNetwork } from "./interfaces";
 import { IUser } from "../../models/IUser";
 import { isStrIncludesValueHandler } from "../../helpers/isStrIncludeValueHandler";
 import { FirebaseErrorsTypes } from "../../constants/errors/firebaseErrors";

@@ -1,5 +1,14 @@
 import { FunctionComponent, useState } from "react";
 
+import { useHeaderText } from "./config/useHeaderText";
+import {
+  HeaderButtonGroup,
+  HeaderWrapper,
+  LogoWrapper,
+  NavWrapper,
+  ProfileBtn,
+  ProfileBtnText,
+} from "./styles";
 import Button from "../UI/Buttons/Button";
 import Portal from "../Portal";
 import Modal from "../Modal";
@@ -19,7 +28,6 @@ import {
   isPortalOpenSelector,
   portalVariantSelector,
 } from "../../store/slices/portalSlice/selectors";
-import { useHeaderText } from "./config/useHeaderText";
 
 import { ButtonVariants } from "../../constants/buttons";
 import { TypographyVariant } from "../../constants/styles/typography";
@@ -29,16 +37,10 @@ import { PortalVariant } from "../../constants/portal";
 import { ReactComponent as Logo } from "../../assets/svg/logo/logo.svg";
 import { ReactComponent as SettingsIcon } from "../../assets/svg/tools/settings.svg";
 import { ReactComponent as ProfileIcon } from "../../assets/svg/profile/profile-small.svg";
-import {
-  HeaderButtonGroup,
-  HeaderWrapper,
-  LogoWrapper,
-  NavWrapper,
-  ProfileBtn,
-  ProfileBtnText,
-} from "./styles";
+import { useTheme } from "styled-components";
 
 const Header: FunctionComponent = () => {
+  const { fontSize } = useTheme();
   const { signInBtn, signUpBtn, drawerTitle, profileBtnText } = useHeaderText();
   const isAuth = useAppSelector(isAuthSelector);
   const isPortalOpen = useAppSelector(isPortalOpenSelector);
@@ -102,7 +104,7 @@ const Header: FunctionComponent = () => {
           <Button
             typography={TypographyVariant.poppins_l}
             variant={ButtonVariants.SECONDARY}
-            fontSize="14px"
+            fontSize={fontSize[14]}
             onClick={onOpenSignUpModal}
           >
             {signUpBtn}
@@ -111,7 +113,7 @@ const Header: FunctionComponent = () => {
             typography={TypographyVariant.poppins_l}
             variant={ButtonVariants.PRIMARY}
             margin="0px 35px 0px 20px"
-            fontSize="14px"
+            fontSize={fontSize[14]}
             onClick={onOpenSignInModal}
           >
             {signInBtn}

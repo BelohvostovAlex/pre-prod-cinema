@@ -1,23 +1,22 @@
 import { FunctionComponent, useEffect } from "react";
 
-import { useAppSelector } from "../../hooks/useAppSelector";
-import { useActions } from "../../hooks/useActionts";
-import { alertSelector } from "../../store/slices/alertSlice/selectors";
-
-import { initialAlertValue } from "../../constants/alert";
-
 import { AlertProps } from "./interfaces";
 import { AlertWrapper } from "./styles";
 
-const Alert: FunctionComponent<AlertProps> = ({ ms = 4000 }) => {
+import { useAppSelector } from "../../hooks/useAppSelector";
+import { useActions } from "../../hooks/useActionts";
+import { alertSelector } from "../../store/slices/alertSlice/selectors";
+import { initialAlertValue } from "../../constants/alert";
+
+const Alert: FunctionComponent<AlertProps> = ({ time = 4000 }) => {
   const { setIsAlertOpen } = useActions();
   const { isOpen, text, type } = useAppSelector(alertSelector);
 
   useEffect(() => {
     if (isOpen) {
-      setTimeout(() => setIsAlertOpen(initialAlertValue), ms);
+      setTimeout(() => setIsAlertOpen(initialAlertValue), time);
     }
-  }, [setIsAlertOpen, ms, isOpen]);
+  }, [isOpen]);
 
   if (!isOpen) {
     return null;

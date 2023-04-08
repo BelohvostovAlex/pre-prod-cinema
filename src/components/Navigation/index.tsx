@@ -2,12 +2,12 @@ import { FunctionComponent } from "react";
 import { useTranslation } from "react-i18next";
 import { useLocation } from "react-router-dom";
 
+import { Nav } from "./styles";
 import RouterLink from "../UI/RouterLink";
 
 import { APP_NAV_MENU } from "../../constants/nav";
 import { TypographyVariant } from "../../constants/styles/typography";
 
-import { Nav } from "./styles";
 import { useAppSelector } from "../../hooks/useAppSelector";
 import { userTokenSelector } from "../../store/slices/userSlice/selectors";
 import { useOpenPortal } from "../../hooks/portal/useOpenPortal";

@@ -1,11 +1,12 @@
 import { TypographyVariant } from "../../../../constants/styles/typography";
 
 export interface SecondaryButtonProps {
-  onClick: () => void;
   text: string;
   fontSize?: string;
   extra?: string;
   typography: TypographyVariant;
+
+  onClick: () => void;
 }
 
 export type StyledSecondaryButtonProps = Omit<

@@ -6,15 +6,23 @@ import {
 } from "firebase/auth";
 import { useForm, SubmitHandler } from "react-hook-form";
 
+import { useAuthFormText } from "./config/useAuthFormText";
+import { handleValidationType } from "./config/validation";
+import { AuthFormInputProps, AuthFormProps } from "./interfaces";
+import {
+  BottomInfoWrapper,
+  ButtonGroup,
+  Form,
+  Link,
+  Typography,
+} from "./styles";
 import Button from "../UI/Buttons/Button";
 import ModalTitle from "../Modal/ModalTitle";
 import InputWithIcon from "../InputWithIcon";
 import PasswordStrengthMeter from "../PasswordStrengthMeter";
 
 import { useAuthBySocialNetwork } from "../../hooks/authBySocial/useAuthBySocialNetworks";
-import { useAuthFormText } from "./config/useAuthFormText";
 import { AuthFormInputsPossibleNames } from "../../constants/authForm";
-import { handleValidationType } from "./config/validation";
 
 import { TypographyVariant } from "../../constants/styles/typography";
 import { Colors } from "../../constants/styles/colors";
@@ -26,15 +34,8 @@ import { ReactComponent as SurnamIcon } from "../../assets/svg/form/surname.svg"
 import { ReactComponent as GoogleIcon } from "../../assets/svg/social/google.svg";
 import { ReactComponent as FacebookIcon } from "../../assets/svg/social/facebook.svg";
 import { ReactComponent as GithubIcon } from "../../assets/svg/social/github.svg";
-import { AuthFormInputProps, AuthFormProps } from "./interfaces";
 import { InputTypes } from "../Input/interfaces";
-import {
-  BottomInfoWrapper,
-  ButtonGroup,
-  Form,
-  Link,
-  Typography,
-} from "./styles";
+import { useTheme } from "styled-components";
 
 const AuthForm: FunctionComponent<AuthFormProps> = ({
   signUp = true,
@@ -58,6 +59,7 @@ const AuthForm: FunctionComponent<AuthFormProps> = ({
     signInBtn,
     signUpBtn,
   } = useAuthFormText(signUp);
+  const { fontSize } = useTheme();
 
   const googleSignIn = useAuthBySocialNetwork({
     ClassProvider: GoogleAuthProvider,
@@ -146,7 +148,6 @@ const AuthForm: FunctionComponent<AuthFormProps> = ({
           <Button
             variant={ButtonVariants.PRIMARY}
             typography={TypographyVariant.poppins_l}
-            width="100%"
             buttonTypes={ButtonTypes.SUBMIT}
           >
             {signUpBtn}
@@ -155,7 +156,6 @@ const AuthForm: FunctionComponent<AuthFormProps> = ({
           <Button
             variant={ButtonVariants.PRIMARY}
             typography={TypographyVariant.poppins_l}
-            width="100%"
             buttonTypes={ButtonTypes.SUBMIT}
           >
             {signInBtn}
@@ -167,7 +167,7 @@ const AuthForm: FunctionComponent<AuthFormProps> = ({
           typography={TypographyVariant.inter_sb}
           width="174px"
           height="28px"
-          fontSize="8px"
+          fontSize={fontSize[8]}
           backgroundColor={Colors.WHITE}
           color={Colors.BLACK}
           onClick={googleSignIn}
@@ -179,8 +179,8 @@ const AuthForm: FunctionComponent<AuthFormProps> = ({
           typography={TypographyVariant.inter_sb}
           width="174px"
           height="28px"
-          fontSize="8px"
-          backgroundColor="#1877F2"
+          fontSize={fontSize[8]}
+          backgroundColor={Colors.FACEBOOK}
           color={Colors.WHITE}
           onClick={facebookSignIn}
         >
@@ -191,7 +191,7 @@ const AuthForm: FunctionComponent<AuthFormProps> = ({
           typography={TypographyVariant.inter_sb}
           width="174px"
           height="28px"
-          fontSize="8px"
+          fontSize={fontSize[8]}
           backgroundColor={Colors.BLACK}
           color={Colors.WHITE}
           margin="10px 0px"

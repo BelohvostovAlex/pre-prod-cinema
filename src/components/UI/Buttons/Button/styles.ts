@@ -1,11 +1,13 @@
 import styled from "styled-components";
 
-import { ButtonVariants } from "../../../../constants/buttons";
 import { ButtonStyleProps } from "./interfaces";
+import { ButtonVariants } from "../../../../constants/buttons";
+
+const svgWidth = 16;
 
 export const StyledButton = styled.button<ButtonStyleProps>`
   ${({ theme, typography }) => theme.typography[typography]}
-  font-size: ${({ fontSize }) => fontSize};
+  font-size: ${({ fontSize, theme }) => fontSize || theme.fontSize};
   background: ${({ theme, variant, backgroundColor }) =>
     variant === ButtonVariants.PRIMARY
       ? theme.colors.primary
@@ -22,8 +24,7 @@ export const StyledButton = styled.button<ButtonStyleProps>`
   width: ${({ width }) => width || "auto"};
   height: ${({ height }) => height || "auto"};
   margin: ${({ margin }) => margin || "0px"};
-  display: flex;
-  align-items: center;
+  ${({ theme }) => theme.flexAlignCenter};
   justify-content: center;
   position: relative;
   border: none;
@@ -32,7 +33,7 @@ export const StyledButton = styled.button<ButtonStyleProps>`
     top: 50%;
     left: 10%;
     transform: translate(-10%, -50%);
-    width: 16px;
+    width: ${svgWidth}px;
     height: auto;
   }
   padding: 6px 30px;

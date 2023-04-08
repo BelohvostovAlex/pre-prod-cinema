@@ -5,9 +5,10 @@ export interface RouterLinkProps {
   to: string;
   $active?: boolean;
   typography: TypographyVariant;
-  onClick?: (to: string) => void;
   fontSize?: string;
   extra?: string;
+
+  onClick?: (to: string) => void;
 }
 
 export type StyledLinkProps = Omit<RouterLinkProps, "text" | "to">;

@@ -1,7 +1,7 @@
 import { AlertTypes } from "../../constants/alert";
 
 export interface AlertProps {
-  ms?: number;
+  time?: number;
 }
 
 export interface AlertWrapperStyleProps {

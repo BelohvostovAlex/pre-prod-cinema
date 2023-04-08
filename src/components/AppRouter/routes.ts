@@ -1,7 +1,7 @@
 import { lazy } from "react";
 
-import { AppPathes } from "../../constants/routes";
 import { IRoute } from "./interfaces";
+import { AppPathes } from "../../constants/routes";
 
 const Main = lazy(() => import("../../pages/Main/Main"));
 const Movie = lazy(() => import("../../pages/Movie/Movie"));

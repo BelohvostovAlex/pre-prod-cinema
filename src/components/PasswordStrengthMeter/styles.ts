@@ -1,17 +1,20 @@
 import styled from "styled-components";
 
+import { ProgressBarProps } from "./interfaces";
 import { passwordStrengthHandler } from "../../helpers/passwordStrengthHandler";
 
-import { ProgressBarProps } from "./interfaces";
+const progressWidthPercent = 100;
+const progressHeight = 2;
+const progressBarHeightPercent = 100;
 
 export const Progress = styled.div`
-  width: 100%;
-  height: 2px;
-  margin-bottom: 10px;
+  width: ${progressWidthPercent}%;
+  height: ${progressHeight}px;
+  ${({ theme }) => theme.margin.mb10}
 `;
 
 export const ProgressBar = styled.div<ProgressBarProps>`
-  height: 100%;
+  height: ${progressBarHeightPercent}%;
 
   ${({ value }) =>
     `background: ${passwordStrengthHandler(value)?.color}; width: ${

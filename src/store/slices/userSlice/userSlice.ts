@@ -1,7 +1,7 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
+import { UserState } from "./interfaces";
 import { ThemeTypes } from "../../../constants/styles/theme";
 
-import { UserState } from "./interfaces";
 import { IUser } from "../../../models/IUser";
 
 const initialState: UserState = {

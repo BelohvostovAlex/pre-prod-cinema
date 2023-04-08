@@ -1,25 +1,29 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
+const headerWidthPercent = 100;
+const headerHeight = 100;
+const logoWrapperWidth = 140;
+const logoWrapperSvgWidth = 100;
+const profileBtnSvgWidth = 30;
+
 export const HeaderWrapper = styled.div`
-  width: 100%;
-  height: 100px;
-  padding: 20px 55px;
-  display: flex;
-  align-items: center;
+  width: ${headerWidthPercent}%;
+  height: ${headerHeight}px;
+  padding: ${({ theme }) => theme.padding.header};
+  ${({ theme }) => theme.flexAlignCenter};
   justify-content: space-between;
   background: ${({ theme }) => theme.colors.backgroundColor};
 `;
 
 export const NavWrapper = styled.div`
-  display: flex;
-  align-items: center;
+  ${({ theme }) => theme.flexAlignCenter};
 `;
 
 export const LogoWrapper = styled(Link)`
-  width: 140px;
+  width: ${logoWrapperWidth}px;
   svg {
-    width: 100%;
+    width: ${logoWrapperSvgWidth}%;
   }
   margin-right: 50px;
   cursor: pointer;
@@ -29,8 +33,7 @@ export const LogoWrapper = styled(Link)`
 `; // поменять цвет лого
 
 export const HeaderButtonGroup = styled.div`
-  display: flex;
-  align-items: center;
+  ${({ theme }) => theme.flexAlignCenter};
   svg path {
     fill: ${({ theme }) => theme.colors.primary};
   }
@@ -41,14 +44,13 @@ export const HeaderButtonGroup = styled.div`
 `;
 
 export const ProfileBtn = styled.div`
-  display: flex;
-  align-items: center;
+  ${({ theme }) => theme.flexAlignCenter};
   &:hover svg path {
     fill: ${({ theme }) => theme.colors.secondary};
     transition-duration: 0.3s;
   }
   svg {
-    width: 30px;
+    width: ${profileBtnSvgWidth}px;
   }
   svg path {
     fill: ${({ theme }) => theme.colors.primary};
@@ -61,7 +63,7 @@ export const ProfileBtn = styled.div`
 
 export const ProfileBtnText = styled.p`
   ${({ theme }) => theme.typography.poppins_l};
-  font-size: 18px;
+  font-size: ${({ theme }) => theme.fontSize[18]};
   margin-right: 15px;
   color: ${({ theme }) => theme.colors.primary};
 `;

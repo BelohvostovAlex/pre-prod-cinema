@@ -1,13 +1,22 @@
 import { FunctionComponent, useMemo } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 
+import { useEditText } from "./config/useEditText";
+import {
+  EditProfileForm,
+  EditProfileWrapper,
+  InputFileWrapper,
+  InputGenderWrapper,
+  InputRadio,
+  InputUploadFile,
+  InputUploadFileLabel,
+} from "./styles";
 import ModalTitle from "../Modal/ModalTitle";
 import InputWithIcon from "../InputWithIcon";
 import PasswordStrengthMeter from "../PasswordStrengthMeter";
 import Button from "../UI/Buttons/Button";
 
-import { useEditText } from "./config/useEditText";
-import { AuthFormInputsPossibleNames } from "../../constants/authForm";
+import { AuthFormInputsPossibleNames, Gender } from "../../constants/authForm";
 import { handleValidationType } from "../AuthForm/config/validation";
 import { useAppSelector } from "../../hooks/useAppSelector";
 import { userSelector } from "../../store/slices/userSlice/selectors";
@@ -21,16 +30,7 @@ import { ReactComponent as ImageIcon } from "../../assets/svg/form/image-file.sv
 import { ReactComponent as GenderIcon } from "../../assets/svg/form/gender.svg";
 import { InputTypes } from "../Input/interfaces";
 import { AuthFormInputProps } from "../AuthForm/interfaces";
-
-import {
-  EditProfileForm,
-  EditProfileWrapper,
-  InputFileWrapper,
-  InputGenderWrapper,
-  InputRadio,
-  InputUploadFile,
-  InputUploadFileLabel,
-} from "./styles";
+import { defaultFormValue } from "./config/constants";
 
 const EditProfile: FunctionComponent = () => {
   const { gender, surname, username } = useAppSelector(userSelector);
@@ -53,8 +53,8 @@ const EditProfile: FunctionComponent = () => {
     mode: "onChange",
     defaultValues: useMemo(
       () => ({
-        surname: surname || "",
-        username: username || "",
+        surname: surname || defaultFormValue.surname,
+        username: username || defaultFormValue.username,
       }),
       [surname, username],
     ),
@@ -106,7 +106,7 @@ const EditProfile: FunctionComponent = () => {
               id="male"
               name="gender"
               value="male"
-              defaultChecked={gender === "male"}
+              defaultChecked={gender === Gender.MALE}
             />
           </InputUploadFileLabel>
 
@@ -117,7 +117,7 @@ const EditProfile: FunctionComponent = () => {
               id="female"
               name="gender"
               value="female"
-              defaultChecked={gender === "female"}
+              defaultChecked={gender === Gender.FEMALE}
             />
           </InputUploadFileLabel>
         </InputGenderWrapper>

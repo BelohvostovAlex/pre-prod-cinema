@@ -1,8 +1,4 @@
 import { FunctionComponent } from "react";
-
-import RoundButton from "../UI/Buttons/RoundButton";
-import ModalTitle from "../Modal/ModalTitle";
-
 import { useSettingsText } from "./config/useSettingsText";
 
 import {
@@ -11,10 +7,13 @@ import {
   BoxTitle,
   SettingsControlWrapper,
 } from "./styles";
+import i18n from "../../i18n";
+import RoundButton from "../UI/Buttons/RoundButton";
+import ModalTitle from "../Modal/ModalTitle";
 import SecondaryButton from "../UI/Buttons/SecondaryButton";
 import { TypographyVariant } from "../../constants/styles/typography";
 import { useActions } from "../../hooks/useActionts";
-import i18n from "../../i18n";
+import { Locales } from "../../constants/locales";
 
 const Settings: FunctionComponent = () => {
   const {
@@ -29,10 +28,10 @@ const Settings: FunctionComponent = () => {
   } = useSettingsText();
   const { changeTheme } = useActions();
   const handleLangRu = () => {
-    i18n.changeLanguage("ru");
+    i18n.changeLanguage(Locales.RU);
   };
   const handleLangEng = () => {
-    i18n.changeLanguage("en");
+    i18n.changeLanguage(Locales.EN);
   };
   return (
     <SettingsWrapper>
