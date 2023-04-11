@@ -1,4 +1,4 @@
-import { ChangeEvent, FunctionComponent, useEffect, useRef } from "react";
+import { FunctionComponent, useEffect, useRef } from "react";
 
 import { ReactComponent as PauseIcon } from "../../assets/svg/tools/pause.svg";
 import { ReactComponent as PlayIcon } from "../../assets/svg/tools/play.svg";
@@ -13,7 +13,7 @@ import { roundButtonExtraCss } from "./config";
 
 const VideoPlayer: FunctionComponent<VideoPlayerProps> = ({ src }) => {
   const { isPlaying, isMuted } = useAppSelector((state) => state.video);
-  const { togglePlay, setProgress, setSpeed, toggleMute } = useActions();
+  const { togglePlay, setProgress } = useActions();
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
@@ -34,26 +34,38 @@ const VideoPlayer: FunctionComponent<VideoPlayerProps> = ({ src }) => {
     }
   };
 
-  const handleVideoProgress = (event: ChangeEvent<HTMLInputElement>) => {
-    if (videoRef.current) {
-      const manualChange = Number(event.target.value);
-      videoRef.current.currentTime =
-        (videoRef.current.duration / 100) * manualChange;
-      setProgress(manualChange);
-    }
-  };
+  // const handleVideoProgress = (event: ChangeEvent<HTMLInputElement>) => {
+  //   if (videoRef.current) {
+  //     const manualChange = Number(event.target.value);
+  //     videoRef.current.currentTime =
+  //       (videoRef.current.duration / 100) * manualChange;
+  //     setProgress(manualChange);
+  //   }
+  // };
 
-  const handleVideoSpeed = (event: ChangeEvent<HTMLSelectElement>) => {
-    if (videoRef.current) {
-      const speed = Number(event.target.value);
-      videoRef.current.playbackRate = speed;
-      setSpeed(speed);
-    }
-  };
+  // const handleVideoSpeed = (event: ChangeEvent<HTMLSelectElement>) => {
+  //   if (videoRef.current) {
+  //     const speed = Number(event.target.value);
+  //     videoRef.current.playbackRate = speed;
+  //     setSpeed(speed);
+  //   }
+  // };
 
-  const handleMute = () => {
-    toggleMute();
-  };
+  // const handleMute = () => {
+  //   toggleMute();
+  // };
+
+  // const fastForward = () => {
+  //   if (videoRef.current) {
+  //     videoRef.current.currentTime += 5;
+  //   }
+  // };
+
+  // const revert = () => {
+  //   if (videoRef.current) {
+  //     videoRef.current.currentTime -= 5;
+  //   }
+  // };
 
   useEffect(() => {
     if (videoRef.current) {
@@ -65,7 +77,7 @@ const VideoPlayer: FunctionComponent<VideoPlayerProps> = ({ src }) => {
 
   return (
     <VidePlayerWrapper>
-      <Video ref={videoRef} onTimeUpdate={handleOnTimeUpdate}>
+      <Video ref={videoRef} onTimeUpdate={handleOnTimeUpdate} controls>
         <source src={trailer} />
       </Video>
 

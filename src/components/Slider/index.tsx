@@ -62,18 +62,18 @@ const Slider: FunctionComponent<SliderProps> = ({
       onWheel={onMouseWheel}
     >
       <SliderItems direction={direction}>
-        {data.map(({ id, image }, idx) => {
+        {data.map(({ imdbid, image }, idx) => {
           const indexTop = mod(index - 1, dataLength);
           const indexDown = mod(index + 1, dataLength);
 
           return (
             <MovieSliderItem
-              key={id}
+              key={imdbid}
               src={image}
               center={idx === index}
               top={idx === indexTop}
               bot={idx === indexDown}
-              id={id}
+              id={imdbid}
             />
           );
         })}

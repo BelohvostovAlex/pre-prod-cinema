@@ -33,9 +33,7 @@ const InTheaterBlock: FunctionComponent<InTheaterBlockProps> = ({
         <InTheaterImg src={img} />
         <InTheterImgTitle>{title}</InTheterImgTitle>
         <TagsWrapper>
-          {genres.map((genre) => (
-            <Chip text={genre} key={genre} />
-          ))}
+          {genres && genres.map((genre) => <Chip text={genre} key={genre} />)}
         </TagsWrapper>
       </InTheaterImgWrapper>
       <SliderBox>

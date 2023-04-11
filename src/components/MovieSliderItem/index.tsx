@@ -1,4 +1,5 @@
 import { FunctionComponent } from "react";
+import { useNavigate } from "react-router-dom";
 
 import { MovieSliderItemProps } from "./interface";
 import { MovieSliderImg, MovieSliderItemWrapper } from "./styles";
@@ -10,8 +11,10 @@ const MovieSliderItem: FunctionComponent<MovieSliderItemProps> = ({
   src,
   id,
 }) => {
+  const navigate = useNavigate();
+
   const handleId = () => {
-    console.log(id);
+    navigate(`/movies/${id}`);
   };
   return (
     <MovieSliderItemWrapper

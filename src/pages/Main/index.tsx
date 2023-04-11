@@ -17,7 +17,7 @@ const Main: FunctionComponent = () => {
 
   const getInTheaters = async () => {
     const data = await getMovies();
-    console.log(data);
+
     setMovies(data);
   };
 

@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 import { StyledRoundButton } from "../UI/Buttons/RoundButton/styles";
 
-const VidePlayerWrapperHeight = 500;
-const VidePlayerWrapperWidth = 460;
+const VidePlayerWrapperHeight = 260;
+const VidePlayerWrapperWidth = 400;
 const VideoHeightPercent = 100;
 const VideoWidthPercent = 100;
 
