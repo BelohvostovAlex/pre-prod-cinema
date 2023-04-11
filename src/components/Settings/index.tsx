@@ -1,19 +1,21 @@
 import { FunctionComponent } from "react";
-import { useSettingsText } from "./config/useSettingsText";
 
-import {
-  SettingsWrapper,
-  BoxWrapper,
-  BoxTitle,
-  SettingsControlWrapper,
-} from "./styles";
-import i18n from "../../i18n";
-import RoundButton from "../UI/Buttons/RoundButton";
-import ModalTitle from "../Modal/ModalTitle";
-import SecondaryButton from "../UI/Buttons/SecondaryButton";
+import { Locales } from "../../constants/locales";
 import { TypographyVariant } from "../../constants/styles/typography";
 import { useActions } from "../../hooks/useActionts";
-import { Locales } from "../../constants/locales";
+import i18n from "../../i18n";
+import ModalTitle from "../Modal/ModalTitle";
+import RoundButton from "../UI/Buttons/RoundButton";
+import SecondaryButton from "../UI/Buttons/SecondaryButton";
+
+import {
+  BoxTitle,
+  BoxWrapper,
+  SettingsControlWrapper,
+  SettingsWrapper,
+} from "./styles";
+import { useSettingsText } from "./config/useSettingsText";
+import { extraStylesRoundButton, extraStylesSecondaryButton } from "./config";
 
 const Settings: FunctionComponent = () => {
   const {
@@ -26,7 +28,7 @@ const Settings: FunctionComponent = () => {
     title,
     titleSpan,
   } = useSettingsText();
-  const { changeTheme } = useActions();
+  const { changeDarkTheme, changeLightTheme } = useActions();
   const handleLangRu = () => {
     i18n.changeLanguage(Locales.RU);
   };
@@ -39,7 +41,7 @@ const Settings: FunctionComponent = () => {
       <SettingsControlWrapper>
         <BoxWrapper>
           <BoxTitle>{chooseLangText}: </BoxTitle>
-          <RoundButton onClick={handleLangRu} extra={"margin-right: 10px"}>
+          <RoundButton onClick={handleLangRu} extra={extraStylesRoundButton}>
             {ru}
           </RoundButton>
           <RoundButton onClick={handleLangEng}>{en}</RoundButton>
@@ -47,13 +49,13 @@ const Settings: FunctionComponent = () => {
         <BoxWrapper>
           <BoxTitle>{changeThemeText}: </BoxTitle>
           <SecondaryButton
-            onClick={changeTheme}
+            onClick={changeDarkTheme}
             text={dark}
             typography={TypographyVariant.poppins_l}
-            extra={"margin-right: 10px;"}
+            extra={extraStylesSecondaryButton}
           />
           <SecondaryButton
-            onClick={changeTheme}
+            onClick={changeLightTheme}
             text={light}
             typography={TypographyVariant.poppins_l}
           />

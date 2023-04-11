@@ -4,11 +4,9 @@ import { BrowserRouter } from "react-router-dom";
 
 import "./i18n";
 import "./lib/firebase.prod";
-import reportWebVitals from "./reportWebVitals";
-
-import ReduxProvider from "./components/ReduxProvider";
 import App from "./components/App/App";
-
+import ReduxProvider from "./components/ReduxProvider";
+import reportWebVitals from "./reportWebVitals";
 import GlobalStyle from "./styles/global";
 
 const rootDomNode = document.getElementById("root") as HTMLElement;

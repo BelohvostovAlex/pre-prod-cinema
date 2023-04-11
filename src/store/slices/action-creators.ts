@@ -1,19 +1,33 @@
+import { setIsAlertOpen } from "./alertSlice/alertSlice";
+import { setPortal } from "./portalSlice/portalSlice";
 import {
-  changeTheme,
-  setUser,
+  changeDarkTheme,
+  changeLightTheme,
   removeUser,
   setLoading,
+  setUser,
   setUserError,
+  updateUser,
 } from "./userSlice/userSlice";
-import { setPortal } from "./portalSlice/portalSlice";
-import { setIsAlertOpen } from "./alertSlice/alertSlice";
+import {
+  setProgress,
+  setSpeed,
+  toggleMute,
+  togglePlay,
+} from "./videoSlice/videoSlice";
 
 export const allActionCreators = {
-  changeTheme,
+  changeDarkTheme,
+  changeLightTheme,
   setUser,
   removeUser,
   setPortal,
   setLoading,
   setUserError,
   setIsAlertOpen,
+  togglePlay,
+  setProgress,
+  setSpeed,
+  toggleMute,
+  updateUser,
 };

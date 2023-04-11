@@ -1,10 +1,10 @@
 import { FunctionComponent } from "react";
 
+import Input from "../Input";
+import { InputTypes } from "../Input/interfaces";
+
 import { InputWithIconProps } from "./interfaces";
 import { Box } from "./styles";
-import Input from "../Input";
-
-import { InputTypes } from "../Input/interfaces";
 
 const InputWithIcon: FunctionComponent<InputWithIconProps> = ({
   icon,

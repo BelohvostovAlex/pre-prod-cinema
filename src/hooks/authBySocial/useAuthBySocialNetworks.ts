@@ -1,22 +1,20 @@
-import { signInWithPopup } from "firebase/auth";
 import { FirebaseError } from "firebase/app";
-import { UseAuthBySocialNetwork } from "./interfaces";
-import { auth } from "../../lib/firebase.prod";
+import { signInWithPopup } from "firebase/auth";
 
-import { useActions } from "../useActionts";
-import { useClosePortal } from "../portal/useClosePortal";
-import { useErrorTranslation } from "../errorTranslation/useErrorTranslation";
-
-import { getDocument } from "../../api/firebase/getDocument";
 import { createDocument } from "../../api/firebase/createDocument";
+import { getDocument } from "../../api/firebase/getDocument";
 import { updateDocument } from "../../api/firebase/updateDocument";
-
-import { FirebaseCollections } from "../../constants/firebase/collections";
 import { AlertTypes } from "../../constants/alert";
-
-import { IUser } from "../../models/IUser";
-import { isStrIncludesValueHandler } from "../../helpers/isStrIncludeValueHandler";
 import { FirebaseErrorsTypes } from "../../constants/errors/firebaseErrors";
+import { FirebaseCollections } from "../../constants/firebase/collections";
+import { isStrIncludesValueHandler } from "../../helpers/isStrIncludeValueHandler";
+import { auth } from "../../lib/firebase.prod";
+import { IUser } from "../../models/IUser";
+import { useErrorTranslation } from "../errorTranslation/useErrorTranslation";
+import { useClosePortal } from "../portal/useClosePortal";
+import { useActions } from "../useActionts";
+
+import { UseAuthBySocialNetwork } from "./interfaces";
 
 export const useAuthBySocialNetwork = (options: UseAuthBySocialNetwork) => {
   const { ClassProvider, provider } = options;

@@ -3,12 +3,15 @@ import {
   AuthFormInputsPossibleNames,
 } from "../../../constants/authForm";
 
-export const handleValidationType = (type: AuthFormInputsPossibleNames) => {
+export const handleValidationType = (
+  type: AuthFormInputsPossibleNames,
+  required = true,
+) => {
   switch (type) {
     case AuthFormInputsPossibleNames.EMAIL:
       return {
         required: {
-          value: true,
+          value: required,
           message: AuthFormInputsErrors.REQUIRED,
         },
         pattern: {
@@ -19,7 +22,7 @@ export const handleValidationType = (type: AuthFormInputsPossibleNames) => {
     case AuthFormInputsPossibleNames.PASSWORD:
       return {
         required: {
-          value: true,
+          value: required,
           message: AuthFormInputsErrors.REQUIRED,
         },
         minLength: {
@@ -31,11 +34,14 @@ export const handleValidationType = (type: AuthFormInputsPossibleNames) => {
           message: AuthFormInputsErrors.PASSWORD_MAX,
         },
         validate: (value: string) => {
-          return (
-            [/[a-zа-я\d]/, /[A-ZА-Я]/, /[0-9]/, /[^a-zа-яA-ZА-Я0-9]/].every(
-              (pattern) => pattern.test(value) && value.length < 16,
-            ) || AuthFormInputsErrors.PASSWORD_MUST_INCLUDE
-          );
+          if (!required && !value) return;
+          if (required) {
+            return (
+              [/[a-zа-я\d]/, /[A-ZА-Я]/, /[0-9]/, /[^a-zа-яA-ZА-Я0-9]/].every(
+                (pattern) => pattern.test(value),
+              ) || AuthFormInputsErrors.PASSWORD_MUST_INCLUDE
+            );
+          }
         },
       };
     case AuthFormInputsPossibleNames.SURNAME:
@@ -45,7 +51,7 @@ export const handleValidationType = (type: AuthFormInputsPossibleNames) => {
           message: AuthFormInputsErrors.TEXT_ONLY_LETTER,
         },
         required: {
-          value: true,
+          value: required,
           message: AuthFormInputsErrors.REQUIRED,
         },
         minLength: {
@@ -61,7 +67,7 @@ export const handleValidationType = (type: AuthFormInputsPossibleNames) => {
           message: AuthFormInputsErrors.TEXT_ONLY_LETTER,
         },
         required: {
-          value: true,
+          value: required,
           message: AuthFormInputsErrors.REQUIRED,
         },
         minLength: {

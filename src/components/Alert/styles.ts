@@ -1,14 +1,15 @@
 import styled from "styled-components";
 
-import { AlertWrapperStyleProps } from "./interfaces";
 import { AlertTypes } from "../../constants/alert";
+
+import { AlertWrapperStyleProps } from "./interfaces";
 
 const alertWrapperRight = 50;
 const alertWrapperBottom = 50;
 
 export const AlertWrapper = styled.div<AlertWrapperStyleProps>`
   position: fixed;
-  right: ${alertWrapperRight}x;
+  right: ${alertWrapperRight}px;
   bottom: ${alertWrapperBottom}px;
   width: fit-content;
   padding: 10px 16px;

@@ -1,21 +1,20 @@
-import { FunctionComponent } from "react";
 import { FirebaseError } from "firebase/app";
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { SignUpProps } from "./interfaces";
-import { auth } from "../../lib/firebase.prod";
+import { FunctionComponent } from "react";
 
-import AuthForm from "../AuthForm";
-
-import { useActions } from "../../hooks/useActionts";
-import { useClosePortal } from "../../hooks/portal/useClosePortal";
 import { createDocument } from "../../api/firebase/createDocument";
-import { FirebaseErrorsTypes } from "../../constants/errors/firebaseErrors";
-import { useErrorTranslation } from "../../hooks/errorTranslation/useErrorTranslation";
-import { isStrIncludesValueHandler } from "../../helpers/isStrIncludeValueHandler";
 import { AlertTypes } from "../../constants/alert";
+import { FirebaseErrorsTypes } from "../../constants/errors/firebaseErrors";
 import { FirebaseCollections } from "../../constants/firebase/collections";
-
+import { isStrIncludesValueHandler } from "../../helpers/isStrIncludeValueHandler";
+import { useErrorTranslation } from "../../hooks/errorTranslation/useErrorTranslation";
+import { useClosePortal } from "../../hooks/portal/useClosePortal";
+import { useActions } from "../../hooks/useActionts";
+import { auth } from "../../lib/firebase.prod";
+import AuthForm from "../AuthForm";
 import { AuthFormInputProps } from "../AuthForm/interfaces";
+
+import { SignUpProps } from "./interfaces";
 
 const SignUp: FunctionComponent<SignUpProps> = ({
   onFormTypeChange,

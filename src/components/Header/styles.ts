@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const headerWidthPercent = 100;
-const headerHeight = 100;
+const headerHeight = 80;
 const logoWrapperWidth = 140;
 const logoWrapperSvgWidth = 100;
 const profileBtnSvgWidth = 30;
@@ -13,7 +13,8 @@ export const HeaderWrapper = styled.div`
   padding: ${({ theme }) => theme.padding.header};
   ${({ theme }) => theme.flexAlignCenter};
   justify-content: space-between;
-  background: ${({ theme }) => theme.colors.backgroundColor};
+  background-color: ${({ theme }) => theme.colors.backgroundColor};
+  transition: background-color ease-in 0.2s;
 `;
 
 export const NavWrapper = styled.div`
@@ -37,7 +38,7 @@ export const HeaderButtonGroup = styled.div`
   svg path {
     fill: ${({ theme }) => theme.colors.primary};
   }
-  &:hover svg path {
+  svg:hover path {
     fill: ${({ theme }) => theme.colors.secondary};
     transition-duration: 0.3s;
   }

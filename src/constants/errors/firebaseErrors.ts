@@ -4,4 +4,5 @@ export enum FirebaseErrorsTypes {
   EMAIL_IN_USE = "email-already-in-use",
   WRONG_PASSWORD = "wrong-password",
   USER_NOT_FOUND = "user-not-found",
+  REQUIRES_RECENT_LOGIN = "requires-recent-login",
 }

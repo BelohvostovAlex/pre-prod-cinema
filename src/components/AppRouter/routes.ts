@@ -1,10 +1,11 @@
 import { lazy } from "react";
 
-import { IRoute } from "./interfaces";
 import { AppPathes } from "../../constants/routes";
 
-const Main = lazy(() => import("../../pages/Main/Main"));
-const Movie = lazy(() => import("../../pages/Movie/Movie"));
+import { IRoute } from "./interfaces";
+
+const Main = lazy(() => import("../../pages/Main"));
+const Movie = lazy(() => import("../../pages/Movie"));
 const Bookings = lazy(() => import("../../pages/Bookings"));
 
 export const publicRoutes: IRoute[] = [

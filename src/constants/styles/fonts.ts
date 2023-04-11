@@ -1,5 +1,5 @@
 export enum FontFamily {
-  NUNITO_SANS = `'Inria Sans', sans-serif`,
+  NUNITO_SANS = `'Nunito Sans', sans-serif`,
   INRIA_SANS = `'Inria Sans', sans-serif`,
   INTER = `'Inter', sans-serif`,
   POPPINS = `'Poppins', sans-serif`,

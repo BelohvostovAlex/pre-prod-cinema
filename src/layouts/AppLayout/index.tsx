@@ -1,19 +1,24 @@
 import { FunctionComponent } from "react";
 
-import { AppLayoutProps } from "./interfaces";
+import Alert from "../../components/Alert";
+import Container from "../../components/Container";
 import ErrorBoundary from "../../components/ErrorBoundary";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
-import Alert from "../../components/Alert";
+
+import { AppLayoutWrapper } from "./styles";
+import { AppLayoutProps } from "./interfaces";
 
 const AppLayout: FunctionComponent<AppLayoutProps> = ({ children }) => {
   return (
-    <div>
+    <AppLayoutWrapper>
       <Header />
-      <ErrorBoundary>{children}</ErrorBoundary>
+      <ErrorBoundary>
+        <Container>{children}</Container>
+      </ErrorBoundary>
       <Alert />
       <Footer />
-    </div>
+    </AppLayoutWrapper>
   );
 };
 

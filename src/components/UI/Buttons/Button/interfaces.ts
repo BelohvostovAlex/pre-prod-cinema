@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 
-import { ButtonVariants, ButtonTypes } from "../../../../constants/buttons";
+import { ButtonTypes, ButtonVariants } from "../../../../constants/buttons";
 import { TypographyVariant } from "../../../../constants/styles/typography";
 
 export interface ButtonProps {

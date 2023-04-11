@@ -1,7 +1,7 @@
 import { FunctionComponent } from "react";
 
-import { StyledModalTitle, StyledModalTitleSpan } from "./styles";
 import { ModalTitleProps } from "./interfaces";
+import { StyledModalTitle, StyledModalTitleSpan } from "./styles";
 
 const ModalTitle: FunctionComponent<ModalTitleProps> = ({ text, spanText }) => {
   return (

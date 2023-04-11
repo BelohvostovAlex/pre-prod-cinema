@@ -7,3 +7,5 @@ export interface DrawerProps {
 
   onClose: () => void;
 }
+
+export type StyledDrawerProps = Pick<DrawerProps, "isOpen">;

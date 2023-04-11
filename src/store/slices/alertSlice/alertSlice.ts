@@ -1,7 +1,8 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
-import { AlertState } from "./interfaces";
 import { AlertTypes } from "../../../constants/alert";
+
+import { AlertState } from "./interfaces";
 
 const initialState: AlertState = {
   isOpen: false,

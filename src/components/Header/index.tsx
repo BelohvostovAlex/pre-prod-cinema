@@ -1,6 +1,34 @@
 import { FunctionComponent, useState } from "react";
+import { useTheme } from "styled-components";
 
-import { useHeaderText } from "./config/useHeaderText";
+import { ReactComponent as Logo } from "../../assets/svg/logo/logo.svg";
+import { ReactComponent as ProfileIcon } from "../../assets/svg/profile/profile-small.svg";
+import { ReactComponent as SettingsIcon } from "../../assets/svg/tools/settings.svg";
+import trailer from "../../assets/video/Inception.mp4";
+import { ButtonVariants } from "../../constants/buttons";
+import { PortalVariant } from "../../constants/portal";
+import { AppPathes } from "../../constants/routes";
+import { TypographyVariant } from "../../constants/styles/typography";
+import { useClosePortal } from "../../hooks/portal/useClosePortal";
+import { useOpenPortal } from "../../hooks/portal/useOpenPortal";
+import { useAppSelector } from "../../hooks/useAppSelector";
+import {
+  isPortalOpenSelector,
+  portalVariantSelector,
+} from "../../store/slices/portalSlice/selectors";
+import { isAuthSelector } from "../../store/slices/userSlice/selectors";
+import Drawer from "../Drawer";
+import EditProfile from "../EditProfile";
+import Modal from "../Modal";
+import Navigation from "../Navigation";
+import Portal from "../Portal";
+import Profile from "../Profile";
+import Settings from "../Settings";
+import SignIn from "../SignIn";
+import SignUp from "../SignUp";
+import Button from "../UI/Buttons/Button";
+import VideoPlayer from "../VideoPlayer";
+
 import {
   HeaderButtonGroup,
   HeaderWrapper,
@@ -9,35 +37,7 @@ import {
   ProfileBtn,
   ProfileBtnText,
 } from "./styles";
-import Button from "../UI/Buttons/Button";
-import Portal from "../Portal";
-import Modal from "../Modal";
-import SignUp from "../SignUp";
-import SignIn from "../SignIn";
-import Profile from "../Profile";
-import Navigation from "../Navigation";
-import Drawer from "../Drawer";
-import EditProfile from "../EditProfile";
-import Settings from "../Settings";
-
-import { useAppSelector } from "../../hooks/useAppSelector";
-import { useOpenPortal } from "../../hooks/portal/useOpenPortal";
-import { useClosePortal } from "../../hooks/portal/useClosePortal";
-import { isAuthSelector } from "../../store/slices/userSlice/selectors";
-import {
-  isPortalOpenSelector,
-  portalVariantSelector,
-} from "../../store/slices/portalSlice/selectors";
-
-import { ButtonVariants } from "../../constants/buttons";
-import { TypographyVariant } from "../../constants/styles/typography";
-import { AppPathes } from "../../constants/routes";
-import { PortalVariant } from "../../constants/portal";
-
-import { ReactComponent as Logo } from "../../assets/svg/logo/logo.svg";
-import { ReactComponent as SettingsIcon } from "../../assets/svg/tools/settings.svg";
-import { ReactComponent as ProfileIcon } from "../../assets/svg/profile/profile-small.svg";
-import { useTheme } from "styled-components";
+import { useHeaderText } from "./config/useHeaderText";
 
 const Header: FunctionComponent = () => {
   const { fontSize } = useTheme();
@@ -136,6 +136,9 @@ const Header: FunctionComponent = () => {
           )}
           {portalVariant === PortalVariant.EDIT_PROFILE && <EditProfile />}
           {portalVariant === PortalVariant.SETTING && <Settings />}
+          {portalVariant === PortalVariant.VIDEO_TRAILER && (
+            <VideoPlayer src={trailer} />
+          )}
         </Modal>
       </Portal>
     </HeaderWrapper>

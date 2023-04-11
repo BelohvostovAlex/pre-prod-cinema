@@ -8,3 +8,5 @@ export interface UserState {
   isLoading: boolean;
   isError: string | null;
 }
+
+export type UpdateUserPayload = Partial<IUser>;

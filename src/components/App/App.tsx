@@ -1,7 +1,7 @@
 import { FunctionComponent, Suspense, lazy } from "react";
 
-import ThemeProvider from "../ThemeProvider";
 import Loader from "../Loader";
+import ThemeProvider from "../ThemeProvider";
 
 const AppLayout = lazy(() => import("../../layouts/AppLayout"));
 const AppRouter = lazy(() => import("../AppRouter"));

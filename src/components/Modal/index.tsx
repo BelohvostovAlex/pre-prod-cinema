@@ -1,14 +1,12 @@
 import { FunctionComponent, useRef } from "react";
 
-import { ModalProps } from "./interfaces";
-import { ModalButton, ModalContainer } from "./styles";
+import { ReactComponent as Close } from "../../assets/svg/tools/Close.svg";
+import { Colors } from "../../constants/styles/colors";
+import useOnClickOutside from "../../hooks/useOnClickOutside";
 import RoundButton from "../UI/Buttons/RoundButton";
 
-import useOnClickOutside from "../../hooks/useOnClickOutside";
-
-import { Colors } from "../../constants/styles/colors";
-
-import { ReactComponent as Close } from "../../assets/svg/tools/Close.svg";
+import { ModalButton, ModalContainer } from "./styles";
+import { ModalProps } from "./interfaces";
 
 const Modal: FunctionComponent<ModalProps> = ({
   children,

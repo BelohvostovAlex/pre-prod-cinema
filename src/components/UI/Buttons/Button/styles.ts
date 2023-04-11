@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
-import { ButtonStyleProps } from "./interfaces";
 import { ButtonVariants } from "../../../../constants/buttons";
+
+import { ButtonStyleProps } from "./interfaces";
 
 const svgWidth = 16;
 
@@ -36,7 +37,7 @@ export const StyledButton = styled.button<ButtonStyleProps>`
     width: ${svgWidth}px;
     height: auto;
   }
-  padding: 6px 30px;
+  padding: 6px 36px;
   cursor: pointer;
   &:hover {
     ${({ theme }) => theme.hover}

@@ -1,14 +1,30 @@
-import { FunctionComponent } from "react";
 import {
-  GoogleAuthProvider,
   FacebookAuthProvider,
   GithubAuthProvider,
+  GoogleAuthProvider,
 } from "firebase/auth";
-import { useForm, SubmitHandler } from "react-hook-form";
+import { FunctionComponent } from "react";
+import { SubmitHandler, useForm } from "react-hook-form";
+import { useTheme } from "styled-components";
 
-import { useAuthFormText } from "./config/useAuthFormText";
-import { handleValidationType } from "./config/validation";
-import { AuthFormInputProps, AuthFormProps } from "./interfaces";
+import { ReactComponent as ProfileIcon } from "../../assets/svg/form/account.svg";
+import { ReactComponent as EmailIcon } from "../../assets/svg/form/email.svg";
+import { ReactComponent as PasswordIcon } from "../../assets/svg/form/password.svg";
+import { ReactComponent as SurnamIcon } from "../../assets/svg/form/surname.svg";
+import { ReactComponent as FacebookIcon } from "../../assets/svg/social/facebook.svg";
+import { ReactComponent as GithubIcon } from "../../assets/svg/social/github.svg";
+import { ReactComponent as GoogleIcon } from "../../assets/svg/social/google.svg";
+import { AuthFormInputsPossibleNames } from "../../constants/authForm";
+import { ButtonTypes, ButtonVariants } from "../../constants/buttons";
+import { Colors } from "../../constants/styles/colors";
+import { TypographyVariant } from "../../constants/styles/typography";
+import { useAuthBySocialNetwork } from "../../hooks/authBySocial/useAuthBySocialNetworks";
+import { InputTypes } from "../Input/interfaces";
+import InputWithIcon from "../InputWithIcon";
+import ModalTitle from "../Modal/ModalTitle";
+import PasswordStrengthMeter from "../PasswordStrengthMeter";
+import Button from "../UI/Buttons/Button";
+
 import {
   BottomInfoWrapper,
   ButtonGroup,
@@ -16,26 +32,9 @@ import {
   Link,
   Typography,
 } from "./styles";
-import Button from "../UI/Buttons/Button";
-import ModalTitle from "../Modal/ModalTitle";
-import InputWithIcon from "../InputWithIcon";
-import PasswordStrengthMeter from "../PasswordStrengthMeter";
-
-import { useAuthBySocialNetwork } from "../../hooks/authBySocial/useAuthBySocialNetworks";
-import { AuthFormInputsPossibleNames } from "../../constants/authForm";
-
-import { TypographyVariant } from "../../constants/styles/typography";
-import { Colors } from "../../constants/styles/colors";
-import { ButtonTypes, ButtonVariants } from "../../constants/buttons";
-import { ReactComponent as ProfileIcon } from "../../assets/svg/form/account.svg";
-import { ReactComponent as EmailIcon } from "../../assets/svg/form/email.svg";
-import { ReactComponent as PasswordIcon } from "../../assets/svg/form/password.svg";
-import { ReactComponent as SurnamIcon } from "../../assets/svg/form/surname.svg";
-import { ReactComponent as GoogleIcon } from "../../assets/svg/social/google.svg";
-import { ReactComponent as FacebookIcon } from "../../assets/svg/social/facebook.svg";
-import { ReactComponent as GithubIcon } from "../../assets/svg/social/github.svg";
-import { InputTypes } from "../Input/interfaces";
-import { useTheme } from "styled-components";
+import { AuthFormInputProps, AuthFormProps } from "./interfaces";
+import { handleValidationType } from "./config/validation";
+import { useAuthFormText } from "./config/useAuthFormText";
 
 const AuthForm: FunctionComponent<AuthFormProps> = ({
   signUp = true,
@@ -149,6 +148,7 @@ const AuthForm: FunctionComponent<AuthFormProps> = ({
             variant={ButtonVariants.PRIMARY}
             typography={TypographyVariant.poppins_l}
             buttonTypes={ButtonTypes.SUBMIT}
+            width="100%"
           >
             {signUpBtn}
           </Button>
@@ -157,6 +157,7 @@ const AuthForm: FunctionComponent<AuthFormProps> = ({
             variant={ButtonVariants.PRIMARY}
             typography={TypographyVariant.poppins_l}
             buttonTypes={ButtonTypes.SUBMIT}
+            width="100%"
           >
             {signInBtn}
           </Button>

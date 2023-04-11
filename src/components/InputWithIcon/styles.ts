@@ -6,7 +6,7 @@ const boxSvgHeight = 40;
 export const Box = styled.div`
   ${({ theme }) => theme.flexAlignCenter};
   text-shadow: 10px 4px 4px rgba(0, 0, 0, 0.25);
-  ${({ theme }) => theme.margin.mb20}
+  margin-bottom: ${({ theme }) => theme.margin.mb20};
   svg {
     margin-right: 16px;
     height: ${boxSvgHeight}px;

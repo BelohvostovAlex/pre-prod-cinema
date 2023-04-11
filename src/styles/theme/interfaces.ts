@@ -32,6 +32,7 @@ export interface ICommonTheme {
     circle: string;
   };
   fontSize: {
+    6: string;
     8: string;
     10: string;
     12: string;
@@ -39,6 +40,7 @@ export interface ICommonTheme {
     16: string;
     18: string;
     21: string;
+    26: string;
   };
   hover: string;
   colors: {

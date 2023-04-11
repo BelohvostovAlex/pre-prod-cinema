@@ -1,7 +1,7 @@
 import { FunctionComponent } from "react";
 
-import { Progress, ProgressBar } from "./styles";
 import { PasswordStrengthMeterProps } from "./interfaces";
+import { Progress, ProgressBar } from "./styles";
 
 const PasswordStrengthMeter: FunctionComponent<PasswordStrengthMeterProps> = ({
   value,

@@ -1,7 +1,7 @@
 import { FunctionComponent } from "react";
 
-import { ErrorText, InoutLabel, InputWrapper, StyledInput } from "./styles";
 import { InputProps, InputTypes } from "./interfaces";
+import { ErrorText, InoutLabel, InputWrapper, StyledInput } from "./styles";
 
 const Input: FunctionComponent<InputProps> = ({
   type = InputTypes.TEXT,

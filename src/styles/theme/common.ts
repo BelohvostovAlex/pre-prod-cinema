@@ -1,8 +1,9 @@
 import { css } from "styled-components";
 
-import { ICommonTheme } from "./interfaces";
 import { Colors } from "../../constants/styles/colors";
 import { FontFamily, FontWeight } from "../../constants/styles/fonts";
+
+import { ICommonTheme } from "./interfaces";
 
 const commonTheme: ICommonTheme = {
   typography: {
@@ -75,6 +76,7 @@ const commonTheme: ICommonTheme = {
     circle: "100%",
   },
   fontSize: {
+    6: "6px",
     8: "8px",
     10: "10px",
     12: "12px",
@@ -82,6 +84,7 @@ const commonTheme: ICommonTheme = {
     16: "16px",
     18: "18px",
     21: "21px",
+    26: "26px",
   },
   zIndex: {
     1: "1",
@@ -95,11 +98,11 @@ const commonTheme: ICommonTheme = {
     modal: "30px 55px",
   },
   margin: {
-    mb10: "margin-bottom: 10px",
-    mb14: "margin-bottom: 14px",
-    mb20: "margin-bottom: 20px",
-    mb30: "margin-bottom: 30px",
-    mb50: "margin-bottom: 50px",
+    mb10: "10px",
+    mb14: "14px",
+    mb20: "20px",
+    mb30: "30px",
+    mb50: "50px",
   },
   hover: "filter: brightness(90%)",
   colors: {

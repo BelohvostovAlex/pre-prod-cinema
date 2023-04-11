@@ -1,6 +1,7 @@
-import { ITheme } from "./interfaces";
 import { Colors } from "../../constants/styles/colors";
 import { ThemeTypes } from "../../constants/styles/theme";
+
+import { ITheme } from "./interfaces";
 
 const darkTheme: ITheme = {
   name: ThemeTypes.DARK,

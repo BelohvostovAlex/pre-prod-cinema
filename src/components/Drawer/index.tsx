@@ -1,8 +1,9 @@
 import { FunctionComponent } from "react";
 
-import { DrawerArrowWrapper, DrawerTitle, StyledDrawer } from "./styles";
-import { DrawerProps } from "./interfaces";
 import { ReactComponent as RightArrowIcon } from "../../assets/svg/tools/right.svg";
+
+import { DrawerProps } from "./interfaces";
+import { DrawerArrowWrapper, DrawerTitle, StyledDrawer } from "./styles";
 
 const Drawer: FunctionComponent<DrawerProps> = ({
   children,
@@ -14,7 +15,7 @@ const Drawer: FunctionComponent<DrawerProps> = ({
     return null;
   }
   return (
-    <StyledDrawer>
+    <StyledDrawer isOpen={isOpen}>
       <DrawerTitle>
         <DrawerArrowWrapper>
           <RightArrowIcon onClick={onClose} />

@@ -1,22 +1,21 @@
-import { FunctionComponent } from "react";
-import { signInWithEmailAndPassword } from "firebase/auth";
 import { FirebaseError } from "firebase/app";
-import { SignInProps } from "./interfaces";
-import { auth } from "../../lib/firebase.prod";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { FunctionComponent } from "react";
 
-import AuthForm from "../AuthForm";
-
-import { useActions } from "../../hooks/useActionts";
 import { getDocument } from "../../api/firebase/getDocument";
+import { updateDocument } from "../../api/firebase/updateDocument";
+import { AlertTypes } from "../../constants/alert";
+import { FirebaseErrorsTypes } from "../../constants/errors/firebaseErrors";
 import { FirebaseCollections } from "../../constants/firebase/collections";
+import { isStrIncludesValueHandler } from "../../helpers/isStrIncludeValueHandler";
 import { useErrorTranslation } from "../../hooks/errorTranslation/useErrorTranslation";
 import { useClosePortal } from "../../hooks/portal/useClosePortal";
-import { AlertTypes } from "../../constants/alert";
-import { updateDocument } from "../../api/firebase/updateDocument";
-import { isStrIncludesValueHandler } from "../../helpers/isStrIncludeValueHandler";
-import { FirebaseErrorsTypes } from "../../constants/errors/firebaseErrors";
-
+import { useActions } from "../../hooks/useActionts";
+import { auth } from "../../lib/firebase.prod";
 import { IUser } from "../../models/IUser";
+import AuthForm from "../AuthForm";
+
+import { SignInProps } from "./interfaces";
 
 const SignIn: FunctionComponent<SignInProps> = ({
   onFormTypeChange,

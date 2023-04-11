@@ -1,6 +1,5 @@
-import { useActions } from "../useActionts";
-
 import { PortalVariant } from "../../constants/portal";
+import { useActions } from "../useActionts";
 
 export const useOpenPortal = (type: PortalVariant) => {
   const { setPortal } = useActions();

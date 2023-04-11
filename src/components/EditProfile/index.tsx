@@ -1,7 +1,26 @@
 import { FunctionComponent, useMemo } from "react";
-import { useForm, SubmitHandler } from "react-hook-form";
+import { useForm } from "react-hook-form";
 
-import { useEditText } from "./config/useEditText";
+import { ReactComponent as ProfileIcon } from "../../assets/svg/form/account.svg";
+import { ReactComponent as GenderIcon } from "../../assets/svg/form/gender.svg";
+import { ReactComponent as ImageIcon } from "../../assets/svg/form/image-file.svg";
+import { ReactComponent as PasswordIcon } from "../../assets/svg/form/password.svg";
+import { ReactComponent as SurnamIcon } from "../../assets/svg/form/surname.svg";
+import { AuthFormInputsPossibleNames, Gender } from "../../constants/authForm";
+import { ButtonTypes, ButtonVariants } from "../../constants/buttons";
+import { FirebaseCollections } from "../../constants/firebase/collections";
+import { TypographyVariant } from "../../constants/styles/typography";
+import { useEditProfile } from "../../hooks/editProfile/useEditProfile";
+import { useAppSelector } from "../../hooks/useAppSelector";
+import { userSelector } from "../../store/slices/userSlice/selectors";
+import { handleValidationType } from "../AuthForm/config/validation";
+import { AuthFormInputProps } from "../AuthForm/interfaces";
+import { InputTypes } from "../Input/interfaces";
+import InputWithIcon from "../InputWithIcon";
+import ModalTitle from "../Modal/ModalTitle";
+import PasswordStrengthMeter from "../PasswordStrengthMeter";
+import Button from "../UI/Buttons/Button";
+
 import {
   EditProfileForm,
   EditProfileWrapper,
@@ -11,29 +30,12 @@ import {
   InputUploadFile,
   InputUploadFileLabel,
 } from "./styles";
-import ModalTitle from "../Modal/ModalTitle";
-import InputWithIcon from "../InputWithIcon";
-import PasswordStrengthMeter from "../PasswordStrengthMeter";
-import Button from "../UI/Buttons/Button";
-
-import { AuthFormInputsPossibleNames, Gender } from "../../constants/authForm";
-import { handleValidationType } from "../AuthForm/config/validation";
-import { useAppSelector } from "../../hooks/useAppSelector";
-import { userSelector } from "../../store/slices/userSlice/selectors";
-import { ButtonTypes, ButtonVariants } from "../../constants/buttons";
-import { TypographyVariant } from "../../constants/styles/typography";
-
-import { ReactComponent as ProfileIcon } from "../../assets/svg/form/account.svg";
-import { ReactComponent as PasswordIcon } from "../../assets/svg/form/password.svg";
-import { ReactComponent as SurnamIcon } from "../../assets/svg/form/surname.svg";
-import { ReactComponent as ImageIcon } from "../../assets/svg/form/image-file.svg";
-import { ReactComponent as GenderIcon } from "../../assets/svg/form/gender.svg";
-import { InputTypes } from "../Input/interfaces";
-import { AuthFormInputProps } from "../AuthForm/interfaces";
+import { useEditText } from "./config/useEditText";
 import { defaultFormValue } from "./config/constants";
 
 const EditProfile: FunctionComponent = () => {
-  const { gender, surname, username } = useAppSelector(userSelector);
+  const { gender, surname, username, id, photo } = useAppSelector(userSelector);
+
   const {
     title,
     titleSpan,
@@ -46,7 +48,6 @@ const EditProfile: FunctionComponent = () => {
   const {
     register,
     handleSubmit,
-    reset,
     watch,
     formState: { isValid, errors },
   } = useForm<AuthFormInputProps>({
@@ -60,11 +61,13 @@ const EditProfile: FunctionComponent = () => {
     ),
   });
 
-  const onSubmitHandler: SubmitHandler<AuthFormInputProps> = (data) => {
-    if (isValid) {
-      reset();
-    }
-  };
+  const { handleFileChange, onSubmitHandler } = useEditProfile({
+    collection: FirebaseCollections.USERS,
+    currUser: { surname, gender, username, photo },
+    id,
+    isValid,
+  });
+
   return (
     <EditProfileWrapper>
       <ModalTitle text={title} spanText={titleSpan} />
@@ -76,6 +79,7 @@ const EditProfile: FunctionComponent = () => {
           inputName={AuthFormInputsPossibleNames.USERNAME}
           validateOptions={handleValidationType(
             AuthFormInputsPossibleNames.USERNAME,
+            false,
           )}
           error={errors.username?.message}
           defaultValue={"username"}
@@ -87,13 +91,20 @@ const EditProfile: FunctionComponent = () => {
           inputName={AuthFormInputsPossibleNames.SURNAME}
           validateOptions={handleValidationType(
             AuthFormInputsPossibleNames.SURNAME,
+            false,
           )}
           error={errors.surname?.message}
           defaultValue={surname}
         />
         <InputFileWrapper>
           <InputUploadFileLabel htmlFor="file">
-            <InputUploadFile type="file" id="file" hidden />
+            <InputUploadFile
+              type="file"
+              id="file"
+              hidden
+              accept="image/*"
+              onChange={handleFileChange}
+            />
             <ImageIcon /> {uploadImg}
           </InputUploadFileLabel>
         </InputFileWrapper>
@@ -102,21 +113,22 @@ const EditProfile: FunctionComponent = () => {
           <InputUploadFileLabel htmlFor="male">
             {male}
             <InputRadio
+              {...register("gender", { required: true })}
               type="radio"
               id="male"
               name="gender"
-              value="male"
+              value={Gender.MALE}
               defaultChecked={gender === Gender.MALE}
             />
           </InputUploadFileLabel>
-
           <InputUploadFileLabel htmlFor="female">
             {female}
             <InputRadio
+              {...register("gender", { required: true })}
               type="radio"
               id="female"
               name="gender"
-              value="female"
+              value={Gender.FEMALE}
               defaultChecked={gender === Gender.FEMALE}
             />
           </InputUploadFileLabel>
@@ -129,6 +141,7 @@ const EditProfile: FunctionComponent = () => {
           inputName={AuthFormInputsPossibleNames.PASSWORD}
           validateOptions={handleValidationType(
             AuthFormInputsPossibleNames.PASSWORD,
+            false,
           )}
           placeholder={passPlaceholder}
           error={errors.password?.message}

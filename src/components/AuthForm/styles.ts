@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Form = styled.form`
-  ${({ theme }) => theme.margin.mb30}
+  margin-bottom: ${({ theme }) => theme.margin.mb30};
 `;
 
 export const ButtonGroup = styled.div`

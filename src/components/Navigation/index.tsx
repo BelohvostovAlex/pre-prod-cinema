@@ -2,17 +2,17 @@ import { FunctionComponent } from "react";
 import { useTranslation } from "react-i18next";
 import { useLocation } from "react-router-dom";
 
-import { Nav } from "./styles";
-import RouterLink from "../UI/RouterLink";
-
 import { APP_NAV_MENU } from "../../constants/nav";
-import { TypographyVariant } from "../../constants/styles/typography";
-
-import { useAppSelector } from "../../hooks/useAppSelector";
-import { userTokenSelector } from "../../store/slices/userSlice/selectors";
-import { useOpenPortal } from "../../hooks/portal/useOpenPortal";
 import { PortalVariant } from "../../constants/portal";
 import { AppPathes } from "../../constants/routes";
+import { TypographyVariant } from "../../constants/styles/typography";
+import { useOpenPortal } from "../../hooks/portal/useOpenPortal";
+import { useAppSelector } from "../../hooks/useAppSelector";
+import { userTokenSelector } from "../../store/slices/userSlice/selectors";
+import RouterLink from "../UI/RouterLink";
+
+import { Nav } from "./styles";
+import { extraStylesRouterLink } from "./config";
 
 const Navigation: FunctionComponent = () => {
   const { t } = useTranslation();
@@ -33,7 +33,7 @@ const Navigation: FunctionComponent = () => {
           text={t(`Nav_menu.${text}`)}
           to={path}
           typography={TypographyVariant.poppins_l}
-          extra={":first-of-type {margin-right: 30px;}"}
+          extra={extraStylesRouterLink}
           $active={pathname === path}
           onClick={onClick}
         />

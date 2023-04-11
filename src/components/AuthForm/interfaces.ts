@@ -3,6 +3,8 @@ export interface AuthFormInputProps {
   password: string;
   surname: string;
   username: string;
+  gender?: string;
+  photo?: string;
 }
 
 export interface AuthFormProps {

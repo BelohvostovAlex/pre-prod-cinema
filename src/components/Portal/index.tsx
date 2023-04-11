@@ -1,8 +1,8 @@
 import { FunctionComponent } from "react";
 import { createPortal } from "react-dom";
 
-import { PortalContainer } from "./styles";
 import { PortalProps } from "./interfaces";
+import { PortalContainer } from "./styles";
 
 const Portal: FunctionComponent<PortalProps> = ({
   element = document.body,

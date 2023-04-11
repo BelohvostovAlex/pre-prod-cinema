@@ -1,8 +1,9 @@
 import { FunctionComponent } from "react";
 
+import { TypographyVariant } from "../../../constants/styles/typography";
+
 import { RouterLinkProps } from "./interfaces";
 import { StyledLink } from "./styles";
-import { TypographyVariant } from "../../../constants/styles/typography";
 
 const RouterLink: FunctionComponent<RouterLinkProps> = ({
   text,

@@ -1,6 +1,15 @@
 import { FunctionComponent } from "react";
+import { useTheme } from "styled-components";
 
-import { useProfileText } from "./config/useProfileText";
+import { ReactComponent as LogoIcon } from "../../assets/svg/logo/logo.svg";
+import { ReactComponent as ProfileIcon } from "../../assets/svg/profile/profile-big.svg";
+import { PortalVariant } from "../../constants/portal";
+import { TypographyVariant } from "../../constants/styles/typography";
+import { useSignOut } from "../../hooks/authBySocial/useSignOut";
+import { useOpenPortal } from "../../hooks/portal/useOpenPortal";
+import { useAppSelector } from "../../hooks/useAppSelector";
+import SecondaryButton from "../UI/Buttons/SecondaryButton";
+
 import {
   ProfileGender,
   ProfileIconWrapper,
@@ -12,18 +21,7 @@ import {
   ProfileName,
   ProfileWrapper,
 } from "./styles";
-import SecondaryButton from "../UI/Buttons/SecondaryButton";
-
-import { useAppSelector } from "../../hooks/useAppSelector";
-import { useSignOut } from "../../hooks/authBySocial/useSignOut";
-
-import { TypographyVariant } from "../../constants/styles/typography";
-
-import { ReactComponent as LogoIcon } from "../../assets/svg/logo/logo.svg";
-import { ReactComponent as ProfileIcon } from "../../assets/svg/profile/profile-big.svg";
-import { useOpenPortal } from "../../hooks/portal/useOpenPortal";
-import { PortalVariant } from "../../constants/portal";
-import { useTheme } from "styled-components";
+import { useProfileText } from "./config/useProfileText";
 
 const Profile: FunctionComponent = () => {
   const { margin } = useTheme();

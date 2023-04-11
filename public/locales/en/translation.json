@@ -77,7 +77,8 @@
     "popupClosedByUser": "Sign in has been cancelled",
     "emailAlreadyInUse": "Email is already in use",
     "wrongPassword": "Wrong password",
-    "userNotFound": "User not found"
+    "userNotFound": "User not found",
+    "requiresRecentLogin": "Requires recent login to update pass, please re-login"
   },
   "AuthInputErrors": {
     "invalidEmail": "invalid email",

@@ -1,12 +1,14 @@
 import styled from "styled-components";
 
+import { StyledDrawerProps } from "./interfaces";
+
 const StyledDrawerHeightPercent = 100;
-const StyledDrawerWidthPercent = 100;
+const StyledDrawerWidthPercent = 28;
 const DrawerTitleWidthPercent = 100;
 const DrawerArrowWrapperWidth = 36;
 const DrawerArrowWrapperSvgWidth = 100;
 
-export const StyledDrawer = styled.div`
+export const StyledDrawer = styled.div<StyledDrawerProps>`
   position: fixed;
   top: 0px;
   right: 0px;
@@ -16,6 +18,7 @@ export const StyledDrawer = styled.div`
   z-index: ${({ theme }) => theme.zIndex[100]};
   padding: ${({ theme }) => theme.padding.drawer};
   background: ${({ theme }) => theme.colors.backgroundColor};
+  box-shadow: -4px 0px 8px 0px rgba(34, 60, 80, 0.4);
 `;
 
 export const DrawerTitle = styled.h3`

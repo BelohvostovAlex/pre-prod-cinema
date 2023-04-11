@@ -9,5 +9,6 @@ export const useErrorTranslation = () => {
     emailAlreadyInUse: t("Errors.emailAlreadyInUse"),
     wrongPassword: t("Errors.wrongPassword"),
     userNotFound: t("Errors.userNotFound"),
+    requiresRecentLogin: t("Errors.requiresRecentLogin"),
   };
 };

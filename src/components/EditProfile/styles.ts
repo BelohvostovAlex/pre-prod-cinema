@@ -8,7 +8,7 @@ export const EditProfileWrapper = styled.div``;
 export const EditProfileForm = styled.form``;
 
 export const InputFileWrapper = styled.div`
-  ${({ theme }) => theme.margin.mb20}
+  margin-bottom: ${({ theme }) => theme.margin.mb20};
   svg {
     height: ${svgHeight}px;
     width: ${svgWidth}px;

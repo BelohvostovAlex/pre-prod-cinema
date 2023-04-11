@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 import { StyledRoundButtonProps } from "./interfaces";
 
-const styledRoundButtonSVGWidthPercent = 100;
-const styledRoundButtonSVGHeightPercent = 100;
+const styledRoundButtonSVGWidthPercent = 50;
+const styledRoundButtonSVGHeightPercent = 50;
 
 export const StyledRoundButton = styled.div<StyledRoundButtonProps>`
   width: ${({ width }) => width || "36px"};
@@ -19,7 +19,10 @@ export const StyledRoundButton = styled.div<StyledRoundButtonProps>`
     width: ${styledRoundButtonSVGWidthPercent}%;
     height: ${styledRoundButtonSVGHeightPercent}%;
   }
-  ${({ theme }) => theme.flexAlignCenter}
+  svg path {
+    fill: ${({ theme }) => theme.colors.primary};
+  }
+  ${({ theme }) => theme.flexAlignCenter};
   justify-content: center;
   cursor: pointer;
   ${({ extra }) => extra}
