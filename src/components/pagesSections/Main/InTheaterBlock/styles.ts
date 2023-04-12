@@ -11,7 +11,17 @@ export const InTheaterBlockWrapper = styled.div`
 
 export const InTheaterImgWrapper = styled.div`
   height: ${InTheaterImgWrapperHeightPercent}%;
-  margin: 5px 25px 5px 55px;
+  width: 180px;
+  margin: 5px 30px 5px 55px;
+  align-self: end;
+  ${({ theme }) => theme.flexAlignCenter};
+  flex-direction: column;
+`;
+
+export const InTheaterImgSkeletonWrapper = styled.div`
+  height: ${InTheaterImgWrapperHeightPercent}%;
+  width: 140px;
+  margin: 0px 90px 5px 125px;
   align-self: end;
 `;
 

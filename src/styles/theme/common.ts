@@ -84,9 +84,11 @@ const commonTheme: ICommonTheme = {
     16: "16px",
     18: "18px",
     21: "21px",
+    24: "24px",
     26: "26px",
   },
   zIndex: {
+    minus1: "-1",
     1: "1",
     10: "10",
     100: "100",

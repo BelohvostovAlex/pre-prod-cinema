@@ -1,5 +1,6 @@
+import { IMovieImdb } from "../../../../models/movie/IMovieImdb";
+
 export interface TrailerBlockProps {
-  img: string;
-  title: string;
-  text: string;
+  movie: IMovieImdb;
+  isLoading: boolean;
 }

@@ -2,14 +2,14 @@ import { FunctionComponent, Suspense } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 
 import { AppPathes } from "../../constants/routes";
-import Loader from "../Loader";
+import MainLoader from "../Loader/MainLoader";
 import PrivateRoutes from "../PrivateRoutes";
 
 import { privateRoutes, publicRoutes } from "./routes";
 
 const AppRouter: FunctionComponent = () => {
   return (
-    <Suspense fallback={<Loader />}>
+    <Suspense fallback={<MainLoader />}>
       <Routes>
         {publicRoutes.map((route) => (
           <Route

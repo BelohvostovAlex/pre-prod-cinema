@@ -1,8 +1,8 @@
 import { SliderDirectionVariant } from "../../constants/slider";
-import { IMovie } from "../../models/movie/IMovie";
+import { IMovieImdb } from "../../models/movie/IMovieImdb";
 
 export interface SliderProps {
-  data: IMovie[];
+  data: IMovieImdb[];
   direction?: SliderDirectionVariant;
 }
 

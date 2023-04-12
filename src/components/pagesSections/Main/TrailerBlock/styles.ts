@@ -10,8 +10,9 @@ const TrailerItemImgWidthPercent = 100;
 
 export const TrailerBlockWrapper = styled.div`
   ${({ theme }) => theme.flexAlignCenter};
+  justify-content: space-between;
   width: ${TrailerBlockWidthPercent}%;
-  padding-top: 30px;
+  padding: 30px 0px;
 `;
 
 export const TrailerItemWrapper = styled.div`

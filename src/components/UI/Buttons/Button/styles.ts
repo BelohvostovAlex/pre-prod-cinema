@@ -42,4 +42,5 @@ export const StyledButton = styled.button<ButtonStyleProps>`
   &:hover {
     ${({ theme }) => theme.hover}
   }
+  transition: linear 0.2s;
 `;

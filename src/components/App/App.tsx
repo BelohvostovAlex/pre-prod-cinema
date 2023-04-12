@@ -1,6 +1,6 @@
 import { FunctionComponent, Suspense, lazy } from "react";
 
-import Loader from "../Loader";
+import MainLoader from "../Loader/MainLoader";
 import ThemeProvider from "../ThemeProvider";
 
 const AppLayout = lazy(() => import("../../layouts/AppLayout"));
@@ -9,7 +9,7 @@ const AppRouter = lazy(() => import("../AppRouter"));
 const App: FunctionComponent = () => {
   return (
     <ThemeProvider>
-      <Suspense fallback={<Loader />}>
+      <Suspense fallback={<MainLoader />}>
         <AppLayout>
           <AppRouter />
         </AppLayout>

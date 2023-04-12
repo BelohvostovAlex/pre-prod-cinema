@@ -72,6 +72,19 @@
     "dark": "темная",
     "light": "светлая"
   },
+  "Movie": {
+    "moveToNextMovieBtn": "Перейти к следующему фильму",
+    "releaseYear": "Год выхода",
+    "country": "Страна",
+    "genre": "Жанр",
+    "author": "Режиссер",
+    "actors": "Актеры",
+    "bookBtn": "Забронировать!",
+    "watchTrailerTitle": "Посмотреть трейлер онлайн!",
+    "review": "Отзыв",
+    "reviewFrom": "От",
+    "readMore": "Читать больше"
+  },
   "Errors": {
     "userAlreadyExistsViaSocial": "Пользователь с данным эл.адресом уже существует, пожалуйста, попробуйте другой метод войти",
     "popupClosedByUser": "Вход был отменен",
@@ -83,7 +96,6 @@
   "AuthInputErrors": {
     "invalidEmail": "неверный эл.адрес",
     "passwordMin": "мин. 6 символов",
-    "passwordMax": "макс. 16 символов",
     "passwordMustInclude": "как минимум одна большая, маленькая буква, цифра, спец.символ",
     "required": "поле обязательно",
     "textOnlyLetter": "только буквы",

@@ -5,3 +5,8 @@ export enum AppPathes {
   PROFILE = "/profile/:id",
   NOT_FOUND = "/not-found",
 }
+
+export enum AppPathesWithoutSlug {
+  MOVIE = "/movies/",
+  PROFILE = "/profile/",
+}

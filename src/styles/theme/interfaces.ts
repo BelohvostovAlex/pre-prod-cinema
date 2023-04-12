@@ -40,6 +40,7 @@ export interface ICommonTheme {
     16: string;
     18: string;
     21: string;
+    24: string;
     26: string;
   };
   hover: string;
@@ -59,6 +60,7 @@ export interface ICommonTheme {
     facebookColor: Colors.FACEBOOK;
   };
   zIndex: {
+    minus1: string;
     1: string;
     10: string;
     100: string;

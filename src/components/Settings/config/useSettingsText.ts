@@ -10,7 +10,5 @@ export const useSettingsText = () => {
     ru: t("Settings.ru"),
     en: t("Settings.en"),
     changeThemeText: t("Settings.changeTheme"),
-    dark: t("Settings.dark"),
-    light: t("Settings.light"),
   };
 };

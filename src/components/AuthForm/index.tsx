@@ -33,8 +33,15 @@ import {
   Typography,
 } from "./styles";
 import { AuthFormInputProps, AuthFormProps } from "./interfaces";
-import { handleValidationType } from "./config/validation";
 import { useAuthFormText } from "./config/useAuthFormText";
+import { useValidationWithTranslate } from "./config/validation";
+import {
+  lastSocialBtnMargin,
+  signInBtnWidth,
+  signUpBtnWidth,
+  socialBtnHeight,
+  socialBtnWidth,
+} from "./config";
 
 const AuthForm: FunctionComponent<AuthFormProps> = ({
   signUp = true,
@@ -59,6 +66,7 @@ const AuthForm: FunctionComponent<AuthFormProps> = ({
     signUpBtn,
   } = useAuthFormText(signUp);
   const { fontSize } = useTheme();
+  const handleValidationType = useValidationWithTranslate();
 
   const googleSignIn = useAuthBySocialNetwork({
     ClassProvider: GoogleAuthProvider,
@@ -95,7 +103,7 @@ const AuthForm: FunctionComponent<AuthFormProps> = ({
         {signUp && (
           <>
             <InputWithIcon
-              id="username"
+              id={AuthFormInputsPossibleNames.USERNAME}
               placeholder={usernameText.placeholder}
               icon={<ProfileIcon />}
               register={register}
@@ -106,7 +114,7 @@ const AuthForm: FunctionComponent<AuthFormProps> = ({
               error={errors.username?.message}
             />
             <InputWithIcon
-              id="surname"
+              id={AuthFormInputsPossibleNames.SURNAME}
               placeholder={surnameText.placeholder}
               icon={<SurnamIcon />}
               register={register}
@@ -120,7 +128,7 @@ const AuthForm: FunctionComponent<AuthFormProps> = ({
         )}
         <InputWithIcon
           type={InputTypes.EMAIL}
-          id="email"
+          id={AuthFormInputsPossibleNames.EMAIL}
           placeholder={emailText.placeholder}
           icon={<EmailIcon />}
           register={register}
@@ -132,7 +140,7 @@ const AuthForm: FunctionComponent<AuthFormProps> = ({
         />
         <InputWithIcon
           type={InputTypes.PASSWORD}
-          id="password"
+          id={AuthFormInputsPossibleNames.PASSWORD}
           placeholder={passwordText.placeholder}
           icon={<PasswordIcon />}
           register={register}
@@ -148,7 +156,7 @@ const AuthForm: FunctionComponent<AuthFormProps> = ({
             variant={ButtonVariants.PRIMARY}
             typography={TypographyVariant.poppins_l}
             buttonTypes={ButtonTypes.SUBMIT}
-            width="100%"
+            width={signUpBtnWidth}
           >
             {signUpBtn}
           </Button>
@@ -157,7 +165,7 @@ const AuthForm: FunctionComponent<AuthFormProps> = ({
             variant={ButtonVariants.PRIMARY}
             typography={TypographyVariant.poppins_l}
             buttonTypes={ButtonTypes.SUBMIT}
-            width="100%"
+            width={signInBtnWidth}
           >
             {signInBtn}
           </Button>
@@ -166,8 +174,8 @@ const AuthForm: FunctionComponent<AuthFormProps> = ({
       <ButtonGroup>
         <Button
           typography={TypographyVariant.inter_sb}
-          width="174px"
-          height="28px"
+          width={socialBtnWidth}
+          height={socialBtnHeight}
           fontSize={fontSize[8]}
           backgroundColor={Colors.WHITE}
           color={Colors.BLACK}
@@ -178,8 +186,8 @@ const AuthForm: FunctionComponent<AuthFormProps> = ({
         </Button>
         <Button
           typography={TypographyVariant.inter_sb}
-          width="174px"
-          height="28px"
+          width={socialBtnWidth}
+          height={socialBtnHeight}
           fontSize={fontSize[8]}
           backgroundColor={Colors.FACEBOOK}
           color={Colors.WHITE}
@@ -190,12 +198,12 @@ const AuthForm: FunctionComponent<AuthFormProps> = ({
         </Button>
         <Button
           typography={TypographyVariant.inter_sb}
-          width="174px"
-          height="28px"
+          width={socialBtnWidth}
+          height={socialBtnHeight}
           fontSize={fontSize[8]}
           backgroundColor={Colors.BLACK}
           color={Colors.WHITE}
-          margin="10px 0px"
+          margin={lastSocialBtnMargin}
           onClick={githubSignIn}
         >
           <GithubIcon />

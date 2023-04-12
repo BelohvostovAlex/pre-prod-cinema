@@ -81,6 +81,7 @@
     "import/no-unresolved": "error",
     "import/no-named-as-default": 0,
     "import/no-named-as-default-member": 0,
+    "@typescript-eslint/no-non-null-assertion": "off",
     "import/order": [
       "error",
       {

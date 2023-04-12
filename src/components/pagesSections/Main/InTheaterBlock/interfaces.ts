@@ -1,9 +1,7 @@
-import { IMovie } from "../../../../models/movie/IMovie";
+import { IMovieImdb } from "../../../../models/movie/IMovieImdb";
 
 export interface InTheaterBlockProps {
-  title: string;
-  text: string;
-  img: string;
-  data: IMovie[];
-  genres: string[];
+  movie: IMovieImdb;
+  data: IMovieImdb[];
+  isLoading: boolean;
 }

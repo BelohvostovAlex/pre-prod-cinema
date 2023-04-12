@@ -1,6 +1,6 @@
 export enum Colors {
   BG_DARK = "#1E1F27",
-  BG_LIGHT = "#D5D8DC",
+  BG_LIGHT = "#c2b490",
   WHITE = "#FFFFFF",
   ORANGE = "#D98639",
   BLACK = "#000000",

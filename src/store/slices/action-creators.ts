@@ -15,6 +15,7 @@ import {
   toggleMute,
   togglePlay,
 } from "./videoSlice/videoSlice";
+import { getMoviesThunk } from "./movieSlice/thunks/getMoviesThunk";
 
 export const allActionCreators = {
   changeDarkTheme,
@@ -30,4 +31,5 @@ export const allActionCreators = {
   setSpeed,
   toggleMute,
   updateUser,
+  getMoviesThunk,
 };

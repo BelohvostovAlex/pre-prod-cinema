@@ -1,43 +1,31 @@
-import { FunctionComponent, useEffect, useState } from "react";
+import { FunctionComponent, useEffect } from "react";
 
-import { getMovies } from "../../api/imdb/getMovies";
 import TrailerBlock from "../../components/pagesSections/Main/TrailerBlock";
 import InTheaterBlock from "../../components/pagesSections/Main/InTheaterBlock";
-import { IMovie } from "../../models/movie/IMovie";
+import FooterSecondary from "../../components/Footer/FooterSecondary";
+import { useAppSelector } from "../../hooks/useAppSelector";
+import { isMoviesLoadingSelector } from "../../store/slices/movieSlice/selectors";
+import { moviesImdbNew } from "../../constants/movies";
 
 import { MainWrapper } from "./styles";
 
 const Main: FunctionComponent = () => {
-  const [movies, setMovies] = useState<IMovie[]>([] as IMovie[]);
-
-  // const handleMovies = async () => {
-  //   const data = await getMovies();
-  //   setMovies(data);
-  // };
-
-  const getInTheaters = async () => {
-    const data = await getMovies();
-
-    setMovies(data);
-  };
+  // const { getMoviesThunk } = useActions();
+  const isMoviesLoading = useAppSelector(isMoviesLoadingSelector);
+  // const movies = useAppSelector(moviesSelector);
 
   useEffect(() => {
-    getInTheaters();
+    // getMoviesThunk();
   }, []);
   return (
     <MainWrapper>
-      <TrailerBlock
-        title={movies[0]?.title}
-        text={movies[0]?.description}
-        img={movies[0]?.image}
-      />
+      <TrailerBlock movie={moviesImdbNew[1]} isLoading={isMoviesLoading} />
       <InTheaterBlock
-        text={movies[1]?.description}
-        title={movies[1]?.title}
-        img={movies[1]?.image}
-        data={movies}
-        genres={movies[1]?.genre}
+        movie={moviesImdbNew[1]}
+        data={moviesImdbNew}
+        isLoading={isMoviesLoading}
       />
+      <FooterSecondary />
     </MainWrapper>
   );
 };

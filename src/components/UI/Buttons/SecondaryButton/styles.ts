@@ -22,9 +22,10 @@ export const StyledSecondaryButton = styled.button<StyledSecondaryButtonProps>`
   cursor: pointer;
   ${({ extra }) => extra};
   &:hover {
-    ${({ theme }) => theme.hover}
+    ${({ theme }) => theme.hover};
   }
   background: transparent;
   border: none;
   position: relative;
+  transition: linear 0.2s;
 `;

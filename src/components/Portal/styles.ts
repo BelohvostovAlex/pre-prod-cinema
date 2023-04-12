@@ -9,7 +9,7 @@ export const PortalContainer = styled.div`
   left: 0;
   width: ${portalContainerWidthPercent}%;
   height: ${portalContainerHeightPercent}%;
-  z-index: ${({ theme }) => theme.zIndex[10]};
+  z-index: ${({ theme }) => theme.zIndex[1000]};
   background: rgba(31, 31, 38, 0.7);
   -webkit-animation-name: fadeIn;
   animation-name: fadeIn;

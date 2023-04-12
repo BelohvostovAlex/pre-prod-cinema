@@ -3,7 +3,7 @@ import { FunctionComponent } from "react";
 import Alert from "../../components/Alert";
 import Container from "../../components/Container";
 import ErrorBoundary from "../../components/ErrorBoundary";
-import Footer from "../../components/Footer";
+import FooterMain from "../../components/Footer/FooterMain";
 import Header from "../../components/Header";
 
 import { AppLayoutWrapper } from "./styles";
@@ -17,7 +17,7 @@ const AppLayout: FunctionComponent<AppLayoutProps> = ({ children }) => {
         <Container>{children}</Container>
       </ErrorBoundary>
       <Alert />
-      <Footer />
+      <FooterMain />
     </AppLayoutWrapper>
   );
 };

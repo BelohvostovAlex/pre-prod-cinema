@@ -1,6 +1,10 @@
 import { FunctionComponent, useMemo } from "react";
 import { useForm } from "react-hook-form";
 
+import ModalTitle from "../Modal/ModalTitle";
+import PasswordStrengthMeter from "../PasswordStrengthMeter";
+import Button from "../UI/Buttons/Button";
+import InputWithIcon from "../InputWithIcon";
 import { ReactComponent as ProfileIcon } from "../../assets/svg/form/account.svg";
 import { ReactComponent as GenderIcon } from "../../assets/svg/form/gender.svg";
 import { ReactComponent as ImageIcon } from "../../assets/svg/form/image-file.svg";
@@ -13,13 +17,9 @@ import { TypographyVariant } from "../../constants/styles/typography";
 import { useEditProfile } from "../../hooks/editProfile/useEditProfile";
 import { useAppSelector } from "../../hooks/useAppSelector";
 import { userSelector } from "../../store/slices/userSlice/selectors";
-import { handleValidationType } from "../AuthForm/config/validation";
+import { useValidationWithTranslate } from "../AuthForm/config/validation";
 import { AuthFormInputProps } from "../AuthForm/interfaces";
 import { InputTypes } from "../Input/interfaces";
-import InputWithIcon from "../InputWithIcon";
-import ModalTitle from "../Modal/ModalTitle";
-import PasswordStrengthMeter from "../PasswordStrengthMeter";
-import Button from "../UI/Buttons/Button";
 
 import {
   EditProfileForm,
@@ -32,10 +32,11 @@ import {
 } from "./styles";
 import { useEditText } from "./config/useEditText";
 import { defaultFormValue } from "./config/constants";
+import { btnSubmitWidth } from "./config";
 
 const EditProfile: FunctionComponent = () => {
   const { gender, surname, username, id, photo } = useAppSelector(userSelector);
-
+  const handleValidationType = useValidationWithTranslate();
   const {
     title,
     titleSpan,
@@ -73,7 +74,7 @@ const EditProfile: FunctionComponent = () => {
       <ModalTitle text={title} spanText={titleSpan} />
       <EditProfileForm onSubmit={handleSubmit(onSubmitHandler)}>
         <InputWithIcon
-          id="username"
+          id={AuthFormInputsPossibleNames.USERNAME}
           icon={<ProfileIcon />}
           register={register}
           inputName={AuthFormInputsPossibleNames.USERNAME}
@@ -82,10 +83,10 @@ const EditProfile: FunctionComponent = () => {
             false,
           )}
           error={errors.username?.message}
-          defaultValue={"username"}
+          defaultValue={username}
         />
         <InputWithIcon
-          id="surname"
+          id={AuthFormInputsPossibleNames.SURNAME}
           icon={<SurnamIcon />}
           register={register}
           inputName={AuthFormInputsPossibleNames.SURNAME}
@@ -135,7 +136,7 @@ const EditProfile: FunctionComponent = () => {
         </InputGenderWrapper>
         <InputWithIcon
           type={InputTypes.PASSWORD}
-          id="password"
+          id={AuthFormInputsPossibleNames.PASSWORD}
           icon={<PasswordIcon />}
           register={register}
           inputName={AuthFormInputsPossibleNames.PASSWORD}
@@ -150,7 +151,7 @@ const EditProfile: FunctionComponent = () => {
         <Button
           variant={ButtonVariants.PRIMARY}
           typography={TypographyVariant.poppins_l}
-          width="100%"
+          width={btnSubmitWidth}
           buttonTypes={ButtonTypes.SUBMIT}
         >
           {submitBtn}

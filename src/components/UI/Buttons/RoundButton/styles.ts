@@ -25,5 +25,6 @@ export const StyledRoundButton = styled.div<StyledRoundButtonProps>`
   ${({ theme }) => theme.flexAlignCenter};
   justify-content: center;
   cursor: pointer;
-  ${({ extra }) => extra}
+  color: ${({ theme }) => theme.colors.primary};
+  ${({ extra }) => extra};
 `;

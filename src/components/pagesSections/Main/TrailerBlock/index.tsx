@@ -6,6 +6,8 @@ import { PortalVariant } from "../../../../constants/portal";
 import { ReactComponent as PlayIcon } from "../../../../assets/svg/tools/play.svg";
 import MovieInfoBlock from "../MovieInfoBlock";
 import { TypographyVariant } from "../../../../constants/styles/typography";
+import MovieInfoBlockSkeleton from "../../../Skeletons/MovieInfoBlock";
+import TrailerBlockSkeleton from "../../../Skeletons/TrailerBlock";
 
 import {
   TrailerBlockWrapper,
@@ -17,25 +19,35 @@ import { TrailerBlockProps } from "./interfaces";
 import { extraStylesForRoundBtn } from "./config";
 
 const TrailerBlock: FunctionComponent<TrailerBlockProps> = ({
-  img,
-  text,
-  title,
+  movie,
+  isLoading,
 }) => {
   const openTrailerPortal = useOpenPortal(PortalVariant.VIDEO_TRAILER);
   return (
     <TrailerBlockWrapper>
-      <MovieInfoBlock
-        typography={TypographyVariant.nunito_l}
-        text={text}
-        title={title}
-      />
-      <TrailerItemWrapper>
-        <TrailerItemLayout />
-        <TrailerItemImg src={img} alt={title} />
-        <RoundButton onClick={openTrailerPortal} extra={extraStylesForRoundBtn}>
-          <PlayIcon />
-        </RoundButton>
-      </TrailerItemWrapper>
+      {isLoading ? (
+        <MovieInfoBlockSkeleton />
+      ) : (
+        <MovieInfoBlock
+          typography={TypographyVariant.nunito_l}
+          text={movie.plot}
+          title={movie.title}
+        />
+      )}
+      {isLoading ? (
+        <TrailerBlockSkeleton />
+      ) : (
+        <TrailerItemWrapper>
+          <TrailerItemLayout />
+          <TrailerItemImg src={movie.image} alt={movie.title} />
+          <RoundButton
+            onClick={openTrailerPortal}
+            extra={extraStylesForRoundBtn}
+          >
+            <PlayIcon />
+          </RoundButton>
+        </TrailerItemWrapper>
+      )}
     </TrailerBlockWrapper>
   );
 };

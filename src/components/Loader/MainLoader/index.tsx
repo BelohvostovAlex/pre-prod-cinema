@@ -3,7 +3,7 @@ import { FunctionComponent } from "react";
 import "./index.css";
 import { StyledLoader } from "./styles";
 
-const Loader: FunctionComponent = () => {
+const MainLoader: FunctionComponent = () => {
   return (
     <StyledLoader>
       <div className="lds-default">
@@ -24,4 +24,4 @@ const Loader: FunctionComponent = () => {
   );
 };
 
-export default Loader;
+export default MainLoader;
