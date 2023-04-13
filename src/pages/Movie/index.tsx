@@ -5,6 +5,8 @@ import { usePalette } from "react-palette";
 import MoviePageLoader from "../../components/Loader/MoviePageLoader";
 import SecondaryButton from "../../components/UI/Buttons/SecondaryButton";
 import Button from "../../components/UI/Buttons/Button";
+import TrailerItem from "../../components/pagesSections/Main/TrailerBlock/TrailerItem";
+import Review from "../../components/pagesSections/Movie/Review";
 import { TypographyVariant } from "../../constants/styles/typography";
 import { moviesImdbNew } from "../../constants/movies";
 import { AppPathesWithoutSlug } from "../../constants/routes";
@@ -24,7 +26,9 @@ import {
   MovieInfoWrapper,
   MovieLayout,
   MovieRating,
+  MovieReviewWrapper,
   MovieTitle,
+  MovieTrailerItem,
   MovieTrailerTitle,
   MovieTrailerWrapper,
   MovieWrapper,
@@ -113,7 +117,37 @@ const Movie: FunctionComponent = () => {
       <MovieDescription>{movie?.plot}</MovieDescription>
       <MovieTrailerWrapper>
         <MovieTrailerTitle>{watchTrailerTitle}</MovieTrailerTitle>
+        <MovieTrailerItem>
+          <TrailerItem image={movie?.image} title={movie?.title} />
+        </MovieTrailerItem>
       </MovieTrailerWrapper>
+      <MovieReviewWrapper>
+        {[1, 2, 3].map((item) => (
+          <Review
+            author="Alex"
+            text="I was a person that saw all the hype and claims of masterpiece as
+        overreacting and overblown excitement for another Joker based film. I
+        thought this looked solid at best and even a bit too pretentious in the
+        trailer, but in here to say I was incredibly wrong. This is a massive
+        achievement of cinema that's extremely rare in a day and age of cgi
+        nonsense and reboots. While this is so...solid at best and even a bit too pretentious in the
+        trailer, but in here to say I was incredibly wrong. This is a massive
+        achievement of cinema that's extremely rare in a day and age of cgi
+        ievement of cinema that's extremely rare in a day and age of cgi
+        nonsense and reboots. While this is so...solid at best and even a bit too pretentious in the
+        trailer, but in here to say I was incredibly wrong. This is a massive
+        achievement of cinema that's extremely rare in a day and age of cgi
+        nonsense and reboots. While this is so
+        ievement of cinema that's extremely rare in a day and age of cgi
+        nonsense and reboots. While this is so...solid at best and even a bit too pretentious in the
+        trailer, but in here to say I was incredibly wrong. This is a massive
+        achievement of cinema that's extremely rare in a day and age of cgi
+        nonsense and reboots. While this is so
+        nonsense and reboots. While this is so...”"
+            key={item}
+          />
+        ))}
+      </MovieReviewWrapper>
       <MovieLayout
         primaryColor={data.darkVibrant}
         secondaryColor={data.lightVibrant}

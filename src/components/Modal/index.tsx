@@ -7,12 +7,13 @@ import RoundButton from "../UI/Buttons/RoundButton";
 
 import { ModalButton, ModalContainer } from "./styles";
 import { ModalProps } from "./interfaces";
+import { defaultModalWidth } from "./config";
 
 const Modal: FunctionComponent<ModalProps> = ({
   children,
   onClose,
   height,
-  width,
+  width = defaultModalWidth,
 }) => {
   const ref = useRef(null);
   useOnClickOutside({ ref, handler: onClose });

@@ -13,6 +13,8 @@ const MovieImgWidth = 260;
 const MovieInfoWrapperWidth = 420;
 const MovieRatingWidthSvg = 20;
 const MovieDescriptionWidthPercent = 100;
+const MovieTrailerItemWidth = 520;
+const MovieTrailerItemHeight = 280;
 
 export const MovieLayout = styled.div<MovieLayoutProps>`
 width: ${MovieLayoutWidthPercent}%;
@@ -37,7 +39,7 @@ export const MovieWrapper = styled.div`
   position: relative;
   width: ${MovieWrapperWidthPercent}%;
   min-height: ${MovieWrapperMinHeight}vh;
-  padding: 100px 10% 0px 10%;
+  padding: 100px 10%;
   z-index: ${({ theme }) => theme.zIndex[10]};
   margin-top: 10px;
 `;
@@ -144,4 +146,17 @@ export const MovieTrailerTitle = styled.h3`
   font-size: ${({ theme }) => theme.fontSize[24]};
   color: ${({ theme }) => theme.colors.primary};
   text-align: center;
+`;
+
+export const MovieTrailerItem = styled.div`
+  width: ${MovieTrailerItemWidth}px;
+  height: ${MovieTrailerItemHeight}px;
+  filter: drop-shadow(15px 15px 50px #000000);
+  margin: 50px auto 80px;
+`;
+
+export const MovieReviewWrapper = styled.div`
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
 `;

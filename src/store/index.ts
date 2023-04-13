@@ -19,7 +19,7 @@ const rootReducer = combineReducers(allReducers);
 const persistConfig = getPersistConfig({
   key: "root",
   storage,
-  blacklist: ["portal", "user.isError", "alert"],
+  blacklist: ["portal", "user.isError", "alert", "video"],
   rootReducer,
 });
 

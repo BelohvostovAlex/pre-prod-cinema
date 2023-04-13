@@ -6,6 +6,8 @@ const headerHeight = 80;
 const logoWrapperWidth = 140;
 const logoWrapperSvgWidth = 100;
 const profileBtnSvgWidth = 30;
+const HeaderButtonGroupSvgWidth = 25;
+const HeaderButtonGroupSvgHeight = 25;
 
 export const HeaderWrapper = styled.div`
   width: ${headerWidthPercent}%;
@@ -35,6 +37,11 @@ export const LogoWrapper = styled(Link)`
 
 export const HeaderButtonGroup = styled.div`
   ${({ theme }) => theme.flexAlignCenter};
+  svg {
+    width: ${HeaderButtonGroupSvgWidth}px;
+    height: ${HeaderButtonGroupSvgHeight}px;
+    cursor: pointer;
+  }
   svg path {
     fill: ${({ theme }) => theme.colors.primary};
   }

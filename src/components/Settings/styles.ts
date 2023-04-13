@@ -1,7 +1,9 @@
 import styled from "styled-components";
 
+const SettingsWrapperHeight = 300;
+
 export const SettingsWrapper = styled.div`
-  height: 300px;
+  height: ${SettingsWrapperHeight}px;
 `;
 
 export const SettingsControlWrapper = styled.div`
@@ -15,7 +17,7 @@ export const BoxWrapper = styled.div`
 `;
 
 export const BoxTitle = styled.h2`
-  font-size: 21px;
+  font-size: ${({ theme }) => theme.fontSize[21]};
   margin-right: 16px;
   ${({ theme }) => theme.typography.poppins_l};
   color: ${({ theme }) => theme.colors.primary};

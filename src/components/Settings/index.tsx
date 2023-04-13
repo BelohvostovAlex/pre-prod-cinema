@@ -21,16 +21,8 @@ import {
 } from "./config";
 
 const Settings: FunctionComponent = () => {
-  const {
-    changeThemeText,
-    chooseLangText,
-
-    en,
-
-    ru,
-    title,
-    titleSpan,
-  } = useSettingsText();
+  const { changeThemeText, chooseLangText, en, ru, title, titleSpan } =
+    useSettingsText();
   const { changeDarkTheme, changeLightTheme } = useActions();
   const handleLangRu = () => {
     i18n.changeLanguage(Locales.RU);

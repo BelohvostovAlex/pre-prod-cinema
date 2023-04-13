@@ -7,7 +7,7 @@ const initialState: VideoState = {
   isMuted: true,
   isPlaying: false,
   progress: 0,
-  speed: 0,
+  speed: 1,
 };
 
 export const videoSlice = createSlice({

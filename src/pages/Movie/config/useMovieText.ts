@@ -12,8 +12,5 @@ export const useMovieText = () => {
     actors: t("Movie.actors"),
     bookBtn: t("Movie.bookBtn"),
     watchTrailerTitle: t("Movie.watchTrailerTitle"),
-    review: t("Movie.review"),
-    reviewFrom: t("Movie.reviewFrom"),
-    readMore: t("Movie.readMore"),
   };
 };

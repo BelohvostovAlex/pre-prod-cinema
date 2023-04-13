@@ -13,6 +13,7 @@ import { useActions } from "../../hooks/useActionts";
 import { auth } from "../../lib/firebase.prod";
 import AuthForm from "../AuthForm";
 import { AuthFormInputProps } from "../AuthForm/interfaces";
+import { Gender } from "../../constants/authForm";
 
 import { SignUpProps } from "./interfaces";
 
@@ -39,7 +40,7 @@ const SignUp: FunctionComponent<SignUpProps> = ({
         username: options.username,
         surname: options.surname,
         photo: user.photoURL || "",
-        gender: "male",
+        gender: Gender.MALE,
         password: options.password,
         email: user.email,
         token,

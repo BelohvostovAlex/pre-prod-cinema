@@ -5,8 +5,6 @@ const TrailerItemWrapperWidth = 50;
 const TrailerItemWrapperHeight = 260;
 const TrailerItemLayoutWidthPercent = 20;
 const TrailerItemLayoutHeightPercent = 100;
-const TrailerItemImgHeightPercent = 100;
-const TrailerItemImgWidthPercent = 100;
 
 export const TrailerBlockWrapper = styled.div`
   ${({ theme }) => theme.flexAlignCenter};
@@ -30,11 +28,4 @@ export const TrailerItemLayout = styled.div`
   position: absolute;
   left: 0px;
   top: 0px;
-`;
-
-export const TrailerItemImg = styled.img`
-  width: ${TrailerItemImgWidthPercent}%;
-  height: ${TrailerItemImgHeightPercent}%;
-  object-fit: cover;
-  overflow: hidden;
 `;

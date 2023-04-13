@@ -80,10 +80,13 @@
     "author": "Режиссер",
     "actors": "Актеры",
     "bookBtn": "Забронировать!",
-    "watchTrailerTitle": "Посмотреть трейлер онлайн!",
-    "review": "Отзыв",
-    "reviewFrom": "От",
-    "readMore": "Читать больше"
+    "watchTrailerTitle": "Посмотреть трейлер онлайн!"
+  },
+  "Review": {
+    "title": "Отзыв",
+    "from": "От",
+    "readMore": "Читать больше",
+    "hide": "Скрыть"
   },
   "Errors": {
     "userAlreadyExistsViaSocial": "Пользователь с данным эл.адресом уже существует, пожалуйста, попробуйте другой метод войти",

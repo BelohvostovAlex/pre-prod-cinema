@@ -100,7 +100,7 @@ const EditProfile: FunctionComponent = () => {
         <InputFileWrapper>
           <InputUploadFileLabel htmlFor="file">
             <InputUploadFile
-              type="file"
+              type={InputTypes.FILE}
               id="file"
               hidden
               accept="image/*"
@@ -111,23 +111,23 @@ const EditProfile: FunctionComponent = () => {
         </InputFileWrapper>
         <InputGenderWrapper>
           <GenderIcon />
-          <InputUploadFileLabel htmlFor="male">
+          <InputUploadFileLabel htmlFor={Gender.MALE}>
             {male}
             <InputRadio
               {...register("gender", { required: true })}
-              type="radio"
-              id="male"
+              type={InputTypes.RADIO}
+              id={Gender.MALE}
               name="gender"
               value={Gender.MALE}
               defaultChecked={gender === Gender.MALE}
             />
           </InputUploadFileLabel>
-          <InputUploadFileLabel htmlFor="female">
+          <InputUploadFileLabel htmlFor={Gender.FEMALE}>
             {female}
             <InputRadio
               {...register("gender", { required: true })}
-              type="radio"
-              id="female"
+              type={InputTypes.RADIO}
+              id={Gender.FEMALE}
               name="gender"
               value={Gender.FEMALE}
               defaultChecked={gender === Gender.FEMALE}

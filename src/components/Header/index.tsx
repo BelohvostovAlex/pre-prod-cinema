@@ -38,6 +38,7 @@ import {
   ProfileBtnText,
 } from "./styles";
 import { useHeaderText } from "./config/useHeaderText";
+import { onOpenSignInModalMargin } from "./config";
 
 const Header: FunctionComponent = () => {
   const { fontSize } = useTheme();
@@ -112,22 +113,17 @@ const Header: FunctionComponent = () => {
           <Button
             typography={TypographyVariant.poppins_l}
             variant={ButtonVariants.PRIMARY}
-            margin="0px 35px 0px 20px"
+            margin={onOpenSignInModalMargin}
             fontSize={fontSize[14]}
             onClick={onOpenSignInModal}
           >
             {signInBtn}
           </Button>
-          <SettingsIcon
-            height="25px"
-            width="25px"
-            cursor="pointer"
-            onClick={openSettingsPortal}
-          />
+          <SettingsIcon onClick={openSettingsPortal} />
         </HeaderButtonGroup>
       )}
       <Portal showContent={isPortalOpen}>
-        <Modal onClose={closePortal} width="500px">
+        <Modal onClose={closePortal}>
           {portalVariant === PortalVariant.SIGN_UP && (
             <SignUp onFormTypeChange={onFormTypeChange} signUp={isSignUp} />
           )}

@@ -1,1 +1,3 @@
-export const isPlaying = () => 1;
+import { RootState } from "../..";
+
+export const videoSelector = (state: RootState) => state.video;

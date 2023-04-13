@@ -80,10 +80,13 @@
     "author": "Author",
     "actors": "Actors",
     "bookBtn": "Book Now!",
-    "watchTrailerTitle": "Watch trailer online!",
-    "review": "Review",
-    "reviewFrom": "From",
-    "readMore": "Read more"
+    "watchTrailerTitle": "Watch trailer online!"
+  },
+  "Review": {
+    "title": "Review",
+    "from": "From",
+    "readMore": "Read more",
+    "hide": "Hide"
   },
   "Errors": {
     "userAlreadyExistsViaSocial": "Account with dat email is already exists, please try another method to log in",

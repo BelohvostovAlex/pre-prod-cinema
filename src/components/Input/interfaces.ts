@@ -8,6 +8,9 @@ export enum InputTypes {
   EMAIL = "email",
   TEXT = "text",
   PASSWORD = "password",
+  RANGE = "range",
+  RADIO = "radio",
+  FILE = "file",
 }
 
 export interface InputProps {
