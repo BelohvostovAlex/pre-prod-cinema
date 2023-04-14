@@ -39,6 +39,7 @@ const Slider: FunctionComponent<SliderProps> = ({
   };
 
   const keyDownHandler = (e: KeyboardEvent<HTMLDivElement>) => {
+    e.preventDefault();
     if (e.key === KeyButtonVariant.ARROW_DOWN) {
       nextSlide();
     }

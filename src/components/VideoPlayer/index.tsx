@@ -127,6 +127,7 @@ const VideoPlayer: FunctionComponent<VideoPlayerProps> = ({ src }) => {
   };
 
   const handleKeyDown = (e: KeyboardEvent<HTMLDivElement>) => {
+    e.preventDefault();
     switch (e.key) {
       case KeyButtonVariant.ARROW_LEFT:
         revert();

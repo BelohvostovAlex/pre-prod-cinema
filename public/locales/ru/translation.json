@@ -88,6 +88,23 @@
     "readMore": "Читать больше",
     "hide": "Скрыть"
   },
+  "Footer": {
+    "firstColumn": {
+      "title": "Первая",
+      "toMain": "Главная страница"
+    },
+    "secondColumn": {
+      "title": "Вторая",
+      "toMain": "Главная страница"
+    },
+    "thirdColumn": {
+      "title": "Третья",
+      "toMain": "Главная страница"
+    },
+    "subscribe": "Подписаться",
+    "subscribeInputPlaceholder": "Введите эл.почту",
+    "subscribeSubtext": "Присоединяйтесь к нашей рассылке новостей, чтобы быть в курсе новых функций и релизов."
+  },
   "Errors": {
     "userAlreadyExistsViaSocial": "Пользователь с данным эл.адресом уже существует, пожалуйста, попробуйте другой метод войти",
     "popupClosedByUser": "Вход был отменен",
