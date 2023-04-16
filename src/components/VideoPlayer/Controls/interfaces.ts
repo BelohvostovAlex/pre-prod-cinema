@@ -6,6 +6,8 @@ export interface ControlsProps {
   title: string;
   progress: number;
   speed: number;
+  elapsedTime: string;
+  totalDuration: string;
 
   handlePlay: () => void;
   handleMute: () => void;

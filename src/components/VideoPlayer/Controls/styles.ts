@@ -69,17 +69,18 @@ export const BottomControls = styled.div`
 
 export const Progress = styled.input`
   width: ${ProgressWidthPercent}%;
-  margin: 0px 25px;
-  &::-moz-range-progress {
-    height: ${ProgressHeight}px;
-    background: ${({ theme }) => theme.colors.primary};
-    border: 0;
-    margin-top: 0;
-  }
-  -webkit-appearance: none !important;
+  margin: 0px 5px;
+  -webkit-appearance: none;
   background: rgba(255, 255, 255, 0.2);
   border-radius: ${({ theme }) => theme.border_radius[20]};
   height: ${ProgressHeight}px;
+  &::-webkit-progress-value {
+    height: ${ProgressHeight}px;
+    background: ${({ theme }) => theme.colors.primary} !important;
+    border: 0;
+    margin-top: 0;
+  }
+
   &::-webkit-slider-thumb {
     -webkit-appearance: none !important;
     background: ${({ theme }) => theme.colors.primary};
@@ -107,4 +108,15 @@ export const VelocityOption = styled.option`
   background: ${({ theme }) => theme.colors.backgroundColor};
   color: ${({ theme }) => theme.colors.primary};
   font-size: ${({ theme }) => theme.fontSize[10]};
+`;
+
+export const VideoTime = styled.div`
+  ${({ theme }) => theme.typography.poppins_sb};
+  color: ${({ theme }) => theme.colors.primary};
+  font-size: ${({ theme }) => theme.fontSize[10]};
+  margin-left: 20px;
+  &:last-of-type {
+    margin-right: 20px;
+    margin-left: 0px;
+  }
 `;

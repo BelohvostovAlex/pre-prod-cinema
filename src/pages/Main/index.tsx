@@ -20,11 +20,7 @@ const Main: FunctionComponent = () => {
   return (
     <MainWrapper>
       <TrailerBlock movie={moviesImdbNew[1]} isLoading={isMoviesLoading} />
-      <InTheaterBlock
-        movie={moviesImdbNew[1]}
-        data={moviesImdbNew}
-        isLoading={isMoviesLoading}
-      />
+      <InTheaterBlock data={moviesImdbNew} isLoading={isMoviesLoading} />
       <FooterSecondary />
     </MainWrapper>
   );

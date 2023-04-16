@@ -1,4 +1,5 @@
-import { FunctionComponent } from "react";
+import { FunctionComponent, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import MovieInfoBlock from "../MovieInfoBlock";
 import Slider from "../../../Slider";
@@ -7,6 +8,7 @@ import { TypographyVariant } from "../../../../constants/styles/typography";
 import MovieInfoBlockSkeleton from "../../../Skeletons/MovieInfoBlock";
 import InTheaterBlockImageSkeleton from "../../../Skeletons/InTheaterBlock/InTheaterBlockImageSkeleton";
 import SliderSkeleton from "../../../Skeletons/InTheaterBlock/SliderSkeleton";
+import { AppPathesWithoutSlug } from "../../../../constants/routes";
 
 import {
   InTheaterBlockWrapper,
@@ -20,10 +22,15 @@ import {
 import { InTheaterBlockProps } from "./interfaces";
 
 const InTheaterBlock: FunctionComponent<InTheaterBlockProps> = ({
-  movie,
   data,
   isLoading,
 }) => {
+  const navigate = useNavigate();
+  const [index, setIndex] = useState<number>(0);
+
+  const handleNavigateToMovie = () => {
+    navigate(`${AppPathesWithoutSlug.MOVIE}${data[index].id}`);
+  };
   return (
     <InTheaterBlockWrapper>
       {isLoading ? (
@@ -31,8 +38,8 @@ const InTheaterBlock: FunctionComponent<InTheaterBlockProps> = ({
       ) : (
         <MovieInfoBlock
           typography={TypographyVariant.inria_l_ital}
-          text={movie.plot}
-          title={movie.title}
+          text={data[index].plot}
+          title={data[index].title}
         />
       )}
       {isLoading ? (
@@ -44,18 +51,18 @@ const InTheaterBlock: FunctionComponent<InTheaterBlockProps> = ({
         </>
       ) : (
         <>
-          <InTheaterImgWrapper>
-            <InTheaterImg src={movie.image} />
-            <InTheterImgTitle>{movie.title}</InTheterImgTitle>
+          <InTheaterImgWrapper onClick={handleNavigateToMovie}>
+            <InTheaterImg src={data[index].image} />
+            <InTheterImgTitle>{data[index].title}</InTheterImgTitle>
             <TagsWrapper>
-              {movie?.genres &&
-                movie.genres
+              {data &&
+                data[index]?.genres
                   .split(",")
                   .map((item) => <Chip text={item} key={item} />)}
             </TagsWrapper>
           </InTheaterImgWrapper>
           <SliderBox>
-            <Slider data={data} />
+            <Slider data={data} index={index} setIndex={setIndex} />
           </SliderBox>
         </>
       )}

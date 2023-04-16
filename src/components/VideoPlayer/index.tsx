@@ -1,20 +1,13 @@
-import {
-  ChangeEvent,
-  FunctionComponent,
-  KeyboardEvent,
-  useEffect,
-  useRef,
-} from "react";
+import { FunctionComponent, useEffect, useRef } from "react";
 
 import trailer from "../../assets/video/Inception.mp4";
-import { useActions } from "../../hooks/useActionts";
 import { useAppSelector } from "../../hooks/useAppSelector";
-import { KeyButtonVariant } from "../../constants/keyboard";
 import { videoSelector } from "../../store/slices/videoSlice/selectors";
 
 import { VidePlayerWrapper, Video, VideoLayout } from "./styles";
 import { VideoPlayerProps } from "./interfaces";
 import Controls from "./Controls";
+import { useVideoControl } from "./config/useVideoControl";
 
 const VideoPlayer: FunctionComponent<VideoPlayerProps> = ({ src }) => {
   const {
@@ -23,138 +16,25 @@ const VideoPlayer: FunctionComponent<VideoPlayerProps> = ({ src }) => {
     progress: videoProgress,
     speed: videoSpeed,
   } = useAppSelector(videoSelector);
-  const { togglePlay, setProgress, toggleMute, setSpeed } = useActions();
+
   const videoRef = useRef<HTMLVideoElement>(null);
 
-  useEffect(() => {
-    const { current } = videoRef;
-    if (current) {
-      isPlaying ? current.play() : current.pause();
-    }
-  }, [isPlaying, videoRef]);
-
-  const handlePlay = async () => {
-    togglePlay();
-  };
-
-  const handleOnTimeUpdate = () => {
-    const { current } = videoRef;
-    if (current) {
-      const progress = (current.currentTime / current.duration) * 100;
-      setProgress(progress);
-    }
-  };
-
-  const handleVideoProgress = (e: ChangeEvent<HTMLInputElement>) => {
-    const { current } = videoRef;
-    if (current) {
-      const { value } = e.target;
-      const manualChange = Number(value);
-      current.currentTime = (current.duration / 100) * manualChange;
-      setProgress(manualChange);
-    }
-  };
-
-  const handleVideoSpeed = (e: ChangeEvent<HTMLSelectElement>) => {
-    const { current } = videoRef;
-    if (current) {
-      const { value } = e.target;
-      const speed = Number(value);
-      current.playbackRate = speed;
-      setSpeed(speed);
-    }
-  };
-
-  const handleVideoSpeedByAngles = (e: KeyboardEvent<HTMLDivElement>) => {
-    const { current } = videoRef;
-    if (current) {
-      const { key } = e;
-      if (
-        key === KeyButtonVariant.AngleBracketLeft &&
-        current.playbackRate > 0.25
-      ) {
-        current.playbackRate -= 0.25;
-        setSpeed(current.playbackRate);
-      }
-      if (
-        key === KeyButtonVariant.AngleBracketLeft &&
-        current.playbackRate === 0.25
-      ) {
-        return;
-      }
-      if (
-        key === KeyButtonVariant.AngleBracketRight &&
-        current.playbackRate < 2
-      ) {
-        current.playbackRate += 0.25;
-        setSpeed(current.playbackRate);
-      }
-      if (
-        key === KeyButtonVariant.AngleBracketLeft &&
-        current.playbackRate === 2
-      ) {
-        return;
-      }
-    }
-  };
-
-  const handleMute = () => {
-    toggleMute();
-  };
-
-  const fastForward = () => {
-    const { current } = videoRef;
-    if (current) {
-      current.currentTime += 10;
-    }
-  };
-
-  const revert = () => {
-    const { current } = videoRef;
-    if (current) {
-      current.currentTime -= 10;
-    }
-  };
-
-  const handleFullScreen = () => {
-    const { current } = videoRef;
-    if (current) {
-      current
-        .requestFullscreen()
-        .then(() => {})
-        .catch(() => {});
-    }
-  };
-
-  const handleKeyDown = (e: KeyboardEvent<HTMLDivElement>) => {
-    e.preventDefault();
-    switch (e.key) {
-      case KeyButtonVariant.ARROW_LEFT:
-        revert();
-        return;
-      case KeyButtonVariant.ARROW_RIGHT:
-        fastForward();
-        return;
-      case KeyButtonVariant.SPACE:
-        handlePlay();
-        return;
-      case KeyButtonVariant.M:
-        handleMute();
-        return;
-      case KeyButtonVariant.F:
-        handleFullScreen();
-        return;
-      case KeyButtonVariant.AngleBracketLeft:
-        handleVideoSpeedByAngles(e);
-        return;
-      case KeyButtonVariant.AngleBracketRight:
-        handleVideoSpeedByAngles(e);
-        return;
-    }
-  };
+  const {
+    fastForward,
+    handleFullScreen,
+    handleKeyDown,
+    handleMute,
+    handleOnTimeUpdate,
+    handlePlay,
+    handleVideoProgress,
+    handleVideoSpeed,
+    revert,
+    elapsedTime,
+    totalDuration,
+  } = useVideoControl(videoRef, isPlaying, isMuted);
 
   useEffect(() => {
-    const { current } = videoRef;
+    const current = videoRef?.current;
     if (current) {
       isMuted ? (current.muted = true) : (current.muted = false);
     }
@@ -176,6 +56,8 @@ const VideoPlayer: FunctionComponent<VideoPlayerProps> = ({ src }) => {
           fastForward={fastForward}
           revert={revert}
           handleFullScreen={handleFullScreen}
+          elapsedTime={elapsedTime}
+          totalDuration={totalDuration}
         />
       </VideoLayout>
       <Video ref={videoRef} onTimeUpdate={handleOnTimeUpdate}>

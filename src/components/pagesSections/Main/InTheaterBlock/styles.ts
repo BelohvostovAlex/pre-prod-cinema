@@ -16,6 +16,7 @@ export const InTheaterImgWrapper = styled.div`
   align-self: end;
   ${({ theme }) => theme.flexAlignCenter};
   flex-direction: column;
+  cursor: pointer;
 `;
 
 export const InTheaterImgSkeletonWrapper = styled.div`

@@ -7,10 +7,3 @@ export const getMovies = async () => {
 
   return data;
 };
-
-// export const getMoviesInTheaters = async () => {
-//   const response = await axios.get(
-//     "https://imdb-api.com/en/API/InTheaters/k_4k2wy26d",
-//   );
-//   return response.data;
-// };

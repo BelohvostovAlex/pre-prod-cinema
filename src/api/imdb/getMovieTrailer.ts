@@ -6,3 +6,4 @@ export const getMovieTrailer = async () => {
   );
   return response.data;
 };
+//have to try this api

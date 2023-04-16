@@ -1,4 +1,4 @@
-import { FunctionComponent, KeyboardEvent, WheelEvent, useState } from "react";
+import { FunctionComponent, KeyboardEvent, WheelEvent } from "react";
 
 import { ReactComponent as DownIcon } from "../../assets/svg/tools/down.svg";
 import { ReactComponent as UpIcon } from "../../assets/svg/tools/up.svg";
@@ -12,8 +12,9 @@ import { SliderProps } from "./interfaces";
 const Slider: FunctionComponent<SliderProps> = ({
   direction = SliderDirectionVariant.VERTICAL,
   data,
+  index,
+  setIndex,
 }) => {
-  const [index, setIndex] = useState<number>(0);
   const dataLength = data.length;
 
   const mod = (n: number, m: number) => {

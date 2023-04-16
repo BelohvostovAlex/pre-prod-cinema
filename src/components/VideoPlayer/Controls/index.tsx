@@ -17,6 +17,7 @@ import {
   Progress,
   Velocity,
   VelocityOption,
+  VideoTime,
 } from "./styles";
 import { ControlsProps } from "./interfaces";
 import { progressRangeMax, progressRangeMin, speedOptions } from "./config";
@@ -27,6 +28,8 @@ const Controls: FunctionComponent<ControlsProps> = ({
   title,
   progress,
   speed,
+  elapsedTime,
+  totalDuration,
   handlePlay,
   handleMute,
   handleProgress,
@@ -53,6 +56,7 @@ const Controls: FunctionComponent<ControlsProps> = ({
         ) : (
           <PlayIcon onClick={handlePlay} />
         )}
+        <VideoTime>{elapsedTime}</VideoTime>
         <Progress
           type={InputTypes.RANGE}
           min={progressRangeMin}
@@ -60,6 +64,7 @@ const Controls: FunctionComponent<ControlsProps> = ({
           value={progress}
           onChange={handleProgress}
         />
+        <VideoTime>{totalDuration}</VideoTime>
         {isMuted ? (
           <MuteIcon onClick={handleMute} />
         ) : (
