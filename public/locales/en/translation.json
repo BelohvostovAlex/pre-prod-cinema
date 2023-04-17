@@ -81,7 +81,9 @@
     "actors": "Actors",
     "bookBtn": "Book Now!",
     "watchTrailerTitle": "Watch trailer online!",
-    "noReviewsTitle": "No reviews"
+    "noReviewsTitle": "No reviews",
+    "notAuthBookBtn": "You should login first",
+    "bookingSectionTitle": "Book Now!"
   },
   "Review": {
     "title": "Review",

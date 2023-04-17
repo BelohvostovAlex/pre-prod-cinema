@@ -13,5 +13,7 @@ export const useMovieText = () => {
     bookBtn: t("Movie.bookBtn"),
     watchTrailerTitle: t("Movie.watchTrailerTitle"),
     noReviewsTitle: t("Movie.noReviewsTitle"),
+    notAuthBookBtn: t("Movie.notAuthBookBtn"),
+    bookingSectionTitle: t("Movie.bookingSectionTitle"),
   };
 };

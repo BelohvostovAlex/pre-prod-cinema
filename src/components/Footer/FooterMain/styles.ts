@@ -61,7 +61,7 @@ export const FooterColumnItem = styled.li`
   }
 `;
 
-export const FooterFooterSubscribeInputWrapper = styled.div`
+export const FooterSubscribeInputWrapper = styled.div`
   ${({ theme }) => theme.flexAlignCenter};
   justify-content: space-between;
   background: ${({ theme }) => theme.colors.darkGray};

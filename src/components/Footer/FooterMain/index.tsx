@@ -11,9 +11,9 @@ import {
   FooterColumnItem,
   FooterColumnSubscribeSubText,
   FooterColumnTitle,
-  FooterFooterSubscribeInputWrapper,
   FooterLogo,
   FooterSubscribeInput,
+  FooterSubscribeInputWrapper,
   FooterWrapper,
 } from "./styles";
 import { useFooterText } from "./config/useFooterText";
@@ -79,13 +79,13 @@ const FooterMain: FunctionComponent = () => {
       </FooterColumn>
       <FooterColumn>
         <FooterColumnTitle>{subscribe}</FooterColumnTitle>
-        <FooterFooterSubscribeInputWrapper>
+        <FooterSubscribeInputWrapper>
           <FooterSubscribeInput
             type={InputTypes.EMAIL}
             placeholder={subscribeInputPlaceholder}
           />
           <TelegramIcon />
-        </FooterFooterSubscribeInputWrapper>
+        </FooterSubscribeInputWrapper>
         <FooterColumnSubscribeSubText>
           {subscribeSubtext}
         </FooterColumnSubscribeSubText>

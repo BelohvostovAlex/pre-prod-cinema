@@ -1,4 +1,4 @@
-import { FunctionComponent } from "react";
+import { FunctionComponent, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { usePalette } from "react-palette";
 
@@ -14,7 +14,12 @@ import { ButtonVariants } from "../../constants/buttons";
 import { ReactComponent as ArrowRightIcon } from "../../assets/svg/tools/right.svg";
 import { ReactComponent as StarIcon } from "../../assets/svg/tools/Star.svg";
 import { reviewsData } from "../../constants/movies/reviews";
-// import { useAppSelector } from "../../hooks/useAppSelector";
+import Divider from "../../components/UI/Divider";
+import MovieBooking from "../../components/pagesSections/Movie/MovieBooking";
+import { useAppSelector } from "../../hooks/useAppSelector";
+import { isAuthSelector } from "../../store/slices/userSlice/selectors";
+import { useActions } from "../../hooks/useActionts";
+import { AlertTypes } from "../../constants/alert";
 // import { moviesSelector } from "../../store/slices/movieSlice/selectors";
 
 import {
@@ -45,6 +50,10 @@ import { handleNextMovieIndex } from "./config/handleNextMovieIndex";
 const Movie: FunctionComponent = () => {
   const { id } = useParams();
   const navigate = useNavigate();
+  const [isBookSectionVisible, setIsBookSectionVisible] =
+    useState<boolean>(false);
+  const isAuth = useAppSelector(isAuthSelector);
+  const { setIsAlertOpen } = useActions();
   // const movies = useAppSelector(moviesSelector);
   // const movieReviews = useGetMoviesReview(id!);
   const {
@@ -57,6 +66,7 @@ const Movie: FunctionComponent = () => {
     releaseYear,
     watchTrailerTitle,
     noReviewsTitle,
+    notAuthBookBtn,
   } = useMovieText();
 
   const movie = moviesImdbNew.find((item) => item.id === id);
@@ -68,8 +78,19 @@ const Movie: FunctionComponent = () => {
     navigate(`${AppPathesWithoutSlug.MOVIE}${nextMovie.id}`);
   };
 
-  if (loading) return <MoviePageLoader />;
-  if (!movie) return <MoviePageLoader />; //доделать
+  const handleBookBtn = () => {
+    if (isAuth) {
+      setIsBookSectionVisible(true);
+    } else {
+      setIsAlertOpen({
+        isOpen: true,
+        text: notAuthBookBtn,
+        type: AlertTypes.ERROR,
+      });
+    }
+  };
+
+  if (loading || !movie) return <MoviePageLoader />;
 
   return (
     <MovieWrapper>
@@ -111,6 +132,7 @@ const Movie: FunctionComponent = () => {
               typography={TypographyVariant.poppins_l}
               variant={ButtonVariants.SECONDARY}
               width={buttonWidth}
+              onClick={handleBookBtn}
             >
               {bookBtn}
             </Button>
@@ -122,6 +144,13 @@ const Movie: FunctionComponent = () => {
         </MovieInfoWrapper>
       </MovieInfo>
       <MovieDescription>{movie?.plot}</MovieDescription>
+      {isBookSectionVisible && (
+        <>
+          <Divider />
+          <MovieBooking />
+          <Divider />
+        </>
+      )}
       <MovieTrailerWrapper>
         <MovieTrailerTitle>{watchTrailerTitle}</MovieTrailerTitle>
         <MovieTrailerItem>

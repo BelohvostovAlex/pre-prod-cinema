@@ -81,7 +81,9 @@
     "actors": "Актеры",
     "bookBtn": "Забронировать!",
     "watchTrailerTitle": "Посмотреть трейлер онлайн!",
-    "noReviewsTitle": "Нет отзывов"
+    "noReviewsTitle": "Нет отзывов",
+    "notAuthBookBtn": "Войдите в свой аккаунт, пожалуйста",
+    "bookingSectionTitle": "Забронировать!"
   },
   "Review": {
     "title": "Отзыв",

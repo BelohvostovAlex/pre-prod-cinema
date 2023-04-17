@@ -132,6 +132,7 @@ export const MovieDescription = styled.p`
   color: ${({ theme }) => theme.colors.primary};
   margin-top: 20px;
   width: ${MovieDescriptionWidthPercent}%;
+  margin-bottom: ${({ theme }) => theme.margin.mb50};
 `;
 
 export const MovieTrailerWrapper = styled.div`
