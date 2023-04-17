@@ -1,60 +1,55 @@
 import { Colors } from "../constants/styles/colors";
 
+export const transparentColor = "transparent";
+export const zeroWidth = 0;
+export const tenWidth = 10;
+export const thirtyWidth = 30;
+export const sixtyWidth = 60;
+export const fullWidth = 100;
+
 export const passwordStrengthHandler = (value: string) => {
-  const specialSymbols = /[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]+/;
   if (!value) {
     return {
-      width: "0%",
-      color: "transparent",
+      width: `${zeroWidth}%`,
+      color: transparentColor,
     };
   }
   const length = value.length;
   if (length) {
     if (length < 4) {
       return {
-        width: "10%",
+        width: `${tenWidth}%`,
         color: Colors.RED,
       };
     }
     if (length >= 4 && length < 8) {
       return {
-        width: "30%",
+        width: `${thirtyWidth}%`,
         color: Colors.RED,
       };
     }
-    if (length >= 8 && length < 16 && !!/^[a-zа-я\d]*$/.test(value)) {
+    if (length >= 8 && length < 12 && /[A-ZА-Я]+/g.test(value)) {
       return {
-        width: "30%",
+        width: `${sixtyWidth}%`,
+        color: Colors.ORANGE,
+      };
+    }
+    if (length >= 8 && !/[A-ZА-Я]+/g.test(value)) {
+      return {
+        width: `${thirtyWidth}%`,
         color: Colors.RED,
       };
     }
-    if (length >= 8 && length < 12 && !/^[a-zа-я\d]*$/.test(value)) {
+    if (length >= 12 && /\W+/g.test(value) && /[A-ZА-Я]+/g.test(value)) {
       return {
-        width: "60%",
-        color: Colors.ORANGE,
-      };
-    }
-    if (
-      length >= 12 &&
-      length < 16 &&
-      value.match(/[A-ZА-Я]/g) &&
-      !specialSymbols.test(value)
-    ) {
-      return {
-        width: "60%",
-        color: Colors.ORANGE,
-      };
-    }
-    if (
-      length >= 12 &&
-      length < 16 &&
-      [/[a-zа-я\d]/, /[A-ZА-Я]/, /[0-9]/, /[^a-zа-яA-ZА-Я0-9]/].every(
-        (pattern) => pattern.test(value),
-      )
-    ) {
-      return {
-        width: "100%",
+        width: `${fullWidth}%`,
         color: Colors.GREEN,
+      };
+    }
+    if (length >= 12 && !/\W+/g.test(value) && /[A-ZА-Я]+/g.test(value)) {
+      return {
+        width: `${sixtyWidth}%`,
+        color: Colors.ORANGE,
       };
     }
   }

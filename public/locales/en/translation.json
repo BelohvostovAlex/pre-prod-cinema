@@ -117,7 +117,7 @@
   "AuthInputErrors": {
     "invalidEmail": "invalid email",
     "passwordMin": "min 6 symbols",
-    "passwordMustInclude": "must include lower, upper, number, and special chars",
+    "passwordMustInclude": "must include at least one uppercase letter",
     "required": "field is required",
     "textOnlyLetter": "only letters",
     "textMaxLength": "should't be over 20 symbols",

@@ -43,9 +43,8 @@ export const useValidationWithTranslate = () => {
             if (!required && !value) return;
             if (required) {
               return (
-                [/[a-zа-я\d]/, /[A-ZА-Я]/, /[0-9]/, /[^a-zа-яA-ZА-Я0-9]/].every(
-                  (pattern) => pattern.test(value),
-                ) || passwordText.passwordMustInclude
+                [/[A-ZА-Я]/].every((pattern) => pattern.test(value)) ||
+                passwordText.passwordMustInclude
               );
             }
           },

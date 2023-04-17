@@ -117,7 +117,7 @@
   "AuthInputErrors": {
     "invalidEmail": "неверный эл.адрес",
     "passwordMin": "мин. 6 символов",
-    "passwordMustInclude": "как минимум одна большая, маленькая буква, цифра, спец.символ",
+    "passwordMustInclude": "как минимум одна большая буква",
     "required": "поле обязательно",
     "textOnlyLetter": "только буквы",
     "textMaxLength": "не больше 20 символов",
