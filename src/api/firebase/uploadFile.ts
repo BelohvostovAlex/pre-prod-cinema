@@ -14,14 +14,26 @@ interface UploadFileProps {
 }
 
 export const uploadFile = async (options: UploadFileProps) => {
-  const { collection, file, id } = options;
-  const storageRef = ref(storage, id);
-  const uploadTask = uploadBytesResumable(storageRef, file);
+  try {
+    const { collection, file, id } = options;
+    const storageRef = ref(storage, id);
+    const uploadTask = uploadBytesResumable(storageRef, file);
 
-  const downloadURL = await getDownloadURL(uploadTask.snapshot.ref);
-  await updateDocument({
-    collection,
-    id,
-    newDoc: { photo: downloadURL },
-  });
+    uploadTask.on(
+      "state_changed",
+      (snapshot) => {},
+      (error) => {},
+      () => {
+        getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+          updateDocument({
+            collection,
+            id,
+            newDoc: { photo: downloadURL },
+          });
+        });
+      },
+    );
+  } catch (error) {
+    throw error;
+  }
 };

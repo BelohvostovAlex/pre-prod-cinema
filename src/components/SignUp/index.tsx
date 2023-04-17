@@ -1,19 +1,7 @@
-import { FirebaseError } from "firebase/app";
-import { createUserWithEmailAndPassword } from "firebase/auth";
 import { FunctionComponent } from "react";
 
-import { createDocument } from "../../api/firebase/createDocument";
-import { AlertTypes } from "../../constants/alert";
-import { FirebaseErrorsTypes } from "../../constants/errors/firebaseErrors";
-import { FirebaseCollections } from "../../constants/firebase/collections";
-import { isStrIncludesValueHandler } from "../../helpers/isStrIncludeValueHandler";
-import { useErrorTranslation } from "../../hooks/errorTranslation/useErrorTranslation";
-import { useClosePortal } from "../../hooks/portal/useClosePortal";
-import { useActions } from "../../hooks/useActionts";
-import { auth } from "../../lib/firebase.prod";
 import AuthForm from "../AuthForm";
-import { AuthFormInputProps } from "../AuthForm/interfaces";
-import { Gender } from "../../constants/authForm";
+import { useSignUp } from "../../hooks/auth/authByEmail/useSignUp";
 
 import { SignUpProps } from "./interfaces";
 
@@ -21,53 +9,7 @@ const SignUp: FunctionComponent<SignUpProps> = ({
   onFormTypeChange,
   signUp,
 }) => {
-  const { setUser, setLoading, setUserError, setIsAlertOpen } = useActions();
-  const { emailAlreadyInUse } = useErrorTranslation();
-  const closePortal = useClosePortal();
-
-  const handleSignUp = async (options: AuthFormInputProps) => {
-    try {
-      setLoading(true);
-      const { user } = await createUserWithEmailAndPassword(
-        auth,
-        options.email,
-        options.password,
-      );
-      const token = await user.getIdToken();
-
-      const newUser = {
-        id: user.uid,
-        username: options.username,
-        surname: options.surname,
-        photo: user.photoURL || "",
-        gender: Gender.MALE,
-        password: options.password,
-        email: user.email,
-        token,
-      };
-      await createDocument({
-        collection: FirebaseCollections.USERS,
-        document: newUser,
-        id: user.uid,
-      });
-      setUser(newUser);
-      closePortal();
-    } catch (e) {
-      if (
-        e instanceof FirebaseError &&
-        isStrIncludesValueHandler(e.code, FirebaseErrorsTypes.EMAIL_IN_USE)
-      ) {
-        setUserError(emailAlreadyInUse);
-        setIsAlertOpen({
-          isOpen: true,
-          text: emailAlreadyInUse,
-          type: AlertTypes.ERROR,
-        });
-      } else {
-        setUserError((e as Error).message);
-      }
-    }
-  };
+  const handleSignUp = useSignUp();
 
   return (
     <AuthForm

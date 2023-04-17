@@ -1,18 +1,18 @@
 import { FirebaseError } from "firebase/app";
 import { signInWithPopup } from "firebase/auth";
 
-import { createDocument } from "../../api/firebase/createDocument";
-import { getDocument } from "../../api/firebase/getDocument";
-import { updateDocument } from "../../api/firebase/updateDocument";
-import { AlertTypes } from "../../constants/alert";
-import { FirebaseErrorsTypes } from "../../constants/errors/firebaseErrors";
-import { FirebaseCollections } from "../../constants/firebase/collections";
-import { isStrIncludesValueHandler } from "../../helpers/isStrIncludeValueHandler";
-import { auth } from "../../lib/firebase.prod";
-import { IUser } from "../../models/IUser";
-import { useErrorTranslation } from "../errorTranslation/useErrorTranslation";
-import { useClosePortal } from "../portal/useClosePortal";
-import { useActions } from "../useActionts";
+import { createDocument } from "../../../api/firebase/createDocument";
+import { getDocument } from "../../../api/firebase/getDocument";
+import { updateDocument } from "../../../api/firebase/updateDocument";
+import { AlertTypes } from "../../../constants/alert";
+import { FirebaseErrorsTypes } from "../../../constants/errors/firebaseErrors";
+import { FirebaseCollections } from "../../../constants/firebase/collections";
+import { isStrIncludesValueHandler } from "../../../helpers/isStrIncludeValueHandler";
+import { auth } from "../../../lib/firebase.prod";
+import { IUser } from "../../../models/IUser";
+import { useErrorTranslation } from "../../errorTranslation/useErrorTranslation";
+import { useClosePortal } from "../../portal/useClosePortal";
+import { useActions } from "../../useActionts";
 
 import { UseAuthBySocialNetwork } from "./interfaces";
 

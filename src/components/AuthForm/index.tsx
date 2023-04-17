@@ -18,7 +18,7 @@ import { AuthFormInputsPossibleNames } from "../../constants/authForm";
 import { ButtonTypes, ButtonVariants } from "../../constants/buttons";
 import { Colors } from "../../constants/styles/colors";
 import { TypographyVariant } from "../../constants/styles/typography";
-import { useAuthBySocialNetwork } from "../../hooks/authBySocial/useAuthBySocialNetworks";
+import { useAuthBySocialNetwork } from "../../hooks/auth/authBySocial/useAuthBySocialNetworks";
 import { InputTypes } from "../Input/interfaces";
 import InputWithIcon from "../InputWithIcon";
 import ModalTitle from "../Modal/ModalTitle";

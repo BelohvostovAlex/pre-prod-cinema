@@ -50,14 +50,21 @@ export const useEditProfile = (options: UseEditProfileProps) => {
       };
       if (isValid && file) {
         await uploadFile({ collection, id, file });
-        updateUser({ photo: file.name });
+
+        const url = URL.createObjectURL(file);
+        updateUser({ photo: url });
       }
 
       if (isValid && data.password) {
         await updateUserPassword(data.password);
+        await updateDocument({
+          collection,
+          id,
+          newDoc: { password: data.password },
+        });
       }
 
-      if (isValid && !data.password) {
+      if (isValid && !data.password && !file) {
         await updateDocument({
           collection,
           id,
