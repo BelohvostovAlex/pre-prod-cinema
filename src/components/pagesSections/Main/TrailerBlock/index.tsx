@@ -24,8 +24,8 @@ const TrailerBlock: FunctionComponent<TrailerBlockProps> = ({
       ) : (
         <MovieInfoBlock
           typography={TypographyVariant.nunito_l}
-          text={movie.plot}
-          title={movie.title}
+          text={movie?.plot}
+          title={movie?.title}
         />
       )}
       {isLoading ? (
@@ -33,7 +33,7 @@ const TrailerBlock: FunctionComponent<TrailerBlockProps> = ({
       ) : (
         <TrailerItemWrapper>
           <TrailerItemLayout />
-          <TrailerItem image={movie.image} title={movie.title} />
+          <TrailerItem image={movie?.image} title={movie?.title} />
         </TrailerItemWrapper>
       )}
     </TrailerBlockWrapper>

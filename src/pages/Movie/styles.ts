@@ -160,3 +160,10 @@ export const MovieReviewWrapper = styled.div`
   align-items: start;
   justify-content: space-between;
 `;
+
+export const MovieNoReviewTitle = styled.h3`
+  ${({ theme }) => theme.typography.poppins_sb};
+  font-size: ${({ theme }) => theme.fontSize[24]};
+  color: ${({ theme }) => theme.colors.primary};
+  text-align: center;
+`;

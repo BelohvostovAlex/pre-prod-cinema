@@ -80,7 +80,8 @@
     "author": "Режиссер",
     "actors": "Актеры",
     "bookBtn": "Забронировать!",
-    "watchTrailerTitle": "Посмотреть трейлер онлайн!"
+    "watchTrailerTitle": "Посмотреть трейлер онлайн!",
+    "noReviewsTitle": "Нет отзывов"
   },
   "Review": {
     "title": "Отзыв",

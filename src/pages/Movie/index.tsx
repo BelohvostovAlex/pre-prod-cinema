@@ -13,6 +13,9 @@ import { AppPathesWithoutSlug } from "../../constants/routes";
 import { ButtonVariants } from "../../constants/buttons";
 import { ReactComponent as ArrowRightIcon } from "../../assets/svg/tools/right.svg";
 import { ReactComponent as StarIcon } from "../../assets/svg/tools/Star.svg";
+import { reviewsData } from "../../constants/movies/reviews";
+// import { useAppSelector } from "../../hooks/useAppSelector";
+// import { moviesSelector } from "../../store/slices/movieSlice/selectors";
 
 import {
   MovieBookWrapper,
@@ -25,6 +28,7 @@ import {
   MovieInfoItemSpan,
   MovieInfoWrapper,
   MovieLayout,
+  MovieNoReviewTitle,
   MovieRating,
   MovieReviewWrapper,
   MovieTitle,
@@ -35,10 +39,14 @@ import {
 } from "./styles";
 import { useMovieText } from "./config/useMovieText";
 import { buttonWidth, secondaryButtonExtraStyles } from "./config";
+// import { useGetMoviesReview } from "./config/useGetMovieReviews";
+import { handleNextMovieIndex } from "./config/handleNextMovieIndex";
 
 const Movie: FunctionComponent = () => {
   const { id } = useParams();
   const navigate = useNavigate();
+  // const movies = useAppSelector(moviesSelector);
+  // const movieReviews = useGetMoviesReview(id!);
   const {
     actors,
     author,
@@ -48,17 +56,16 @@ const Movie: FunctionComponent = () => {
     moveToNextMovieBtn,
     releaseYear,
     watchTrailerTitle,
+    noReviewsTitle,
   } = useMovieText();
-  const movie = moviesImdbNew.find((item) => item.id === id);
-  const movieIndex = moviesImdbNew.findIndex((item) => item.id === id);
-  const nextMovie = moviesImdbNew[movieIndex + 1];
 
-  const { data, loading } = usePalette(movie!.image);
+  const movie = moviesImdbNew.find((item) => item.id === id);
+  const nextMovie = handleNextMovieIndex(moviesImdbNew, id!);
+
+  const { data, loading } = usePalette(movie?.image);
 
   const navigateToNextMovie = () => {
-    if (nextMovie) {
-      navigate(`${AppPathesWithoutSlug.MOVIE}${nextMovie.id}`);
-    }
+    navigate(`${AppPathesWithoutSlug.MOVIE}${nextMovie.id}`);
   };
 
   if (loading) return <MoviePageLoader />;
@@ -121,33 +128,25 @@ const Movie: FunctionComponent = () => {
           <TrailerItem image={movie?.image} title={movie?.title} />
         </MovieTrailerItem>
       </MovieTrailerWrapper>
-      <MovieReviewWrapper>
-        {[1, 2, 3].map((item) => (
-          <Review
-            author="Alex"
-            text="I was a person that saw all the hype and claims of masterpiece as
-        overreacting and overblown excitement for another Joker based film. I
-        thought this looked solid at best and even a bit too pretentious in the
-        trailer, but in here to say I was incredibly wrong. This is a massive
-        achievement of cinema that's extremely rare in a day and age of cgi
-        nonsense and reboots. While this is so...solid at best and even a bit too pretentious in the
-        trailer, but in here to say I was incredibly wrong. This is a massive
-        achievement of cinema that's extremely rare in a day and age of cgi
-        ievement of cinema that's extremely rare in a day and age of cgi
-        nonsense and reboots. While this is so...solid at best and even a bit too pretentious in the
-        trailer, but in here to say I was incredibly wrong. This is a massive
-        achievement of cinema that's extremely rare in a day and age of cgi
-        nonsense and reboots. While this is so
-        ievement of cinema that's extremely rare in a day and age of cgi
-        nonsense and reboots. While this is so...solid at best and even a bit too pretentious in the
-        trailer, but in here to say I was incredibly wrong. This is a massive
-        achievement of cinema that's extremely rare in a day and age of cgi
-        nonsense and reboots. While this is so
-        nonsense and reboots. While this is so...”"
-            key={item}
-          />
-        ))}
-      </MovieReviewWrapper>
+      {reviewsData?.items?.length > 0 ? (
+        <MovieReviewWrapper>
+          {/* {movieReviews?.items &&
+          movieReviews.items
+            .slice(0, 3)
+            .map(({ username, content, reviewLink }) => (
+              <Review author={username} text={content} key={reviewLink} />
+            ))} */}
+
+          {reviewsData.items
+            .slice(0, 3)
+            .map(({ username, content, reviewLink }) => (
+              <Review author={username} text={content} key={reviewLink} />
+            ))}
+        </MovieReviewWrapper>
+      ) : (
+        <MovieNoReviewTitle>{noReviewsTitle}</MovieNoReviewTitle>
+      )}
+
       <MovieLayout
         primaryColor={data.darkVibrant}
         secondaryColor={data.lightVibrant}

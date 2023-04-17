@@ -4,6 +4,7 @@ import TrailerBlock from "../../components/pagesSections/Main/TrailerBlock";
 import InTheaterBlock from "../../components/pagesSections/Main/InTheaterBlock";
 import FooterSecondary from "../../components/Footer/FooterSecondary";
 import { useAppSelector } from "../../hooks/useAppSelector";
+// import { useActions } from "../../hooks/useActionts";
 import { isMoviesLoadingSelector } from "../../store/slices/movieSlice/selectors";
 import { moviesImdbNew } from "../../constants/movies";
 

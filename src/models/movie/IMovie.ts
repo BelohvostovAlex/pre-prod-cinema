@@ -1,15 +1,18 @@
 export interface IMovie {
-  description: string;
-  director: string;
-  genre: string[];
+  directors: string;
+  stars: string;
+  genres: string;
   id: string;
   image: string;
-  imdbid: string;
-  rank: number;
-  rating: string;
-  thumbnail: string;
   title: string;
-  trailer: string;
-  writers: string[];
-  year: number;
+  fullTitle: string;
+  year: string;
+  releaseState: string;
+  runtimeMins: string;
+  runtimeStr: string;
+  plot: string;
+  contentRating: string;
+  imDbRating: string;
+  imDbRatingCount: string;
+  metacriticRating: string;
 }

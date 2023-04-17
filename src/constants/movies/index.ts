@@ -1,4 +1,6 @@
-export const moviesImdbNew = [
+import { IMovie } from "../../models/movie/IMovie";
+
+export const moviesImdbNew: IMovie[] = [
   {
     id: "tt6718170",
     title: "The Super Mario Bros. Movie",
@@ -15,25 +17,8 @@ export const moviesImdbNew = [
     imDbRatingCount: "37027",
     metacriticRating: "46",
     genres: "Animation, Adventure, Comedy",
-    genreList: [
-      { key: "Animation", value: "Animation" },
-      { key: "Adventure", value: "Adventure" },
-      { key: "Comedy", value: "Comedy" },
-    ],
     directors: "Aaron Horvath, Michael Jelenic, Pierre Leduc, Fabien Polack",
-    directorList: [
-      { id: "nm1739338", name: "Aaron Horvath" },
-      { id: "nm2398585", name: "Michael Jelenic" },
-      { id: "nm2966857", name: "Pierre Leduc" },
-      { id: "nm6042133", name: "Fabien Polack" },
-    ],
     stars: "Chris Pratt, Anya Taylor-Joy, Charlie Day, Jack Black",
-    starList: [
-      { id: "nm0695435", name: "Chris Pratt" },
-      { id: "nm5896355", name: "Anya Taylor-Joy" },
-      { id: "nm0206359", name: "Charlie Day" },
-      { id: "nm0085312", name: "Jack Black" },
-    ],
   },
   {
     id: "tt2906216",
@@ -51,23 +36,8 @@ export const moviesImdbNew = [
     imDbRatingCount: "35617",
     metacriticRating: "72",
     genres: "Action, Adventure, Comedy",
-    genreList: [
-      { key: "Action", value: "Action" },
-      { key: "Adventure", value: "Adventure" },
-      { key: "Comedy", value: "Comedy" },
-    ],
     directors: "John Francis Daley, Jonathan Goldstein",
-    directorList: [
-      { id: "nm0197855", name: "John Francis Daley" },
-      { id: "nm0326246", name: "Jonathan Goldstein" },
-    ],
     stars: "Chris Pine, Michelle Rodriguez, Regé-Jean Page, Justice Smith",
-    starList: [
-      { id: "nm1517976", name: "Chris Pine" },
-      { id: "nm0735442", name: "Michelle Rodriguez" },
-      { id: "nm2074546", name: "Regé-Jean Page" },
-      { id: "nm6819854", name: "Justice Smith" },
-    ],
   },
   {
     id: "tt10366206",
@@ -85,20 +55,8 @@ export const moviesImdbNew = [
     imDbRatingCount: "106257",
     metacriticRating: "78",
     genres: "Action, Crime, Thriller",
-    genreList: [
-      { key: "Action", value: "Action" },
-      { key: "Crime", value: "Crime" },
-      { key: "Thriller", value: "Thriller" },
-    ],
     directors: "Chad Stahelski",
-    directorList: [{ id: "nm0821432", name: "Chad Stahelski" }],
     stars: "Keanu Reeves, Laurence Fishburne, George Georgiou, Lance Reddick",
-    starList: [
-      { id: "nm0000206", name: "Keanu Reeves" },
-      { id: "nm0000401", name: "Laurence Fishburne" },
-      { id: "nm1745190", name: "George Georgiou" },
-      { id: "nm0714698", name: "Lance Reddick" },
-    ],
   },
   {
     id: "tt16419074",
@@ -116,19 +74,8 @@ export const moviesImdbNew = [
     imDbRatingCount: "10332",
     metacriticRating: "73",
     genres: "Drama, Sport",
-    genreList: [
-      { key: "Drama", value: "Drama" },
-      { key: "Sport", value: "Sport" },
-    ],
     directors: "Ben Affleck",
-    directorList: [{ id: "nm0000255", name: "Ben Affleck" }],
     stars: "Matt Damon, Jason Bateman, Ben Affleck, Chris Messina",
-    starList: [
-      { id: "nm0000354", name: "Matt Damon" },
-      { id: "nm0000867", name: "Jason Bateman" },
-      { id: "nm0000255", name: "Ben Affleck" },
-      { id: "nm0582149", name: "Chris Messina" },
-    ],
   },
   {
     id: "tt1630029",
@@ -146,20 +93,8 @@ export const moviesImdbNew = [
     imDbRatingCount: "349790",
     metacriticRating: "67",
     genres: "Action, Adventure, Fantasy",
-    genreList: [
-      { key: "Action", value: "Action" },
-      { key: "Adventure", value: "Adventure" },
-      { key: "Fantasy", value: "Fantasy" },
-    ],
     directors: "James Cameron",
-    directorList: [{ id: "nm0000116", name: "James Cameron" }],
     stars: "Sam Worthington, Zoe Saldana, Sigourney Weaver, Stephen Lang",
-    starList: [
-      { id: "nm0941777", name: "Sam Worthington" },
-      { id: "nm0757855", name: "Zoe Saldana" },
-      { id: "nm0000244", name: "Sigourney Weaver" },
-      { id: "nm0002332", name: "Stephen Lang" },
-    ],
   },
   {
     id: "tt11145118",
@@ -177,19 +112,8 @@ export const moviesImdbNew = [
     imDbRatingCount: "43584",
     metacriticRating: "73",
     genres: "Drama, Sport",
-    genreList: [
-      { key: "Drama", value: "Drama" },
-      { key: "Sport", value: "Sport" },
-    ],
     directors: "Michael B. Jordan",
-    directorList: [{ id: "nm0430107", name: "Michael B. Jordan" }],
     stars: "Michael B. Jordan, Tessa Thompson, Jonathan Majors, Wood Harris",
-    starList: [
-      { id: "nm0430107", name: "Michael B. Jordan" },
-      { id: "nm1935086", name: "Tessa Thompson" },
-      { id: "nm3718007", name: "Jonathan Majors" },
-      { id: "nm0365445", name: "Wood Harris" },
-    ],
   },
   {
     id: "tt10151854",
@@ -207,20 +131,8 @@ export const moviesImdbNew = [
     imDbRatingCount: "41450",
     metacriticRating: "47",
     genres: "Action, Adventure, Comedy",
-    genreList: [
-      { key: "Action", value: "Action" },
-      { key: "Adventure", value: "Adventure" },
-      { key: "Comedy", value: "Comedy" },
-    ],
     directors: "David F. Sandberg",
-    directorList: [{ id: "nm2497546", name: "David F. Sandberg" }],
     stars: "Zachary Levi, Asher Angel, Jack Dylan Grazer, Rachel Zegler",
-    starList: [
-      { id: "nm1157048", name: "Zachary Levi" },
-      { id: "nm4755508", name: "Asher Angel" },
-      { id: "nm6244013", name: "Jack Dylan Grazer" },
-      { id: "nm10399505", name: "Rachel Zegler" },
-    ],
   },
   {
     id: "tt6710474",
@@ -238,23 +150,8 @@ export const moviesImdbNew = [
     imDbRatingCount: "422954",
     metacriticRating: "81",
     genres: "Action, Adventure, Comedy",
-    genreList: [
-      { key: "Action", value: "Action" },
-      { key: "Adventure", value: "Adventure" },
-      { key: "Comedy", value: "Comedy" },
-    ],
     directors: "Daniel Kwan, Daniel Scheinert",
-    directorList: [
-      { id: "nm3453283", name: "Daniel Kwan" },
-      { id: "nm3215397", name: "Daniel Scheinert" },
-    ],
     stars: "Michelle Yeoh, Stephanie Hsu, Jamie Lee Curtis, Ke Huy Quan",
-    starList: [
-      { id: "nm0000706", name: "Michelle Yeoh" },
-      { id: "nm3513533", name: "Stephanie Hsu" },
-      { id: "nm0000130", name: "Jamie Lee Curtis" },
-      { id: "nm0702841", name: "Ke Huy Quan" },
-    ],
   },
   {
     id: "tt12261776",
@@ -272,23 +169,8 @@ export const moviesImdbNew = [
     imDbRatingCount: "24978",
     metacriticRating: "40",
     genres: "Action, Adventure, Drama",
-    genreList: [
-      { key: "Action", value: "Action" },
-      { key: "Adventure", value: "Adventure" },
-      { key: "Drama", value: "Drama" },
-    ],
     directors: "Scott Beck, Bryan Woods",
-    directorList: [
-      { id: "nm1399714", name: "Scott Beck" },
-      { id: "nm1456816", name: "Bryan Woods" },
-    ],
     stars: "Adam Driver, Ariana Greenblatt, Chloe Coleman, Nika King",
-    starList: [
-      { id: "nm3485845", name: "Adam Driver" },
-      { id: "nm7567556", name: "Ariana Greenblatt" },
-      { id: "nm5668548", name: "Chloe Coleman" },
-      { id: "nm1519739", name: "Nika King" },
-    ],
   },
   {
     id: "tt17663992",
@@ -306,23 +188,8 @@ export const moviesImdbNew = [
     imDbRatingCount: "40690",
     metacriticRating: "61",
     genres: "Horror, Mystery, Thriller",
-    genreList: [
-      { key: "Horror", value: "Horror" },
-      { key: "Mystery", value: "Mystery" },
-      { key: "Thriller", value: "Thriller" },
-    ],
     directors: "Matt Bettinelli-Olpin, Tyler Gillett",
-    directorList: [
-      { id: "nm2366012", name: "Matt Bettinelli-Olpin" },
-      { id: "nm2419470", name: "Tyler Gillett" },
-    ],
     stars: "Courteney Cox, Melissa Barrera, Jenna Ortega, Jasmin Savoy Brown",
-    starList: [
-      { id: "nm0001073", name: "Courteney Cox" },
-      { id: "nm4574440", name: "Melissa Barrera" },
-      { id: "nm4911194", name: "Jenna Ortega" },
-      { id: "nm5506401", name: "Jasmin Savoy Brown" },
-    ],
   },
   {
     id: "tt14209916",
@@ -340,19 +207,8 @@ export const moviesImdbNew = [
     imDbRatingCount: "50224",
     metacriticRating: "54",
     genres: "Comedy, Thriller",
-    genreList: [
-      { key: "Comedy", value: "Comedy" },
-      { key: "Thriller", value: "Thriller" },
-    ],
     directors: "Elizabeth Banks",
-    directorList: [{ id: "nm0006969", name: "Elizabeth Banks" }],
     stars: "Keri Russell, Alden Ehrenreich, O'Shea Jackson Jr., Ray Liotta",
-    starList: [
-      { id: "nm0005392", name: "Keri Russell" },
-      { id: "nm2403277", name: "Alden Ehrenreich" },
-      { id: "nm6578009", name: "O'Shea Jackson Jr." },
-      { id: "nm0000501", name: "Ray Liotta" },
-    ],
   },
   {
     id: "tt8277246",
@@ -370,19 +226,8 @@ export const moviesImdbNew = [
     imDbRatingCount: "850",
     metacriticRating: "",
     genres: "Drama, History",
-    genreList: [
-      { key: "Drama", value: "Drama" },
-      { key: "History", value: "History" },
-    ],
     directors: "David Helling",
-    directorList: [{ id: "nm5278287", name: "David Helling" }],
     stars: "Nicolas Mouawad, Sara Seyed, Daniel da Silva, Edaan Moskowitz",
-    starList: [
-      { id: "nm3369005", name: "Nicolas Mouawad" },
-      { id: "nm10211037", name: "Sara Seyed" },
-      { id: "nm4362629", name: "Daniel da Silva" },
-      { id: "nm7212956", name: "Edaan Moskowitz" },
-    ],
   },
   {
     id: "tt10954600",
@@ -400,20 +245,8 @@ export const moviesImdbNew = [
     imDbRatingCount: "97736",
     metacriticRating: "48",
     genres: "Action, Adventure, Comedy",
-    genreList: [
-      { key: "Action", value: "Action" },
-      { key: "Adventure", value: "Adventure" },
-      { key: "Comedy", value: "Comedy" },
-    ],
     directors: "Peyton Reed",
-    directorList: [{ id: "nm0715636", name: "Peyton Reed" }],
     stars: "Paul Rudd, Evangeline Lilly, Michael Douglas, Michelle Pfeiffer",
-    starList: [
-      { id: "nm0748620", name: "Paul Rudd" },
-      { id: "nm1431940", name: "Evangeline Lilly" },
-      { id: "nm0000140", name: "Michael Douglas" },
-      { id: "nm0000201", name: "Michelle Pfeiffer" },
-    ],
   },
   {
     id: "tt14153080",
@@ -431,16 +264,8 @@ export const moviesImdbNew = [
     imDbRatingCount: "1626",
     metacriticRating: "50",
     genres: "Drama",
-    genreList: [{ key: "Drama", value: "Drama" }],
     directors: "Zach Braff",
-    directorList: [{ id: "nm0103785", name: "Zach Braff" }],
     stars: "Florence Pugh, Morgan Freeman, Celeste O'Connor, Molly Shannon",
-    starList: [
-      { id: "nm6073955", name: "Florence Pugh" },
-      { id: "nm0000151", name: "Morgan Freeman" },
-      { id: "nm9305936", name: "Celeste O'Connor" },
-      { id: "nm0788340", name: "Molly Shannon" },
-    ],
   },
   {
     id: "tt14472156",
@@ -458,19 +283,8 @@ export const moviesImdbNew = [
     imDbRatingCount: "259",
     metacriticRating: "45",
     genres: "Comedy, Drama",
-    genreList: [
-      { key: "Comedy", value: "Comedy" },
-      { key: "Drama", value: "Drama" },
-    ],
     directors: "Brit McAdams",
-    directorList: [{ id: "nm2310934", name: "Brit McAdams" }],
     stars: "Owen Wilson, Elisabeth Henry, Paul Kosopod, Sonia Darmei Lopes",
-    starList: [
-      { id: "nm0005562", name: "Owen Wilson" },
-      { id: "nm6393559", name: "Elisabeth Henry" },
-      { id: "nm6142986", name: "Paul Kosopod" },
-      { id: "nm0520208", name: "Sonia Darmei Lopes" },
-    ],
   },
   {
     id: "tt12427158",
@@ -488,19 +302,8 @@ export const moviesImdbNew = [
     imDbRatingCount: "854",
     metacriticRating: "80",
     genres: "Crime, Drama",
-    genreList: [
-      { key: "Crime", value: "Crime" },
-      { key: "Drama", value: "Drama" },
-    ],
     directors: "A.V. Rockwell",
-    directorList: [{ id: "nm5690427", name: "A.V. Rockwell" }],
     stars: "Teyana Taylor, Aaron Kingsley Adetola, Aven Courtney, Josiah Cross",
-    starList: [
-      { id: "nm3692520", name: "Teyana Taylor" },
-      { id: "nm11242885", name: "Aaron Kingsley Adetola" },
-      { id: "nm9300564", name: "Aven Courtney" },
-      { id: "nm8582283", name: "Josiah Cross" },
-    ],
   },
   {
     id: "tt10098448",
@@ -518,20 +321,9 @@ export const moviesImdbNew = [
     imDbRatingCount: "5083",
     metacriticRating: "46",
     genres: "Drama",
-    genreList: [{ key: "Drama", value: "Drama" }],
     directors: "Jon Erwin, Brent McCorkle",
-    directorList: [
-      { id: "nm2296528", name: "Jon Erwin" },
-      { id: "nm3634546", name: "Brent McCorkle" },
-    ],
     stars:
       "Joel Courtney, Jonathan Roumie, Kimberly Williams-Paisley, Anna Grace Barlow",
-    starList: [
-      { id: "nm1525807", name: "Joel Courtney" },
-      { id: "nm0745751", name: "Jonathan Roumie" },
-      { id: "nm0931090", name: "Kimberly Williams-Paisley" },
-      { id: "nm2953809", name: "Anna Grace Barlow" },
-    ],
   },
   {
     id: "tt0166924",
@@ -549,20 +341,8 @@ export const moviesImdbNew = [
     imDbRatingCount: "364441",
     metacriticRating: "86",
     genres: "Drama, Mystery, Thriller",
-    genreList: [
-      { key: "Drama", value: "Drama" },
-      { key: "Mystery", value: "Mystery" },
-      { key: "Thriller", value: "Thriller" },
-    ],
     directors: "David Lynch",
-    directorList: [{ id: "nm0000186", name: "David Lynch" }],
     stars: "Naomi Watts, Laura Harring, Justin Theroux, Jeanne Bates",
-    starList: [
-      { id: "nm0915208", name: "Naomi Watts" },
-      { id: "nm0005009", name: "Laura Harring" },
-      { id: "nm0857620", name: "Justin Theroux" },
-      { id: "nm0060931", name: "Jeanne Bates" },
-    ],
   },
   {
     id: "tt15440322",
@@ -580,20 +360,8 @@ export const moviesImdbNew = [
     imDbRatingCount: "4613",
     metacriticRating: "",
     genres: "Action, Adventure, Drama",
-    genreList: [
-      { key: "Action", value: "Action" },
-      { key: "Adventure", value: "Adventure" },
-      { key: "Drama", value: "Drama" },
-    ],
     directors: "Srikanth Odela",
-    directorList: [{ id: "nm9577930", name: "Srikanth Odela" }],
     stars: "Nani, Keerthy Suresh, Shine Tom Chacko, Dheekshith Shetty",
-    starList: [
-      { id: "nm3761004", name: "Nani" },
-      { id: "nm7146337", name: "Keerthy Suresh" },
-      { id: "nm3557375", name: "Shine Tom Chacko" },
-      { id: "nm11341642", name: "Dheekshith Shetty" },
-    ],
   },
   {
     id: "tt13923456",
@@ -611,21 +379,9 @@ export const moviesImdbNew = [
     imDbRatingCount: "",
     metacriticRating: "",
     genres: "Action, Comedy, Crime",
-    genreList: [
-      { key: "Action", value: "Action" },
-      { key: "Comedy", value: "Comedy" },
-      { key: "Crime", value: "Crime" },
-    ],
     directors: "Catherine Hardwicke",
-    directorList: [{ id: "nm0362566", name: "Catherine Hardwicke" }],
     stars:
       "Toni Collette, Monica Bellucci, Sophia Nomvete, Alessandro Bressanello",
-    starList: [
-      { id: "nm0001057", name: "Toni Collette" },
-      { id: "nm0000899", name: "Monica Bellucci" },
-      { id: "nm11273330", name: "Sophia Nomvete" },
-      { id: "nm0107792", name: "Alessandro Bressanello" },
-    ],
   },
   {
     id: "tt11396310",
@@ -643,20 +399,8 @@ export const moviesImdbNew = [
     imDbRatingCount: "2694",
     metacriticRating: "",
     genres: "Action, Crime, Drama",
-    genreList: [
-      { key: "Action", value: "Action" },
-      { key: "Crime", value: "Crime" },
-      { key: "Drama", value: "Drama" },
-    ],
     directors: "Vetrimaaran",
-    directorList: [{ id: "nm4274575", name: "Vetrimaaran" }],
     stars: "Soori, Vijay Sethupathi, Bhavani Sre, Chetan",
-    starList: [
-      { id: "nm4262344", name: "Soori" },
-      { id: "nm4043111", name: "Vijay Sethupathi" },
-      { id: "nm11424386", name: "Bhavani Sre" },
-      { id: "nm4742589", name: "Chetan" },
-    ],
   },
   {
     id: "tt21440780",
@@ -674,20 +418,8 @@ export const moviesImdbNew = [
     imDbRatingCount: "558",
     metacriticRating: "76",
     genres: "Crime, Drama, Thriller",
-    genreList: [
-      { key: "Crime", value: "Crime" },
-      { key: "Drama", value: "Drama" },
-      { key: "Thriller", value: "Thriller" },
-    ],
     directors: "Daniel Goldhaber",
-    directorList: [{ id: "nm3771823", name: "Daniel Goldhaber" }],
     stars: "Ariela Barer, Kristine Froseth, Lukas Gage, Forrest Goodluck",
-    starList: [
-      { id: "nm2821733", name: "Ariela Barer" },
-      { id: "nm8109082", name: "Kristine Froseth" },
-      { id: "nm4965072", name: "Lukas Gage" },
-      { id: "nm5569442", name: "Forrest Goodluck" },
-    ],
   },
   {
     id: "tt13421498",
@@ -705,19 +437,8 @@ export const moviesImdbNew = [
     imDbRatingCount: "3599",
     metacriticRating: "64",
     genres: "Comedy, Drama",
-    genreList: [
-      { key: "Comedy", value: "Comedy" },
-      { key: "Drama", value: "Drama" },
-    ],
     directors: "Stephen Frears",
-    directorList: [{ id: "nm0001241", name: "Stephen Frears" }],
     stars: "Sally Hawkins, Shonagh Price, Helen Katamba, Lewis Macleod",
-    starList: [
-      { id: "nm1020089", name: "Sally Hawkins" },
-      { id: "nm0697154", name: "Shonagh Price" },
-      { id: "nm9844932", name: "Helen Katamba" },
-      { id: "nm0533914", name: "Lewis Macleod" },
-    ],
   },
   {
     id: "tt15430628",
@@ -735,20 +456,8 @@ export const moviesImdbNew = [
     imDbRatingCount: "71",
     metacriticRating: "",
     genres: "Action, Comedy, Drama",
-    genreList: [
-      { key: "Action", value: "Action" },
-      { key: "Comedy", value: "Comedy" },
-      { key: "Drama", value: "Drama" },
-    ],
     directors: "Larry Yang",
-    directorList: [{ id: "nm6225858", name: "Larry Yang" }],
     stars: "Jackie Chan, Haocun Liu, Kevin Guo, Yueting Lang",
-    starList: [
-      { id: "nm0000329", name: "Jackie Chan" },
-      { id: "nm11654704", name: "Haocun Liu" },
-      { id: "nm8750925", name: "Kevin Guo" },
-      { id: "nm6887859", name: "Yueting Lang" },
-    ],
   },
   {
     id: "tt11698800",
@@ -766,16 +475,8 @@ export const moviesImdbNew = [
     imDbRatingCount: "886",
     metacriticRating: "78",
     genres: "Horror",
-    genreList: [{ key: "Horror", value: "Horror" }],
     directors: "Mark Jenkin",
-    directorList: [{ id: "nm1985490", name: "Mark Jenkin" }],
     stars: "Mary Woodvine, Edward Rowe, Flo Crowe, John Woodvine",
-    starList: [
-      { id: "nm0940893", name: "Mary Woodvine" },
-      { id: "nm8196922", name: "Edward Rowe" },
-      { id: "nm13633116", name: "Flo Crowe" },
-      { id: "nm0940892", name: "John Woodvine" },
-    ],
   },
   {
     id: "tt19719836",
@@ -793,16 +494,8 @@ export const moviesImdbNew = [
     imDbRatingCount: "1504",
     metacriticRating: "87",
     genres: "Drama",
-    genreList: [{ key: "Drama", value: "Drama" }],
     directors: "Davy Chou",
-    directorList: [{ id: "nm1976187", name: "Davy Chou" }],
     stars: "Park Ji-min, Oh Kwang-rok, Guka Han, Kim Sun-young",
-    starList: [
-      { id: "nm13973657", name: "Park Ji-min" },
-      { id: "nm1059108", name: "Oh Kwang-rok" },
-      { id: "nm13580099", name: "Guka Han" },
-      { id: "nm6728658", name: "Kim Sun-young" },
-    ],
   },
   {
     id: "tt15488088",
@@ -820,16 +513,8 @@ export const moviesImdbNew = [
     imDbRatingCount: "375",
     metacriticRating: "60",
     genres: "Comedy",
-    genreList: [{ key: "Comedy", value: "Comedy" }],
     directors: "Paul Weitz",
-    directorList: [{ id: "nm0919369", name: "Paul Weitz" }],
     stars: "Jane Fonda, Lily Tomlin, Malcolm McDowell, Lauren Tom",
-    starList: [
-      { id: "nm0000404", name: "Jane Fonda" },
-      { id: "nm0005499", name: "Lily Tomlin" },
-      { id: "nm0000532", name: "Malcolm McDowell" },
-      { id: "nm0866300", name: "Lauren Tom" },
-    ],
   },
   {
     id: "tt16301792",
@@ -847,21 +532,9 @@ export const moviesImdbNew = [
     imDbRatingCount: "24",
     metacriticRating: "",
     genres: "Comedy, Crime, Musical",
-    genreList: [
-      { key: "Comedy", value: "Comedy" },
-      { key: "Crime", value: "Crime" },
-      { key: "Musical", value: "Musical" },
-    ],
     directors: "Santiago Limón",
-    directorList: [{ id: "nm2759628", name: "Santiago Limón" }],
     stars:
       "Isabella Castillo, Alan Estrada, Cecilia Toussaint, Susana Zabaleta",
-    starList: [
-      { id: "nm4378173", name: "Isabella Castillo" },
-      { id: "nm2828782", name: "Alan Estrada" },
-      { id: "nm0869732", name: "Cecilia Toussaint" },
-      { id: "nm0951365", name: "Susana Zabaleta" },
-    ],
   },
   {
     id: "tt15816190",
@@ -879,20 +552,8 @@ export const moviesImdbNew = [
     imDbRatingCount: "636",
     metacriticRating: "",
     genres: "Action, Crime, Drama",
-    genreList: [
-      { key: "Action", value: "Action" },
-      { key: "Crime", value: "Crime" },
-      { key: "Drama", value: "Drama" },
-    ],
     directors: "Sudheer Varma",
-    directorList: [{ id: "nm5567731", name: "Sudheer Varma" }],
     stars: "Jayaram, Faria Abdullah, Megha Akash, Jahid D'cruz",
-    starList: [
-      { id: "nm0419688", name: "Jayaram" },
-      { id: "nm12260942", name: "Faria Abdullah" },
-      { id: "nm8306579", name: "Megha Akash" },
-      { id: "nm14560741", name: "Jahid D'cruz" },
-    ],
   },
   {
     id: "tt13885492",
@@ -910,19 +571,8 @@ export const moviesImdbNew = [
     imDbRatingCount: "72",
     metacriticRating: "79",
     genres: "Documentary, Music",
-    genreList: [
-      { key: "Documentary", value: "Documentary" },
-      { key: "Music", value: "Music" },
-    ],
     directors: "Lisa Cortes",
-    directorList: [{ id: "nm0181263", name: "Lisa Cortes" }],
     stars: "John Waters, Mick Jagger, Paul McCartney, Tom Jones",
-    starList: [
-      { id: "nm0000691", name: "John Waters" },
-      { id: "nm0001396", name: "Mick Jagger" },
-      { id: "nm0005200", name: "Paul McCartney" },
-      { id: "nm0429367", name: "Tom Jones" },
-    ],
   },
   {
     id: "tt11455260",
@@ -940,19 +590,8 @@ export const moviesImdbNew = [
     imDbRatingCount: "530",
     metacriticRating: "",
     genres: "Adventure, Family",
-    genreList: [
-      { key: "Adventure", value: "Adventure" },
-      { key: "Family", value: "Family" },
-    ],
     directors: "Gregor Schnitzler",
-    directorList: [{ id: "nm0774221", name: "Gregor Schnitzler" }],
     stars: "Emilia Maier, Leonard Conrads, Loris Sichrovsky, Nadja Uhl",
-    starList: [
-      { id: "nm11207933", name: "Emilia Maier" },
-      { id: "nm11248075", name: "Leonard Conrads" },
-      { id: "nm11248081", name: "Loris Sichrovsky" },
-      { id: "nm0880167", name: "Nadja Uhl" },
-    ],
   },
   {
     id: "tt19719940",
@@ -970,16 +609,8 @@ export const moviesImdbNew = [
     imDbRatingCount: "371",
     metacriticRating: "69",
     genres: "Drama",
-    genreList: [{ key: "Drama", value: "Drama" }],
     directors: "Lola Quivoron",
-    directorList: [{ id: "nm7472737", name: "Lola Quivoron" }],
     stars: "Julie Ledru, Yannis Lafki, Antonia Buresi, Cody Schroeder",
-    starList: [
-      { id: "nm5435135", name: "Julie Ledru" },
-      { id: "nm13580166", name: "Yannis Lafki" },
-      { id: "nm5232400", name: "Antonia Buresi" },
-      { id: "nm13669595", name: "Cody Schroeder" },
-    ],
   },
   {
     id: "tt26234988",
@@ -997,21 +628,9 @@ export const moviesImdbNew = [
     imDbRatingCount: "102",
     metacriticRating: "",
     genres: "Action, Comedy, Drama",
-    genreList: [
-      { key: "Action", value: "Action" },
-      { key: "Comedy", value: "Comedy" },
-      { key: "Drama", value: "Drama" },
-    ],
     directors: "Ramesh Kadhuri",
-    directorList: [{ id: "nm9508443", name: "Ramesh Kadhuri" }],
     stars:
       "Kiran Abbavaram, Athulya Ravi, Keshav Deepak, Krishna Murali Posani",
-    starList: [
-      { id: "nm10954569", name: "Kiran Abbavaram" },
-      { id: "nm9048134", name: "Athulya Ravi" },
-      { id: "nm6642302", name: "Keshav Deepak" },
-      { id: "nm0692586", name: "Krishna Murali Posani" },
-    ],
   },
   {
     id: "tt18690030",
@@ -1029,19 +648,8 @@ export const moviesImdbNew = [
     imDbRatingCount: "137",
     metacriticRating: "",
     genres: "Comedy, Drama",
-    genreList: [
-      { key: "Comedy", value: "Comedy" },
-      { key: "Drama", value: "Drama" },
-    ],
     directors: "Chengpeng Dong",
-    directorList: [{ id: "nm3934959", name: "Chengpeng Dong" }],
     stars: "Chengpeng Dong, Xueqin Li, Zheng Yin, Xun Wang",
-    starList: [
-      { id: "nm3934959", name: "Chengpeng Dong" },
-      { id: "nm11766159", name: "Xueqin Li" },
-      { id: "nm7613069", name: "Zheng Yin" },
-      { id: "nm2355740", name: "Xun Wang" },
-    ],
   },
   {
     id: "tt27079328",
@@ -1059,16 +667,8 @@ export const moviesImdbNew = [
     imDbRatingCount: "576",
     metacriticRating: "",
     genres: "Drama",
-    genreList: [{ key: "Drama", value: "Drama" }],
     directors: "Uday Pratap Singh",
-    directorList: [{ id: "nm1598332", name: "Uday Pratap Singh" }],
     stars: "Jass Bajwa, Neeru Bajwa, Kulwinder Billa, Gurpreet Ghuggi",
-    starList: [
-      { id: "nm9132188", name: "Jass Bajwa" },
-      { id: "nm1263093", name: "Neeru Bajwa" },
-      { id: "nm9449729", name: "Kulwinder Billa" },
-      { id: "nm1836657", name: "Gurpreet Ghuggi" },
-    ],
   },
   {
     id: "tt10646310",
@@ -1086,10 +686,7 @@ export const moviesImdbNew = [
     imDbRatingCount: "30",
     metacriticRating: "",
     genres: "Documentary",
-    genreList: [{ key: "Documentary", value: "Documentary" }],
     directors: "Andrew Young",
-    directorList: [{ id: "nm0949255", name: "Andrew Young" }],
     stars: "Michael Keaton",
-    starList: [{ id: "nm0000474", name: "Michael Keaton" }],
   },
 ];

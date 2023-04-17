@@ -38,8 +38,8 @@ const InTheaterBlock: FunctionComponent<InTheaterBlockProps> = ({
       ) : (
         <MovieInfoBlock
           typography={TypographyVariant.inria_l_ital}
-          text={data[index].plot}
-          title={data[index].title}
+          text={data[index]?.plot}
+          title={data[index]?.title}
         />
       )}
       {isLoading ? (
@@ -52,8 +52,8 @@ const InTheaterBlock: FunctionComponent<InTheaterBlockProps> = ({
       ) : (
         <>
           <InTheaterImgWrapper onClick={handleNavigateToMovie}>
-            <InTheaterImg src={data[index].image} />
-            <InTheterImgTitle>{data[index].title}</InTheterImgTitle>
+            <InTheaterImg src={data[index]?.image} />
+            <InTheterImgTitle>{data[index]?.title}</InTheterImgTitle>
             <TagsWrapper>
               {data &&
                 data[index]?.genres

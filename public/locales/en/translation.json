@@ -80,7 +80,8 @@
     "author": "Author",
     "actors": "Actors",
     "bookBtn": "Book Now!",
-    "watchTrailerTitle": "Watch trailer online!"
+    "watchTrailerTitle": "Watch trailer online!",
+    "noReviewsTitle": "No reviews"
   },
   "Review": {
     "title": "Review",
