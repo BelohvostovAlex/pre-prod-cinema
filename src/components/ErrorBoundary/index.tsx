@@ -1,6 +1,7 @@
 import { Component } from "react";
 
 import { ErrorBoundaryProps, ErrorBoundaryState } from "./interfaces";
+import { ErrorBoundaryTitle, ErrorBoundaryWrapper } from "./styles";
 
 class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
   constructor(props: ErrorBoundaryProps) {
@@ -21,9 +22,9 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
     const { children } = this.props;
     if (hasError) {
       return (
-        <div>
-          <h1>{error?.message}</h1>
-        </div>
+        <ErrorBoundaryWrapper>
+          <ErrorBoundaryTitle>{error?.message}</ErrorBoundaryTitle>
+        </ErrorBoundaryWrapper>
       );
     }
 
