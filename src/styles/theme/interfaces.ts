@@ -61,6 +61,7 @@ export interface ICommonTheme {
   };
   zIndex: {
     minus1: string;
+    0: string;
     1: string;
     10: string;
     100: string;

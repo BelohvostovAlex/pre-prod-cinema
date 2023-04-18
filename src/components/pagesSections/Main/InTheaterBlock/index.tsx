@@ -8,6 +8,7 @@ import { TypographyVariant } from "../../../../constants/styles/typography";
 import MovieInfoBlockSkeleton from "../../../Skeletons/MovieInfoBlock";
 import InTheaterBlockImageSkeleton from "../../../Skeletons/InTheaterBlock/InTheaterBlockImageSkeleton";
 import SliderSkeleton from "../../../Skeletons/InTheaterBlock/SliderSkeleton";
+import MovieSliderItems from "../../../MovieSliderItems";
 import { AppPathesWithoutSlug } from "../../../../constants/routes";
 
 import {
@@ -62,7 +63,9 @@ const InTheaterBlock: FunctionComponent<InTheaterBlockProps> = ({
             </TagsWrapper>
           </InTheaterImgWrapper>
           <SliderBox>
-            <Slider data={data} index={index} setIndex={setIndex} />
+            <Slider data={data} index={index} setIndex={setIndex}>
+              <MovieSliderItems data={data} index={index} />
+            </Slider>
           </SliderBox>
         </>
       )}

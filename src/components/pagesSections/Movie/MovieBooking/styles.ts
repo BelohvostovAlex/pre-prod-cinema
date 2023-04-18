@@ -1,9 +1,12 @@
 import styled from "styled-components";
 
+const MovieBookingWrapperWidthPercent = 100;
+
 export const MovieBookingWrapper = styled.div`
   padding: 50px 0px;
-  height: 600px;
-  width: 100%;
+  width: ${MovieBookingWrapperWidthPercent}%;
+  ${({ theme }) => theme.flexAlignCenter};
+  flex-direction: column;
 `;
 
 export const MovieBookingTitle = styled.h2`
@@ -11,4 +14,5 @@ export const MovieBookingTitle = styled.h2`
   font-size: ${({ theme }) => theme.fontSize[26]};
   color: ${({ theme }) => theme.colors.lightGray};
   text-align: center;
+  margin-bottom: ${({ theme }) => theme.margin.mb20};
 `;

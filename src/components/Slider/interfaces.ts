@@ -1,13 +1,18 @@
-import { Dispatch, SetStateAction } from "react";
+import { Dispatch, ReactNode, SetStateAction } from "react";
 
 import { SliderDirectionVariant } from "../../constants/slider";
-import { IMovieImdb } from "../../models/movie/IMovieImdb";
 
-export interface SliderProps {
-  data: IMovieImdb[];
+export interface SliderProps<T> {
+  data: T[];
   direction?: SliderDirectionVariant;
   index: number;
+  children: ReactNode;
+
   setIndex: Dispatch<SetStateAction<number>>;
 }
 
-export type SliderItemsProps = Pick<SliderProps, "direction">;
+export interface SliderItemsProps {
+  direction?: SliderDirectionVariant;
+}
+
+export type SliderWrapperProps = SliderItemsProps;

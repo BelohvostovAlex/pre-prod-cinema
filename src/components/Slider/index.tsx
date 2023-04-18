@@ -1,27 +1,21 @@
-import { FunctionComponent, KeyboardEvent, WheelEvent } from "react";
+import { KeyboardEvent, ReactNode, WheelEvent } from "react";
 
 import { ReactComponent as DownIcon } from "../../assets/svg/tools/down.svg";
 import { ReactComponent as UpIcon } from "../../assets/svg/tools/up.svg";
 import { SliderDirectionVariant } from "../../constants/slider";
 import { KeyButtonVariant } from "../../constants/keyboard";
-import MovieSliderItem from "../MovieSliderItem";
 
 import { SliderControls, SliderItems, SliderWrapper } from "./styles";
 import { SliderProps } from "./interfaces";
 
-const Slider: FunctionComponent<SliderProps> = ({
+const Slider = <T,>({
   direction = SliderDirectionVariant.VERTICAL,
-  data,
   index,
   setIndex,
-}) => {
+  children,
+  data,
+}: SliderProps<T> & { children?: ReactNode }) => {
   const dataLength = data.length;
-
-  const mod = (n: number, m: number) => {
-    const result = n % m;
-
-    return result >= 0 ? result : result + m;
-  };
 
   const prevSlide = () => {
     if (index > 0) {
@@ -41,11 +35,22 @@ const Slider: FunctionComponent<SliderProps> = ({
 
   const keyDownHandler = (e: KeyboardEvent<HTMLDivElement>) => {
     e.preventDefault();
-    if (e.key === KeyButtonVariant.ARROW_DOWN) {
-      nextSlide();
+    if (direction === SliderDirectionVariant.VERTICAL) {
+      if (e.key === KeyButtonVariant.ARROW_DOWN) {
+        nextSlide();
+      }
+      if (e.key === KeyButtonVariant.ARROW_UP) {
+        prevSlide();
+      }
     }
-    if (e.key === KeyButtonVariant.ARROW_UP) {
-      prevSlide();
+
+    if (direction === SliderDirectionVariant.HORIZONTAL) {
+      if (e.key === KeyButtonVariant.ARROW_RIGHT) {
+        nextSlide();
+      }
+      if (e.key === KeyButtonVariant.ARROW_LEFT) {
+        prevSlide();
+      }
     }
   };
 
@@ -62,28 +67,24 @@ const Slider: FunctionComponent<SliderProps> = ({
       onKeyDown={keyDownHandler}
       tabIndex={0}
       onWheel={onMouseWheel}
+      direction={direction}
     >
-      <SliderItems direction={direction}>
-        {data.map(({ id, image }, idx) => {
-          const indexTop = mod(index - 1, dataLength);
-          const indexDown = mod(index + 1, dataLength);
-
-          return (
-            <MovieSliderItem
-              key={id}
-              src={image}
-              center={idx === index}
-              top={idx === indexTop}
-              bot={idx === indexDown}
-              id={id}
-            />
-          );
-        })}
-      </SliderItems>
-      <SliderControls>
-        <UpIcon onClick={prevSlide} />
-        <DownIcon onClick={nextSlide} />
-      </SliderControls>
+      {direction === SliderDirectionVariant.HORIZONTAL && (
+        <>
+          <UpIcon onClick={prevSlide} />
+          <SliderItems direction={direction}>{children}</SliderItems>
+          <DownIcon onClick={nextSlide} />
+        </>
+      )}
+      {direction === SliderDirectionVariant.VERTICAL && (
+        <>
+          <SliderItems direction={direction}>{children}</SliderItems>
+          <SliderControls>
+            <UpIcon onClick={prevSlide} />
+            <DownIcon onClick={nextSlide} />
+          </SliderControls>
+        </>
+      )}
     </SliderWrapper>
   );
 };
