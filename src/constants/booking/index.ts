@@ -4,3 +4,9 @@ export const seats = [
   42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60,
   61, 62, 63, 64, 65, 66, 67, 68,
 ];
+
+export const halls = [
+  { time: "2:30 PM - 4:25 PM", hallNumber: "1D" },
+  { time: "2:50 PM - 4:45 PM", hallNumber: "2D" },
+  { time: "6:25 PM - 8:30 PM", hallNumber: "2D" },
+];

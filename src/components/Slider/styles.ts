@@ -7,9 +7,9 @@ import { SliderItemsProps, SliderWrapperProps } from "./interfaces";
 const SliderWrapperSvgHeight = 16;
 const SliderWrapperHorizontalSvgHeight = 28;
 const SliderItemsVerticalWidth = 100;
-const SliderItemsHorizontalWidth = 400;
+export const SliderItemsHorizontalWidth = 500;
 const SliderItemsVerticalHeight = 330;
-const SliderItemsHorizontalHeight = 94;
+const SliderItemsHorizontalHeight = 106;
 
 export const SliderWrapper = styled.div<SliderWrapperProps>`
   ${({ theme }) => theme.flexAlignCenter};

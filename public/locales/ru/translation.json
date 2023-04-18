@@ -83,7 +83,10 @@
     "watchTrailerTitle": "Посмотреть трейлер онлайн!",
     "noReviewsTitle": "Нет отзывов",
     "notAuthBookBtn": "Войдите в свой аккаунт, пожалуйста",
-    "bookingSectionTitle": "Забронировать!"
+    "bookingSectionTitle": "Забронировать!",
+    "movieBadgeHallTitle": "Зал",
+    "availableSeats": "доступных мест",
+    "noAvailableSeats": "нет доступных мест"
   },
   "Review": {
     "title": "Отзыв",

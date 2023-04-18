@@ -2,20 +2,20 @@ import styled from "styled-components";
 
 import { BookSliderItemWrapperProps } from "./interfaces";
 
-export const BookSliderItemWrapperWidth = 400;
-const BookSliderItemWrapperHeight = 100;
+export const BookSliderItemWrapperWidth = 500;
+const BookSliderItemWrapperHeight = 110;
 const BookSliderItemSquareHW = {
   prevDirection: {
-    width: "55px",
-    height: "55px",
-  },
-  direction: {
     width: "65px",
     height: "65px",
   },
-  center: {
+  direction: {
     width: "75px",
     height: "75px",
+  },
+  center: {
+    width: "85px",
+    height: "85px",
   },
 };
 

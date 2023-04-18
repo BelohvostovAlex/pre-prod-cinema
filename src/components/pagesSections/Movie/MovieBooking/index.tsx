@@ -7,9 +7,14 @@ import BookSliderItems from "../../../BookSliderItems";
 import { Colors } from "../../../../constants/styles/colors";
 import { SliderDirectionVariant } from "../../../../constants/slider";
 import { BookSliderItemWrapperWidth } from "../../../BookSliderItems/BookSliderItem/styles";
-import { seats } from "../../../../constants/booking";
+import { halls, seats } from "../../../../constants/booking";
 
-import { MovieBookingTitle, MovieBookingWrapper } from "./styles";
+import {
+  MovieBookingTitle,
+  MovieBookingWrapper,
+  MovieHallBadgeWrapper,
+} from "./styles";
+import MovieHallBadge from "./MovieHallBadge";
 import { dividerHeight } from "./config";
 
 const MovieBooking: FunctionComponent = () => {
@@ -35,6 +40,16 @@ const MovieBooking: FunctionComponent = () => {
         height={dividerHeight}
         color={Colors.WHITE}
       />
+      <MovieHallBadgeWrapper>
+        {halls.map((item) => (
+          <MovieHallBadge
+            key={item.time}
+            isActive={true}
+            hallNumber={item.hallNumber}
+            time={item.time}
+          />
+        ))}
+      </MovieHallBadgeWrapper>
     </MovieBookingWrapper>
   );
 };

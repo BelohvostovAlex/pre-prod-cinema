@@ -83,7 +83,10 @@
     "watchTrailerTitle": "Watch trailer online!",
     "noReviewsTitle": "No reviews",
     "notAuthBookBtn": "You should login first",
-    "bookingSectionTitle": "Book Now!"
+    "bookingSectionTitle": "Book Now!",
+    "movieBadgeHallTitle": "Cinema",
+    "availableSeats": "seats available",
+    "noAvailableSeats": "no available seats"
   },
   "Review": {
     "title": "Review",
