@@ -20,6 +20,7 @@ import { useAppSelector } from "../../hooks/useAppSelector";
 import { isAuthSelector } from "../../store/slices/userSlice/selectors";
 import { useActions } from "../../hooks/useActionts";
 import { AlertTypes } from "../../constants/alert";
+import MovieScreen from "../../components/pagesSections/Movie/MovieBooking/MovieScreen";
 // import { moviesSelector } from "../../store/slices/movieSlice/selectors";
 
 import {
@@ -148,6 +149,7 @@ const Movie: FunctionComponent = () => {
         <>
           <Divider />
           <MovieBooking />
+          <MovieScreen />
           <Divider />
         </>
       )}

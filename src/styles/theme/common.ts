@@ -86,6 +86,7 @@ const commonTheme: ICommonTheme = {
     21: "21px",
     24: "24px",
     26: "26px",
+    30: "30px",
   },
   zIndex: {
     minus1: "-1",
@@ -122,6 +123,7 @@ const commonTheme: ICommonTheme = {
     white: Colors.WHITE,
     black: Colors.BLACK,
     facebookColor: Colors.FACEBOOK,
+    screenDark: Colors.SCREEN_DARK,
   },
   flexAlignCenter: "display: flex; align-items: center;",
 };

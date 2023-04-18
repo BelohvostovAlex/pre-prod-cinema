@@ -15,4 +15,5 @@ export enum Colors {
   RED = "#ff4242",
   GREEN = "#36e353",
   FACEBOOK = "#1877F2",
+  SCREEN_DARK = "#313131",
 }

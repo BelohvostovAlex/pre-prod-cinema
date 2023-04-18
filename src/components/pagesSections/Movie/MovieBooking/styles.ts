@@ -5,7 +5,7 @@ import { SliderItemsHorizontalWidth } from "../../../Slider/styles";
 const MovieBookingWrapperWidthPercent = 100;
 
 export const MovieBookingWrapper = styled.div`
-  padding: 50px 0px;
+  padding: 50px 0px 20px 0px;
   width: ${MovieBookingWrapperWidthPercent}%;
   ${({ theme }) => theme.flexAlignCenter};
   flex-direction: column;
@@ -23,5 +23,5 @@ export const MovieHallBadgeWrapper = styled.div`
   ${({ theme }) => theme.flexAlignCenter};
   justify-content: space-between;
   width: ${SliderItemsHorizontalWidth}px;
-  margin: 30px 0px;
+  margin-top: 30px;
 `;

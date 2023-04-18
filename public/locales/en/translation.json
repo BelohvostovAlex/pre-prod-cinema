@@ -86,7 +86,11 @@
     "bookingSectionTitle": "Book Now!",
     "movieBadgeHallTitle": "Cinema",
     "availableSeats": "seats available",
-    "noAvailableSeats": "no available seats"
+    "noAvailableSeats": "no available seats",
+    "screenTitle": "Screen",
+    "selected": "Selected",
+    "reserved": "Reserved",
+    "available": "Available"
   },
   "Review": {
     "title": "Review",

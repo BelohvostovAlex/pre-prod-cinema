@@ -5,6 +5,8 @@ export const seats = [
   61, 62, 63, 64, 65, 66, 67, 68,
 ];
 
+export const rows = [6, 8, 8, 8, 8, 8, 8, 8, 6];
+
 export const halls = [
   { time: "2:30 PM - 4:25 PM", hallNumber: "1D" },
   { time: "2:50 PM - 4:45 PM", hallNumber: "2D" },

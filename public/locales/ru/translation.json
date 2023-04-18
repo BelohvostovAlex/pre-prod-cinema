@@ -86,7 +86,11 @@
     "bookingSectionTitle": "Забронировать!",
     "movieBadgeHallTitle": "Зал",
     "availableSeats": "доступных мест",
-    "noAvailableSeats": "нет доступных мест"
+    "noAvailableSeats": "нет доступных мест",
+    "screenTitle": "Экран",
+    "selected": "Выбранные",
+    "reserved": "Зарезервированные",
+    "available": "Доступные"
   },
   "Review": {
     "title": "Отзыв",
