@@ -5,15 +5,13 @@ import MovieScreenCell from "../MovieScreenCell";
 import { MovieScreenRawProps } from "./interfaces";
 import { MovieScreenRowWrapper } from "./styles";
 
-const MovieScreenRaw: FunctionComponent<MovieScreenRawProps> = ({
-  cellAmount,
-}) => {
+const MovieScreenRaw: FunctionComponent<MovieScreenRawProps> = ({ seats }) => {
   return (
     <MovieScreenRowWrapper>
-      {Array.from(Array(cellAmount).keys()).map((item) => (
+      {seats.map((item) => (
         <MovieScreenCell
           key={item}
-          seatNumber={item + 1}
+          seatNumber={item}
           reserved={false}
           selected={false}
         />

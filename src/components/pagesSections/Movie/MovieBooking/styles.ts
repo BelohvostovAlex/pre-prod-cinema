@@ -24,4 +24,5 @@ export const MovieHallBadgeWrapper = styled.div`
   justify-content: space-between;
   width: ${SliderItemsHorizontalWidth}px;
   margin-top: 30px;
+  cursor: pointer;
 `;

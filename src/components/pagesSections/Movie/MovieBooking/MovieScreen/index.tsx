@@ -26,8 +26,8 @@ const MovieScreen: FunctionComponent = () => {
         </MovieScreenHeadRow>
       </MovieScreenHead>
       <MovieScreenSeatsWrapper>
-        {rows.map((item, i) => (
-          <MovieScreenRaw key={i} cellAmount={item} />
+        {rows.map(({ seats }, i) => (
+          <MovieScreenRaw key={i} seats={seats} />
         ))}
       </MovieScreenSeatsWrapper>
       <MovieScreenFooter>

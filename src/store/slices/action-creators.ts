@@ -16,6 +16,12 @@ import {
   togglePlay,
 } from "./videoSlice/videoSlice";
 import { getMoviesThunk } from "./movieSlice/thunks/getMoviesThunk";
+import { setCurrDay, setDays } from "./daysSlice/daysSlice";
+import {
+  setBookings,
+  setReserve,
+  setSelect,
+} from "./bookingSlice/bookingSlice";
 
 export const allActionCreators = {
   changeDarkTheme,
@@ -32,4 +38,9 @@ export const allActionCreators = {
   toggleMute,
   updateUser,
   getMoviesThunk,
+  setDays,
+  setCurrDay,
+  setBookings,
+  setReserve,
+  setSelect,
 };

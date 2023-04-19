@@ -1,3 +1,3 @@
 export interface MovieScreenRawProps {
-  cellAmount: number;
+  seats: number[];
 }

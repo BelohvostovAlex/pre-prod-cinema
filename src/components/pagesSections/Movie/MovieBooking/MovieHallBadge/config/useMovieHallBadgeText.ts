@@ -5,7 +5,7 @@ export const useMovieHallBadgeText = () => {
 
   return {
     movieBadgeHallTitle: t("Movie.movieBadgeHallTitle"),
-    availableSeats: t("Movie.availableSeats"),
+    availableSeatsText: t("Movie.availableSeats"),
     noAvailableSeats: t("Movie.noAvailableSeats"),
   };
 };
