@@ -33,6 +33,7 @@ import {
 import { useMovieText } from "./config/useMovieText";
 // import { useGetMoviesReview } from "./config/useGetMovieReviews";
 import { handleNextMovieIndex } from "./config/handleNextMovieIndex";
+import { futureLimit } from "./config";
 
 const Movie: FunctionComponent = () => {
   const { id } = useParams();
@@ -47,7 +48,7 @@ const Movie: FunctionComponent = () => {
   // const movies = useAppSelector(moviesSelector);
   // const movieReviews = useGetMoviesReview(id!);
 
-  const isValidDay = chosenDay >= currDay;
+  const isValidDay = chosenDay >= currDay && chosenDay <= currDay + futureLimit;
   const movie = moviesImdbNew.find((item) => item.id === id);
   const nextMovie = handleNextMovieIndex(moviesImdbNew, id!);
   const { data, loading } = usePalette(movie?.image);

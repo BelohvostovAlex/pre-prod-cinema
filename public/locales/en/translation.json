@@ -93,6 +93,7 @@
     "available": "Available",
     "footerSeats": "seats",
     "cantBookForPast": "You can't book ticket for the past days",
+    "cantBookForFuture": "You can't book tickets for a date more than a week in advance",
     "bookedSeats": "You have booked tickets!"
   },
   "Review": {

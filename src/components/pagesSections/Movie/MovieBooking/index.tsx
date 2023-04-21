@@ -15,12 +15,14 @@ import { createArrOfDaysFromNumber } from "../../../../helpers/createArrFromNumb
 import { AlertTypes } from "../../../../constants/alert";
 import { userChoiceSelector } from "../../../../store/slices/userChoiceSlice/selectors";
 import { daysSelector } from "../../../../store/slices/daysSlice/selectors";
+import { futureLimit } from "../../../../pages/Movie/config";
 
 import { MovieBookingTitle, MovieBookingWrapper } from "./styles";
 import { dividerHeight } from "./config";
 
 const MovieBooking: FunctionComponent = () => {
-  const { bookingSectionTitle, cantBookForPast } = useMovieText();
+  const { bookingSectionTitle, cantBookForPast, cantBookForFuture } =
+    useMovieText();
   const [index, setIndex] = useState<number>(() => getCurrDay() - 1);
 
   const {
@@ -51,6 +53,13 @@ const MovieBooking: FunctionComponent = () => {
       setIsAlertOpen({
         isOpen: true,
         text: cantBookForPast,
+        type: AlertTypes.ERROR,
+      });
+    }
+    if (incrementedIndex > currDay + futureLimit) {
+      setIsAlertOpen({
+        isOpen: true,
+        text: cantBookForFuture,
         type: AlertTypes.ERROR,
       });
     } else {
