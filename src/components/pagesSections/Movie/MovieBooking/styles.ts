@@ -1,7 +1,5 @@
 import styled from "styled-components";
 
-import { SliderItemsHorizontalWidth } from "../../../Slider/styles";
-
 const MovieBookingWrapperWidthPercent = 100;
 
 export const MovieBookingWrapper = styled.div`
@@ -17,12 +15,4 @@ export const MovieBookingTitle = styled.h2`
   color: ${({ theme }) => theme.colors.lightGray};
   text-align: center;
   margin-bottom: ${({ theme }) => theme.margin.mb20};
-`;
-
-export const MovieHallBadgeWrapper = styled.div`
-  ${({ theme }) => theme.flexAlignCenter};
-  justify-content: space-between;
-  width: ${SliderItemsHorizontalWidth}px;
-  margin-top: 30px;
-  cursor: pointer;
 `;

@@ -90,7 +90,10 @@
     "screenTitle": "Screen",
     "selected": "Selected",
     "reserved": "Reserved",
-    "available": "Available"
+    "available": "Available",
+    "footerSeats": "seats",
+    "cantBookForPast": "You can't book ticket for the past days",
+    "bookedSeats": "You have booked tickets!"
   },
   "Review": {
     "title": "Review",

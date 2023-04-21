@@ -7,44 +7,56 @@ import BookSliderItems from "../../../BookSliderItems";
 import { Colors } from "../../../../constants/styles/colors";
 import { SliderDirectionVariant } from "../../../../constants/slider";
 import { BookSliderItemWrapperWidth } from "../../../BookSliderItems/BookSliderItem/styles";
-import { handleDays } from "../../../../helpers/handleDays";
-import { createArrOfDaysFromNumber } from "../../../../helpers/createArrFromNumber";
 import { useActions } from "../../../../hooks/useActionts";
 import { useAppSelector } from "../../../../hooks/useAppSelector";
+import { getCurrDay } from "../../../../helpers/date/getCurrDay";
+import { getMonthDays } from "../../../../helpers/date/getMonthDays";
+import { createArrOfDaysFromNumber } from "../../../../helpers/createArrFromNumber";
+import { AlertTypes } from "../../../../constants/alert";
+import { userChoiceSelector } from "../../../../store/slices/userChoiceSlice/selectors";
+import { daysSelector } from "../../../../store/slices/daysSlice/selectors";
 
-import {
-  MovieBookingTitle,
-  MovieBookingWrapper,
-  MovieHallBadgeWrapper,
-} from "./styles";
-import MovieHallBadge from "./MovieHallBadge";
+import { MovieBookingTitle, MovieBookingWrapper } from "./styles";
 import { dividerHeight } from "./config";
-import { createDefaultBookingInfo } from "./config/createDefaultBookingInfo";
 
 const MovieBooking: FunctionComponent = () => {
-  const { bookingSectionTitle } = useMovieText();
-  const [index, setIndex] = useState<number>(0);
-  const [badgeIndex, setBadgeIndex] = useState<number>(0);
-  const { setBookings, setDays, setCurrDay, setSelect } = useActions();
-  const { bookings } = useAppSelector((state) => state.booking);
-  const { currDay, days } = useAppSelector((state) => state.days);
+  const { bookingSectionTitle, cantBookForPast } = useMovieText();
+  const [index, setIndex] = useState<number>(() => getCurrDay() - 1);
+
+  const {
+    setDays,
+    setCurrDay,
+    setChosenDay,
+    setCinemaMovieDay,
+    setIsAlertOpen,
+    removePrevMovies,
+  } = useActions();
+  const { days, currDay } = useAppSelector(daysSelector);
+  const { chosenMovie } = useAppSelector(userChoiceSelector);
 
   useEffect(() => {
-    const { day, days: monthDays } = handleDays();
-    const monthDayArr = createArrOfDaysFromNumber(monthDays);
-    setDays({ currDay: day, days: monthDayArr });
-    setIndex(currDay - 1);
-    const restDays = monthDayArr.slice(currDay - 1);
-    setBookings(restDays.map((item) => createDefaultBookingInfo(item)));
+    const day = getCurrDay();
+    const monthDays = getMonthDays();
+    const monthDaysArr = createArrOfDaysFromNumber(monthDays);
+    setCurrDay(day);
+    setDays(monthDaysArr);
+    setIndex(day - 1);
+    removePrevMovies({ day, movieTitle: chosenMovie });
   }, []);
 
   useEffect(() => {
-    setCurrDay(index + 1);
+    const incrementedIndex = index + 1;
+    setChosenDay(incrementedIndex);
+    if (incrementedIndex < currDay) {
+      setIsAlertOpen({
+        isOpen: true,
+        text: cantBookForPast,
+        type: AlertTypes.ERROR,
+      });
+    } else {
+      setCinemaMovieDay({ chosenDay: incrementedIndex, movie: chosenMovie });
+    }
   }, [index]);
-
-  const handleActiveBadge = (badgeIdx: number) => () => {
-    setBadgeIndex(badgeIdx);
-  };
 
   return (
     <MovieBookingWrapper>
@@ -66,20 +78,6 @@ const MovieBooking: FunctionComponent = () => {
         height={dividerHeight}
         color={Colors.WHITE}
       />
-      <MovieHallBadgeWrapper>
-        {bookings
-          .find(({ day }) => day === currDay)
-          ?.session?.map(({ available, hall, startTime }, i) => (
-            <MovieHallBadge
-              key={startTime}
-              isActive={badgeIndex === i}
-              hallNumber={hall}
-              time={startTime}
-              available={available.length}
-              onClick={handleActiveBadge(i)}
-            />
-          ))}
-      </MovieHallBadgeWrapper>
     </MovieBookingWrapper>
   );
 };

@@ -4,7 +4,8 @@ import portalSliceReducer from "./portalSlice/portalSlice";
 import userSliceReducer from "./userSlice/userSlice";
 import videoSliceReducer from "./videoSlice/videoSlice";
 import daysSliceReducer from "./daysSlice/daysSlice";
-import bookingSliceReducer from "./bookingSlice/bookingSlice";
+import cinemaSliceReducer from "./cinemaSlice/cinemaSlice";
+import useChoiceSliceReducer from "./userChoiceSlice/userChoiceSlice";
 
 export const allReducers = {
   user: userSliceReducer,
@@ -12,6 +13,7 @@ export const allReducers = {
   alert: alertSliceReducer,
   video: videoSliceReducer,
   movies: movieSliceReducer,
-  booking: bookingSliceReducer,
+  cinema: cinemaSliceReducer,
   days: daysSliceReducer,
+  userChoice: useChoiceSliceReducer,
 };

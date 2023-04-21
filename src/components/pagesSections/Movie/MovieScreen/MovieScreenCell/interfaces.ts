@@ -1,5 +1,5 @@
 export interface MovieScreenCellProps {
-  seatNumber?: number;
+  seatNumber: number;
   reserved?: boolean;
   selected?: boolean;
 }

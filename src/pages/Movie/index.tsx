@@ -1,4 +1,4 @@
-import { FunctionComponent, useState } from "react";
+import { FunctionComponent, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { usePalette } from "react-palette";
 
@@ -13,10 +13,15 @@ import { useAppSelector } from "../../hooks/useAppSelector";
 import { isAuthSelector } from "../../store/slices/userSlice/selectors";
 import { useActions } from "../../hooks/useActionts";
 import { AlertTypes } from "../../constants/alert";
-import MovieScreen from "../../components/pagesSections/Movie/MovieBooking/MovieScreen";
+import MovieScreen from "../../components/pagesSections/Movie/MovieScreen";
 import MovieInfo from "../../components/pagesSections/Movie/MovieInfo";
 import MovieTrailer from "../../components/pagesSections/Movie/MovieTrailer";
 import MovieHeader from "../../components/pagesSections/Movie/MovieHeader";
+import MovieBadges from "../../components/pagesSections/Movie/MovieBadges";
+import MovieFooter from "../../components/pagesSections/Movie/MovieFooter";
+import { createDefaultCinemaInfo } from "../../store/slices/cinemaSlice/config.ts";
+import { userChoiceSelector } from "../../store/slices/userChoiceSlice/selectors";
+import { currDaySelector } from "../../store/slices/daysSlice/selectors";
 // import { moviesSelector } from "../../store/slices/movieSlice/selectors";
 
 import {
@@ -36,21 +41,27 @@ const Movie: FunctionComponent = () => {
   const [isBookSectionVisible, setIsBookSectionVisible] =
     useState<boolean>(false);
   const isAuth = useAppSelector(isAuthSelector);
-  const { setIsAlertOpen } = useActions();
+  const { chosenDay } = useAppSelector(userChoiceSelector);
+  const currDay = useAppSelector(currDaySelector);
+  const { setIsAlertOpen, setCinemaMovie, setChosenMovie } = useActions();
   // const movies = useAppSelector(moviesSelector);
   // const movieReviews = useGetMoviesReview(id!);
 
+  const isValidDay = chosenDay >= currDay;
   const movie = moviesImdbNew.find((item) => item.id === id);
   const nextMovie = handleNextMovieIndex(moviesImdbNew, id!);
   const { data, loading } = usePalette(movie?.image);
 
   const navigateToNextMovie = () => {
+    setIsBookSectionVisible(false);
     navigate(`${AppPathesWithoutSlug.MOVIE}${nextMovie.id}`);
   };
 
   const handleBookBtn = () => {
-    if (isAuth) {
+    if (isAuth && movie) {
       setIsBookSectionVisible(true);
+      setCinemaMovie(createDefaultCinemaInfo(movie.title));
+      setChosenMovie(movie.title);
     } else {
       setIsAlertOpen({
         isOpen: true,
@@ -59,6 +70,12 @@ const Movie: FunctionComponent = () => {
       });
     }
   };
+
+  useEffect(() => {
+    if (!isAuth) {
+      setIsBookSectionVisible(false);
+    }
+  }, [isAuth]);
 
   if (loading || !movie) return <MoviePageLoader />;
 
@@ -70,7 +87,13 @@ const Movie: FunctionComponent = () => {
         <>
           <Divider />
           <MovieBooking />
-          <MovieScreen />
+          {isValidDay && (
+            <>
+              <MovieBadges />
+              <MovieScreen />
+              <MovieFooter />
+            </>
+          )}
           <Divider />
         </>
       )}

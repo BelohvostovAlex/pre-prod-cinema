@@ -1,7 +1,9 @@
 import { FunctionComponent } from "react";
 
+import { BookingsWrapper } from "./styles";
+
 const Bookings: FunctionComponent = () => {
-  return <div>Bookings</div>;
+  return <BookingsWrapper>Bookings</BookingsWrapper>;
 };
 
 export default Bookings;

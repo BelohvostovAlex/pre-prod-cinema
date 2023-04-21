@@ -18,10 +18,18 @@ import {
 import { getMoviesThunk } from "./movieSlice/thunks/getMoviesThunk";
 import { setCurrDay, setDays } from "./daysSlice/daysSlice";
 import {
-  setBookings,
+  resetChoice,
+  setChosenDay,
+  setChosenMovie,
+  setChosenMovieBadge,
+  setChosenSeats,
+} from "./userChoiceSlice/userChoiceSlice";
+import {
+  removePrevMovies,
+  setCinemaMovie,
+  setCinemaMovieDay,
   setReserve,
-  setSelect,
-} from "./bookingSlice/bookingSlice";
+} from "./cinemaSlice/cinemaSlice";
 
 export const allActionCreators = {
   changeDarkTheme,
@@ -40,7 +48,13 @@ export const allActionCreators = {
   getMoviesThunk,
   setDays,
   setCurrDay,
-  setBookings,
+  setChosenDay,
+  setChosenMovieBadge,
   setReserve,
-  setSelect,
+  setCinemaMovie,
+  setCinemaMovieDay,
+  setChosenMovie,
+  setChosenSeats,
+  resetChoice,
+  removePrevMovies,
 };

@@ -1,7 +1,6 @@
 import { FunctionComponent } from "react";
 
-import MovieScreenRaw from "../MovieScreenRow";
-import { rows } from "../../../../../constants/booking";
+import { rows } from "../../../../constants/booking";
 
 import {
   MovieScreenCellExample,
@@ -15,6 +14,7 @@ import {
   MovieScreenWrapper,
 } from "./styles";
 import { useMovieScreenText } from "./config/useMovieScreenText";
+import MovieScreenRaw from "./MovieScreenRow";
 
 const MovieScreen: FunctionComponent = () => {
   const { screenTitle, available, reserved, selected } = useMovieScreenText();

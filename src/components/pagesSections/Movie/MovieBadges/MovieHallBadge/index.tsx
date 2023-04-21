@@ -19,6 +19,7 @@ const MovieHallBadge: FunctionComponent<MovieHallBadgeProps> = ({
   onClick,
 }) => {
   const { movieBadgeHallTitle, availableSeatsText } = useMovieHallBadgeText();
+
   return (
     <MovieHallBadgeWrapper isActive={isActive} onClick={onClick}>
       <MovieHallBadgeTime>{time}</MovieHallBadgeTime>

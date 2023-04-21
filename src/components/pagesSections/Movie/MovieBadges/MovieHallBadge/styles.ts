@@ -11,7 +11,9 @@ export const MovieHallBadgeWrapper = styled.div<MovieHallBadgeWrapperProps>`
   background: ${({ theme }) => theme.colors.extraDarkGray};
   border-radius: ${({ theme }) => theme.border_radius[20]};
   border: ${({ isActive, theme }) =>
-    isActive && `solid 3px ${theme.colors.secondary}`};
+    isActive
+      ? `solid 3px ${theme.colors.secondary}`
+      : `solid 3px ${theme.colors.extraDarkGray}`};
   color: ${({ theme }) => theme.colors.primary};
   padding: 10px;
 `;
