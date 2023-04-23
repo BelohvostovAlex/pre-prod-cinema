@@ -1,10 +1,12 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
+import { IDate } from "../../../models/IDate";
+
 import { CinemaInfo, CinemaState, ReservePayload } from "./interfaces";
 import { createCinemaSession } from "./config.ts";
 
 const initialState: CinemaState = {
-  cinema: [],
+  cinema: [] as CinemaInfo[],
 };
 
 export const cinemaSlice = createSlice({
@@ -12,28 +14,28 @@ export const cinemaSlice = createSlice({
   initialState,
   reducers: {
     setCinemaMovie: (state, action: PayloadAction<CinemaInfo>) => {
-      const newCinema = state.cinema.find(
-        (movie) => movie.movie === action.payload.movie,
+      const { movie } = action.payload;
+      const isCinemaExists = state.cinema.find(
+        (cinema) => cinema.movie === movie,
       );
-      if (!newCinema) {
+      if (!isCinemaExists) {
         state.cinema.push(action.payload);
       }
     },
     setCinemaMovieDay: (
       state,
-      action: PayloadAction<{ movie: string; chosenDay: number }>,
+      action: PayloadAction<{ movie: string; chosenDay: IDate }>,
     ) => {
-      const newCinema = state.cinema.find(
-        (movie) => movie.movie === action.payload.movie,
+      const { chosenDay, movie } = action.payload;
+      const isCinemaExists = state.cinema.find(
+        (cinema) => cinema.movie === movie,
       );
-      if (newCinema) {
-        const dayBooking = newCinema.movieInfoBookings.find(
-          (item) => item.day === action.payload.chosenDay,
+      if (isCinemaExists) {
+        const dayBooking = isCinemaExists.movieInfoBookings.find(
+          (item) => item.day.date === chosenDay.date,
         );
         if (!dayBooking) {
-          newCinema.movieInfoBookings.push(
-            createCinemaSession(action.payload.chosenDay),
-          );
+          isCinemaExists.movieInfoBookings.push(createCinemaSession(chosenDay));
         }
       }
     },
@@ -45,13 +47,13 @@ export const cinemaSlice = createSlice({
         movie: actionMovie,
       } = action.payload;
       const selectedMovie = state.cinema.find(
-        (item) => item.movie === actionMovie,
+        ({ movie }) => movie === actionMovie,
       );
       const selectedMovieDay = selectedMovie?.movieInfoBookings.find(
-        (item) => item.day === actionDay,
+        ({ day }) => day === actionDay,
       );
       const selectedSession = selectedMovieDay?.session.find(
-        (item) => item.time === actionTime,
+        ({ time }) => time === actionTime,
       );
       if (selectedSession) {
         if (!seat.some((item) => selectedSession.reserved.includes(item))) {
@@ -64,13 +66,13 @@ export const cinemaSlice = createSlice({
     },
     removePrevMovies: (
       state,
-      action: PayloadAction<{ day: number; movieTitle: string }>,
+      action: PayloadAction<{ date: IDate; movieTitle: string }>,
     ) => {
-      const { movieTitle, day } = action.payload;
+      const { movieTitle, date } = action.payload;
       const currMovie = state.cinema.find(({ movie }) => movie === movieTitle);
       if (currMovie) {
         currMovie.movieInfoBookings = currMovie.movieInfoBookings.filter(
-          (movInfo) => movInfo.day >= day,
+          (movInfo) => movInfo.day.fullDateInfo <= date.fullDateInfo,
         );
       }
     },

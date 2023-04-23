@@ -6,7 +6,7 @@ import { IRoute } from "./interfaces";
 
 const Main = lazy(() => import("../../pages/Main"));
 const Movie = lazy(() => import("../../pages/Movie"));
-const Bookings = lazy(() => import("../../pages/Bookings"));
+const Booking = lazy(() => import("../../pages/Booking"));
 
 export const publicRoutes: IRoute[] = [
   { path: AppPathes.MAIN, element: Main },
@@ -14,5 +14,5 @@ export const publicRoutes: IRoute[] = [
 ];
 
 export const privateRoutes: IRoute[] = [
-  { path: AppPathes.BOOKINGS, element: Bookings },
+  { path: AppPathes.BOOKING, element: Booking },
 ];

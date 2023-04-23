@@ -30,6 +30,7 @@ import {
   setCinemaMovieDay,
   setReserve,
 } from "./cinemaSlice/cinemaSlice";
+import { removeTicket, setTicket } from "./ticketsSlice/ticketsSlice";
 
 export const allActionCreators = {
   changeDarkTheme,
@@ -57,4 +58,6 @@ export const allActionCreators = {
   setChosenSeats,
   resetChoice,
   removePrevMovies,
+  setTicket,
+  removeTicket,
 };

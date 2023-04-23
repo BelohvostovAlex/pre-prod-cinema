@@ -1,9 +1,11 @@
+import { IDate } from "../IDate";
+
 export interface ITicket {
+  id: string;
   movie: string;
-  hall: string;
   time: string;
-  date: string;
+  day: IDate;
   price: string;
-  reservedSeat: number[];
-  selectedSeat: number[];
+  seatsAmount: number;
+  isCanceled: boolean;
 }

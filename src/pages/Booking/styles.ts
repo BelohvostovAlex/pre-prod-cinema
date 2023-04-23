@@ -4,4 +4,5 @@ const BookingsWrapperMinH = 100;
 
 export const BookingsWrapper = styled.div`
   min-height: ${BookingsWrapperMinH}vh;
+  padding-top: 20px;
 `;

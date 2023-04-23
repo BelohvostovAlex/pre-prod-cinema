@@ -16,7 +16,7 @@ const BookSliderItems: FunctionComponent<BookSliderItemsProps> = ({
   };
   return (
     <>
-      {data?.map((item, idx) => {
+      {data?.map(({ date }, idx) => {
         const indexLeft = mod(index - 1, dataLength);
         const indexRight = mod(index + 1, dataLength);
         const indexPrevLeft = mod(index - 2, dataLength);
@@ -24,13 +24,13 @@ const BookSliderItems: FunctionComponent<BookSliderItemsProps> = ({
 
         return (
           <BookSliderItem
-            key={item}
+            key={date}
             center={idx === index}
             left={idx === indexLeft}
             right={idx === indexRight}
             prevLeft={idx === indexPrevLeft}
             prevRight={idx === indexPrevRight}
-            item={item}
+            item={date}
           />
         );
       })}

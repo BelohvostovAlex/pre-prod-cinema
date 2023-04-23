@@ -1,4 +1,6 @@
+import { IDate } from "../../models/IDate";
+
 export interface BookSliderItemsProps {
-  data: number[];
+  data: IDate[];
   index: number;
 }

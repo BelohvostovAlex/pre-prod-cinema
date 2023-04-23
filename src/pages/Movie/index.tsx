@@ -20,8 +20,6 @@ import MovieHeader from "../../components/pagesSections/Movie/MovieHeader";
 import MovieBadges from "../../components/pagesSections/Movie/MovieBadges";
 import MovieFooter from "../../components/pagesSections/Movie/MovieFooter";
 import { createDefaultCinemaInfo } from "../../store/slices/cinemaSlice/config.ts";
-import { userChoiceSelector } from "../../store/slices/userChoiceSlice/selectors";
-import { currDaySelector } from "../../store/slices/daysSlice/selectors";
 // import { moviesSelector } from "../../store/slices/movieSlice/selectors";
 
 import {
@@ -33,7 +31,6 @@ import {
 import { useMovieText } from "./config/useMovieText";
 // import { useGetMoviesReview } from "./config/useGetMovieReviews";
 import { handleNextMovieIndex } from "./config/handleNextMovieIndex";
-import { futureLimit } from "./config";
 
 const Movie: FunctionComponent = () => {
   const { id } = useParams();
@@ -42,13 +39,10 @@ const Movie: FunctionComponent = () => {
   const [isBookSectionVisible, setIsBookSectionVisible] =
     useState<boolean>(false);
   const isAuth = useAppSelector(isAuthSelector);
-  const { chosenDay } = useAppSelector(userChoiceSelector);
-  const currDay = useAppSelector(currDaySelector);
   const { setIsAlertOpen, setCinemaMovie, setChosenMovie } = useActions();
   // const movies = useAppSelector(moviesSelector);
   // const movieReviews = useGetMoviesReview(id!);
 
-  const isValidDay = chosenDay >= currDay && chosenDay <= currDay + futureLimit;
   const movie = moviesImdbNew.find((item) => item.id === id);
   const nextMovie = handleNextMovieIndex(moviesImdbNew, id!);
   const { data, loading } = usePalette(movie?.image);
@@ -88,13 +82,9 @@ const Movie: FunctionComponent = () => {
         <>
           <Divider />
           <MovieBooking />
-          {isValidDay && (
-            <>
-              <MovieBadges />
-              <MovieScreen />
-              <MovieFooter />
-            </>
-          )}
+          <MovieBadges />
+          <MovieScreen />
+          <MovieFooter />
           <Divider />
         </>
       )}

@@ -21,7 +21,7 @@ const Navigation: FunctionComponent = () => {
   const openSignUpPortal = useOpenPortal(PortalVariant.SIGN_UP);
 
   const onClick = (to: string) => {
-    if (!token && to === AppPathes.BOOKINGS) {
+    if (!token && to === AppPathes.BOOKING) {
       openSignUpPortal();
     }
   };

@@ -1,20 +1,22 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
+import { IDate } from "../../../models/IDate";
+
 import { DaysState } from "./interfaces";
 
 const initialState: DaysState = {
-  currDay: 0,
-  days: [],
+  currDay: {} as IDate,
+  days: [] as IDate[],
 };
 
 export const daysSlice = createSlice({
   name: "days",
   initialState,
   reducers: {
-    setDays: (state, action: PayloadAction<number[]>) => {
+    setDays: (state, action: PayloadAction<IDate[]>) => {
       state.days = action.payload;
     },
-    setCurrDay: (state, action: PayloadAction<number>) => {
+    setCurrDay: (state, action: PayloadAction<IDate>) => {
       state.currDay = action.payload;
     },
   },

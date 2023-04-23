@@ -102,6 +102,14 @@
     "readMore": "Read more",
     "hide": "Hide"
   },
+  "Booking": {
+    "title": {
+      "missed": "Your missed bookings",
+      "past": "Your past bookings",
+      "upcoming": "Your upcoming bookings"
+    },
+    "cancelBtn": "Cancel"
+  },
   "Footer": {
     "firstColumn": {
       "title": "First",

@@ -1,5 +1,6 @@
 import { FunctionComponent } from "react";
 import { useNavigate } from "react-router-dom";
+import { v4 } from "uuid";
 
 import Button from "../../../UI/Buttons/Button";
 import { TypographyVariant } from "../../../../constants/styles/typography";
@@ -9,7 +10,6 @@ import { useAppSelector } from "../../../../hooks/useAppSelector";
 import { useActions } from "../../../../hooks/useActionts";
 import { AlertTypes } from "../../../../constants/alert";
 import { AppPathes } from "../../../../constants/routes";
-import { currDaySelector } from "../../../../store/slices/daysSlice/selectors";
 import { userChoiceSelector } from "../../../../store/slices/userChoiceSlice/selectors";
 
 import {
@@ -20,12 +20,11 @@ import {
 } from "./styles";
 
 const MovieFooter: FunctionComponent = () => {
-  const { bookBtn, footerSeats, cantBookForPast, bookedSeats } = useMovieText();
+  const { bookBtn, footerSeats, bookedSeats } = useMovieText();
   const navigate = useNavigate();
   const { chosenDay, chosenBadge, chosenMovie, chosenSeats } =
     useAppSelector(userChoiceSelector);
-  const currDay = useAppSelector(currDaySelector);
-  const { setReserve, setIsAlertOpen, resetChoice } = useActions();
+  const { setReserve, setIsAlertOpen, resetChoice, setTicket } = useActions();
 
   const seats = chosenSeats.find(
     ({ day, movie, time }) =>
@@ -34,29 +33,30 @@ const MovieFooter: FunctionComponent = () => {
   const seatsAmount = seats?.length || 0;
 
   const handleBook = () => {
-    if (chosenDay < currDay) {
+    if (seats) {
+      setReserve({
+        day: chosenDay,
+        hallNumber: chosenBadge.hallNumber,
+        seat: seats,
+        time: chosenBadge.time,
+        movie: chosenMovie,
+      });
+      setTicket({
+        day: chosenDay,
+        id: v4(),
+        movie: chosenMovie,
+        seatsAmount: chosenSeats.length,
+        price: "100",
+        time: chosenBadge.time,
+        isCanceled: false,
+      });
+      resetChoice();
       setIsAlertOpen({
         isOpen: true,
-        text: cantBookForPast,
-        type: AlertTypes.ERROR,
+        text: bookedSeats,
+        type: AlertTypes.SUCCESS,
       });
-    } else {
-      if (seats) {
-        setReserve({
-          day: chosenDay,
-          hallNumber: chosenBadge.hallNumber,
-          seat: seats,
-          time: chosenBadge.time,
-          movie: chosenMovie,
-        });
-        resetChoice();
-        setIsAlertOpen({
-          isOpen: true,
-          text: bookedSeats,
-          type: AlertTypes.SUCCESS,
-        });
-        navigate(AppPathes.BOOKINGS);
-      }
+      navigate(AppPathes.BOOKING);
     }
   };
   return (

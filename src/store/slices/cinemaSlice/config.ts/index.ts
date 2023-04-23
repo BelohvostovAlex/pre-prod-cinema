@@ -1,10 +1,11 @@
 import { halls, seats } from "../../../../constants/booking";
 import { getCurrDay } from "../../../../helpers/date/getCurrDay";
+import { IDate } from "../../../../models/IDate";
 import { CinemaInfo } from "../interfaces";
 
 export const createDefaultCinemaInfo = (
   movie: string,
-  day: number = getCurrDay(),
+  day: IDate = getCurrDay(),
 ): CinemaInfo => {
   return {
     movie,
@@ -39,7 +40,7 @@ export const createDefaultCinemaInfo = (
   };
 };
 
-export const createCinemaSession = (day: number) => {
+export const createCinemaSession = (day: IDate) => {
   return {
     day,
     session: [

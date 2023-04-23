@@ -29,7 +29,9 @@ const MovieBadges: FunctionComponent<MovieBadgesProps> = () => {
     );
     const movieInfo = movie?.movieInfoBookings;
     if (movieInfo) {
-      const currMovieInfo = movieInfo.find(({ day }) => day === chosenDay);
+      const currMovieInfo = movieInfo.find(
+        ({ day }) => day.date === chosenDay.date,
+      );
       if (currMovieInfo) setCurrMovieSession(currMovieInfo.session);
       setChosenMovieBadge(halls[badgeIndex]);
     }

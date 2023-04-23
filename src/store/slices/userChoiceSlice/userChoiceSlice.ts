@@ -1,19 +1,17 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
-import { Badge, UserChoiceState } from "./interfaces";
+import { IDate } from "../../../models/IDate";
 
-const initialState: UserChoiceState = {
-  chosenDay: 0,
-  chosenMovie: "",
-  chosenBadge: {} as Badge,
-  chosenSeats: [],
-};
+import { Badge, UserChoiceState } from "./interfaces";
+import { defaultState } from "./config";
+
+const initialState: UserChoiceState = defaultState;
 
 export const userChoiceSlice = createSlice({
   name: "userChoice",
   initialState,
   reducers: {
-    setChosenDay: (state, action: PayloadAction<number>) => {
+    setChosenDay: (state, action: PayloadAction<IDate>) => {
       state.chosenDay = action.payload;
     },
     setChosenMovieBadge: (state, action: PayloadAction<Badge>) => {
@@ -25,7 +23,7 @@ export const userChoiceSlice = createSlice({
     setChosenSeats: (
       state,
       action: PayloadAction<{
-        day: number;
+        day: IDate;
         movie: string;
         seat: number;
         time: string;
@@ -34,7 +32,9 @@ export const userChoiceSlice = createSlice({
       const { day, movie, seat, time } = action.payload;
       const isExist = state.chosenSeats.find(
         (item) =>
-          item.movie === movie && item.day === day && item.time === time,
+          item.movie === movie &&
+          item.day.date === day.date &&
+          item.time === time,
       );
       if (isExist && !isExist.seats.includes(seat)) {
         isExist.seats.push(seat);
@@ -43,11 +43,8 @@ export const userChoiceSlice = createSlice({
         state.chosenSeats.push({ day, movie, seats: [seat], time });
       }
     },
-    resetChoice: (state) => {
-      state.chosenBadge = {} as Badge;
-      state.chosenDay = 0;
-      state.chosenMovie = "";
-      state.chosenSeats = [];
+    resetChoice: () => {
+      return defaultState;
     },
   },
 });

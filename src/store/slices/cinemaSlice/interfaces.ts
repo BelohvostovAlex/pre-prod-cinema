@@ -1,3 +1,5 @@
+import { IDate } from "../../../models/IDate";
+
 export interface Session {
   time: string;
   hallNumber: string;
@@ -7,7 +9,7 @@ export interface Session {
 }
 
 interface MovieInfo {
-  day: number;
+  day: IDate;
   session: Session[];
 }
 

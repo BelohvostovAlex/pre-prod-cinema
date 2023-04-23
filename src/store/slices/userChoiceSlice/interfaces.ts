@@ -1,3 +1,5 @@
+import { IDate } from "../../../models/IDate";
+
 export interface Badge {
   time: string;
   hallNumber: string;
@@ -5,13 +7,13 @@ export interface Badge {
 
 export interface ChosenSeat {
   time: string;
-  day: number;
+  day: IDate;
   movie: string;
   seats: number[];
 }
 
 export interface UserChoiceState {
-  chosenDay: number;
+  chosenDay: IDate;
   chosenBadge: Badge;
   chosenMovie: string;
   chosenSeats: ChosenSeat[];
