@@ -16,9 +16,10 @@ export const ticketsSlice = createSlice({
       state.tickets.push(action.payload);
     },
     removeTicket: (state, action: PayloadAction<string>) => {
-      state.tickets = state.tickets.filter(
-        (ticket) => ticket.id !== action.payload,
-      );
+      const currTicket = state.tickets.find(({ id }) => id === action.payload);
+      if (currTicket) {
+        currTicket.isCanceled = true;
+      }
     },
   },
 });

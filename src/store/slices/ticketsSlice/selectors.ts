@@ -17,7 +17,8 @@ export const pastTicketsSelector = createSelector(
   currDaySelector,
   (tickets, { fullDateInfo, date }) => {
     return tickets.filter(
-      ({ day }) => day.fullDateInfo < fullDateInfo && day.date !== date,
+      ({ day, isCanceled }) =>
+        !isCanceled && day.fullDateInfo < fullDateInfo && day.date !== date,
     );
   },
 );
@@ -27,7 +28,8 @@ export const upcomingTicketsSelector = createSelector(
   currDaySelector,
   (tickets, { fullDateInfo, date }) => {
     return tickets.filter(
-      ({ day }) => day.date === date || day.fullDateInfo > fullDateInfo,
+      ({ day, isCanceled }) =>
+        (!isCanceled && day.date === date) || day.fullDateInfo > fullDateInfo,
     );
   },
 );

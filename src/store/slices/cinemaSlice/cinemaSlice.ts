@@ -47,10 +47,10 @@ export const cinemaSlice = createSlice({
         movie: actionMovie,
       } = action.payload;
       const selectedMovie = state.cinema.find(
-        ({ movie }) => movie === actionMovie,
+        (item) => item.movie === actionMovie,
       );
       const selectedMovieDay = selectedMovie?.movieInfoBookings.find(
-        ({ day }) => day === actionDay,
+        ({ day }) => day.date === actionDay.date,
       );
       const selectedSession = selectedMovieDay?.session.find(
         ({ time }) => time === actionTime,
@@ -72,7 +72,7 @@ export const cinemaSlice = createSlice({
       const currMovie = state.cinema.find(({ movie }) => movie === movieTitle);
       if (currMovie) {
         currMovie.movieInfoBookings = currMovie.movieInfoBookings.filter(
-          (movInfo) => movInfo.day.fullDateInfo <= date.fullDateInfo,
+          (movInfo) => movInfo?.day?.fullDateInfo >= date?.fullDateInfo,
         );
       }
     },

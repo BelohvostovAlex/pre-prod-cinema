@@ -1,11 +1,12 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
 import { IDate } from "../../../models/IDate";
+import { handleTicketPrice } from "../../../helpers/handleTicketPrice";
 
-import { Badge, UserChoiceState } from "./interfaces";
+import { Badge } from "./interfaces";
 import { defaultState } from "./config";
 
-const initialState: UserChoiceState = defaultState;
+const initialState = defaultState;
 
 export const userChoiceSlice = createSlice({
   name: "userChoice",
@@ -38,9 +39,16 @@ export const userChoiceSlice = createSlice({
       );
       if (isExist && !isExist.seats.includes(seat)) {
         isExist.seats.push(seat);
+        isExist.price = isExist.price + handleTicketPrice(day);
       }
       if (!isExist) {
-        state.chosenSeats.push({ day, movie, seats: [seat], time });
+        state.chosenSeats.push({
+          day,
+          movie,
+          seats: [seat],
+          time,
+          price: handleTicketPrice(day),
+        });
       }
     },
     resetChoice: () => {

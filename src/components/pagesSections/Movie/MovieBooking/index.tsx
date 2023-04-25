@@ -36,14 +36,16 @@ const MovieBooking: FunctionComponent = () => {
     setCurrDay(currDate);
     setChosenDay(currDate);
     setDays(availableDays);
-    removePrevMovies({ date: currDate, movieTitle: chosenMovie });
+    // removePrevMovies({ date: currDate, movieTitle: chosenMovie });
   }, []);
 
   useEffect(() => {
     const chosenDate = days[index];
-    setChosenDay(chosenDate);
-    setCinemaMovieDay({ chosenDay: chosenDate, movie: chosenMovie });
-  }, [index]);
+    if (chosenDate) {
+      setChosenDay(chosenDate);
+      setCinemaMovieDay({ chosenDay: chosenDate, movie: chosenMovie });
+    }
+  }, [index, days]);
 
   return (
     <MovieBookingWrapper>

@@ -4,7 +4,8 @@ export interface TicketProps {
   date: string;
   time: string;
   seatsAmount: number;
-  price: string;
+  price: number;
+  isUpcoming: boolean;
 
   cancelBooking?: () => void;
 }

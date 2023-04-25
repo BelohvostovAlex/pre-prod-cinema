@@ -1,7 +1,7 @@
 import { IDate } from "../../../../models/IDate";
-import { Badge } from "../interfaces";
+import { Badge, UserChoiceState } from "../interfaces";
 
-export const defaultState = {
+export const defaultState: UserChoiceState = {
   chosenDay: {} as IDate,
   chosenMovie: "",
   chosenBadge: {} as Badge,

@@ -108,7 +108,13 @@
       "past": "Ваши прошлые букинги",
       "upcoming": "Ваши предстоящие букинги"
     },
-    "cancelBtn": "Отмена"
+    "ticket": {
+      "date": "Дата",
+      "time": "Время",
+      "cancelBtn": "Отмена",
+      "seats": "мест(а)",
+      "seat": "место"
+    }
   },
   "Footer": {
     "firstColumn": {

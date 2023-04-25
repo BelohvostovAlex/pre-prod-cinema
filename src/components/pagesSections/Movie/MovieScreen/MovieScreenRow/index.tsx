@@ -21,7 +21,9 @@ const MovieScreenRaw: FunctionComponent<MovieScreenRawProps> = ({ seats }) => {
     );
     const movieInfo = movie?.movieInfoBookings;
     if (movieInfo) {
-      const currMovieInfo = movieInfo.find(({ day }) => day === chosenDay);
+      const currMovieInfo = movieInfo.find(
+        ({ day }) => day.date === chosenDay.date,
+      );
 
       if (currMovieInfo) {
         const currSession = currMovieInfo.session.find(

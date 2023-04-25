@@ -5,7 +5,7 @@ export interface ITicket {
   movie: string;
   time: string;
   day: IDate;
-  price: string;
+  price: number;
   seatsAmount: number;
   isCanceled: boolean;
 }

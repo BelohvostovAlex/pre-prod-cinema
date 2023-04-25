@@ -9,10 +9,12 @@ import { BookingTicketSectionProps } from "./interfaces";
 const BookingTicketSection: FunctionComponent<BookingTicketSectionProps> = ({
   title,
   data,
+  isUpcoming = false,
 }) => {
   if (data.length < 1) {
     return null;
   }
+
   return (
     <BookingTicketSectionWrapper>
       <BookingTitle title={title} />
@@ -28,6 +30,7 @@ const BookingTicketSection: FunctionComponent<BookingTicketSectionProps> = ({
               date={ticketDate}
               time={time}
               key={id}
+              isUpcoming={isUpcoming}
             />
           );
         })}

@@ -108,7 +108,13 @@
       "past": "Your past bookings",
       "upcoming": "Your upcoming bookings"
     },
-    "cancelBtn": "Cancel"
+    "ticket": {
+      "date": "Date",
+      "time": "Time",
+      "cancelBtn": "Cancel",
+      "seats": "seats",
+      "seat": "seat"
+    }
   },
   "Footer": {
     "firstColumn": {

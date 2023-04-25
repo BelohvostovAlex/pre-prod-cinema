@@ -10,6 +10,7 @@ export interface ChosenSeat {
   day: IDate;
   movie: string;
   seats: number[];
+  price: number;
 }
 
 export interface UserChoiceState {

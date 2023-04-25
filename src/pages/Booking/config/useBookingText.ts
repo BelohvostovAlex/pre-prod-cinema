@@ -7,6 +7,10 @@ export const useBookingText = () => {
     missedTitle: t("Booking.title.missed"),
     pastTitle: t("Booking.title.past"),
     upcomingTitle: t("Booking.title.upcoming"),
-    cancelBtn: t("Booking.cancelBtn"),
+    cancelBtn: t("Booking.ticket.cancelBtn"),
+    timeText: t("Booking.ticket.time"),
+    dateText: t("Booking.ticket.date"),
+    seatsText: t("Booking.ticket.seats"),
+    seatText: t("Booking.ticket.seat"),
   };
 };

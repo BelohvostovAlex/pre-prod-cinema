@@ -11,11 +11,12 @@ export const getAvailableDates = (
   for (let i = 0; i <= daysToAdd; i++) {
     const currentDate = new Date();
     currentDate.setDate(startDate.getDate() + i);
+    const dateMs = currentDate.getTime();
     availableDates.push({
       date: currentDate.getDate(),
       year: currentDate.getFullYear(),
       month: getMonthString(currentDate.getMonth()),
-      fullDateInfo: currentDate,
+      fullDateInfo: dateMs,
     });
   }
 

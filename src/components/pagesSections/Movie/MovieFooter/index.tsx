@@ -11,6 +11,7 @@ import { useActions } from "../../../../hooks/useActionts";
 import { AlertTypes } from "../../../../constants/alert";
 import { AppPathes } from "../../../../constants/routes";
 import { userChoiceSelector } from "../../../../store/slices/userChoiceSlice/selectors";
+import { handleTicketPrice } from "../../../../helpers/handleTicketPrice";
 
 import {
   MovieFooterBookingInfo,
@@ -18,6 +19,7 @@ import {
   MovieFooterBookingInfoText,
   MovieFooterWrapper,
 } from "./styles";
+import { buttonHeight } from "./config";
 
 const MovieFooter: FunctionComponent = () => {
   const { bookBtn, footerSeats, bookedSeats } = useMovieText();
@@ -26,18 +28,18 @@ const MovieFooter: FunctionComponent = () => {
     useAppSelector(userChoiceSelector);
   const { setReserve, setIsAlertOpen, resetChoice, setTicket } = useActions();
 
-  const seats = chosenSeats.find(
+  const foundChosenSeats = chosenSeats.find(
     ({ day, movie, time }) =>
       day === chosenDay && movie === chosenMovie && time === chosenBadge.time,
-  )?.seats;
-  const seatsAmount = seats?.length || 0;
+  );
+  const seatsAmount = foundChosenSeats?.seats?.length || 0;
 
   const handleBook = () => {
-    if (seats) {
+    if (foundChosenSeats?.seats) {
       setReserve({
         day: chosenDay,
         hallNumber: chosenBadge.hallNumber,
-        seat: seats,
+        seat: foundChosenSeats?.seats,
         time: chosenBadge.time,
         movie: chosenMovie,
       });
@@ -45,8 +47,8 @@ const MovieFooter: FunctionComponent = () => {
         day: chosenDay,
         id: v4(),
         movie: chosenMovie,
-        seatsAmount: chosenSeats.length,
-        price: "100",
+        seatsAmount: seatsAmount,
+        price: handleTicketPrice(chosenDay) * seatsAmount,
         time: chosenBadge.time,
         isCanceled: false,
       });
@@ -65,12 +67,14 @@ const MovieFooter: FunctionComponent = () => {
         <MovieFooterBookingInfoSubText>
           {seatsAmount} {footerSeats}
         </MovieFooterBookingInfoSubText>
-        <MovieFooterBookingInfoText>45 $</MovieFooterBookingInfoText>
+        <MovieFooterBookingInfoText>
+          {(foundChosenSeats?.price && foundChosenSeats.price) || 0} $
+        </MovieFooterBookingInfoText>
       </MovieFooterBookingInfo>
       <Button
         typography={TypographyVariant.poppins_b}
         variant={ButtonVariants.SECONDARY}
-        height="50px"
+        height={buttonHeight}
         onClick={handleBook}
       >
         {bookBtn}
