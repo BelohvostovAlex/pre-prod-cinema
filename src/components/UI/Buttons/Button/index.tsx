@@ -14,6 +14,7 @@ const Button: FunctionComponent<ButtonProps> = ({
   backgroundColor,
   color,
   margin,
+  icon,
   buttonTypes,
 }) => {
   return (
@@ -28,7 +29,9 @@ const Button: FunctionComponent<ButtonProps> = ({
       backgroundColor={backgroundColor}
       color={color}
       margin={margin}
+      icon={icon}
     >
+      {icon}
       {children}
     </StyledButton>
   );

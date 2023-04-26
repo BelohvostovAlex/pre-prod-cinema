@@ -11,9 +11,6 @@ const Drawer: FunctionComponent<DrawerProps> = ({
   onClose,
   title,
 }) => {
-  if (!isOpen) {
-    return null;
-  }
   return (
     <StyledDrawer isOpen={isOpen}>
       <DrawerTitle>

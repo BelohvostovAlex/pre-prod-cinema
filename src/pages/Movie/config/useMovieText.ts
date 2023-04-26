@@ -16,8 +16,7 @@ export const useMovieText = () => {
     notAuthBookBtn: t("Movie.notAuthBookBtn"),
     bookingSectionTitle: t("Movie.bookingSectionTitle"),
     footerSeats: t("Movie.footerSeats"),
-    cantBookForPast: t("Movie.cantBookForPast"),
-    cantBookForFuture: t("Movie.cantBookForFuture"),
+    cantBookEmpty: t("Movie.cantBookEmpty"),
     bookedSeats: t("Movie.bookedSeats"),
   };
 };

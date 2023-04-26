@@ -19,6 +19,10 @@ export const StyledRoundButton = styled.div<StyledRoundButtonProps>`
     width: ${styledRoundButtonSVGWidthPercent}%;
     height: ${styledRoundButtonSVGHeightPercent}%;
   }
+  svg line {
+    stroke: ${({ theme }) => theme.colors.primary};
+  }
+
   svg path {
     fill: ${({ theme }) => theme.colors.primary};
   }

@@ -17,6 +17,7 @@ box-shadow: ${({
 }) => `inset 50px 50px 100px 20px ${theme.colors.backgroundColor},
 inset -50px -50px 100px ${theme.colors.backgroundColor};`}
 filter: blur(10px);
+transition: background-color ease-in 0.2s;
 
 position: absolute;
 top: 0px;

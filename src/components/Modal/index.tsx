@@ -5,7 +5,7 @@ import { Colors } from "../../constants/styles/colors";
 import useOnClickOutside from "../../hooks/useOnClickOutside";
 import RoundButton from "../UI/Buttons/RoundButton";
 
-import { ModalButton, ModalContainer } from "./styles";
+import { ModalButtonWrapper, ModalContainer } from "./styles";
 import { ModalProps } from "./interfaces";
 import { defaultModalWidth } from "./config";
 
@@ -21,13 +21,13 @@ const Modal: FunctionComponent<ModalProps> = ({
   return (
     <ModalContainer height={height} width={width} ref={ref}>
       {children}
-      <ModalButton>
+      <ModalButtonWrapper>
         <RoundButton
           children={<Close />}
           onClick={onClose}
           background={Colors.DARK_GRAY}
         />
-      </ModalButton>
+      </ModalButtonWrapper>
     </ModalContainer>
   );
 };

@@ -13,8 +13,10 @@ import { IUser } from "../../../models/IUser";
 import { useErrorTranslation } from "../../errorTranslation/useErrorTranslation";
 import { useClosePortal } from "../../portal/useClosePortal";
 import { useActions } from "../../useActionts";
+import { Gender } from "../../../constants/authForm";
 
 import { UseAuthBySocialNetwork } from "./interfaces";
+import { mockUserData } from "./config";
 
 export const useAuthBySocialNetwork = (options: UseAuthBySocialNetwork) => {
   const { ClassProvider, provider } = options;
@@ -25,6 +27,7 @@ export const useAuthBySocialNetwork = (options: UseAuthBySocialNetwork) => {
 
   const handleAuthBySocialNetwork = async () => {
     try {
+      const { mockEmail, mockPhoto, mockSurname, mockUsername } = mockUserData;
       const result = await signInWithPopup(auth, provider);
       const user = result.user;
 
@@ -32,15 +35,15 @@ export const useAuthBySocialNetwork = (options: UseAuthBySocialNetwork) => {
 
       const isUserExists = (await getDocument(
         FirebaseCollections.USERS,
-        user.email || user.uid,
+        user.uid,
       )) as IUser | false;
 
       const id = user.uid;
       const token = credential?.accessToken;
-      const username = user.displayName?.split(" ")[0] || "Name";
-      const surname = user.displayName?.split(" ")[1] || "Surname";
-      const photo = user.photoURL || "";
-      const email = user.email ? user.email : "";
+      const username = user.displayName?.split(" ")[0] || mockUsername;
+      const surname = user.displayName?.split(" ")[1] || mockSurname;
+      const photo = user.photoURL || mockPhoto;
+      const email = user.email ? user.email : mockEmail;
 
       const newUser = {
         email,
@@ -48,7 +51,7 @@ export const useAuthBySocialNetwork = (options: UseAuthBySocialNetwork) => {
         photo,
         username,
         surname,
-        gender: "male",
+        gender: Gender.MALE,
         token,
       };
 

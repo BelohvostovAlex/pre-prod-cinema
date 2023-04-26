@@ -1,8 +1,7 @@
 import { setIsAlertOpen } from "./alertSlice/alertSlice";
 import { setPortal } from "./portalSlice/portalSlice";
 import {
-  changeDarkTheme,
-  changeLightTheme,
+  changeTheme,
   removeUser,
   setLoading,
   setUser,
@@ -33,8 +32,7 @@ import {
 import { removeTicket, setTicket } from "./ticketsSlice/ticketsSlice";
 
 export const allActionCreators = {
-  changeDarkTheme,
-  changeLightTheme,
+  changeTheme,
   setUser,
   removeUser,
   setPortal,

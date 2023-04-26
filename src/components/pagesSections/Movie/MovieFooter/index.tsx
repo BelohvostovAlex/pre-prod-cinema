@@ -22,7 +22,7 @@ import {
 import { buttonHeight } from "./config";
 
 const MovieFooter: FunctionComponent = () => {
-  const { bookBtn, footerSeats, bookedSeats } = useMovieText();
+  const { bookBtn, footerSeats, bookedSeats, cantBookEmpty } = useMovieText();
   const navigate = useNavigate();
   const { chosenDay, chosenBadge, chosenMovie, chosenSeats } =
     useAppSelector(userChoiceSelector);
@@ -59,6 +59,12 @@ const MovieFooter: FunctionComponent = () => {
         type: AlertTypes.SUCCESS,
       });
       navigate(AppPathes.BOOKING);
+    } else {
+      setIsAlertOpen({
+        isOpen: true,
+        text: cantBookEmpty,
+        type: AlertTypes.ERROR,
+      });
     }
   };
   return (

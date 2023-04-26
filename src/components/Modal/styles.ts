@@ -14,7 +14,7 @@ export const ModalContainer = styled.div<ModalContainerProps>`
   color: ${({ theme }) => theme.colors.white};
 `;
 
-export const ModalButton = styled.div`
+export const ModalButtonWrapper = styled.div`
   position: absolute;
   top: 5%;
   right: 7%;

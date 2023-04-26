@@ -180,8 +180,8 @@ const AuthForm: FunctionComponent<AuthFormProps> = ({
           backgroundColor={Colors.WHITE}
           color={Colors.BLACK}
           onClick={googleSignIn}
+          icon={<GoogleIcon />}
         >
-          <GoogleIcon />
           {googleBtn}
         </Button>
         <Button
@@ -192,8 +192,8 @@ const AuthForm: FunctionComponent<AuthFormProps> = ({
           backgroundColor={Colors.FACEBOOK}
           color={Colors.WHITE}
           onClick={facebookSignIn}
+          icon={<FacebookIcon />}
         >
-          <FacebookIcon />
           {facebookBtn}
         </Button>
         <Button
@@ -205,8 +205,8 @@ const AuthForm: FunctionComponent<AuthFormProps> = ({
           color={Colors.WHITE}
           margin={lastSocialBtnMargin}
           onClick={githubSignIn}
+          icon={<GithubIcon />}
         >
-          <GithubIcon />
           {githubrBtn}
         </Button>
       </ButtonGroup>

@@ -37,9 +37,7 @@ const MovieScreenCell: FunctionComponent<MovieScreenCellProps> = ({
       reserved={reserved}
       selected={isSelected}
       onClick={handleCellClick}
-    >
-      {seatNumber}
-    </MovieScreenCellWrapper>
+    />
   );
 };
 

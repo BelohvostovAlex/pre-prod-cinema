@@ -7,6 +7,7 @@ import ModalTitle from "../Modal/ModalTitle";
 import RoundButton from "../UI/Buttons/RoundButton";
 import { ReactComponent as SunIcon } from "../../assets/svg/theme/sun.svg";
 import { ReactComponent as MoonIcon } from "../../assets/svg/theme/moon.svg";
+import { ThemeTypes } from "../../constants/styles/theme";
 
 import {
   BoxTitle,
@@ -23,13 +24,15 @@ import {
 const Settings: FunctionComponent = () => {
   const { changeThemeText, chooseLangText, en, ru, title, titleSpan } =
     useSettingsText();
-  const { changeDarkTheme, changeLightTheme } = useActions();
+  const { changeTheme } = useActions();
   const handleLangRu = () => {
     i18n.changeLanguage(Locales.RU);
   };
   const handleLangEng = () => {
     i18n.changeLanguage(Locales.EN);
   };
+
+  const handleChangeTheme = (theme: ThemeTypes) => () => changeTheme(theme);
   return (
     <SettingsWrapper>
       <ModalTitle text={title} spanText={titleSpan} />
@@ -47,12 +50,12 @@ const Settings: FunctionComponent = () => {
         <BoxWrapper>
           <BoxTitle>{changeThemeText}: </BoxTitle>
           <RoundButton
-            onClick={changeDarkTheme}
+            onClick={handleChangeTheme(ThemeTypes.DARK)}
             extra={extraStylesRoundButtonTheme}
           >
             <MoonIcon />
           </RoundButton>
-          <RoundButton onClick={changeLightTheme}>
+          <RoundButton onClick={handleChangeTheme(ThemeTypes.LIGHT)}>
             <SunIcon />
           </RoundButton>
         </BoxWrapper>

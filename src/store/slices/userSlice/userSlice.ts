@@ -17,11 +17,8 @@ export const userSlice = createSlice({
   name: "user",
   initialState,
   reducers: {
-    changeDarkTheme: (state) => {
-      state.theme = ThemeTypes.DARK;
-    },
-    changeLightTheme: (state) => {
-      state.theme = ThemeTypes.LIGHT;
+    changeTheme: (state, action: PayloadAction<ThemeTypes>) => {
+      state.theme = action.payload;
     },
     setUser: (state, action: PayloadAction<IUser>) => {
       state.isAuth = true;
@@ -54,8 +51,7 @@ export const userSlice = createSlice({
 });
 
 export const {
-  changeDarkTheme,
-  changeLightTheme,
+  changeTheme,
   setUser,
   updateUser,
   removeUser,

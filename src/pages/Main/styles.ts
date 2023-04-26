@@ -10,4 +10,5 @@ export const MainWrapper = styled.div`
   height: ${MainWrapperHeightPercent}%;
   min-height: ${MainWrapperMinHeight}vh;
   background: ${({ theme }) => theme.colors.backgroundColor};
+  transition: background-color ease-in 0.2s;
 `;

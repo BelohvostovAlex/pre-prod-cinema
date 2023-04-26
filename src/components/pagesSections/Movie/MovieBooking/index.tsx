@@ -20,13 +20,7 @@ const MovieBooking: FunctionComponent = () => {
   const { bookingSectionTitle } = useMovieText();
   const [index, setIndex] = useState<number>(0);
 
-  const {
-    setDays,
-    setCurrDay,
-    setChosenDay,
-    setCinemaMovieDay,
-    removePrevMovies,
-  } = useActions();
+  const { setDays, setCurrDay, setChosenDay, setCinemaMovieDay } = useActions();
   const { days } = useAppSelector(daysSelector);
   const { chosenMovie } = useAppSelector(userChoiceSelector);
 
@@ -36,7 +30,6 @@ const MovieBooking: FunctionComponent = () => {
     setCurrDay(currDate);
     setChosenDay(currDate);
     setDays(availableDays);
-    // removePrevMovies({ date: currDate, movieTitle: chosenMovie });
   }, []);
 
   useEffect(() => {

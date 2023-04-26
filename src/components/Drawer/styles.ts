@@ -19,6 +19,9 @@ export const StyledDrawer = styled.div<StyledDrawerProps>`
   padding: ${({ theme }) => theme.padding.drawer};
   background: ${({ theme }) => theme.colors.backgroundColor};
   box-shadow: -4px 0px 8px 0px rgba(34, 60, 80, 0.4);
+  transform: ${({ isOpen }) =>
+    isOpen ? "translateX(0%)" : "translateX(100%)"};
+  transition: transform 0.2s ease-in-out;
 `;
 
 export const DrawerTitle = styled.h3`

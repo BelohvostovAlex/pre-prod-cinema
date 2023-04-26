@@ -3,11 +3,12 @@ module.exports = {
   addons: [
     "@storybook/addon-links",
     "@storybook/addon-essentials",
+    "@storybook/addon-styling",
     "@storybook/addon-interactions",
     "@storybook/preset-create-react-app",
   ],
-  framework: "@storybook/react",
-  core: {
-    builder: "@storybook/builder-webpack5",
+  framework: {
+    name: "@storybook/react-webpack5",
+    options: {},
   },
 };

@@ -14,6 +14,7 @@ export interface ButtonProps {
   fontSize?: string;
   backgroundColor?: string;
   color?: string;
+  icon?: ReactNode;
 
   onClick?: () => void;
 }
