@@ -1,10 +1,17 @@
-import { FunctionComponent } from "react";
+import { FunctionComponent, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { SubmitHandler, useForm } from "react-hook-form";
+import emailjs from "@emailjs/browser";
 
 import { AppPathes } from "../../../constants/routes";
+import { AuthFormInputsPossibleNames } from "../../../constants/authForm";
 import { ReactComponent as LogoIcon } from "../../../assets/svg/logo/logo.svg";
 import { ReactComponent as TelegramIcon } from "../../../assets/svg/social/telegram.svg";
 import { InputTypes } from "../../Input/interfaces";
+import { ButtonTypes } from "../../../constants/buttons";
+import { useActions } from "../../../hooks/useActionts";
+import { useValidationWithTranslate } from "../../AuthForm/config/validation";
+import { AlertTypes } from "../../../constants/alert";
 
 import {
   FooterColumn,
@@ -12,13 +19,18 @@ import {
   FooterColumnSubscribeSubText,
   FooterColumnTitle,
   FooterLogo,
+  FooterSubmitBtn,
   FooterSubscribeInput,
   FooterSubscribeInputWrapper,
   FooterWrapper,
 } from "./styles";
 import { useFooterText } from "./config/useFooterText";
+import { FooterFormProps } from "./interfaces";
 
 const FooterMain: FunctionComponent = () => {
+  const formRef = useRef<HTMLFormElement>(null);
+  const { setIsAlertOpen } = useActions();
+  const handleValidationType = useValidationWithTranslate();
   const { pathname } = useLocation();
   const {
     firstColumnTitle,
@@ -30,7 +42,46 @@ const FooterMain: FunctionComponent = () => {
     subscribeSubtext,
     thirdColumnTitle,
     thirdColumnToMain,
+    subsError,
+    subsSuccess,
   } = useFooterText();
+
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { isValid },
+  } = useForm<FooterFormProps>({ mode: "onChange" });
+
+  const onSubmitHandler: SubmitHandler<FooterFormProps> = (data) => {
+    if (isValid) {
+      emailjs
+        .sendForm(
+          process.env.REACT_APP_EMAILJS_SERVICE!,
+          process.env.REACT_APP_EMAILJS_TEMPLATE!,
+          formRef.current as HTMLFormElement,
+          process.env.REACT_APP_EMAILJS_PRIVATE_KEY!,
+        )
+        .then(
+          () => {
+            setIsAlertOpen({
+              isOpen: true,
+              text: subsSuccess,
+              type: AlertTypes.SUCCESS,
+            });
+          },
+          () => {
+            setIsAlertOpen({
+              isOpen: true,
+              text: subsError,
+              type: AlertTypes.ERROR,
+            });
+          },
+        );
+
+      reset();
+    }
+  };
 
   const isFooterVisible = pathname !== AppPathes.MAIN;
   return (
@@ -40,51 +91,45 @@ const FooterMain: FunctionComponent = () => {
       </FooterLogo>
       <FooterColumn>
         <FooterColumnTitle>{firstColumnTitle}</FooterColumnTitle>
-        <FooterColumnItem>
-          <Link to={AppPathes.MAIN}>{firstColumnToMain}</Link>
-        </FooterColumnItem>
-        <FooterColumnItem>
-          <Link to={AppPathes.MAIN}>{firstColumnToMain}</Link>
-        </FooterColumnItem>
-        <FooterColumnItem>
-          <Link to={AppPathes.MAIN}>{firstColumnToMain}</Link>
-        </FooterColumnItem>
-        <FooterColumnItem>
-          <Link to={AppPathes.MAIN}>{firstColumnToMain}</Link>
-        </FooterColumnItem>
+        {Array.from(Array(4).keys()).map((item) => (
+          <FooterColumnItem key={item}>
+            <Link to={AppPathes.MAIN}>{firstColumnToMain}</Link>
+          </FooterColumnItem>
+        ))}
       </FooterColumn>
       <FooterColumn>
         <FooterColumnTitle>{secondColumnTitle}</FooterColumnTitle>
-        <FooterColumnItem>
-          <Link to={AppPathes.MAIN}>{secondColumnToMain}</Link>
-        </FooterColumnItem>
-        <FooterColumnItem>
-          <Link to={AppPathes.MAIN}>{secondColumnToMain}</Link>
-        </FooterColumnItem>
-        <FooterColumnItem>
-          <Link to={AppPathes.MAIN}>{secondColumnToMain}</Link>
-        </FooterColumnItem>
+        {Array.from(Array(3).keys()).map((item) => (
+          <FooterColumnItem key={item}>
+            <Link to={AppPathes.MAIN}>{secondColumnToMain}</Link>
+          </FooterColumnItem>
+        ))}
       </FooterColumn>
       <FooterColumn>
         <FooterColumnTitle>{thirdColumnTitle}</FooterColumnTitle>
-        <FooterColumnItem>
-          <Link to={AppPathes.MAIN}>{thirdColumnToMain}</Link>
-        </FooterColumnItem>
-        <FooterColumnItem>
-          <Link to={AppPathes.MAIN}>{thirdColumnToMain}</Link>
-        </FooterColumnItem>
-        <FooterColumnItem>
-          <Link to={AppPathes.MAIN}>{thirdColumnToMain}</Link>
-        </FooterColumnItem>
+        {Array.from(Array(3).keys()).map((item) => (
+          <FooterColumnItem key={item}>
+            <Link to={AppPathes.MAIN}>{thirdColumnToMain}</Link>
+          </FooterColumnItem>
+        ))}
       </FooterColumn>
       <FooterColumn>
         <FooterColumnTitle>{subscribe}</FooterColumnTitle>
-        <FooterSubscribeInputWrapper>
+        <FooterSubscribeInputWrapper
+          ref={formRef}
+          onSubmit={handleSubmit(onSubmitHandler)}
+        >
           <FooterSubscribeInput
             type={InputTypes.EMAIL}
             placeholder={subscribeInputPlaceholder}
+            {...register(
+              "user_email",
+              handleValidationType(AuthFormInputsPossibleNames.EMAIL),
+            )}
           />
-          <TelegramIcon />
+          <FooterSubmitBtn type={ButtonTypes.SUBMIT}>
+            <TelegramIcon />
+          </FooterSubmitBtn>
         </FooterSubscribeInputWrapper>
         <FooterColumnSubscribeSubText>
           {subscribeSubtext}

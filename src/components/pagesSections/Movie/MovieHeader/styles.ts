@@ -17,6 +17,10 @@ export const MovieTitle = styled.h2`
   color: ${({ theme }) => theme.colors.primary};
   margin-bottom: ${({ theme }) => theme.margin.mb20};
   width: ${MovieTitleWidth}px;
+
+  @media (max-width: ${({ theme }) => `${theme.breakPoints.m}px`}) {
+    font-size: ${({ theme }) => theme.fontSize[21]};
+  }
 `;
 
 export const MovieBtnNextWrapper = styled.div`
@@ -29,5 +33,11 @@ export const MovieBtnNextWrapper = styled.div`
   }
   svg path {
     fill: ${({ theme }) => theme.colors.primary};
+  }
+
+  @media (max-width: ${({ theme }) => `${theme.breakPoints.m}px`}) {
+    button {
+      display: none;
+    }
   }
 `;

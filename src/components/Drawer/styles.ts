@@ -4,8 +4,11 @@ import { StyledDrawerProps } from "./interfaces";
 
 const StyledDrawerHeightPercent = 100;
 const StyledDrawerWidthPercent = 28;
+const StyledDrawerWidthPercentXl = 60;
+const StyledDrawerWidthPercentSm = 100;
 const DrawerTitleWidthPercent = 100;
 const DrawerArrowWrapperWidth = 36;
+const DrawerArrowWrapperWidthSm = 24;
 const DrawerArrowWrapperSvgWidth = 100;
 
 export const StyledDrawer = styled.div<StyledDrawerProps>`
@@ -22,6 +25,14 @@ export const StyledDrawer = styled.div<StyledDrawerProps>`
   transform: ${({ isOpen }) =>
     isOpen ? "translateX(0%)" : "translateX(100%)"};
   transition: transform 0.2s ease-in-out;
+
+  @media (max-width: ${({ theme }) => `${theme.breakPoints.xl}px`}) {
+    width: ${StyledDrawerWidthPercentXl}%;
+  }
+
+  @media (max-width: ${({ theme }) => `${theme.breakPoints.sm}px`}) {
+    width: ${StyledDrawerWidthPercentSm}%;
+  }
 `;
 
 export const DrawerTitle = styled.h3`
@@ -32,6 +43,10 @@ export const DrawerTitle = styled.h3`
   width: ${DrawerTitleWidthPercent}%;
   text-align: center;
   margin-bottom: ${({ theme }) => theme.margin.mb50};
+
+  @media (max-width: ${({ theme }) => `${theme.breakPoints.sm}px`}) {
+    font-size: ${({ theme }) => theme.fontSize[16]};
+  }
 `;
 
 export const DrawerArrowWrapper = styled.div`
@@ -52,5 +67,9 @@ export const DrawerArrowWrapper = styled.div`
   svg:hover path {
     fill: ${({ theme }) => theme.colors.secondary};
     transition-duration: 0.3s;
+  }
+
+  @media (max-width: ${({ theme }) => `${theme.breakPoints.sm}px`}) {
+    width: ${DrawerArrowWrapperWidthSm}px;
   }
 `;

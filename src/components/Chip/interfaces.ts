@@ -1,9 +1,6 @@
-import { ThemeTypes } from "../../constants/styles/theme";
-
 export interface ChipProps {
   text: string;
+  background?: string;
 }
 
-export interface ChipWrapperProps {
-  themeMode: ThemeTypes;
-}
+export type ChipWrapperProps = Pick<ChipProps, "background">;

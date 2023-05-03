@@ -2,17 +2,21 @@ import styled from "styled-components";
 
 import { MovieScreenCellExampleProps } from "./interfaces";
 
-const MovieScreenWrapperWidth = 480;
-const MovieScreenWrapperHeight = 550;
+const MovieScreenWrapperMaxWidth = 480;
+const MovieScreenWrapperMaxHeight = 550;
 const MovieScreenCellExampleWidth = 24;
 const MovieScreenCellExampleHeight = 24;
 
 export const MovieScreenWrapper = styled.table`
-  width: ${MovieScreenWrapperWidth}px;
-  height: ${MovieScreenWrapperHeight}px;
+  max-width: ${MovieScreenWrapperMaxWidth}px;
+  max-height: ${MovieScreenWrapperMaxHeight}px;
   background: ${({ theme }) => theme.colors.screenDark};
   padding: 20px 20px 15px 20px;
   margin: 30px auto;
+
+  @media (max-width: ${({ theme }) => `${theme.breakPoints.s}px`}) {
+    padding: 15px 10px 15px 10px;
+  }
 `;
 
 export const MovieScreenHead = styled.thead``;
@@ -36,6 +40,10 @@ export const MovieScreenFooter = styled.tfoot``;
 export const MovieScreenFooterRow = styled.tr`
   ${({ theme }) => theme.flexAlignCenter};
   justify-content: space-between;
+
+  @media (max-width: ${({ theme }) => `${theme.breakPoints.sm}px`}) {
+    flex-direction: column;
+  }
 `;
 
 export const MovieScreenFooterItem = styled.td`
@@ -44,6 +52,10 @@ export const MovieScreenFooterItem = styled.td`
   font-size: ${({ theme }) => theme.fontSize[16]};
   color: ${({ theme }) => theme.colors.primary};
   margin-top: 6px;
+
+  @media (max-width: ${({ theme }) => `${theme.breakPoints.m}px`}) {
+    font-size: ${({ theme }) => theme.fontSize[14]};
+  }
 `;
 
 export const MovieScreenCellExample = styled.div<MovieScreenCellExampleProps>`

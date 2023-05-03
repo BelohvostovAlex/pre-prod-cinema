@@ -2,6 +2,8 @@ import styled from "styled-components";
 
 import { ModalContainerProps } from "./interfaces";
 
+const ModalContainerWidthSm = 360;
+
 export const ModalContainer = styled.div<ModalContainerProps>`
   position: absolute;
   top: 50%;
@@ -12,6 +14,11 @@ export const ModalContainer = styled.div<ModalContainerProps>`
   padding: ${({ theme }) => theme.padding.modal};
   background: ${({ theme }) => theme.colors.backgroundColor};
   color: ${({ theme }) => theme.colors.white};
+
+  @media (max-width: ${({ theme }) => `${theme.breakPoints.sm}px`}) {
+    width: ${ModalContainerWidthSm}px;
+    padding: ${({ theme }) => theme.padding.modalMobile};
+  }
 `;
 
 export const ModalButtonWrapper = styled.div`

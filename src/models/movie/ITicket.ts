@@ -2,6 +2,7 @@ import { IDate } from "../IDate";
 
 export interface ITicket {
   id: string;
+  userId: string;
   movie: string;
   time: string;
   day: IDate;

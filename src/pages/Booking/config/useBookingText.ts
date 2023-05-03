@@ -7,6 +7,7 @@ export const useBookingText = () => {
     missedTitle: t("Booking.title.missed"),
     pastTitle: t("Booking.title.past"),
     upcomingTitle: t("Booking.title.upcoming"),
+    noBookingsTitle: t("Booking.title.noBookingsTitle"),
     cancelBtn: t("Booking.ticket.cancelBtn"),
     timeText: t("Booking.ticket.time"),
     dateText: t("Booking.ticket.date"),

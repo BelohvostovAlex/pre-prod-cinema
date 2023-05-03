@@ -8,6 +8,10 @@ export const StyledModalTitle = styled.h2`
   width: ${StyledModalTitleWithPercent}%;
   margin-bottom: ${({ theme }) => theme.margin.mb30};
   color: ${({ theme }) => theme.colors.primary};
+
+  @media (max-width: ${({ theme }) => `${theme.breakPoints.sm}px`}) {
+    font-size: ${({ theme }) => theme.fontSize[14]};
+  }
 `;
 
 export const StyledModalTitleSpan = styled.span`

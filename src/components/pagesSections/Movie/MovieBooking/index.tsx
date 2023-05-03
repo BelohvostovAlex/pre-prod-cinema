@@ -1,22 +1,27 @@
 import { FunctionComponent, useEffect, useState } from "react";
+import { useTheme } from "styled-components";
 
 import { useMovieText } from "../../../../pages/Movie/config/useMovieText";
 import Divider from "../../../UI/Divider";
 import Slider from "../../../Slider";
-import BookSliderItems from "../../../BookSliderItems";
+import SliderItems from "../../../Slider/SliderItems";
+import BookSliderItem from "../../../BookSliderItem";
 import { Colors } from "../../../../constants/styles/colors";
 import { SliderDirectionVariant } from "../../../../constants/slider";
-import { BookSliderItemWrapperWidth } from "../../../BookSliderItems/BookSliderItem/styles";
+import { BookSliderItemWrapperWidth } from "../../../BookSliderItem/styles";
 import { useActions } from "../../../../hooks/useActionts";
 import { useAppSelector } from "../../../../hooks/useAppSelector";
+import { useMediaQuery } from "../../../../hooks/style/useMediaQuery";
 import { userChoiceSelector } from "../../../../store/slices/userChoiceSlice/selectors";
 import { daysSelector } from "../../../../store/slices/daysSlice/selectors";
 import { getAvailableDates } from "../../../../helpers/date/getAvailableDates";
 
 import { MovieBookingTitle, MovieBookingWrapper } from "./styles";
-import { dividerHeight, futureLimit } from "./config";
+import { dividerHeight, dividerWidthM, futureLimit } from "./config";
 
 const MovieBooking: FunctionComponent = () => {
+  const { breakPoints } = useTheme();
+  const isMSize = useMediaQuery(`(max-width: ${breakPoints.m}px)`);
   const { bookingSectionTitle } = useMovieText();
   const [index, setIndex] = useState<number>(0);
 
@@ -44,16 +49,53 @@ const MovieBooking: FunctionComponent = () => {
     <MovieBookingWrapper>
       <MovieBookingTitle>{bookingSectionTitle}</MovieBookingTitle>
       <Divider
-        width={`${BookSliderItemWrapperWidth}px`}
+        width={isMSize ? dividerWidthM : `${BookSliderItemWrapperWidth}px`}
         height={dividerHeight}
         color={Colors.WHITE}
       />
       <Slider
-        direction={SliderDirectionVariant.HORIZONTAL}
+        direction={
+          isMSize
+            ? SliderDirectionVariant.VERTICAL
+            : SliderDirectionVariant.HORIZONTAL
+        }
         data={days}
         index={index}
         setIndex={setIndex}
-        children={<BookSliderItems data={days} index={index} />}
+        children={
+          <SliderItems
+            data={days}
+            index={index}
+            renderItem={(
+              item,
+              top,
+              center,
+              bot,
+              left,
+              right,
+              prevLeft,
+              prevRight,
+            ) => (
+              <BookSliderItem
+                item={item.date}
+                top={top}
+                center={center!}
+                bot={bot}
+                left={left!}
+                right={right!}
+                prevLeft={prevLeft!}
+                prevRight={prevRight!}
+                key={item.fullDateInfo}
+                direction={
+                  isMSize
+                    ? SliderDirectionVariant.VERTICAL
+                    : SliderDirectionVariant.HORIZONTAL
+                }
+                month={item.month}
+              />
+            )}
+          />
+        }
       />
       <Divider
         width={`${BookSliderItemWrapperWidth}px`}

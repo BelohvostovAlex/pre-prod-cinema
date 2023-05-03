@@ -8,5 +8,6 @@ export const useHeaderText = () => {
     signUpBtn: t("AuthForm.signUpBtn"),
     drawerTitle: t("Drawer.title"),
     profileBtnText: t("Profile.headerBtnText"),
+    menuTitle: t("Nav_menu.Title"),
   };
 };

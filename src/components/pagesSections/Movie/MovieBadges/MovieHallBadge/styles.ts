@@ -3,11 +3,13 @@ import styled from "styled-components";
 import { MovieHallBadgeWrapperProps } from "./interfaces";
 
 const MovieHallBadgeWrapperWidthPercent = 31;
+const MovieHallBadgeWrapperWidthPercentM = 100;
 const SeatSvgHeight = 20;
 const SeatSvgWidth = 20;
 
 export const MovieHallBadgeWrapper = styled.div<MovieHallBadgeWrapperProps>`
   width: ${MovieHallBadgeWrapperWidthPercent}%;
+  max-width: fit-content;
   background: ${({ theme }) => theme.colors.extraDarkGray};
   border-radius: ${({ theme }) => theme.border_radius[20]};
   border: ${({ isActive, theme }) =>
@@ -16,6 +18,12 @@ export const MovieHallBadgeWrapper = styled.div<MovieHallBadgeWrapperProps>`
       : `solid 3px ${theme.colors.extraDarkGray}`};
   color: ${({ theme }) => theme.colors.primary};
   padding: 10px;
+
+  @media (max-width: ${({ theme }) => `${theme.breakPoints.m}px`}) {
+    width: ${MovieHallBadgeWrapperWidthPercentM}%;
+    max-width: ${MovieHallBadgeWrapperWidthPercentM}%;
+    margin-bottom: 10px;
+  }
 `;
 
 export const MovieHallBadgeTime = styled.h3`

@@ -12,6 +12,7 @@ import { AlertTypes } from "../../../../constants/alert";
 import { AppPathes } from "../../../../constants/routes";
 import { userChoiceSelector } from "../../../../store/slices/userChoiceSlice/selectors";
 import { handleTicketPrice } from "../../../../helpers/handleTicketPrice";
+import { userIdSelector } from "../../../../store/slices/userSlice/selectors";
 
 import {
   MovieFooterBookingInfo,
@@ -24,6 +25,7 @@ import { buttonHeight } from "./config";
 const MovieFooter: FunctionComponent = () => {
   const { bookBtn, footerSeats, bookedSeats, cantBookEmpty } = useMovieText();
   const navigate = useNavigate();
+  const id = useAppSelector(userIdSelector);
   const { chosenDay, chosenBadge, chosenMovie, chosenSeats } =
     useAppSelector(userChoiceSelector);
   const { setReserve, setIsAlertOpen, resetChoice, setTicket } = useActions();
@@ -46,6 +48,7 @@ const MovieFooter: FunctionComponent = () => {
       setTicket({
         day: chosenDay,
         id: v4(),
+        userId: id,
         movie: chosenMovie,
         seatsAmount: seatsAmount,
         price: handleTicketPrice(chosenDay) * seatsAmount,

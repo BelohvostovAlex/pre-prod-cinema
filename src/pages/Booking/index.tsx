@@ -1,6 +1,7 @@
 import { FunctionComponent, useEffect } from "react";
 
 import BookingTicketSection from "../../components/pagesSections/Booking/BookingTicketSection";
+import BookingTitle from "../../components/pagesSections/Booking/BookingTitle";
 import { useAppSelector } from "../../hooks/useAppSelector";
 import {
   missedTicketsSelector,
@@ -14,7 +15,8 @@ import { BookingsWrapper } from "./styles";
 import { useBookingText } from "./config/useBookingText";
 
 const Bookings: FunctionComponent = () => {
-  const { missedTitle, pastTitle, upcomingTitle } = useBookingText();
+  const { missedTitle, pastTitle, upcomingTitle, noBookingsTitle } =
+    useBookingText();
   const upcomingTickets = useAppSelector(upcomingTicketsSelector);
   const pastTickets = useAppSelector(pastTicketsSelector);
   const missedTickets = useAppSelector(missedTicketsSelector);
@@ -27,6 +29,9 @@ const Bookings: FunctionComponent = () => {
 
   return (
     <BookingsWrapper>
+      {upcomingTickets.length < 1 &&
+        pastTickets.length < 1 &&
+        missedTickets.length < 1 && <BookingTitle title={noBookingsTitle} />}
       <BookingTicketSection
         data={upcomingTickets}
         title={upcomingTitle}

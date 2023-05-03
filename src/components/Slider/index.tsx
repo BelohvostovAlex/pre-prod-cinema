@@ -5,7 +5,7 @@ import { ReactComponent as UpIcon } from "../../assets/svg/tools/up.svg";
 import { SliderDirectionVariant } from "../../constants/slider";
 import { KeyButtonVariant } from "../../constants/keyboard";
 
-import { SliderControls, SliderItems, SliderWrapper } from "./styles";
+import { SliderControls, SliderItemsWrapper, SliderWrapper } from "./styles";
 import { SliderProps } from "./interfaces";
 
 const Slider = <T,>({
@@ -72,13 +72,17 @@ const Slider = <T,>({
       {direction === SliderDirectionVariant.HORIZONTAL && (
         <>
           <UpIcon onClick={prevSlide} />
-          <SliderItems direction={direction}>{children}</SliderItems>
+          <SliderItemsWrapper direction={direction}>
+            {children}
+          </SliderItemsWrapper>
           <DownIcon onClick={nextSlide} />
         </>
       )}
       {direction === SliderDirectionVariant.VERTICAL && (
         <>
-          <SliderItems direction={direction}>{children}</SliderItems>
+          <SliderItemsWrapper direction={direction}>
+            {children}
+          </SliderItemsWrapper>
           <SliderControls>
             <UpIcon onClick={prevSlide} />
             <DownIcon onClick={nextSlide} />

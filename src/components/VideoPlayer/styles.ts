@@ -3,7 +3,9 @@ import styled from "styled-components";
 import { ControlsWrapper } from "./Controls/styles";
 
 const VidePlayerWrapperHeight = 260;
+const VidePlayerWrapperHeightSm = 200;
 const VidePlayerWrapperWidth = 390;
+const VidePlayerWrapperWidthSm = 290;
 const VideoHeightPercent = 100;
 const VideoWidthPercent = 100;
 const VideoLayoutWidthPercent = 101;
@@ -34,6 +36,11 @@ export const VidePlayerWrapper = styled.div`
   }
   &:hover ${VideoLayout} {
     opacity: 1;
+  }
+
+  @media (max-width: ${({ theme }) => `${theme.breakPoints.sm}px`}) {
+    width: ${VidePlayerWrapperWidthSm}px;
+    height: ${VidePlayerWrapperHeightSm}px;
   }
 `;
 

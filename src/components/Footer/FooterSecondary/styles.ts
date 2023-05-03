@@ -1,11 +1,15 @@
 import styled from "styled-components";
 
 const footerSvgHeight = 36;
+const footerSvgHeightSm = 26;
 
 export const FooterSecondaryWrapper = styled.div`
   ${({ theme }) => theme.flexAlignCenter};
   flex-direction: column;
   margin-top: 80px;
+  @media (max-width: ${({ theme }) => `${theme.breakPoints.m}px`}) {
+    margin-top: 60px;
+  }
 `;
 
 export const FooterSecondaryItemsWrapper = styled.div`
@@ -19,6 +23,12 @@ export const FooterSecondaryItemsWrapper = styled.div`
     margin-right: 0px;
   }
   margin-bottom: ${({ theme }) => theme.margin.mb20};
+
+  @media (max-width: ${({ theme }) => `${theme.breakPoints.sm}px`}) {
+    svg {
+      height: ${footerSvgHeightSm}px;
+    }
+  }
 `;
 
 export const FooterSecondaryYear = styled.h3`

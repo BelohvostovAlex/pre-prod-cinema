@@ -8,7 +8,9 @@ import { TypographyVariant } from "../../../../constants/styles/typography";
 import MovieInfoBlockSkeleton from "../../../Skeletons/MovieInfoBlock";
 import InTheaterBlockImageSkeleton from "../../../Skeletons/InTheaterBlock/InTheaterBlockImageSkeleton";
 import SliderSkeleton from "../../../Skeletons/InTheaterBlock/SliderSkeleton";
-import MovieSliderItems from "../../../MovieSliderItems";
+import SliderItems from "../../../Slider/SliderItems";
+import { SliderDirectionVariant } from "../../../../constants/slider";
+import MovieSliderItem from "../../../MovieSliderItem";
 import { AppPathesWithoutSlug } from "../../../../constants/routes";
 
 import {
@@ -16,6 +18,7 @@ import {
   InTheaterImg,
   InTheaterImgSkeletonWrapper,
   InTheaterImgWrapper,
+  InTheaterSliderWrapper,
   InTheterImgTitle,
   SliderBox,
   TagsWrapper,
@@ -51,7 +54,7 @@ const InTheaterBlock: FunctionComponent<InTheaterBlockProps> = ({
           <SliderSkeleton />
         </>
       ) : (
-        <>
+        <InTheaterSliderWrapper>
           <InTheaterImgWrapper onClick={handleNavigateToMovie}>
             <InTheaterImg src={data[index]?.image} />
             <InTheterImgTitle>{data[index]?.title}</InTheterImgTitle>
@@ -63,11 +66,43 @@ const InTheaterBlock: FunctionComponent<InTheaterBlockProps> = ({
             </TagsWrapper>
           </InTheaterImgWrapper>
           <SliderBox>
-            <Slider data={data} index={index} setIndex={setIndex}>
-              <MovieSliderItems data={data} index={index} />
-            </Slider>
+            <Slider
+              data={data}
+              index={index}
+              setIndex={setIndex}
+              children={
+                <SliderItems
+                  data={data}
+                  index={index}
+                  renderItem={(
+                    item,
+                    top,
+                    center,
+                    bot,
+                    left,
+                    right,
+                    prevLeft,
+                    prevRight,
+                  ) => (
+                    <MovieSliderItem
+                      id={item.id}
+                      src={item.image}
+                      top={top!}
+                      center={center!}
+                      bot={bot!}
+                      left={left!}
+                      right={right!}
+                      prevLeft={prevLeft!}
+                      prevRight={prevRight!}
+                      key={item.id}
+                      direction={SliderDirectionVariant.VERTICAL}
+                    />
+                  )}
+                />
+              }
+            ></Slider>
           </SliderBox>
-        </>
+        </InTheaterSliderWrapper>
       )}
     </InTheaterBlockWrapper>
   );

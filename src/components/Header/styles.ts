@@ -4,6 +4,7 @@ import styled from "styled-components";
 const headerWidthPercent = 100;
 const headerHeight = 80;
 const logoWrapperWidth = 140;
+const logoWrapperWidthSm = 110;
 const logoWrapperSvgWidth = 100;
 const profileBtnSvgWidth = 30;
 const HeaderButtonGroupSvgWidth = 25;
@@ -32,6 +33,11 @@ export const LogoWrapper = styled(Link)`
   cursor: pointer;
   svg path {
     fill: ${({ theme }) => theme.colors.primary};
+  }
+
+  @media (max-width: ${({ theme }) => `${theme.breakPoints.sm}px`}) {
+    margin-right: 20px;
+    width: ${logoWrapperWidthSm}px;
   }
 `; // поменять цвет лого
 
@@ -74,4 +80,23 @@ export const ProfileBtnText = styled.p`
   font-size: ${({ theme }) => theme.fontSize[18]};
   margin-right: 15px;
   color: ${({ theme }) => theme.colors.primary};
+
+  @media (max-width: ${({ theme }) => `${theme.breakPoints.sm}px`}) {
+    display: none;
+  }
+`;
+
+export const BurgerWrapper = styled.div`
+  display: none;
+
+  @media (max-width: ${({ theme }) => `${theme.breakPoints.s}px`}) {
+    display: block;
+    height: 30px;
+    svg {
+      width: 30px;
+    }
+    svg path {
+      fill: ${({ theme }) => theme.colors.primary};
+    }
+  }
 `;

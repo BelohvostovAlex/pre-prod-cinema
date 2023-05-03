@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 import { SliderDirectionVariant } from "../../constants/slider";
 
-import { SliderItemsProps, SliderWrapperProps } from "./interfaces";
+import { SliderItemsWrapperProps, SliderWrapperProps } from "./interfaces";
 
 const SliderWrapperSvgHeight = 16;
 const SliderWrapperHorizontalSvgHeight = 28;
@@ -49,7 +49,7 @@ export const SliderWrapper = styled.div<SliderWrapperProps>`
   }
 `;
 
-export const SliderItems = styled.div<SliderItemsProps>`
+export const SliderItemsWrapper = styled.div<SliderItemsWrapperProps>`
   ${({ theme }) => theme.flexAlignCenter};
   flex-direction: ${({ direction }) =>
     direction === SliderDirectionVariant.HORIZONTAL ? "row" : "column"};
@@ -66,6 +66,10 @@ export const SliderItems = styled.div<SliderItemsProps>`
       : `${SliderItemsVerticalHeight}px`};
   position: relative;
   overflow: hidden;
+
+  @media (max-width: ${({ theme }) => `${theme.breakPoints.m}px`}) {
+    width: ${({ direction }) =>
+      direction === SliderDirectionVariant.HORIZONTAL && "400px;"}
 `;
 
 export const SliderControls = styled.div`

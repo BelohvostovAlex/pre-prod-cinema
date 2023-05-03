@@ -9,6 +9,16 @@ export const ButtonGroup = styled.div`
   justify-content: space-around;
   flex-wrap: wrap;
   padding: 0px 2px;
+
+  @media (max-width: ${({ theme }) => `${theme.breakPoints.sm}px`}) {
+    button {
+      width: 100%;
+    }
+
+    button:first-of-type {
+      margin-bottom: 10px;
+    }
+  }
 `;
 
 export const BottomInfoWrapper = styled.div`
@@ -22,6 +32,10 @@ export const Typography = styled.p`
   margin: 5px;
   font-size: ${({ theme }) => theme.fontSize[12]};
   color: ${({ theme }) => theme.colors.primary};
+
+  @media (max-width: ${({ theme }) => `${theme.breakPoints.sm}px`}) {
+    font-size: ${({ theme }) => theme.fontSize[10]};
+  }
 `;
 
 export const Link = styled.a`
@@ -33,4 +47,8 @@ export const Link = styled.a`
   }
   color: ${({ theme }) => theme.colors.primary};
   border-bottom: ${({ theme }) => `1px solid ${theme.colors.primary}`};
+
+  @media (max-width: ${({ theme }) => `${theme.breakPoints.sm}px`}) {
+    font-size: ${({ theme }) => theme.fontSize[10]};
+  }
 `;

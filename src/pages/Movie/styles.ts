@@ -34,12 +34,20 @@ export const MovieWrapper = styled.div`
   padding: 100px 10%;
   z-index: ${({ theme }) => theme.zIndex[10]};
   margin-top: 10px;
+
+  @media (max-width: ${({ theme }) => `${theme.breakPoints.sm}px`}) {
+    padding: 30px 2%;
+  }
 `;
 
 export const MovieReviewWrapper = styled.div`
   display: flex;
   align-items: start;
   justify-content: space-between;
+
+  @media (max-width: ${({ theme }) => `${theme.breakPoints.l}px`}) {
+    flex-direction: column;
+  }
 `;
 
 export const MovieNoReviewTitle = styled.h3`

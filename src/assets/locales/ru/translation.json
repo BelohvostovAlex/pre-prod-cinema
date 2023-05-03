@@ -1,0 +1,156 @@
+{
+  "Nav_menu": {
+    "Title": "Меню",
+    "Home": "Главная",
+    "Bookings": "Бронирование"
+  },
+  "AuthForm": {
+    "title": {
+      "signin": "Мы рады видеть вас снова! ",
+      "signup": "Отличные фильмы в лучшем кинотеатре! Мы заботимся о вашем комфорте. "
+    },
+    "titleSpan": {
+      "signin": "Наслаждайтесь просмотром фильмов вместе с нами!",
+      "signup": "Присоединяйтесь к нам прямо сейчас!"
+    },
+    "usernameField": {
+      "label": "Имя",
+      "placeholder": "Введите ваше имя",
+      "required": "Имя обязательно"
+    },
+    "surnameField": {
+      "label": "Фамилия",
+      "placeholder": "Введите вашу фамилию",
+      "required": "Фамилия обязательна"
+    },
+    "emailField": {
+      "label": "Эл.почта",
+      "placeholder": "Введите вашу эл.почту",
+      "required": "Эл.почта обязательна"
+    },
+    "passwordField": {
+      "label": "Пароль",
+      "placeholder": "Введите ваш пароль",
+      "required": "Пароль обязателен"
+    },
+    "signInWithGoogle": "Войти с Google",
+    "signInWithGithub": "Войти с Github",
+    "signInWithFacebook": "Войти с Facebook",
+    "needAcc": "Нет аккаунта? ",
+    "alreadyHaveAcc": "Уже есть аккаунт? ",
+    "linkToSignIn": "Войдите, пожалуйста.",
+    "linkToSignUp": "Зарегистрируйтесь, пожалуйста.",
+    "signInBtn": "Войти",
+    "signUpBtn": "Зарегистрироваться"
+  },
+  "Drawer": {
+    "title": "Профайл пользователя"
+  },
+  "Profile": {
+    "userId": "ID Пользователя",
+    "editProfile": "Изменить Профиль",
+    "logOut": "Выйти",
+    "settings": "Настройки",
+    "altImgText": "Фото пользователя",
+    "headerBtnText": "Профиль"
+  },
+  "EditProfile": {
+    "title": "Здесь вы можете поменять вашу",
+    "titleSpan": "информацию и пароль.",
+    "submitBtn": "Отправить",
+    "male": "мужчина",
+    "female": "женщина",
+    "uploadImg": "Загрузить фото",
+    "newPass": "Ваш новый пароль"
+  },
+  "Settings": {
+    "title": "Здесь вы можете поменять ",
+    "titleSpan": "язык и тему!",
+    "chooseLang": "Выберите язык",
+    "ru": "RU",
+    "en": "EN",
+    "changeTheme": "Выберите тему",
+    "dark": "темная",
+    "light": "светлая"
+  },
+  "Movie": {
+    "moveToNextMovieBtn": "Перейти к следующему фильму",
+    "releaseYear": "Год выхода",
+    "country": "Страна",
+    "genre": "Жанр",
+    "author": "Режиссер",
+    "actors": "Актеры",
+    "bookBtn": "Забронировать!",
+    "watchTrailerTitle": "Посмотреть трейлер онлайн!",
+    "noReviewsTitle": "Нет отзывов",
+    "notAuthBookBtn": "Войдите в свой аккаунт, пожалуйста",
+    "bookingSectionTitle": "Забронировать!",
+    "movieBadgeHallTitle": "Зал",
+    "availableSeats": "доступных мест",
+    "noAvailableSeats": "нет доступных мест",
+    "screenTitle": "Экран",
+    "selected": "Выбранные",
+    "reserved": "Зарезервированные",
+    "available": "Доступные",
+    "footerSeats": "мест",
+    "cantBookEmpty": "Пожалуйста, выберите места",
+    "bookedSeats": "Ваши билеты забронированы!"
+  },
+  "Review": {
+    "title": "Отзыв",
+    "from": "От",
+    "readMore": "Читать больше",
+    "hide": "Скрыть"
+  },
+  "Booking": {
+    "title": {
+      "missed": "Ваши пропущенные букинги",
+      "past": "Ваши прошлые букинги",
+      "upcoming": "Ваши предстоящие букинги",
+      "noBookingsTitle": "Нет предстоящих букингов"
+    },
+    "ticket": {
+      "date": "Дата",
+      "time": "Время",
+      "cancelBtn": "Отмена",
+      "seats": "мест(а)",
+      "seat": "место"
+    }
+  },
+  "Footer": {
+    "firstColumn": {
+      "title": "Первая",
+      "toMain": "Главная страница"
+    },
+    "secondColumn": {
+      "title": "Вторая",
+      "toMain": "Главная страница"
+    },
+    "thirdColumn": {
+      "title": "Третья",
+      "toMain": "Главная страница"
+    },
+    "subscribe": "Подписаться",
+    "subscribeInputPlaceholder": "Введите эл.почту",
+    "subscribeSubtext": "Присоединяйтесь к нашей рассылке новостей, чтобы быть в курсе новых функций и релизов.",
+    "subsSuccess": "Вы успешно подписались",
+    "subsError": "Ошибка при подписке"
+  },
+  "Errors": {
+    "userAlreadyExistsViaSocial": "Пользователь с данным эл.адресом уже существует, пожалуйста, попробуйте другой метод войти",
+    "popupClosedByUser": "Вход был отменен",
+    "emailAlreadyInUse": "Данный эл.адрес уже используется",
+    "wrongPassword": "Неверный пароль",
+    "userNotFound": "Пользователь не найден",
+    "requiresRecentLogin": "Необходим недавний вход для обновление пароля, пожалуйста, перезайдите"
+  },
+  "AuthInputErrors": {
+    "invalidEmail": "неверный эл.адрес",
+    "passwordMin": "мин. 6 символов",
+    "passwordMustInclude": "как минимум одна большая буква",
+    "required": "поле обязательно",
+    "textOnlyLetter": "только буквы",
+    "textMaxLength": "не больше 20 символов",
+    "textMinLength": "не меньше 2 символов"
+  }
+}

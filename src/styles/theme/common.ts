@@ -100,6 +100,7 @@ const commonTheme: ICommonTheme = {
     drawer: "50px 40px 20px 40px",
     header: "20px 55px",
     modal: "30px 55px",
+    modalMobile: "15px 35px",
   },
   margin: {
     mb10: "10px",
@@ -126,6 +127,15 @@ const commonTheme: ICommonTheme = {
     screenDark: Colors.SCREEN_DARK,
   },
   flexAlignCenter: "display: flex; align-items: center;",
+  breakPoints: {
+    xs: 320,
+    s: 481,
+    sm: 641,
+    m: 800,
+    l: 961,
+    xl: 1025,
+    xxl: 1281,
+  },
 };
 
 export default commonTheme;

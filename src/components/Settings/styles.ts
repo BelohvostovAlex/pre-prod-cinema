@@ -21,4 +21,8 @@ export const BoxTitle = styled.h2`
   margin-right: 16px;
   ${({ theme }) => theme.typography.poppins_l};
   color: ${({ theme }) => theme.colors.primary};
+
+  @media (max-width: ${({ theme }) => `${theme.breakPoints.sm}px`}) {
+    font-size: ${({ theme }) => theme.fontSize[18]};
+  }
 `;

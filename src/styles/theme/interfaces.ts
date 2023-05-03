@@ -73,6 +73,7 @@ export interface ICommonTheme {
     drawer: string;
     header: string;
     modal: string;
+    modalMobile: string;
   };
   margin: {
     mb10: string;
@@ -82,6 +83,15 @@ export interface ICommonTheme {
     mb50: string;
   };
   flexAlignCenter: string;
+  breakPoints: {
+    xs: number;
+    s: number;
+    sm: number;
+    m: number;
+    l: number;
+    xl: number;
+    xxl: number;
+  };
 }
 
 export interface ITheme {

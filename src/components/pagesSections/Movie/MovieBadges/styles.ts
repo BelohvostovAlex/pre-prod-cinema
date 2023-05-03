@@ -8,4 +8,8 @@ export const MovieHallBadgeWrapper = styled.div`
   width: ${SliderItemsHorizontalWidth}px;
   margin: 10px auto;
   cursor: pointer;
+
+  @media (max-width: ${({ theme }) => `${theme.breakPoints.m}px`}) {
+    flex-direction: column;
+  }
 `;

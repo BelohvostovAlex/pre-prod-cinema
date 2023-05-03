@@ -11,8 +11,8 @@ export interface SliderProps<T> {
   setIndex: Dispatch<SetStateAction<number>>;
 }
 
-export interface SliderItemsProps {
+export interface SliderItemsWrapperProps {
   direction?: SliderDirectionVariant;
 }
 
-export type SliderWrapperProps = SliderItemsProps;
+export type SliderWrapperProps = SliderItemsWrapperProps;

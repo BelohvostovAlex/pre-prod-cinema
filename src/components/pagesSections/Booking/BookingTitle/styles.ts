@@ -6,4 +6,8 @@ export const BookingTitleWrapper = styled.h3`
   text-transform: uppercase;
   color: ${({ theme }) => theme.colors.primary};
   margin-bottom: ${({ theme }) => theme.margin.mb20};
+
+  @media (max-width: ${({ theme }) => `${theme.breakPoints.s}px`}) {
+    font-size: ${({ theme }) => theme.fontSize[21]};
+  }
 `;

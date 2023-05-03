@@ -1,0 +1,156 @@
+{
+  "Nav_menu": {
+    "Title": "Menu",
+    "Home": "Home",
+    "Bookings": "Bookings"
+  },
+  "AuthForm": {
+    "title": {
+      "signin": "We are glad to see you again! ",
+      "signup": "Great Movies in the best cinema! We care about your comfort. "
+    },
+    "titleSpan": {
+      "signin": "Enjoy watching movies with us!",
+      "signup": "Join us Right Now!"
+    },
+    "usernameField": {
+      "label": "Username",
+      "placeholder": "Enter your name",
+      "required": "username required"
+    },
+    "surnameField": {
+      "label": "Surname",
+      "placeholder": "Enter your surname",
+      "required": "surname required"
+    },
+    "emailField": {
+      "label": "Email",
+      "placeholder": "Enter your email",
+      "required": "email is required"
+    },
+    "passwordField": {
+      "label": "Password",
+      "placeholder": "Enter your strong password",
+      "required": "password is required"
+    },
+    "signInWithGoogle": "Continue with Google",
+    "signInWithGithub": "Sign up with Github",
+    "signInWithFacebook": "Sign up with Facebook",
+    "needAcc": "No account? ",
+    "alreadyHaveAcc": "Already has an account? ",
+    "linkToSignIn": "Login please.",
+    "linkToSignUp": "Sign up please.",
+    "signInBtn": "Sign In",
+    "signUpBtn": "Sign Up"
+  },
+  "Drawer": {
+    "title": "User profile"
+  },
+  "Profile": {
+    "userId": "USER ID",
+    "editProfile": "Edit profile",
+    "logOut": "Log Out",
+    "settings": "Settings",
+    "altImgText": "Profile photo",
+    "headerBtnText": "Profile"
+  },
+  "EditProfile": {
+    "title": "Here you can change your profile",
+    "titleSpan": "information and password.",
+    "submitBtn": "Submit",
+    "male": "male",
+    "female": "female",
+    "uploadImg": "Upload img",
+    "newPass": "Your new pass"
+  },
+  "Settings": {
+    "title": "Here you can change ",
+    "titleSpan": "language and theme!",
+    "chooseLang": "Choose language",
+    "ru": "RU",
+    "en": "EN",
+    "changeTheme": "Change theme",
+    "dark": "dark",
+    "light": "light"
+  },
+  "Movie": {
+    "moveToNextMovieBtn": "Move to the next movie",
+    "releaseYear": "Release year",
+    "country": "Country",
+    "genre": "Genre",
+    "author": "Author",
+    "actors": "Actors",
+    "bookBtn": "Book Now!",
+    "watchTrailerTitle": "Watch trailer online!",
+    "noReviewsTitle": "No reviews",
+    "notAuthBookBtn": "You should login first",
+    "bookingSectionTitle": "Book Now!",
+    "movieBadgeHallTitle": "Cinema",
+    "availableSeats": "seats available",
+    "noAvailableSeats": "no available seats",
+    "screenTitle": "Screen",
+    "selected": "Selected",
+    "reserved": "Reserved",
+    "available": "Available",
+    "footerSeats": "seats",
+    "cantBookEmpty": "Please, choose seats",
+    "bookedSeats": "You have booked tickets!"
+  },
+  "Review": {
+    "title": "Review",
+    "from": "From",
+    "readMore": "Read more",
+    "hide": "Hide"
+  },
+  "Booking": {
+    "title": {
+      "missed": "Your missed bookings",
+      "past": "Your past bookings",
+      "upcoming": "Your upcoming bookings",
+      "noBookingsTitle": "No bookings"
+    },
+    "ticket": {
+      "date": "Date",
+      "time": "Time",
+      "cancelBtn": "Cancel",
+      "seats": "seats",
+      "seat": "seat"
+    }
+  },
+  "Footer": {
+    "firstColumn": {
+      "title": "First",
+      "toMain": "Main page"
+    },
+    "secondColumn": {
+      "title": "Second",
+      "toMain": "Main page"
+    },
+    "thirdColumn": {
+      "title": "Third",
+      "toMain": "Main page"
+    },
+    "subscribe": "Subscribe",
+    "subscribeInputPlaceholder": "Enter email",
+    "subscribeSubtext": "Join our newsletter to stay up to date on features and releases.",
+    "subsSuccess": "Your successfully subscribed",
+    "subsError": "Error with subscription"
+  },
+  "Errors": {
+    "userAlreadyExistsViaSocial": "Account with dat email is already exists, please try another method to log in",
+    "popupClosedByUser": "Sign in has been cancelled",
+    "emailAlreadyInUse": "Email is already in use",
+    "wrongPassword": "Wrong password",
+    "userNotFound": "User not found",
+    "requiresRecentLogin": "Requires recent login to update pass, please re-login"
+  },
+  "AuthInputErrors": {
+    "invalidEmail": "invalid email",
+    "passwordMin": "min 6 symbols",
+    "passwordMustInclude": "must include at least one uppercase letter",
+    "required": "field is required",
+    "textOnlyLetter": "only letters",
+    "textMaxLength": "should't be over 20 symbols",
+    "textMinLength": "at least 2 sybmols"
+  }
+}

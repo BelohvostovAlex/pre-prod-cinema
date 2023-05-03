@@ -6,7 +6,10 @@ const FooterWrapperWidthPercent = 100;
 const FooterLogoWidth = 110;
 const FooterLogoWidthPercentSvg = 100;
 const FooterColumnWidthPercent = 10;
+const FooterColumnWidthLPercent = 20;
+const FooterColumnWidthSMPercent = 31;
 const FooterColumnWidthLastPercent = 28;
+const FooterColumnWidthLastSMPercent = 100;
 const FooterFooterSubscribeInputWrapperHeight = 36;
 const FooterSubscribeInputHeightPercent = 100;
 
@@ -17,6 +20,10 @@ export const FooterWrapper = styled.div<FooterWrapperProps>`
   padding: 50px 15%;
   justify-content: space-between;
   align-items: start;
+
+  @media (max-width: ${({ theme }) => `${theme.breakPoints.sm}px`}) {
+    flex-wrap: wrap;
+  }
 `;
 
 export const FooterLogo = styled.div`
@@ -30,6 +37,10 @@ export const FooterLogo = styled.div`
   }
   margin-right: 20px;
   cursor: pointer;
+
+  @media (max-width: ${({ theme }) => `${theme.breakPoints.l}px`}) {
+    display: none;
+  }
 `;
 
 export const FooterColumn = styled.ul`
@@ -40,6 +51,18 @@ export const FooterColumn = styled.ul`
   &:last-of-type {
     width: ${FooterColumnWidthLastPercent}%;
   }
+
+  @media (max-width: ${({ theme }) => `${theme.breakPoints.l}px`}) {
+    width: ${FooterColumnWidthLPercent}%;
+  }
+
+  @media (max-width: ${({ theme }) => `${theme.breakPoints.sm}px`}) {
+    width: ${FooterColumnWidthSMPercent}%;
+    &:last-of-type {
+      margin-top: 10px;
+      width: ${FooterColumnWidthLastSMPercent}%;
+    }
+  }
 `;
 
 export const FooterColumnTitle = styled.li`
@@ -47,6 +70,10 @@ export const FooterColumnTitle = styled.li`
   ${({ theme }) => theme.typography.inter_b};
   font-size: ${({ theme }) => theme.fontSize[14]};
   color: ${({ theme }) => theme.colors.primary};
+
+  @media (max-width: ${({ theme }) => `${theme.breakPoints.l}px`}) {
+    font-size: ${({ theme }) => theme.fontSize[12]};
+  }
 `;
 
 export const FooterColumnItem = styled.li`
@@ -59,9 +86,15 @@ export const FooterColumnItem = styled.li`
   &:hover {
     ${({ theme }) => theme.hover}
   }
+
+  @media (max-width: ${({ theme }) => `${theme.breakPoints.l}px`}) {
+    a {
+      font-size: ${({ theme }) => theme.fontSize[10]};
+    }
+  }
 `;
 
-export const FooterSubscribeInputWrapper = styled.div`
+export const FooterSubscribeInputWrapper = styled.form`
   ${({ theme }) => theme.flexAlignCenter};
   justify-content: space-between;
   background: ${({ theme }) => theme.colors.darkGray};
@@ -82,10 +115,26 @@ export const FooterSubscribeInput = styled.input`
   height: ${FooterSubscribeInputHeightPercent}%;
   outline: none;
   border: none;
+  width: 80%;
+
+  @media (max-width: ${({ theme }) => `${theme.breakPoints.l}px`}) {
+    font-size: ${({ theme }) => theme.fontSize[10]};
+  }
 `;
 
 export const FooterColumnSubscribeSubText = styled.p`
   ${({ theme }) => theme.typography.inter_r};
   font-size: ${({ theme }) => theme.fontSize[12]};
   color: ${({ theme }) => theme.colors.darkGray};
+
+  @media (max-width: ${({ theme }) => `${theme.breakPoints.l}px`}) {
+    font-size: ${({ theme }) => theme.fontSize[10]};
+  }
+`;
+
+export const FooterSubmitBtn = styled.button`
+  background: transparent;
+  border: none;
+  display: flex;
+  justify-content: center;
 `;

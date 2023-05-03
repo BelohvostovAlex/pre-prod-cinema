@@ -13,5 +13,7 @@ export const useFooterText = () => {
     subscribe: t("Footer.subscribe"),
     subscribeInputPlaceholder: t("Footer.subscribeInputPlaceholder"),
     subscribeSubtext: t("Footer.subscribeSubtext"),
+    subsSuccess: t("Footer.subsSuccess"),
+    subsError: t("Footer.subsError"),
   };
 };

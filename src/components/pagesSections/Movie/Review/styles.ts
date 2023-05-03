@@ -3,10 +3,13 @@ import styled from "styled-components";
 import { ReviewTextProps } from "./interface";
 
 const ReviewWrapperWidthPercent = 30;
+const ReviewWrapperWidthPercentL = 100;
 const ReviewWrapperHeight = 400;
+const ReviewWrapperMaxWidth = 320;
 
 export const ReviewWrapper = styled.div`
   width: ${ReviewWrapperWidthPercent}%;
+  max-width: ${ReviewWrapperMaxWidth}px;
   min-height: ${ReviewWrapperHeight}px;
   filter: drop-shadow(15px 15px 50px #000000);
   border-radius: ${({ theme }) => theme.border_radius[20]};
@@ -16,6 +19,13 @@ export const ReviewWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  @media (max-width: ${({ theme }) => `${theme.breakPoints.l}px`}) {
+    width: ${ReviewWrapperWidthPercentL}%;
+    max-width: 100%;
+    min-height: 0px;
+    margin-bottom: 20px;
+  }
 `;
 
 export const ReviewInfo = styled.div`
