@@ -1,7 +1,6 @@
 import { FunctionComponent } from "react";
+import { Button, Divider } from "cinema-ui-belohvostov";
 
-import Divider from "../UI/Divider";
-import Button from "../UI/Buttons/Button";
 import { Colors } from "../../constants/styles/colors";
 import { ReactComponent as RatingIcon } from "../../assets/svg/tools/Star.svg";
 import { ReactComponent as TicketIcon } from "../../assets/svg/movie/ticket.svg";

@@ -1,16 +1,14 @@
 import { FunctionComponent, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Chip, Slider, SliderItems } from "cinema-ui-belohvostov";
 
 import MovieInfoBlock from "../MovieInfoBlock";
-import Slider from "../../../Slider";
-import Chip from "../../../Chip";
+import MovieSliderItem from "../../../MovieSliderItem";
 import { TypographyVariant } from "../../../../constants/styles/typography";
 import MovieInfoBlockSkeleton from "../../../Skeletons/MovieInfoBlock";
 import InTheaterBlockImageSkeleton from "../../../Skeletons/InTheaterBlock/InTheaterBlockImageSkeleton";
 import SliderSkeleton from "../../../Skeletons/InTheaterBlock/SliderSkeleton";
-import SliderItems from "../../../Slider/SliderItems";
 import { SliderDirectionVariant } from "../../../../constants/slider";
-import MovieSliderItem from "../../../MovieSliderItem";
 import { AppPathesWithoutSlug } from "../../../../constants/routes";
 
 import {

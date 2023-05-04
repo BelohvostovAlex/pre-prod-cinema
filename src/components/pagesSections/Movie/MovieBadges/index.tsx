@@ -1,4 +1,5 @@
 import { FunctionComponent, useEffect, useState } from "react";
+import { MovieHallBadge } from "cinema-ui-belohvostov";
 
 import { useAppSelector } from "../../../../hooks/useAppSelector";
 import { useActions } from "../../../../hooks/useActionts";
@@ -9,7 +10,6 @@ import { userChoiceSelector } from "../../../../store/slices/userChoiceSlice/sel
 
 import { MovieBadgesProps } from "./interfaces";
 import { MovieHallBadgeWrapper } from "./styles";
-import MovieHallBadge from "./MovieHallBadge";
 
 const MovieBadges: FunctionComponent<MovieBadgesProps> = () => {
   const [badgeIndex, setBadgeIndex] = useState<number>(0);

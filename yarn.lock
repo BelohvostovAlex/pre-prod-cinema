@@ -3937,6 +3937,11 @@ ci-info@^3.2.0:
   resolved "https://registry.yarnpkg.com/ci-info/-/ci-info-3.8.0.tgz#81408265a5380c929f0bc665d62256628ce9ef91"
   integrity sha512-eXTggHWSooYhq49F2opQhuHWgzucfF2YgODK4e1566GQs5BIfP30B0oenwBJHfWxAs2fyPB1s7Mg949zLf61Yw==
 
+cinema-ui-belohvostov@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/cinema-ui-belohvostov/-/cinema-ui-belohvostov-1.0.0.tgz#7c7fd5e6b6e12b936817ceed2a4b88fa3a4b0b55"
+  integrity sha512-DHWIrIKUnfMY6mIk1PFxGgmwa4foyg6c8kRpxmHfMjcYz3N4aLmYwFoKkMcNhLadyL8FgPTi+CpIznXDiPHmwg==
+
 cjs-module-lexer@^1.0.0:
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/cjs-module-lexer/-/cjs-module-lexer-1.2.2.tgz#9f84ba3244a512f3a54e5277e8eef4c489864e40"

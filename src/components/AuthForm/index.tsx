@@ -6,14 +6,17 @@ import {
 import { FunctionComponent } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { useTheme } from "styled-components";
+import {
+  Button,
+  FacebookButton,
+  GithubButton,
+  GoogleButton,
+} from "cinema-ui-belohvostov";
 
 import { ReactComponent as ProfileIcon } from "../../assets/svg/form/account.svg";
 import { ReactComponent as EmailIcon } from "../../assets/svg/form/email.svg";
 import { ReactComponent as PasswordIcon } from "../../assets/svg/form/password.svg";
 import { ReactComponent as SurnamIcon } from "../../assets/svg/form/surname.svg";
-import { ReactComponent as FacebookIcon } from "../../assets/svg/social/facebook.svg";
-import { ReactComponent as GithubIcon } from "../../assets/svg/social/github.svg";
-import { ReactComponent as GoogleIcon } from "../../assets/svg/social/google.svg";
 import { AuthFormInputsPossibleNames } from "../../constants/authForm";
 import { ButtonTypes, ButtonVariants } from "../../constants/buttons";
 import { Colors } from "../../constants/styles/colors";
@@ -23,7 +26,6 @@ import { InputTypes } from "../Input/interfaces";
 import InputWithIcon from "../InputWithIcon";
 import ModalTitle from "../Modal/ModalTitle";
 import PasswordStrengthMeter from "../PasswordStrengthMeter";
-import Button from "../UI/Buttons/Button";
 
 import {
   BottomInfoWrapper,
@@ -172,7 +174,7 @@ const AuthForm: FunctionComponent<AuthFormProps> = ({
         )}
       </Form>
       <ButtonGroup>
-        <Button
+        <GoogleButton
           typography={TypographyVariant.inter_sb}
           width={socialBtnWidth}
           height={socialBtnHeight}
@@ -180,11 +182,9 @@ const AuthForm: FunctionComponent<AuthFormProps> = ({
           backgroundColor={Colors.WHITE}
           color={Colors.BLACK}
           onClick={googleSignIn}
-          icon={<GoogleIcon />}
-        >
-          {googleBtn}
-        </Button>
-        <Button
+          children={googleBtn}
+        />
+        <FacebookButton
           typography={TypographyVariant.inter_sb}
           width={socialBtnWidth}
           height={socialBtnHeight}
@@ -192,11 +192,9 @@ const AuthForm: FunctionComponent<AuthFormProps> = ({
           backgroundColor={Colors.FACEBOOK}
           color={Colors.WHITE}
           onClick={facebookSignIn}
-          icon={<FacebookIcon />}
-        >
-          {facebookBtn}
-        </Button>
-        <Button
+          children={facebookBtn}
+        />
+        <GithubButton
           typography={TypographyVariant.inter_sb}
           width={socialBtnWidth}
           height={socialBtnHeight}
@@ -205,10 +203,8 @@ const AuthForm: FunctionComponent<AuthFormProps> = ({
           color={Colors.WHITE}
           margin={lastSocialBtnMargin}
           onClick={githubSignIn}
-          icon={<GithubIcon />}
-        >
-          {githubrBtn}
-        </Button>
+          children={githubrBtn}
+        />
       </ButtonGroup>
       <BottomInfoWrapper>
         <Typography>{signUp ? alreadyHaveAcc : needAcc}</Typography>

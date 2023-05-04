@@ -1,13 +1,12 @@
 import { FunctionComponent, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { usePalette } from "react-palette";
+import { Divider, Review } from "cinema-ui-belohvostov";
 
 import MoviePageLoader from "../../components/Loader/MoviePageLoader";
-import Review from "../../components/pagesSections/Movie/Review";
 import { moviesImdbNew } from "../../constants/movies";
 import { AppPathesWithoutSlug } from "../../constants/routes";
 import { reviewsData } from "../../constants/movies/reviews";
-import Divider from "../../components/UI/Divider";
 import MovieBooking from "../../components/pagesSections/Movie/MovieBooking";
 import { useAppSelector } from "../../hooks/useAppSelector";
 import { isAuthSelector } from "../../store/slices/userSlice/selectors";

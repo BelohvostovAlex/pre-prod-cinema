@@ -1,9 +1,9 @@
 import { FunctionComponent, useRef } from "react";
+import { RoundButton } from "cinema-ui-belohvostov";
 
 import { ReactComponent as Close } from "../../assets/svg/tools/Close.svg";
 import { Colors } from "../../constants/styles/colors";
 import useOnClickOutside from "../../hooks/useOnClickOutside";
-import RoundButton from "../UI/Buttons/RoundButton";
 
 import { ModalButtonWrapper, ModalContainer } from "./styles";
 import { ModalProps } from "./interfaces";

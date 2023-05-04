@@ -1,11 +1,13 @@
 import { FunctionComponent, useEffect, useState } from "react";
 import { useTheme } from "styled-components";
+import {
+  BookSliderItem,
+  Divider,
+  Slider,
+  SliderItems,
+} from "cinema-ui-belohvostov";
 
 import { useMovieText } from "../../../../pages/Movie/config/useMovieText";
-import Divider from "../../../UI/Divider";
-import Slider from "../../../Slider";
-import SliderItems from "../../../Slider/SliderItems";
-import BookSliderItem from "../../../BookSliderItem";
 import { Colors } from "../../../../constants/styles/colors";
 import { SliderDirectionVariant } from "../../../../constants/slider";
 import { BookSliderItemWrapperWidth } from "../../../BookSliderItem/styles";
