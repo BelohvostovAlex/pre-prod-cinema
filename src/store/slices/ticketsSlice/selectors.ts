@@ -39,7 +39,7 @@ export const upcomingTicketsSelector = createSelector(
     return tickets.filter(
       ({ day, isCanceled, userId }) =>
         (userId === id && !isCanceled && day.date === date) ||
-        (userId === id && day.fullDateInfo > fullDateInfo),
+        (userId === id && !isCanceled && day.fullDateInfo > fullDateInfo),
     );
   },
 );
