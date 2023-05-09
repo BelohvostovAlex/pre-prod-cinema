@@ -1,4 +1,4 @@
-import { Colors } from "../../constants/styles/colors";
+import { Colors } from "@constants/styles/colors";
 import {
   fullWidth,
   passwordStrengthHandler,
@@ -7,7 +7,7 @@ import {
   thirtyWidth,
   transparentColor,
   zeroWidth,
-} from "../../helpers/passwordStrengthHandler";
+} from "@helpers/passwordStrengthHandler";
 
 const emptyValue = "";
 const emptyValueResponse = {

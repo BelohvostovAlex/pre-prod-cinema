@@ -1,6 +1,7 @@
 import { FunctionComponent } from "react";
 
-import { useMovieText } from "../../../../pages/Movie/config/useMovieText";
+import { useMovieText } from "@pages/Movie/config/useMovieText";
+
 import TrailerItem from "../../Main/TrailerBlock/TrailerItem";
 
 import { MovieTrailerProps } from "./interfaces";

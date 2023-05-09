@@ -1,10 +1,11 @@
 import { FunctionComponent } from "react";
 
-import BookingTitle from "../BookingTitle";
-import Ticket from "../../../Ticket";
+import Ticket from "@components/Ticket";
 
-import { BookingTicketSectionWrapper, TicketsWrapper } from "./styles";
+import BookingTitle from "../BookingTitle";
+
 import { BookingTicketSectionProps } from "./interfaces";
+import { BookingTicketSectionWrapper, TicketsWrapper } from "./styles";
 
 const BookingTicketSection: FunctionComponent<BookingTicketSectionProps> = ({
   title,

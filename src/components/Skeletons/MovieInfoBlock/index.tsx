@@ -1,7 +1,7 @@
 import { FunctionComponent } from "react";
 import ContentLoader from "react-content-loader";
 
-import { Colors } from "../../../constants/styles/colors";
+import { Colors } from "@constants/styles/colors";
 
 const MovieInfoBlockSkeleton: FunctionComponent = (props) => (
   <ContentLoader

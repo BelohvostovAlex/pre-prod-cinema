@@ -1,5 +1,5 @@
-import { futureLimit } from "../components/pagesSections/Movie/MovieBooking/config";
-import { IDate } from "../models/IDate";
+import { futureLimit } from "@components/pagesSections/Movie/MovieBooking/config";
+import { IDate } from "@models/IDate";
 
 import { getAvailableDates } from "./date/getAvailableDates";
 

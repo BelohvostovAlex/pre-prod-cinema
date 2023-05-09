@@ -1,7 +1,7 @@
 import { FlattenSimpleInterpolation } from "styled-components";
 
-import { Colors } from "../../constants/styles/colors";
-import { TThemeType } from "../../constants/styles/theme";
+import { Colors } from "@constants/styles/colors";
+import { TThemeType } from "@constants/styles/theme";
 
 export interface ICommonTheme {
   typography: {

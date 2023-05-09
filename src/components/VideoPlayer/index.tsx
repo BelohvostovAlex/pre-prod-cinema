@@ -1,13 +1,13 @@
 import { FunctionComponent, useEffect, useRef } from "react";
 
-import trailer from "../../assets/video/Inception.mp4";
-import { useAppSelector } from "../../hooks/useAppSelector";
-import { videoSelector } from "../../store/slices/videoSlice/selectors";
+import trailer from "@assets/video/Inception.mp4";
+import { useAppSelector } from "@hooks/useAppSelector";
+import { videoSelector } from "@store/slices/videoSlice/selectors";
 
-import { VidePlayerWrapper, Video, VideoLayout } from "./styles";
-import { VideoPlayerProps } from "./interfaces";
-import Controls from "./Controls";
 import { useVideoControl } from "./config/useVideoControl";
+import Controls from "./Controls";
+import { VideoPlayerProps } from "./interfaces";
+import { VidePlayerWrapper, Video, VideoLayout } from "./styles";
 
 const VideoPlayer: FunctionComponent<VideoPlayerProps> = ({ src }) => {
   const {

@@ -1,6 +1,6 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
-import { IDate } from "../../../models/IDate";
+import { IDate } from "@models/IDate";
 
 import { DaysState } from "./interfaces";
 

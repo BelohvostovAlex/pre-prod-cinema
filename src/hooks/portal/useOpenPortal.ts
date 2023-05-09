@@ -1,4 +1,5 @@
-import { PortalVariant } from "../../constants/portal";
+import { PortalVariant } from "@constants/portal";
+
 import { useActions } from "../useActionts";
 
 export const useOpenPortal = (type: PortalVariant) => {

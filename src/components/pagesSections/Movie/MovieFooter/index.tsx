@@ -2,25 +2,25 @@ import { FunctionComponent } from "react";
 import { useNavigate } from "react-router-dom";
 import { v4 } from "uuid";
 
-import Button from "../../../UI/Buttons/Button";
-import { TypographyVariant } from "../../../../constants/styles/typography";
-import { ButtonVariants } from "../../../../constants/buttons";
-import { useMovieText } from "../../../../pages/Movie/config/useMovieText";
-import { useAppSelector } from "../../../../hooks/useAppSelector";
-import { useActions } from "../../../../hooks/useActionts";
-import { AlertTypes } from "../../../../constants/alert";
-import { AppPathes } from "../../../../constants/routes";
-import { userChoiceSelector } from "../../../../store/slices/userChoiceSlice/selectors";
-import { handleTicketPrice } from "../../../../helpers/handleTicketPrice";
-import { userIdSelector } from "../../../../store/slices/userSlice/selectors";
+import Button from "@components/UI/Buttons/Button";
+import { AlertTypes } from "@constants/alert";
+import { ButtonVariants } from "@constants/buttons";
+import { AppPathes } from "@constants/routes";
+import { TypographyVariant } from "@constants/styles/typography";
+import { handleTicketPrice } from "@helpers/handleTicketPrice";
+import { useActions } from "@hooks/useActionts";
+import { useAppSelector } from "@hooks/useAppSelector";
+import { useMovieText } from "@pages/Movie/config/useMovieText";
+import { userChoiceSelector } from "@store/slices/userChoiceSlice/selectors";
+import { userIdSelector } from "@store/slices/userSlice/selectors";
 
+import { buttonHeight } from "./config";
 import {
   MovieFooterBookingInfo,
   MovieFooterBookingInfoSubText,
   MovieFooterBookingInfoText,
   MovieFooterWrapper,
 } from "./styles";
-import { buttonHeight } from "./config";
 
 const MovieFooter: FunctionComponent = () => {
   const { bookBtn, footerSeats, bookedSeats, cantBookEmpty } = useMovieText();

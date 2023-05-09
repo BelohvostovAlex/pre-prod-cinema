@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { passwordStrengthHandler } from "../../helpers/passwordStrengthHandler";
+import { passwordStrengthHandler } from "@helpers/passwordStrengthHandler";
 
 import { ProgressBarProps } from "./interfaces";
 

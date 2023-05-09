@@ -1,5 +1,5 @@
-import { Colors } from "../../constants/styles/colors";
-import { ThemeTypes } from "../../constants/styles/theme";
+import { Colors } from "@constants/styles/colors";
+import { ThemeTypes } from "@constants/styles/theme";
 
 import { ITheme } from "./interfaces";
 

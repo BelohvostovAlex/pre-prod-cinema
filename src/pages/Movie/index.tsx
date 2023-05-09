@@ -1,35 +1,36 @@
 import { FunctionComponent, useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
-import { usePalette } from "react-palette";
 import { Divider, Review } from "cinema-ui-belohvostov";
+import { useNavigate, useParams } from "react-router-dom";
 
-import MoviePageLoader from "../../components/Loader/MoviePageLoader";
-import { moviesImdbNew } from "../../constants/movies";
-import { AppPathesWithoutSlug } from "../../constants/routes";
-import { reviewsData } from "../../constants/movies/reviews";
-import MovieBooking from "../../components/pagesSections/Movie/MovieBooking";
-import { useAppSelector } from "../../hooks/useAppSelector";
-import { isAuthSelector } from "../../store/slices/userSlice/selectors";
-import { useActions } from "../../hooks/useActionts";
-import { AlertTypes } from "../../constants/alert";
-import MovieScreen from "../../components/pagesSections/Movie/MovieScreen";
-import MovieInfo from "../../components/pagesSections/Movie/MovieInfo";
-import MovieTrailer from "../../components/pagesSections/Movie/MovieTrailer";
-import MovieHeader from "../../components/pagesSections/Movie/MovieHeader";
-import MovieBadges from "../../components/pagesSections/Movie/MovieBadges";
-import MovieFooter from "../../components/pagesSections/Movie/MovieFooter";
-import { createDefaultCinemaInfo } from "../../store/slices/cinemaSlice/config.ts";
-// import { moviesSelector } from "../../store/slices/movieSlice/selectors";
+import MoviePageLoader from "@components/Loader/MoviePageLoader";
+import MovieBadges from "@components/pagesSections/Movie/MovieBadges";
+import MovieBooking from "@components/pagesSections/Movie/MovieBooking";
+import MovieFooter from "@components/pagesSections/Movie/MovieFooter";
+import MovieHeader from "@components/pagesSections/Movie/MovieHeader";
+import MovieInfo from "@components/pagesSections/Movie/MovieInfo";
+import MovieScreen from "@components/pagesSections/Movie/MovieScreen";
+import MovieTrailer from "@components/pagesSections/Movie/MovieTrailer";
+import { AlertTypes } from "@constants/alert";
+import { moviesImdbNew } from "@constants/movies";
+import { reviewsData } from "@constants/movies/reviews";
+import { AppPathesWithoutSlug } from "@constants/routes";
+import { useActions } from "@hooks/useActionts";
+import { useAppSelector } from "@hooks/useAppSelector";
+import { createDefaultCinemaInfo } from "@store/slices/cinemaSlice/config";
+import { isAuthSelector } from "@store/slices/userSlice/selectors";
+import { usePalette } from "react-palette";
 
+// import { moviesSelector } from "@store/slices/movieSlice/selectors";
+
+// import { useGetMoviesReview } from "./config/useGetMovieReviews";
+import { handleNextMovieIndex } from "./config/handleNextMovieIndex";
+import { useMovieText } from "./config/useMovieText";
 import {
   MovieLayout,
   MovieNoReviewTitle,
   MovieReviewWrapper,
   MovieWrapper,
 } from "./styles";
-import { useMovieText } from "./config/useMovieText";
-// import { useGetMoviesReview } from "./config/useGetMovieReviews";
-import { handleNextMovieIndex } from "./config/handleNextMovieIndex";
 
 const Movie: FunctionComponent = () => {
   const { id } = useParams();

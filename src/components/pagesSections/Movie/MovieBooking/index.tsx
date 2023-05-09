@@ -1,25 +1,25 @@
 import { FunctionComponent, useEffect, useState } from "react";
-import { useTheme } from "styled-components";
 import {
   BookSliderItem,
   Divider,
   Slider,
   SliderItems,
 } from "cinema-ui-belohvostov";
+import { useTheme } from "styled-components";
 
-import { useMovieText } from "../../../../pages/Movie/config/useMovieText";
-import { Colors } from "../../../../constants/styles/colors";
-import { SliderDirectionVariant } from "../../../../constants/slider";
-import { BookSliderItemWrapperWidth } from "../../../BookSliderItem/styles";
-import { useActions } from "../../../../hooks/useActionts";
-import { useAppSelector } from "../../../../hooks/useAppSelector";
-import { useMediaQuery } from "../../../../hooks/style/useMediaQuery";
-import { userChoiceSelector } from "../../../../store/slices/userChoiceSlice/selectors";
-import { daysSelector } from "../../../../store/slices/daysSlice/selectors";
-import { getAvailableDates } from "../../../../helpers/date/getAvailableDates";
+import { BookSliderItemWrapperWidth } from "@components/BookSliderItem/styles";
+import { SliderDirectionVariant } from "@constants/slider";
+import { Colors } from "@constants/styles/colors";
+import { getAvailableDates } from "@helpers/date/getAvailableDates";
+import { useMediaQuery } from "@hooks/style/useMediaQuery";
+import { useActions } from "@hooks/useActionts";
+import { useAppSelector } from "@hooks/useAppSelector";
+import { useMovieText } from "@pages/Movie/config/useMovieText";
+import { daysSelector } from "@store/slices/daysSlice/selectors";
+import { userChoiceSelector } from "@store/slices/userChoiceSlice/selectors";
 
-import { MovieBookingTitle, MovieBookingWrapper } from "./styles";
 import { dividerHeight, dividerWidthM, futureLimit } from "./config";
+import { MovieBookingTitle, MovieBookingWrapper } from "./styles";
 
 const MovieBooking: FunctionComponent = () => {
   const { breakPoints } = useTheme();

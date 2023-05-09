@@ -1,4 +1,4 @@
-import { handleNextMovieIndex } from "../../pages/Movie/config/handleNextMovieIndex";
+import { handleNextMovieIndex } from "@pages/Movie/config/handleNextMovieIndex";
 
 const mockData = [
   {

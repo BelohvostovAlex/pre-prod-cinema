@@ -1,17 +1,17 @@
-import { createUserWithEmailAndPassword } from "firebase/auth";
 import { FirebaseError } from "firebase/app";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 
-import { AuthFormInputProps } from "../../../components/AuthForm/interfaces";
-import { auth } from "../../../lib/firebase.prod";
-import { useErrorTranslation } from "../../errorTranslation/useErrorTranslation";
-import { useClosePortal } from "../../portal/useClosePortal";
-import { useActions } from "../../useActionts";
-import { createDocument } from "../../../api/firebase/createDocument";
-import { Gender } from "../../../constants/authForm";
-import { FirebaseCollections } from "../../../constants/firebase/collections";
-import { isStrIncludesValueHandler } from "../../../helpers/isStrIncludeValueHandler";
-import { FirebaseErrorsTypes } from "../../../constants/errors/firebaseErrors";
-import { AlertTypes } from "../../../constants/alert";
+import { createDocument } from "@api/firebase/createDocument";
+import { AuthFormInputProps } from "@components/AuthForm/interfaces";
+import { AlertTypes } from "@constants/alert";
+import { Gender } from "@constants/authForm";
+import { FirebaseErrorsTypes } from "@constants/errors/firebaseErrors";
+import { FirebaseCollections } from "@constants/firebase/collections";
+import { isStrIncludesValueHandler } from "@helpers/isStrIncludeValueHandler";
+import { useErrorTranslation } from "@hooks/errorTranslation/useErrorTranslation";
+import { useClosePortal } from "@hooks/portal/useClosePortal";
+import { useActions } from "@hooks/useActionts";
+import { auth } from "@lib/firebase.prod";
 
 export const useSignUp = () => {
   const { setUser, setLoading, setUserError, setIsAlertOpen } = useActions();

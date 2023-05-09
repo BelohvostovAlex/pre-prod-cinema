@@ -1,18 +1,21 @@
 import { FunctionComponent, useRef } from "react";
-import { Link, useLocation } from "react-router-dom";
-import { SubmitHandler, useForm } from "react-hook-form";
 import emailjs from "@emailjs/browser";
+import { SubmitHandler, useForm } from "react-hook-form";
+import { Link, useLocation } from "react-router-dom";
 
-import { AppPathes } from "../../../constants/routes";
-import { AuthFormInputsPossibleNames } from "../../../constants/authForm";
-import { ReactComponent as LogoIcon } from "../../../assets/svg/logo/logo.svg";
-import { ReactComponent as TelegramIcon } from "../../../assets/svg/social/telegram.svg";
-import { InputTypes } from "../../Input/interfaces";
-import { ButtonTypes } from "../../../constants/buttons";
-import { useActions } from "../../../hooks/useActionts";
+import { ReactComponent as LogoIcon } from "@assets/svg/logo/logo.svg";
+import { ReactComponent as TelegramIcon } from "@assets/svg/social/telegram.svg";
+import { AlertTypes } from "@constants/alert";
+import { AuthFormInputsPossibleNames } from "@constants/authForm";
+import { ButtonTypes } from "@constants/buttons";
+import { AppPathes } from "@constants/routes";
+import { useActions } from "@hooks/useActionts";
+
 import { useValidationWithTranslate } from "../../AuthForm/config/validation";
-import { AlertTypes } from "../../../constants/alert";
+import { InputTypes } from "../../Input/interfaces";
 
+import { useFooterText } from "./config/useFooterText";
+import { FooterFormProps } from "./interfaces";
 import {
   FooterColumn,
   FooterColumnItem,
@@ -24,8 +27,6 @@ import {
   FooterSubscribeInputWrapper,
   FooterWrapper,
 } from "./styles";
-import { useFooterText } from "./config/useFooterText";
-import { FooterFormProps } from "./interfaces";
 
 const FooterMain: FunctionComponent = () => {
   const formRef = useRef<HTMLFormElement>(null);

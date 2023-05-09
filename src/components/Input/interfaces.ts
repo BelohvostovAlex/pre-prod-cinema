@@ -1,6 +1,7 @@
 import { RegisterOptions, UseFormRegister } from "react-hook-form/dist/types";
 
-import { AuthFormInputsPossibleNames } from "../../constants/authForm";
+import { AuthFormInputsPossibleNames } from "@constants/authForm";
+
 import { AuthFormInputProps } from "../AuthForm/interfaces";
 
 export enum InputTypes {

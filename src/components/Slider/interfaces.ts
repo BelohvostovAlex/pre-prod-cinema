@@ -1,6 +1,6 @@
 import { Dispatch, ReactNode, SetStateAction } from "react";
 
-import { SliderDirectionVariant } from "../../constants/slider";
+import { SliderDirectionVariant } from "@constants/slider";
 
 export interface SliderProps<T> {
   data: T[];
