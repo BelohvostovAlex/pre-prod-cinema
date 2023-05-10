@@ -1,27 +1,26 @@
 import { FunctionComponent, useState } from "react";
 import { useTheme } from "styled-components";
 
-import { ReactComponent as Logo } from "@assets/svg/logo/logo.svg";
-import { ReactComponent as ProfileIcon } from "@assets/svg/profile/profile-small.svg";
-import { ReactComponent as BurgerIcon } from "@assets/svg/tools/burger.svg";
-import { ReactComponent as SettingsIcon } from "@assets/svg/tools/settings.svg";
-import { ReactComponent as SignInIcon } from "@assets/svg/tools/sign-in.svg";
-import trailer from "@assets/video/Inception.mp4";
-import { ButtonVariants } from "@constants/buttons";
-import { PortalVariant } from "@constants/portal";
-import { AppPathes } from "@constants/routes";
-import { Colors } from "@constants/styles/colors";
-import { TypographyVariant } from "@constants/styles/typography";
-import { useClosePortal } from "@hooks/portal/useClosePortal";
-import { useOpenPortal } from "@hooks/portal/useOpenPortal";
-import { useMediaQuery } from "@hooks/style/useMediaQuery";
-import { useAppSelector } from "@hooks/useAppSelector";
+import { ReactComponent as Logo } from "../../assets/svg/logo/logo.svg";
+import { ReactComponent as ProfileIcon } from "../../assets/svg/profile/profile-small.svg";
+import { ReactComponent as SettingsIcon } from "../../assets/svg/tools/settings.svg";
+import { ReactComponent as BurgerIcon } from "../../assets/svg/tools/burger.svg";
+import { ReactComponent as SignInIcon } from "../../assets/svg/tools/sign-in.svg";
+import trailer from "../../assets/video/Inception.mp4";
+import { ButtonVariants } from "../../constants/buttons";
+import { PortalVariant } from "../../constants/portal";
+import { AppPathes } from "../../constants/routes";
+import { Colors } from "../../constants/styles/colors";
+import { TypographyVariant } from "../../constants/styles/typography";
+import { useClosePortal } from "../../hooks/portal/useClosePortal";
+import { useOpenPortal } from "../../hooks/portal/useOpenPortal";
+import { useAppSelector } from "../../hooks/useAppSelector";
+import { useMediaQuery } from "../../hooks/style/useMediaQuery";
 import {
   isPortalOpenSelector,
   portalVariantSelector,
-} from "@store/slices/portalSlice/selectors";
-import { isAuthSelector } from "@store/slices/userSlice/selectors";
-
+} from "../../store/slices/portalSlice/selectors";
+import { isAuthSelector } from "../../store/slices/userSlice/selectors";
 import Drawer from "../Drawer";
 import EditProfile from "../EditProfile";
 import Modal from "../Modal";
@@ -32,8 +31,8 @@ import Settings from "../Settings";
 import SignIn from "../SignIn";
 import SignUp from "../SignUp";
 import Button from "../UI/Buttons/Button";
-import RoundButton from "../UI/Buttons/RoundButton";
 import VideoPlayer from "../VideoPlayer";
+import RoundButton from "../UI/Buttons/RoundButton";
 
 import {
   BurgerWrapper,

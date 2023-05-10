@@ -1,4 +1,4 @@
-import { Colors } from "@constants/styles/colors";
+import { Colors } from "../../../constants/styles/colors";
 
 export interface DividerProps {
   color?: Colors;

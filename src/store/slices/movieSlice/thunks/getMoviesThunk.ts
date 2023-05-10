@@ -1,6 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
-import { getMovies } from "@api/imdb/getMovies";
+import { getMovies } from "../../../../api/imdb/getMovies";
 
 export const getMoviesThunk = createAsyncThunk(
   "movie/getMovies",

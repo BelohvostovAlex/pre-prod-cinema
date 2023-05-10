@@ -1,8 +1,7 @@
 import { FunctionComponent, Suspense } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 
-import { AppPathes } from "@constants/routes";
-
+import { AppPathes } from "../../constants/routes";
 import MainLoader from "../Loader/MainLoader";
 import PrivateRoutes from "../PrivateRoutes";
 

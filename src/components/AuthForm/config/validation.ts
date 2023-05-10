@@ -1,4 +1,4 @@
-import { AuthFormInputsPossibleNames } from "@constants/authForm";
+import { AuthFormInputsPossibleNames } from "../../../constants/authForm";
 
 import { useValidationText } from "./useValidationText";
 

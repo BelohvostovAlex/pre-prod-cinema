@@ -1,16 +1,14 @@
 import { FunctionComponent } from "react";
 
-import { ReactComponent as PauseIcon } from "@assets/svg/tools/pause.svg";
-import { ReactComponent as PlayIcon } from "@assets/svg/tools/play.svg";
-import { ReactComponent as FullScreenIcon } from "@assets/svg/video/full-screen.svg";
-import { ReactComponent as MuteIcon } from "@assets/svg/video/mute.svg";
-import { ReactComponent as SpeedLeftIcon } from "@assets/svg/video/speed-left.svg";
-import { ReactComponent as SpeedRightIcon } from "@assets/svg/video/speed-right.svg";
-import { ReactComponent as VolumeIcon } from "@assets/svg/video/volume.svg";
-import { InputTypes } from "@components/Input/interfaces";
+import { ReactComponent as FullScreenIcon } from "../../../assets/svg/video/full-screen.svg";
+import { ReactComponent as MuteIcon } from "../../../assets/svg/video/mute.svg";
+import { ReactComponent as SpeedLeftIcon } from "../../../assets/svg/video/speed-left.svg";
+import { ReactComponent as SpeedRightIcon } from "../../../assets/svg/video/speed-right.svg";
+import { ReactComponent as VolumeIcon } from "../../../assets/svg/video/volume.svg";
+import { ReactComponent as PlayIcon } from "../../../assets/svg/tools/play.svg";
+import { ReactComponent as PauseIcon } from "../../../assets/svg/tools/pause.svg";
+import { InputTypes } from "../../Input/interfaces";
 
-import { progressRangeMax, progressRangeMin, speedOptions } from "./config";
-import { ControlsProps } from "./interfaces";
 import {
   BottomControls,
   ControlsTitle,
@@ -21,6 +19,8 @@ import {
   VelocityOption,
   VideoTime,
 } from "./styles";
+import { ControlsProps } from "./interfaces";
+import { progressRangeMax, progressRangeMin, speedOptions } from "./config";
 
 const Controls: FunctionComponent<ControlsProps> = ({
   isPlaying,

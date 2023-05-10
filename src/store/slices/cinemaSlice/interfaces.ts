@@ -1,4 +1,4 @@
-import { IDate } from "@models/IDate";
+import { IDate } from "../../../models/IDate";
 
 export interface Session {
   time: string;

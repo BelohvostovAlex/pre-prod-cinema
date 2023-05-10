@@ -1,4 +1,4 @@
-import { isStrIncludesValueHandler } from "@helpers/isStrIncludeValueHandler";
+import { isStrIncludesValueHandler } from "../../helpers/isStrIncludeValueHandler";
 
 const string = "auth/firebase closed-popup";
 const substr1 = "closed-popup";

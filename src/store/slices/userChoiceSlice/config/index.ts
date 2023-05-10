@@ -1,5 +1,4 @@
-import { IDate } from "@models/IDate";
-
+import { IDate } from "../../../../models/IDate";
 import { Badge, UserChoiceState } from "../interfaces";
 
 export const defaultState: UserChoiceState = {

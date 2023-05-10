@@ -1,6 +1,6 @@
-import { getMonthString } from "@helpers/date/getMonthString";
-import { handleTicketPrice } from "@helpers/handleTicketPrice";
-import { IDate } from "@models/IDate";
+import { getMonthString } from "../../helpers/date/getMonthString";
+import { handleTicketPrice } from "../../helpers/handleTicketPrice";
+import { IDate } from "../../models/IDate";
 
 const currDate = new Date();
 const currDateMs = currDate.getTime();

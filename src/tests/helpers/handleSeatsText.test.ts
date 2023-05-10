@@ -1,4 +1,4 @@
-import { handleSeatsText } from "@components/Ticket/config/handleSeatsText";
+import { handleSeatsText } from "../../components/Ticket/config/handleSeatsText";
 
 const length1 = 1;
 const length0 = 0;

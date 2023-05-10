@@ -1,4 +1,4 @@
-import { GetMovieReviewsResponse } from "@api/imdb/interfaces";
+import { GetMovieReviewsResponse } from "../../api/imdb/interfaces";
 
 export const reviewsData: GetMovieReviewsResponse = {
   imDbId: "tt6718170",

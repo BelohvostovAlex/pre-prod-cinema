@@ -1,7 +1,7 @@
 import { css } from "styled-components";
 
-import { Colors } from "@constants/styles/colors";
-import { FontFamily, FontWeight } from "@constants/styles/fonts";
+import { Colors } from "../../constants/styles/colors";
+import { FontFamily, FontWeight } from "../../constants/styles/fonts";
 
 import { ICommonTheme } from "./interfaces";
 

@@ -1,12 +1,12 @@
 import { FunctionComponent, useEffect } from "react";
 
-import { initialAlertValue } from "@constants/alert";
-import { useActions } from "@hooks/useActionts";
-import { useAppSelector } from "@hooks/useAppSelector";
-import { alertSelector } from "@store/slices/alertSlice/selectors";
+import { useActions } from "../../hooks/useActionts";
+import { useAppSelector } from "../../hooks/useAppSelector";
+import { alertSelector } from "../../store/slices/alertSlice/selectors";
+import { initialAlertValue } from "../../constants/alert";
 
-import { AlertProps } from "./interfaces";
 import { AlertWrapper } from "./styles";
+import { AlertProps } from "./interfaces";
 
 const Alert: FunctionComponent<AlertProps> = ({ time = 4000 }) => {
   const { setIsAlertOpen } = useActions();

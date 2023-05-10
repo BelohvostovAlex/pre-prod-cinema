@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { ButtonVariants } from "@constants/buttons";
+import { ButtonVariants } from "../../../../constants/buttons";
 
 import { ButtonStyleProps } from "./interfaces";
 

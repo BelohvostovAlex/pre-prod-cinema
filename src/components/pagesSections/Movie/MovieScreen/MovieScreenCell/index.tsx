@@ -1,11 +1,11 @@
 import { FunctionComponent } from "react";
 
-import { useActions } from "@hooks/useActionts";
-import { useAppSelector } from "@hooks/useAppSelector";
-import { userChoiceSelector } from "@store/slices/userChoiceSlice/selectors";
+import { useActions } from "../../../../../hooks/useActionts";
+import { useAppSelector } from "../../../../../hooks/useAppSelector";
+import { userChoiceSelector } from "../../../../../store/slices/userChoiceSlice/selectors";
 
-import { MovieScreenCellProps } from "./interfaces";
 import { MovieScreenCellWrapper } from "./styles";
+import { MovieScreenCellProps } from "./interfaces";
 
 const MovieScreenCell: FunctionComponent<MovieScreenCellProps> = ({
   seatNumber,

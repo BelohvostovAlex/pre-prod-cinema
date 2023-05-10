@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { SliderItemsHorizontalWidth } from "@components/Slider/styles";
+import { SliderItemsHorizontalWidth } from "../../../Slider/styles";
 
 export const MovieHallBadgeWrapper = styled.div`
   ${({ theme }) => theme.flexAlignCenter};

@@ -1,4 +1,4 @@
-import { getAvailableDates } from "@helpers/date/getAvailableDates";
+import { getAvailableDates } from "../../helpers/date/getAvailableDates";
 
 const startDate = new Date();
 const daysToAdd0 = 0;

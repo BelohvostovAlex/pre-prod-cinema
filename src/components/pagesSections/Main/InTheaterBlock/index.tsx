@@ -1,18 +1,16 @@
 import { FunctionComponent, useState } from "react";
-import { Chip, Slider, SliderItems } from "cinema-ui-belohvostov";
 import { useNavigate } from "react-router-dom";
-
-import MovieSliderItem from "@components/MovieSliderItem";
-import InTheaterBlockImageSkeleton from "@components/Skeletons/InTheaterBlock/InTheaterBlockImageSkeleton";
-import SliderSkeleton from "@components/Skeletons/InTheaterBlock/SliderSkeleton";
-import MovieInfoBlockSkeleton from "@components/Skeletons/MovieInfoBlock";
-import { AppPathesWithoutSlug } from "@constants/routes";
-import { SliderDirectionVariant } from "@constants/slider";
-import { TypographyVariant } from "@constants/styles/typography";
+import { Chip, Slider, SliderItems } from "cinema-ui-belohvostov";
 
 import MovieInfoBlock from "../MovieInfoBlock";
+import MovieSliderItem from "../../../MovieSliderItem";
+import { TypographyVariant } from "../../../../constants/styles/typography";
+import MovieInfoBlockSkeleton from "../../../Skeletons/MovieInfoBlock";
+import InTheaterBlockImageSkeleton from "../../../Skeletons/InTheaterBlock/InTheaterBlockImageSkeleton";
+import SliderSkeleton from "../../../Skeletons/InTheaterBlock/SliderSkeleton";
+import { SliderDirectionVariant } from "../../../../constants/slider";
+import { AppPathesWithoutSlug } from "../../../../constants/routes";
 
-import { InTheaterBlockProps } from "./interfaces";
 import {
   InTheaterBlockWrapper,
   InTheaterImg,
@@ -23,6 +21,7 @@ import {
   SliderBox,
   TagsWrapper,
 } from "./styles";
+import { InTheaterBlockProps } from "./interfaces";
 
 const InTheaterBlock: FunctionComponent<InTheaterBlockProps> = ({
   data,

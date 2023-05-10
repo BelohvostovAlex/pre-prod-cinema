@@ -1,6 +1,6 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
-import { AlertTypes } from "@constants/alert";
+import { AlertTypes } from "../../../constants/alert";
 
 import { AlertState } from "./interfaces";
 

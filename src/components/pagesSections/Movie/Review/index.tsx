@@ -1,13 +1,10 @@
 import { FunctionComponent, useState } from "react";
 
-import { ReactComponent as ArrowDownIcon } from "@assets/svg/tools/arrow-down.svg";
-import { ReactComponent as ArrowUpIcon } from "@assets/svg/tools/arrow-up.svg";
-import RoundButton from "@components/UI/Buttons/RoundButton";
+import RoundButton from "../../../UI/Buttons/RoundButton";
+import { ReactComponent as ArrowDownIcon } from "../../../../assets/svg/tools/arrow-down.svg";
+import { ReactComponent as ArrowUpIcon } from "../../../../assets/svg/tools/arrow-up.svg";
 
-import { readMoreRoundBtnExtraStyles, textLimit } from "./config";
-import { handleReviewText } from "./config/handleReviewText";
 import { useReviewText } from "./config/useReviewText";
-import { ReviewProps } from "./interface";
 import {
   ReadMoreTitle,
   ReadMoreWrapper,
@@ -17,6 +14,9 @@ import {
   ReviewTitle,
   ReviewWrapper,
 } from "./styles";
+import { ReviewProps } from "./interface";
+import { readMoreRoundBtnExtraStyles, textLimit } from "./config";
+import { handleReviewText } from "./config/handleReviewText";
 
 const Review: FunctionComponent<ReviewProps> = ({ author, text }) => {
   const { from, readMore, title, hide } = useReviewText();

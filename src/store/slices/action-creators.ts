@@ -1,21 +1,5 @@
 import { setIsAlertOpen } from "./alertSlice/alertSlice";
-import {
-  removePrevMovies,
-  setCinemaMovie,
-  setCinemaMovieDay,
-  setReserve,
-} from "./cinemaSlice/cinemaSlice";
-import { setCurrDay, setDays } from "./daysSlice/daysSlice";
-import { getMoviesThunk } from "./movieSlice/thunks/getMoviesThunk";
 import { setPortal } from "./portalSlice/portalSlice";
-import { removeTicket, setTicket } from "./ticketsSlice/ticketsSlice";
-import {
-  resetChoice,
-  setChosenDay,
-  setChosenMovie,
-  setChosenMovieBadge,
-  setChosenSeats,
-} from "./userChoiceSlice/userChoiceSlice";
 import {
   changeTheme,
   removeUser,
@@ -30,6 +14,22 @@ import {
   toggleMute,
   togglePlay,
 } from "./videoSlice/videoSlice";
+import { getMoviesThunk } from "./movieSlice/thunks/getMoviesThunk";
+import { setCurrDay, setDays } from "./daysSlice/daysSlice";
+import {
+  resetChoice,
+  setChosenDay,
+  setChosenMovie,
+  setChosenMovieBadge,
+  setChosenSeats,
+} from "./userChoiceSlice/userChoiceSlice";
+import {
+  removePrevMovies,
+  setCinemaMovie,
+  setCinemaMovieDay,
+  setReserve,
+} from "./cinemaSlice/cinemaSlice";
+import { removeTicket, setTicket } from "./ticketsSlice/ticketsSlice";
 
 export const allActionCreators = {
   changeTheme,

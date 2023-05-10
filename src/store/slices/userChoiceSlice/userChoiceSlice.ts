@@ -1,10 +1,10 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
-import { handleTicketPrice } from "@helpers/handleTicketPrice";
-import { IDate } from "@models/IDate";
+import { IDate } from "../../../models/IDate";
+import { handleTicketPrice } from "../../../helpers/handleTicketPrice";
 
-import { defaultState } from "./config";
 import { Badge } from "./interfaces";
+import { defaultState } from "./config";
 
 const initialState = defaultState;
 

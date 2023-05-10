@@ -1,4 +1,4 @@
-import { Colors } from "@constants/styles/colors";
+import { Colors } from "../constants/styles/colors";
 
 export const transparentColor = "transparent";
 export const zeroWidth = 0;

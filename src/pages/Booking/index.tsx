@@ -1,18 +1,18 @@
 import { FunctionComponent, useEffect } from "react";
 
-import BookingTicketSection from "@components/pagesSections/Booking/BookingTicketSection";
-import BookingTitle from "@components/pagesSections/Booking/BookingTitle";
-import { getCurrDay } from "@helpers/date/getCurrDay";
-import { useActions } from "@hooks/useActionts";
-import { useAppSelector } from "@hooks/useAppSelector";
+import BookingTicketSection from "../../components/pagesSections/Booking/BookingTicketSection";
+import BookingTitle from "../../components/pagesSections/Booking/BookingTitle";
+import { useAppSelector } from "../../hooks/useAppSelector";
 import {
   missedTicketsSelector,
   pastTicketsSelector,
   upcomingTicketsSelector,
-} from "@store/slices/ticketsSlice/selectors";
+} from "../../store/slices/ticketsSlice/selectors";
+import { useActions } from "../../hooks/useActionts";
+import { getCurrDay } from "../../helpers/date/getCurrDay";
 
-import { useBookingText } from "./config/useBookingText";
 import { BookingsWrapper } from "./styles";
+import { useBookingText } from "./config/useBookingText";
 
 const Bookings: FunctionComponent = () => {
   const { missedTitle, pastTitle, upcomingTitle, noBookingsTitle } =

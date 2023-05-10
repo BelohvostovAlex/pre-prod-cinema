@@ -1,8 +1,8 @@
 import { FunctionComponent } from "react";
 import { useNavigate } from "react-router-dom";
 
-import { AppPathesWithoutSlug } from "@constants/routes";
-import { SliderDirectionVariant } from "@constants/slider";
+import { AppPathesWithoutSlug } from "../../constants/routes";
+import { SliderDirectionVariant } from "../../constants/slider";
 
 import { MovieSliderItemProps } from "./interface";
 import {

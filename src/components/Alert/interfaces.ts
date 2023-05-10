@@ -1,4 +1,4 @@
-import { AlertTypes } from "@constants/alert";
+import { AlertTypes } from "../../constants/alert";
 
 export interface AlertProps {
   time?: number;

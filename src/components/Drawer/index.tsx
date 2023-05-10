@@ -1,6 +1,6 @@
 import { FunctionComponent } from "react";
 
-import { ReactComponent as RightArrowIcon } from "@assets/svg/tools/right.svg";
+import { ReactComponent as RightArrowIcon } from "../../assets/svg/tools/right.svg";
 
 import { DrawerProps } from "./interfaces";
 import { DrawerArrowWrapper, DrawerTitle, StyledDrawer } from "./styles";

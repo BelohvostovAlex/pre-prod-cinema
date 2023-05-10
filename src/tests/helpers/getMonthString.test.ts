@@ -1,4 +1,4 @@
-import { getMonthString } from "@helpers/date/getMonthString";
+import { getMonthString } from "../../helpers/date/getMonthString";
 
 const monthIndexJan = 0;
 const janStr = "January";

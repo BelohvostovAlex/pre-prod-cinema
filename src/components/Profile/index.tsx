@@ -1,17 +1,15 @@
 import { FunctionComponent } from "react";
 import { useTheme } from "styled-components";
 
-import { ReactComponent as LogoIcon } from "@assets/svg/logo/logo.svg";
-import { ReactComponent as ProfileIcon } from "@assets/svg/profile/profile-big.svg";
-import { PortalVariant } from "@constants/portal";
-import { TypographyVariant } from "@constants/styles/typography";
-import { useSignOut } from "@hooks/auth/useSignOut";
-import { useOpenPortal } from "@hooks/portal/useOpenPortal";
-import { useAppSelector } from "@hooks/useAppSelector";
-
+import { ReactComponent as LogoIcon } from "../../assets/svg/logo/logo.svg";
+import { ReactComponent as ProfileIcon } from "../../assets/svg/profile/profile-big.svg";
+import { PortalVariant } from "../../constants/portal";
+import { TypographyVariant } from "../../constants/styles/typography";
+import { useSignOut } from "../../hooks/auth/useSignOut";
+import { useOpenPortal } from "../../hooks/portal/useOpenPortal";
+import { useAppSelector } from "../../hooks/useAppSelector";
 import SecondaryButton from "../UI/Buttons/SecondaryButton";
 
-import { useProfileText } from "./config/useProfileText";
 import {
   ProfileGender,
   ProfileIconWrapper,
@@ -23,6 +21,7 @@ import {
   ProfileName,
   ProfileWrapper,
 } from "./styles";
+import { useProfileText } from "./config/useProfileText";
 
 const Profile: FunctionComponent = () => {
   const { margin } = useTheme();

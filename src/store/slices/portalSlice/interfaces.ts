@@ -1,4 +1,4 @@
-import { PortalVariant } from "@constants/portal";
+import { PortalVariant } from "../../../constants/portal";
 
 export interface PortalState {
   isOpen: boolean;

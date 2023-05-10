@@ -1,6 +1,6 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
-import { ITicket } from "@models/movie/ITicket";
+import { ITicket } from "../../../models/movie/ITicket";
 
 import { TicketsState } from "./interfaces";
 

@@ -1,6 +1,6 @@
-import { getCurrDay } from "@helpers/date/getCurrDay";
-import { getMonthString } from "@helpers/date/getMonthString";
-import { IDate } from "@models/IDate";
+import { getMonthString } from "../../helpers/date/getMonthString";
+import { getCurrDay } from "../../helpers/date/getCurrDay";
+import { IDate } from "../../models/IDate";
 
 const date = new Date();
 const dateMs = date.getTime();

@@ -1,17 +1,16 @@
-import { ChangeEvent, useState } from "react";
 import { FirebaseError } from "firebase/app";
+import { ChangeEvent, useState } from "react";
 import { SubmitHandler } from "react-hook-form";
 
-import { updateDocument } from "@api/firebase/updateDocument";
-import { updateUserPassword } from "@api/firebase/updateUserPassword";
-import { uploadFile } from "@api/firebase/uploadFile";
-import { AuthFormInputProps } from "@components/AuthForm/interfaces";
-import { AlertTypes } from "@constants/alert";
-import { FirebaseErrorsTypes } from "@constants/errors/firebaseErrors";
-import { FirebaseCollections } from "@constants/firebase/collections";
-import { isStrIncludesValueHandler } from "@helpers/isStrIncludeValueHandler";
-import { IUser } from "@models/IUser";
-
+import { updateDocument } from "../../api/firebase/updateDocument";
+import { updateUserPassword } from "../../api/firebase/updateUserPassword";
+import { uploadFile } from "../../api/firebase/uploadFile";
+import { AuthFormInputProps } from "../../components/AuthForm/interfaces";
+import { AlertTypes } from "../../constants/alert";
+import { FirebaseErrorsTypes } from "../../constants/errors/firebaseErrors";
+import { FirebaseCollections } from "../../constants/firebase/collections";
+import { isStrIncludesValueHandler } from "../../helpers/isStrIncludeValueHandler";
+import { IUser } from "../../models/IUser";
 import { useErrorTranslation } from "../errorTranslation/useErrorTranslation";
 import { useActions } from "../useActionts";
 

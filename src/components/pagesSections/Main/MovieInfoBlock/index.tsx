@@ -1,11 +1,11 @@
 import { FunctionComponent } from "react";
 
-import { MovieInfoBlockProps } from "./interfaces";
 import {
   MovieInfoBlockText,
   MovieInfoBlockTitle,
   MovieInfoBlockWrapper,
 } from "./styles";
+import { MovieInfoBlockProps } from "./interfaces";
 
 const MovieInfoBlock: FunctionComponent<MovieInfoBlockProps> = ({
   text,

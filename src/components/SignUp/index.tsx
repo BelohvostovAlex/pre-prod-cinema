@@ -1,8 +1,7 @@
 import { FunctionComponent } from "react";
 
-import { useSignUp } from "@hooks/auth/authByEmail/useSignUp";
-
 import AuthForm from "../AuthForm";
+import { useSignUp } from "../../hooks/auth/authByEmail/useSignUp";
 
 import { SignUpProps } from "./interfaces";
 
