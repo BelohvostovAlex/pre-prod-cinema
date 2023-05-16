@@ -7,7 +7,7 @@ import { AppPathes } from "../../constants/routes";
 import { TypographyVariant } from "../../constants/styles/typography";
 import { useAppSelector } from "../../hooks/useAppSelector";
 import { userTokenSelector } from "../../store/slices/userSlice/selectors";
-import RouterLink from "../UI/RouterLink";
+import RouterLink from "../../ui/RouterLink";
 
 import { Nav } from "./styles";
 import { extraStylesRouterLink } from "./config";

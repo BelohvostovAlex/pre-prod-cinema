@@ -7,7 +7,7 @@ import { TypographyVariant } from "../../constants/styles/typography";
 import { useSignOut } from "../../hooks/auth/useSignOut";
 import { usePortal } from "../../hooks/portal/usePortal";
 import { useAppSelector } from "../../hooks/useAppSelector";
-import SecondaryButton from "../UI/Buttons/SecondaryButton";
+import SecondaryButton from "../../ui/Buttons/SecondaryButton";
 import Modal from "../Modal";
 import EditProfile from "../EditProfile";
 import Settings from "../Settings";

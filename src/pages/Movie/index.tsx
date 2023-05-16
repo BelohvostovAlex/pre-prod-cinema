@@ -3,22 +3,23 @@ import { useNavigate, useParams } from "react-router-dom";
 import { usePalette } from "react-palette";
 import { Divider } from "cinema-ui-belohvostov";
 
-import MoviePageLoader from "../../components/Loader/MoviePageLoader";
+import MoviePageLoader from "cinema-components-lib/Loaders/MoviePageLoader";
+
 import { moviesImdbNew } from "../../constants/movies";
 import { AppPathesWithoutSlug } from "../../constants/routes";
 import { reviewsData } from "../../constants/movies/reviews";
-import MovieBooking from "../../components/pagesSections/Movie/MovieBooking";
+import MovieBooking from "../../sections/Movie/MovieBooking";
 import { useAppSelector } from "../../hooks/useAppSelector";
 import { isAuthSelector } from "../../store/slices/userSlice/selectors";
 import { useActions } from "../../hooks/useActionts";
 import { AlertTypes } from "../../constants/alert";
-import MovieScreen from "../../components/pagesSections/Movie/MovieScreen";
-import MovieInfo from "../../components/pagesSections/Movie/MovieInfo";
-import Review from "../../components/pagesSections/Movie/Review";
-import MovieTrailer from "../../components/pagesSections/Movie/MovieTrailer";
-import MovieHeader from "../../components/pagesSections/Movie/MovieHeader";
-import MovieBadges from "../../components/pagesSections/Movie/MovieBadges";
-import MovieFooter from "../../components/pagesSections/Movie/MovieFooter";
+import MovieScreen from "../../sections/Movie/MovieScreen";
+import MovieInfo from "../../sections/Movie/MovieInfo";
+import MovieReview from "../../sections/Movie/MovieReview";
+import MovieTrailer from "../../sections/Movie/MovieTrailer";
+import MovieHeader from "../../sections/Movie/MovieHeader";
+import MovieBadges from "../../sections/Movie/MovieBadges";
+import MovieFooter from "../../sections/Movie/MovieFooter";
 import { createDefaultCinemaInfo } from "../../store/slices/cinemaSlice/config.ts";
 // import { moviesSelector } from "../../store/slices/movieSlice/selectors";
 
@@ -101,7 +102,7 @@ const Movie: FunctionComponent = () => {
           {reviewsData.items
             .slice(0, 3)
             .map(({ username, content, reviewLink }) => (
-              <Review author={username} text={content} key={reviewLink} />
+              <MovieReview author={username} text={content} key={reviewLink} />
             ))}
         </MovieReviewWrapper>
       ) : (

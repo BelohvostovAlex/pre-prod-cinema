@@ -1,4 +1,4 @@
-import { handleReviewText } from "../../components/pagesSections/Movie/Review/config/handleReviewText";
+import { handleReviewText } from "../../sections/Movie/MovieReview/config/handleReviewText";
 
 const tooBigString =
   "I was a person that saw all the hype and claims of masterpiece";

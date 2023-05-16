@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 
 import ModalTitle from "../Modal/ModalTitle";
 import PasswordStrengthMeter from "../PasswordStrengthMeter";
-import Button from "../UI/Buttons/Button";
+import Button from "../../ui/Buttons/Button";
 import InputWithIcon from "../InputWithIcon";
 import { ReactComponent as ProfileIcon } from "../../assets/svg/form/account.svg";
 import { ReactComponent as GenderIcon } from "../../assets/svg/form/gender.svg";
@@ -17,8 +17,8 @@ import { TypographyVariant } from "../../constants/styles/typography";
 import { useEditProfile } from "../../hooks/editProfile/useEditProfile";
 import { useAppSelector } from "../../hooks/useAppSelector";
 import { userSelector } from "../../store/slices/userSlice/selectors";
-import { useValidationWithTranslate } from "../AuthForm/hooks/useValidationWithTranslate";
-import { AuthFormInputProps } from "../AuthForm/interfaces";
+import { useValidationWithTranslate } from "../../forms/AuthForm/hooks/useValidationWithTranslate";
+import { AuthFormInputProps } from "../../forms/AuthForm/interfaces";
 import { InputTypes } from "../Input/interfaces";
 
 import {

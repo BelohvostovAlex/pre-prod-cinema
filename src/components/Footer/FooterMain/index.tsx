@@ -9,7 +9,7 @@ import { ReactComponent as LogoIcon } from "../../../assets/svg/logo/logo.svg";
 import { ReactComponent as TelegramIcon } from "../../../assets/svg/social/telegram.svg";
 import { InputTypes } from "../../Input/interfaces";
 import { useActions } from "../../../hooks/useActionts";
-import { useValidationWithTranslate } from "../../AuthForm/hooks/useValidationWithTranslate";
+import { useValidationWithTranslate } from "../../../forms/AuthForm/hooks/useValidationWithTranslate";
 import { AlertTypes } from "../../../constants/alert";
 
 import {

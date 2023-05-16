@@ -1,7 +1,7 @@
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { FirebaseError } from "firebase/app";
 
-import { AuthFormInputProps } from "../../../components/AuthForm/interfaces";
+import { AuthFormInputProps } from "../../../forms/AuthForm/interfaces";
 import { auth } from "../../../lib/firebase.prod";
 import { useErrorTranslation } from "../../errorTranslation/useErrorTranslation";
 import { useActions } from "../../useActionts";

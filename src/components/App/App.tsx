@@ -1,10 +1,11 @@
 import { FunctionComponent, Suspense, lazy } from "react";
 
-import MainLoader from "../Loader/MainLoader";
-import ThemeProvider from "../ThemeProvider";
+import MainLoader from "cinema-components-lib/Loaders/MainLoader";
 
-const AppLayout = lazy(() => import("../../layouts/AppLayout"));
-const AppRouter = lazy(() => import("../AppRouter"));
+import ThemeProvider from "../../containers/ThemeProvider";
+
+const AppLayout = lazy(() => import("../../containers/AppLayout"));
+const AppRouter = lazy(() => import("../../routes/AppRouter"));
 
 const App: FunctionComponent = () => {
   return (

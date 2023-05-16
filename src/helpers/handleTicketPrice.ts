@@ -1,4 +1,4 @@
-import { futureLimit } from "../components/pagesSections/Movie/MovieBooking/config";
+import { futureLimit } from "../sections/Movie/MovieBooking/config";
 import { IDate } from "../interfaces/IDate";
 
 import { getAvailableDates } from "./date/getAvailableDates";

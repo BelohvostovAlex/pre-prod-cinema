@@ -1,7 +1,7 @@
 import { FunctionComponent, useEffect } from "react";
 
-import TrailerBlock from "../../components/pagesSections/Main/TrailerBlock";
-import InTheaterBlock from "../../components/pagesSections/Main/InTheaterBlock";
+import TrailerBlock from "../../sections/Main/TrailerBlock";
+import InTheaterBlock from "../../sections/Main/InTheaterBlock";
 import FooterSecondary from "../../components/Footer/FooterSecondary";
 import { useAppSelector } from "../../hooks/useAppSelector";
 // import { useActions } from "../../hooks/useActionts";

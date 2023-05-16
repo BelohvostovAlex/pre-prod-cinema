@@ -5,7 +5,7 @@ import { SubmitHandler } from "react-hook-form";
 import { updateDocument } from "../../api/firebase/updateDocument";
 import { updateUserPassword } from "../../api/firebase/updateUserPassword";
 import { uploadFile } from "../../api/firebase/uploadFile";
-import { AuthFormInputProps } from "../../components/AuthForm/interfaces";
+import { AuthFormInputProps } from "../../forms/AuthForm/interfaces";
 import { AlertTypes } from "../../constants/alert";
 import { FirebaseErrorsTypes } from "../../constants/errors/firebaseErrors";
 import { FirebaseCollections } from "../../constants/firebase/collections";

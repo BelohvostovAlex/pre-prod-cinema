@@ -1,7 +1,7 @@
 import { FunctionComponent } from "react";
 
-import BookingTicketSection from "../../components/pagesSections/Booking/BookingTicketSection";
-import BookingTitle from "../../components/pagesSections/Booking/BookingTitle";
+import BookingTicketSection from "../../sections/Booking/BookingTicketSection";
+import BookingTitle from "../../sections/Booking/BookingTitle";
 import { useAppSelector } from "../../hooks/useAppSelector";
 import { allCategoriesTicketsSelector } from "../../store/slices/ticketsSlice/selectors";
 

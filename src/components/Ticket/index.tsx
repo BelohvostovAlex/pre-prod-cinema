@@ -9,7 +9,7 @@ import { moviesImdbNew } from "../../constants/movies";
 import { useBookingText } from "../../pages/Booking/hooks/useBookingText";
 import { useActions } from "../../hooks/useActionts";
 import { TypographyVariant } from "../../constants/styles/typography";
-import Button from "../UI/Buttons/Button";
+import Button from "../../ui/Buttons/Button";
 
 import { TicketProps } from "./interfaces";
 import {

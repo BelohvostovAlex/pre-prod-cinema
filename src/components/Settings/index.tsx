@@ -4,7 +4,7 @@ import { Locales } from "../../constants/locales";
 import { useActions } from "../../hooks/useActionts";
 import i18n from "../../config/i18n";
 import ModalTitle from "../Modal/ModalTitle";
-import RoundButton from "../UI/Buttons/RoundButton";
+import RoundButton from "../../ui/Buttons/RoundButton";
 import { ReactComponent as SunIcon } from "../../assets/svg/theme/sun.svg";
 import { ReactComponent as MoonIcon } from "../../assets/svg/theme/moon.svg";
 import { ThemeTypes } from "../../constants/styles/theme";
