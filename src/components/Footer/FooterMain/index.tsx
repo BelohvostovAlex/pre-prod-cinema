@@ -8,9 +8,8 @@ import { AuthFormInputsPossibleNames } from "../../../constants/authForm";
 import { ReactComponent as LogoIcon } from "../../../assets/svg/logo/logo.svg";
 import { ReactComponent as TelegramIcon } from "../../../assets/svg/social/telegram.svg";
 import { InputTypes } from "../../Input/interfaces";
-import { ButtonTypes } from "../../../constants/buttons";
 import { useActions } from "../../../hooks/useActionts";
-import { useValidationWithTranslate } from "../../AuthForm/config/validation";
+import { useValidationWithTranslate } from "../../AuthForm/hooks/useValidationWithTranslate";
 import { AlertTypes } from "../../../constants/alert";
 
 import {
@@ -24,7 +23,7 @@ import {
   FooterSubscribeInputWrapper,
   FooterWrapper,
 } from "./styles";
-import { useFooterText } from "./config/useFooterText";
+import { useFooterText } from "./hooks/useFooterText";
 import { FooterFormProps } from "./interfaces";
 
 const FooterMain: FunctionComponent = () => {
@@ -127,7 +126,7 @@ const FooterMain: FunctionComponent = () => {
               handleValidationType(AuthFormInputsPossibleNames.EMAIL),
             )}
           />
-          <FooterSubmitBtn type={ButtonTypes.SUBMIT}>
+          <FooterSubmitBtn type="submit">
             <TelegramIcon />
           </FooterSubmitBtn>
         </FooterSubscribeInputWrapper>

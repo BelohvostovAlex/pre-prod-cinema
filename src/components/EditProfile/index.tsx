@@ -11,13 +11,13 @@ import { ReactComponent as ImageIcon } from "../../assets/svg/form/image-file.sv
 import { ReactComponent as PasswordIcon } from "../../assets/svg/form/password.svg";
 import { ReactComponent as SurnamIcon } from "../../assets/svg/form/surname.svg";
 import { AuthFormInputsPossibleNames, Gender } from "../../constants/authForm";
-import { ButtonTypes, ButtonVariants } from "../../constants/buttons";
+import { ButtonVariants } from "../../constants/buttons";
 import { FirebaseCollections } from "../../constants/firebase/collections";
 import { TypographyVariant } from "../../constants/styles/typography";
 import { useEditProfile } from "../../hooks/editProfile/useEditProfile";
 import { useAppSelector } from "../../hooks/useAppSelector";
 import { userSelector } from "../../store/slices/userSlice/selectors";
-import { useValidationWithTranslate } from "../AuthForm/config/validation";
+import { useValidationWithTranslate } from "../AuthForm/hooks/useValidationWithTranslate";
 import { AuthFormInputProps } from "../AuthForm/interfaces";
 import { InputTypes } from "../Input/interfaces";
 
@@ -30,7 +30,7 @@ import {
   InputUploadFile,
   InputUploadFileLabel,
 } from "./styles";
-import { useEditText } from "./config/useEditText";
+import { useEditText } from "./hooks/useEditText";
 import { defaultFormValue } from "./config/constants";
 import { btnSubmitWidth } from "./config";
 
@@ -45,6 +45,10 @@ const EditProfile: FunctionComponent = () => {
     passPlaceholder,
     submitBtn,
     uploadImg,
+    surnameTitle,
+    usernameTitle,
+    genderTitle,
+    passTitle,
   } = useEditText();
   const {
     register,
@@ -75,7 +79,7 @@ const EditProfile: FunctionComponent = () => {
       <EditProfileForm onSubmit={handleSubmit(onSubmitHandler)}>
         <InputWithIcon
           id={AuthFormInputsPossibleNames.USERNAME}
-          icon={<ProfileIcon />}
+          icon={<ProfileIcon title={usernameTitle} />}
           register={register}
           inputName={AuthFormInputsPossibleNames.USERNAME}
           validateOptions={handleValidationType(
@@ -87,7 +91,7 @@ const EditProfile: FunctionComponent = () => {
         />
         <InputWithIcon
           id={AuthFormInputsPossibleNames.SURNAME}
-          icon={<SurnamIcon />}
+          icon={<SurnamIcon title={surnameTitle} />}
           register={register}
           inputName={AuthFormInputsPossibleNames.SURNAME}
           validateOptions={handleValidationType(
@@ -106,11 +110,11 @@ const EditProfile: FunctionComponent = () => {
               accept="image/*"
               onChange={handleFileChange}
             />
-            <ImageIcon /> {uploadImg}
+            <ImageIcon title={uploadImg} /> {uploadImg}
           </InputUploadFileLabel>
         </InputFileWrapper>
         <InputGenderWrapper>
-          <GenderIcon />
+          <GenderIcon title={genderTitle} />
           <InputUploadFileLabel htmlFor={Gender.MALE}>
             {male}
             <InputRadio
@@ -137,7 +141,7 @@ const EditProfile: FunctionComponent = () => {
         <InputWithIcon
           type={InputTypes.PASSWORD}
           id={AuthFormInputsPossibleNames.PASSWORD}
-          icon={<PasswordIcon />}
+          icon={<PasswordIcon title={passTitle} />}
           register={register}
           inputName={AuthFormInputsPossibleNames.PASSWORD}
           validateOptions={handleValidationType(
@@ -152,7 +156,7 @@ const EditProfile: FunctionComponent = () => {
           variant={ButtonVariants.PRIMARY}
           typography={TypographyVariant.poppins_l}
           width={btnSubmitWidth}
-          buttonTypes={ButtonTypes.SUBMIT}
+          type="submit"
         >
           {submitBtn}
         </Button>

@@ -3,13 +3,16 @@ import { useTheme } from "styled-components";
 
 import { ReactComponent as LogoIcon } from "../../assets/svg/logo/logo.svg";
 import { ReactComponent as ProfileIcon } from "../../assets/svg/profile/profile-big.svg";
-import { PortalVariant } from "../../constants/portal";
 import { TypographyVariant } from "../../constants/styles/typography";
 import { useSignOut } from "../../hooks/auth/useSignOut";
-import { useOpenPortal } from "../../hooks/portal/useOpenPortal";
+import { usePortal } from "../../hooks/portal/usePortal";
 import { useAppSelector } from "../../hooks/useAppSelector";
 import SecondaryButton from "../UI/Buttons/SecondaryButton";
+import Modal from "../Modal";
+import EditProfile from "../EditProfile";
+import Settings from "../Settings";
 
+import { useProfileText } from "./hooks/useProfileText";
 import {
   ProfileGender,
   ProfileIconWrapper,
@@ -21,62 +24,87 @@ import {
   ProfileName,
   ProfileWrapper,
 } from "./styles";
-import { useProfileText } from "./config/useProfileText";
 
 const Profile: FunctionComponent = () => {
   const { margin } = useTheme();
-  const { editProfileText, logOutText, settingsText, userIdText, altImgText } =
-    useProfileText();
+  const {
+    editProfileText,
+    logOutText,
+    settingsText,
+    userIdText,
+    altImgText,
+    logoTitle,
+  } = useProfileText();
   const { gender, id, photo, surname, username } = useAppSelector(
     (state) => state.user.user,
   );
-  const openEditPortal = useOpenPortal(PortalVariant.EDIT_PROFILE);
-  const openSettingPortal = useOpenPortal(PortalVariant.SETTING);
+  const [isEditPortalOpen, handleEditPortal] = usePortal();
+  const [isSettingPortalOpen, handleSettingPortal] = usePortal();
 
   const signOut = useSignOut();
 
+  const buttons = [
+    {
+      text: editProfileText,
+      typography: TypographyVariant.poppins_sb,
+      onClick: handleEditPortal,
+      extra: `margin-bottom: ${margin.mb14}`,
+    },
+    {
+      text: settingsText,
+      typography: TypographyVariant.poppins_sb,
+      onClick: handleSettingPortal,
+      extra: `margin-bottom: ${margin.mb14}`,
+    },
+    {
+      text: logOutText,
+      typography: TypographyVariant.poppins_sb,
+      onClick: signOut,
+      extra: `margin-bottom: ${margin.mb14}`,
+    },
+  ];
+
   return (
-    <ProfileWrapper>
-      <ProfileInfo>
-        <ProfileIconWrapper>
-          {photo ? (
-            <ProfileImg src={photo} alt={altImgText} />
-          ) : (
-            <ProfileIcon />
-          )}
-        </ProfileIconWrapper>
-        <ProfileName>
-          {username} {surname}
-        </ProfileName>
-        <ProfileId>
-          {userIdText}: {id.slice(0, 7)}
-        </ProfileId>
-        <ProfileGender>{gender}</ProfileGender>
-      </ProfileInfo>
-      <ProfileMenu>
-        <SecondaryButton
-          text={editProfileText}
-          typography={TypographyVariant.poppins_sb}
-          onClick={openEditPortal}
-          extra={`margin-bottom: ${margin.mb14}`}
-        />
-        <SecondaryButton
-          text={settingsText}
-          typography={TypographyVariant.poppins_sb}
-          onClick={openSettingPortal}
-          extra={`margin-bottom: ${margin.mb14}`}
-        />
-        <SecondaryButton
-          text={logOutText}
-          typography={TypographyVariant.poppins_sb}
-          extra={`margin-bottom: ${margin.mb14}`}
-          onClick={signOut}
-        />
-      </ProfileMenu>
-      <ProfileLogoWrapper>
-        <LogoIcon />
-      </ProfileLogoWrapper>
-    </ProfileWrapper>
+    <>
+      <ProfileWrapper>
+        <ProfileInfo>
+          <ProfileIconWrapper>
+            {photo ? (
+              <ProfileImg src={photo} alt={altImgText} title={altImgText} />
+            ) : (
+              <ProfileIcon title={altImgText} />
+            )}
+          </ProfileIconWrapper>
+          <ProfileName>
+            {username} {surname}
+          </ProfileName>
+          <ProfileId>
+            {userIdText}: {id.substring(0, 7)}
+          </ProfileId>
+          <ProfileGender>{gender}</ProfileGender>
+        </ProfileInfo>
+        <ProfileMenu>
+          {buttons.map(({ extra, onClick, text, typography }, idx) => (
+            <SecondaryButton
+              key={idx}
+              extra={extra}
+              onClick={onClick}
+              text={text}
+              typography={typography}
+            />
+          ))}
+        </ProfileMenu>
+        <ProfileLogoWrapper>
+          <LogoIcon title={logoTitle} />
+        </ProfileLogoWrapper>
+      </ProfileWrapper>
+      <Modal isOpen={isEditPortalOpen} onClose={handleEditPortal}>
+        <EditProfile />
+      </Modal>
+      <Modal isOpen={isSettingPortalOpen} onClose={handleSettingPortal}>
+        <Settings />
+      </Modal>
+    </>
   );
 };
 

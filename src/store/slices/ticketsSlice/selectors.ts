@@ -1,8 +1,8 @@
 import { createSelector } from "@reduxjs/toolkit";
 
 import { RootState } from "../..";
-import { currDaySelector } from "../daysSlice/selectors";
 import { userIdSelector } from "../userSlice/selectors";
+import { getCurrDay } from "../../../helpers/date/getCurrDay";
 
 export const ticketsSelector = (state: RootState) => state.tickets.tickets;
 
@@ -18,9 +18,9 @@ export const missedTicketsSelector = createSelector(
 
 export const pastTicketsSelector = createSelector(
   ticketsSelector,
-  currDaySelector,
   userIdSelector,
-  (tickets, { fullDateInfo, date }, id) => {
+  (tickets, id) => {
+    const { date, fullDateInfo } = getCurrDay();
     return tickets.filter(
       ({ day, isCanceled, userId }) =>
         !isCanceled &&
@@ -33,13 +33,22 @@ export const pastTicketsSelector = createSelector(
 
 export const upcomingTicketsSelector = createSelector(
   ticketsSelector,
-  currDaySelector,
   userIdSelector,
-  (tickets, { fullDateInfo, date }, id) => {
+  (tickets, id) => {
+    const { date, fullDateInfo } = getCurrDay();
     return tickets.filter(
       ({ day, isCanceled, userId }) =>
         (userId === id && !isCanceled && day.date === date) ||
         (userId === id && !isCanceled && day.fullDateInfo > fullDateInfo),
     );
+  },
+);
+
+export const allCategoriesTicketsSelector = createSelector(
+  missedTicketsSelector,
+  pastTicketsSelector,
+  upcomingTicketsSelector,
+  (missedTickets, pastTickets, upcomingTickets) => {
+    return { missedTickets, pastTickets, upcomingTickets };
   },
 );

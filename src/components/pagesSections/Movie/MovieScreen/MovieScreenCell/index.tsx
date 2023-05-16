@@ -26,7 +26,7 @@ const MovieScreenCell: FunctionComponent<MovieScreenCellProps> = ({
   };
   const selectedSeats = chosenSeats.find(
     (item) =>
-      item.day === chosenDay &&
+      item.day.date === chosenDay.date &&
       item.movie === chosenMovie &&
       item.time === chosenBadge.time,
   );

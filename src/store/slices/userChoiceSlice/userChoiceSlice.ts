@@ -1,6 +1,6 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
-import { IDate } from "../../../models/IDate";
+import { IDate } from "../../../interfaces/IDate";
 import { handleTicketPrice } from "../../../helpers/handleTicketPrice";
 
 import { Badge } from "./interfaces";
@@ -37,9 +37,14 @@ export const userChoiceSlice = createSlice({
           item.day.date === day.date &&
           item.time === time,
       );
-      if (isExist && !isExist.seats.includes(seat)) {
-        isExist.seats.push(seat);
-        isExist.price = isExist.price + handleTicketPrice(day);
+      if (isExist) {
+        if (!isExist.seats.includes(seat)) {
+          isExist.seats.push(seat);
+          isExist.price = isExist.price + handleTicketPrice(day);
+        } else {
+          isExist.seats = isExist.seats.filter((item) => item !== seat);
+          isExist.price = isExist.price - handleTicketPrice(day);
+        }
       }
       if (!isExist) {
         state.chosenSeats.push({

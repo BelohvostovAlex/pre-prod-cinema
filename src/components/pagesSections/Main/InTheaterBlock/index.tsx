@@ -1,11 +1,12 @@
 import { FunctionComponent, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Chip, Slider, SliderItems } from "cinema-ui-belohvostov";
+import { Chip, SliderItems } from "cinema-ui-belohvostov";
 
 import MovieInfoBlock from "../MovieInfoBlock";
 import MovieSliderItem from "../../../MovieSliderItem";
 import { TypographyVariant } from "../../../../constants/styles/typography";
 import MovieInfoBlockSkeleton from "../../../Skeletons/MovieInfoBlock";
+import Slider from "../../../Slider";
 import InTheaterBlockImageSkeleton from "../../../Skeletons/InTheaterBlock/InTheaterBlockImageSkeleton";
 import SliderSkeleton from "../../../Skeletons/InTheaterBlock/SliderSkeleton";
 import { SliderDirectionVariant } from "../../../../constants/slider";
@@ -33,6 +34,8 @@ const InTheaterBlock: FunctionComponent<InTheaterBlockProps> = ({
   const handleNavigateToMovie = () => {
     navigate(`${AppPathesWithoutSlug.MOVIE}${data[index].id}`);
   };
+
+  const { plot, title, image, genres } = data[index];
   return (
     <InTheaterBlockWrapper>
       {isLoading ? (
@@ -40,8 +43,8 @@ const InTheaterBlock: FunctionComponent<InTheaterBlockProps> = ({
       ) : (
         <MovieInfoBlock
           typography={TypographyVariant.inria_l_ital}
-          text={data[index]?.plot}
-          title={data[index]?.title}
+          text={plot}
+          title={title}
         />
       )}
       {isLoading ? (
@@ -54,11 +57,11 @@ const InTheaterBlock: FunctionComponent<InTheaterBlockProps> = ({
       ) : (
         <InTheaterSliderWrapper>
           <InTheaterImgWrapper onClick={handleNavigateToMovie}>
-            <InTheaterImg src={data[index]?.image} />
-            <InTheterImgTitle>{data[index]?.title}</InTheterImgTitle>
+            <InTheaterImg src={image} title={title} alt={title} />
+            <InTheterImgTitle>{title}</InTheterImgTitle>
             <TagsWrapper>
-              {data &&
-                data[index]?.genres
+              {genres &&
+                genres
                   .split(",")
                   .map((item) => <Chip text={item} key={item} />)}
             </TagsWrapper>

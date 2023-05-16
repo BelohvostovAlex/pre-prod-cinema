@@ -1,7 +1,7 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
 import { ThemeTypes } from "../../../constants/styles/theme";
-import { IUser } from "../../../models/IUser";
+import { IUser } from "../../../interfaces/IUser";
 
 import { UpdateUserPayload, UserState } from "./interfaces";
 

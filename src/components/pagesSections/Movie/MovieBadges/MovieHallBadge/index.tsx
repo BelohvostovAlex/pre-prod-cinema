@@ -9,7 +9,7 @@ import {
   MovieHallBadgeWrapper,
 } from "./styles";
 import { MovieHallBadgeProps } from "./interfaces";
-import { useMovieHallBadgeText } from "./config/useMovieHallBadgeText";
+import { useMovieHallBadgeText } from "./hooks/useMovieHallBadgeText";
 
 const MovieHallBadge: FunctionComponent<MovieHallBadgeProps> = ({
   isActive,

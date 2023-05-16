@@ -2,7 +2,7 @@ import { FunctionComponent } from "react";
 
 import { Locales } from "../../constants/locales";
 import { useActions } from "../../hooks/useActionts";
-import i18n from "../../i18n";
+import i18n from "../../config/i18n";
 import ModalTitle from "../Modal/ModalTitle";
 import RoundButton from "../UI/Buttons/RoundButton";
 import { ReactComponent as SunIcon } from "../../assets/svg/theme/sun.svg";
@@ -15,15 +15,23 @@ import {
   SettingsControlWrapper,
   SettingsWrapper,
 } from "./styles";
-import { useSettingsText } from "./config/useSettingsText";
+import { useSettingsText } from "./hooks/useSettingsText";
 import {
   extraStylesRoundButtonLang,
   extraStylesRoundButtonTheme,
 } from "./config";
 
 const Settings: FunctionComponent = () => {
-  const { changeThemeText, chooseLangText, en, ru, title, titleSpan } =
-    useSettingsText();
+  const {
+    changeThemeText,
+    chooseLangText,
+    en,
+    ru,
+    title,
+    titleSpan,
+    darkTitle,
+    lightTitle,
+  } = useSettingsText();
   const { changeTheme } = useActions();
   const handleLangRu = () => {
     i18n.changeLanguage(Locales.RU);
@@ -53,10 +61,10 @@ const Settings: FunctionComponent = () => {
             onClick={handleChangeTheme(ThemeTypes.DARK)}
             extra={extraStylesRoundButtonTheme}
           >
-            <MoonIcon />
+            <MoonIcon title={darkTitle} />
           </RoundButton>
           <RoundButton onClick={handleChangeTheme(ThemeTypes.LIGHT)}>
-            <SunIcon />
+            <SunIcon title={lightTitle} />
           </RoundButton>
         </BoxWrapper>
       </SettingsControlWrapper>

@@ -1,5 +1,6 @@
 {
   "Nav_menu": {
+    "Title": "Menu",
     "Home": "Home",
     "Bookings": "Bookings"
   },
@@ -43,7 +44,8 @@
     "signUpBtn": "Sign Up"
   },
   "Drawer": {
-    "title": "User profile"
+    "title": "User profile",
+    "close": "Close"
   },
   "Profile": {
     "userId": "USER ID",
@@ -51,12 +53,14 @@
     "logOut": "Log Out",
     "settings": "Settings",
     "altImgText": "Profile photo",
-    "headerBtnText": "Profile"
+    "headerBtnText": "Profile",
+    "logoTitle": "Modsen Logo"
   },
   "EditProfile": {
     "title": "Here you can change your profile",
     "titleSpan": "information and password.",
     "submitBtn": "Submit",
+    "gender": "Gender",
     "male": "male",
     "female": "female",
     "uploadImg": "Upload img",
@@ -70,7 +74,8 @@
     "en": "EN",
     "changeTheme": "Change theme",
     "dark": "dark",
-    "light": "light"
+    "light": "light",
+    "iconTitle": "Settings"
   },
   "Movie": {
     "moveToNextMovieBtn": "Move to the next movie",
@@ -105,7 +110,8 @@
     "title": {
       "missed": "Your missed bookings",
       "past": "Your past bookings",
-      "upcoming": "Your upcoming bookings"
+      "upcoming": "Your upcoming bookings",
+      "noBookingsTitle": "No bookings"
     },
     "ticket": {
       "date": "Date",
@@ -130,7 +136,9 @@
     },
     "subscribe": "Subscribe",
     "subscribeInputPlaceholder": "Enter email",
-    "subscribeSubtext": "Join our newsletter to stay up to date on features and releases."
+    "subscribeSubtext": "Join our newsletter to stay up to date on features and releases.",
+    "subsSuccess": "Your successfully subscribed",
+    "subsError": "Error with subscription"
   },
   "Errors": {
     "userAlreadyExistsViaSocial": "Account with dat email is already exists, please try another method to log in",

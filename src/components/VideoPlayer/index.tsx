@@ -7,7 +7,7 @@ import { videoSelector } from "../../store/slices/videoSlice/selectors";
 import { VidePlayerWrapper, Video, VideoLayout } from "./styles";
 import { VideoPlayerProps } from "./interfaces";
 import Controls from "./Controls";
-import { useVideoControl } from "./config/useVideoControl";
+import { useVideoControl } from "./hooks/useVideoControl";
 
 const VideoPlayer: FunctionComponent<VideoPlayerProps> = ({ src }) => {
   const {
@@ -61,7 +61,7 @@ const VideoPlayer: FunctionComponent<VideoPlayerProps> = ({ src }) => {
         />
       </VideoLayout>
       <Video ref={videoRef} onTimeUpdate={handleOnTimeUpdate}>
-        <source src={trailer} />
+        <source src={trailer} type="video/mp4" />
       </Video>
     </VidePlayerWrapper>
   );

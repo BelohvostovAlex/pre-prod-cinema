@@ -46,8 +46,6 @@ export const BookSliderItemWrapperHorizontal = styled.div<BookSliderItemWrapperP
       : "translateX(110%)"};
   transition: 0.2s ease-out;
   cursor: pointer;
-  zindex: ${({ theme, center }) =>
-    center ? theme.zIndex[100] : theme.zIndex[0]};
 `;
 
 export const BookSliderItemSquare = styled.div<BookSliderItemWrapperProps>`
@@ -102,5 +100,4 @@ export const BookSliderItemWrapperVertical = styled.div<BookSliderItemWrapperPro
       : "translateY(310%) scale(0);"};
   transition: 0.2s ease-out;
   cursor: pointer;
-  zindex: ${({ theme, center }) => (center ? theme.zIndex[100] : "0")};
 `;

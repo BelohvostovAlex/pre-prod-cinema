@@ -6,7 +6,7 @@ export interface SecondaryButtonProps {
   extra?: string;
   typography: TypographyVariant;
 
-  onClick: () => void;
+  onClick?: () => void;
 }
 
 export type StyledSecondaryButtonProps = Omit<

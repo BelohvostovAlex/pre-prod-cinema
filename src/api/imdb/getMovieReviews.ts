@@ -1,5 +1,5 @@
 import { ImdbUrls } from "../../constants/url/imdb";
-import { imdbApi } from "../../http/imdbApi";
+import { imdbApi } from "../http/imdbApi";
 
 import { GetMovieReviewsResponse } from "./interfaces";
 

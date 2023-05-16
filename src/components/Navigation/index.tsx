@@ -3,26 +3,26 @@ import { useTranslation } from "react-i18next";
 import { useLocation } from "react-router-dom";
 
 import { APP_NAV_MENU } from "../../constants/nav";
-import { PortalVariant } from "../../constants/portal";
 import { AppPathes } from "../../constants/routes";
 import { TypographyVariant } from "../../constants/styles/typography";
-import { useOpenPortal } from "../../hooks/portal/useOpenPortal";
 import { useAppSelector } from "../../hooks/useAppSelector";
 import { userTokenSelector } from "../../store/slices/userSlice/selectors";
 import RouterLink from "../UI/RouterLink";
 
 import { Nav } from "./styles";
 import { extraStylesRouterLink } from "./config";
+import { NavigationProps } from "./interfaces";
 
-const Navigation: FunctionComponent = () => {
+const Navigation: FunctionComponent<NavigationProps> = ({
+  handlePortalOpen,
+}) => {
   const { t } = useTranslation();
   const { pathname } = useLocation();
   const token = useAppSelector(userTokenSelector);
-  const openSignUpPortal = useOpenPortal(PortalVariant.SIGN_UP);
 
   const onClick = (to: string) => {
     if (!token && to === AppPathes.BOOKING) {
-      openSignUpPortal();
+      handlePortalOpen();
     }
   };
   return (

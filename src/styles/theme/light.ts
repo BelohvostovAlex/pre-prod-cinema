@@ -10,6 +10,16 @@ const lightTheme: ITheme = {
     secondary: Colors.ORANGE,
     backgroundColor: Colors.BG_LIGHT,
   },
+  button: {
+    primary: {
+      background: Colors.BLACK,
+      color: Colors.ORANGE,
+    },
+    secondary: {
+      background: Colors.ORANGE,
+      color: Colors.BLACK,
+    },
+  },
 };
 
 export default lightTheme;

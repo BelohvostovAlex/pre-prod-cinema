@@ -1,4 +1,4 @@
-import { KeyboardEvent, ReactNode, WheelEvent } from "react";
+import { KeyboardEvent, ReactNode, WheelEvent, useEffect, useRef } from "react";
 
 import { ReactComponent as DownIcon } from "../../assets/svg/tools/down.svg";
 import { ReactComponent as UpIcon } from "../../assets/svg/tools/up.svg";
@@ -7,6 +7,7 @@ import { KeyButtonVariant } from "../../constants/keyboard";
 
 import { SliderControls, SliderItemsWrapper, SliderWrapper } from "./styles";
 import { SliderProps } from "./interfaces";
+import { svgTitle } from "./config";
 
 const Slider = <T,>({
   direction = SliderDirectionVariant.VERTICAL,
@@ -15,6 +16,7 @@ const Slider = <T,>({
   children,
   data,
 }: SliderProps<T> & { children?: ReactNode }) => {
+  const ref = useRef<HTMLDivElement>(null);
   const dataLength = data.length;
 
   const prevSlide = () => {
@@ -62,20 +64,29 @@ const Slider = <T,>({
       prevSlide();
     }
   };
+
+  useEffect(() => {
+    if (ref.current) {
+      ref.current.addEventListener("wheel", (e) => e.preventDefault());
+
+      return ref.current.addEventListener("wheel", (e) => e.preventDefault());
+    }
+  }, []);
   return (
     <SliderWrapper
       onKeyDown={keyDownHandler}
       tabIndex={0}
       onWheel={onMouseWheel}
       direction={direction}
+      ref={ref}
     >
       {direction === SliderDirectionVariant.HORIZONTAL && (
         <>
-          <UpIcon onClick={prevSlide} />
+          <UpIcon onClick={prevSlide} title={svgTitle.prev} />
           <SliderItemsWrapper direction={direction}>
             {children}
           </SliderItemsWrapper>
-          <DownIcon onClick={nextSlide} />
+          <DownIcon onClick={nextSlide} title={svgTitle.next} />
         </>
       )}
       {direction === SliderDirectionVariant.VERTICAL && (
@@ -84,8 +95,8 @@ const Slider = <T,>({
             {children}
           </SliderItemsWrapper>
           <SliderControls>
-            <UpIcon onClick={prevSlide} />
-            <DownIcon onClick={nextSlide} />
+            <UpIcon onClick={prevSlide} title={svgTitle.prev} />
+            <DownIcon onClick={nextSlide} title={svgTitle.next} />
           </SliderControls>
         </>
       )}

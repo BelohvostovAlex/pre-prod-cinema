@@ -43,7 +43,6 @@ export const MovieSliderItemWrapperVertical = styled.div<MovieSliderItemWrapperP
       : "translateY(310%) scale(0);"};
   transition: 0.2s ease-out;
   cursor: pointer;
-  zindex: ${({ theme, center }) => (center ? theme.zIndex[100] : "0")};
 `;
 
 export const MovieSliderImgVertical = styled.img`
@@ -93,6 +92,4 @@ export const MovieSliderItemWrapperHorizontal = styled.div<MovieSliderItemWrappe
       : "translateX(110%)"};
   transition: 0.2s ease-out;
   cursor: pointer;
-  zindex: ${({ theme, center }) =>
-    center ? theme.zIndex[100] : theme.zIndex[0]};
 `;

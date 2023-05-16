@@ -69,7 +69,8 @@ export const SliderItemsWrapper = styled.div<SliderItemsWrapperProps>`
 
   @media (max-width: ${({ theme }) => `${theme.breakPoints.m}px`}) {
     width: ${({ direction }) =>
-      direction === SliderDirectionVariant.HORIZONTAL && "400px;"}
+      direction === SliderDirectionVariant.HORIZONTAL && "400px;"};
+  }
 `;
 
 export const SliderControls = styled.div`

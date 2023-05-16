@@ -3,7 +3,6 @@ import { FirebaseError } from "firebase/app";
 
 import { auth } from "../../../lib/firebase.prod";
 import { useErrorTranslation } from "../../errorTranslation/useErrorTranslation";
-import { useClosePortal } from "../../portal/useClosePortal";
 import { useActions } from "../../useActionts";
 import { getDocument } from "../../../api/firebase/getDocument";
 import { FirebaseCollections } from "../../../constants/firebase/collections";
@@ -11,12 +10,11 @@ import { updateDocument } from "../../../api/firebase/updateDocument";
 import { isStrIncludesValueHandler } from "../../../helpers/isStrIncludeValueHandler";
 import { FirebaseErrorsTypes } from "../../../constants/errors/firebaseErrors";
 import { AlertTypes } from "../../../constants/alert";
-import { IUser } from "../../../models/IUser";
+import { IUser } from "../../../interfaces/IUser";
 
-export const useSignIn = () => {
+export const useSignIn = (handlePortal: () => void) => {
   const { setLoading, setUser, setUserError, setIsAlertOpen } = useActions();
   const { wrongPassword, userNotFound } = useErrorTranslation();
-  const closePortal = useClosePortal();
 
   const handleSignIn = async (option: { email: string; password: string }) => {
     try {
@@ -41,7 +39,7 @@ export const useSignIn = () => {
           newDoc: newUserDoc,
         });
         setUser(newUserDoc);
-        closePortal();
+        handlePortal();
       }
     } catch (e) {
       if (

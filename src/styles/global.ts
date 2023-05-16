@@ -1,5 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 
+import { Colors } from "../constants/styles/colors";
+
 export default createGlobalStyle`
   * {
     padding: 0;
@@ -19,14 +21,14 @@ export default createGlobalStyle`
     width: 4px;
   }
   ::-webkit-scrollbar-track {
-    background-color: #BDBDBD;
+    background-color: ${Colors.LIGHT_GRAY};
   }
   
   ::-webkit-scrollbar-thumb {
-    background-color: #D98639;
+    background-color:  ${Colors.ORANGE};
   }
   
   ::-webkit-scrollbar-thumb:hover {
-    background-color: #555;
+    background-color:${Colors.DARK_GRAY};
   }
 `;

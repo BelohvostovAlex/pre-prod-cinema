@@ -4,32 +4,27 @@ import { ButtonProps } from "./interfaces";
 import { StyledButton } from "./styles";
 
 const Button: FunctionComponent<ButtonProps> = ({
-  children,
   variant,
   height,
   width,
-  onClick,
   typography,
   fontSize,
   backgroundColor,
-  color,
   margin,
   icon,
-  buttonTypes,
+  children,
+  ...rest
 }) => {
   return (
     <StyledButton
       variant={variant}
-      buttonTypes={buttonTypes}
-      onClick={onClick}
       height={height}
       width={width}
       typography={typography}
       fontSize={fontSize}
       backgroundColor={backgroundColor}
-      color={color}
       margin={margin}
-      icon={icon}
+      {...rest}
     >
       {icon}
       {children}

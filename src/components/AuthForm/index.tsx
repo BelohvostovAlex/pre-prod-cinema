@@ -7,7 +7,6 @@ import { FunctionComponent } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { useTheme } from "styled-components";
 import {
-  Button,
   FacebookButton,
   GithubButton,
   GoogleButton,
@@ -18,14 +17,18 @@ import { ReactComponent as EmailIcon } from "../../assets/svg/form/email.svg";
 import { ReactComponent as PasswordIcon } from "../../assets/svg/form/password.svg";
 import { ReactComponent as SurnamIcon } from "../../assets/svg/form/surname.svg";
 import { AuthFormInputsPossibleNames } from "../../constants/authForm";
-import { ButtonTypes, ButtonVariants } from "../../constants/buttons";
+import { ButtonVariants } from "../../constants/buttons";
 import { Colors } from "../../constants/styles/colors";
 import { TypographyVariant } from "../../constants/styles/typography";
 import { useAuthBySocialNetwork } from "../../hooks/auth/authBySocial/useAuthBySocialNetworks";
 import { InputTypes } from "../Input/interfaces";
 import InputWithIcon from "../InputWithIcon";
+import InlineLoader from "../Loader/InlineLoader";
 import ModalTitle from "../Modal/ModalTitle";
 import PasswordStrengthMeter from "../PasswordStrengthMeter";
+import { useAppSelector } from "../../hooks/useAppSelector";
+import Button from "../UI/Buttons/Button";
+import { userLoadingSelector } from "../../store/slices/userSlice/selectors";
 
 import {
   BottomInfoWrapper,
@@ -35,8 +38,8 @@ import {
   Typography,
 } from "./styles";
 import { AuthFormInputProps, AuthFormProps } from "./interfaces";
-import { useAuthFormText } from "./config/useAuthFormText";
-import { useValidationWithTranslate } from "./config/validation";
+import { useAuthFormText } from "./hooks/useAuthFormText";
+import { useValidationWithTranslate } from "./hooks/useValidationWithTranslate";
 import {
   lastSocialBtnMargin,
   signInBtnWidth,
@@ -49,6 +52,7 @@ const AuthForm: FunctionComponent<AuthFormProps> = ({
   signUp = true,
   onFormTypeChange,
   onSubmit,
+  handlePortal,
 }) => {
   const {
     title,
@@ -67,20 +71,24 @@ const AuthForm: FunctionComponent<AuthFormProps> = ({
     signInBtn,
     signUpBtn,
   } = useAuthFormText(signUp);
+  const isLoading = useAppSelector(userLoadingSelector);
   const { fontSize } = useTheme();
   const handleValidationType = useValidationWithTranslate();
 
   const googleSignIn = useAuthBySocialNetwork({
     ClassProvider: GoogleAuthProvider,
     provider: new GoogleAuthProvider(),
+    handlePortal,
   });
   const facebookSignIn = useAuthBySocialNetwork({
     ClassProvider: FacebookAuthProvider,
     provider: new FacebookAuthProvider(),
+    handlePortal,
   });
   const githubSignIn = useAuthBySocialNetwork({
     ClassProvider: GithubAuthProvider,
     provider: new GithubAuthProvider(),
+    handlePortal,
   });
 
   const {
@@ -99,7 +107,7 @@ const AuthForm: FunctionComponent<AuthFormProps> = ({
   };
 
   return (
-    <div>
+    <>
       <ModalTitle text={title} spanText={titleSpan} />
       <Form onSubmit={handleSubmit(onSubmitHandler)}>
         {signUp && (
@@ -107,7 +115,7 @@ const AuthForm: FunctionComponent<AuthFormProps> = ({
             <InputWithIcon
               id={AuthFormInputsPossibleNames.USERNAME}
               placeholder={usernameText.placeholder}
-              icon={<ProfileIcon />}
+              icon={<ProfileIcon title={usernameText.label} />}
               register={register}
               inputName={AuthFormInputsPossibleNames.USERNAME}
               validateOptions={handleValidationType(
@@ -118,7 +126,7 @@ const AuthForm: FunctionComponent<AuthFormProps> = ({
             <InputWithIcon
               id={AuthFormInputsPossibleNames.SURNAME}
               placeholder={surnameText.placeholder}
-              icon={<SurnamIcon />}
+              icon={<SurnamIcon title={surnameText.label} />}
               register={register}
               inputName={AuthFormInputsPossibleNames.SURNAME}
               validateOptions={handleValidationType(
@@ -132,7 +140,7 @@ const AuthForm: FunctionComponent<AuthFormProps> = ({
           type={InputTypes.EMAIL}
           id={AuthFormInputsPossibleNames.EMAIL}
           placeholder={emailText.placeholder}
-          icon={<EmailIcon />}
+          icon={<EmailIcon title={emailText.label} />}
           register={register}
           inputName={AuthFormInputsPossibleNames.EMAIL}
           validateOptions={handleValidationType(
@@ -144,7 +152,7 @@ const AuthForm: FunctionComponent<AuthFormProps> = ({
           type={InputTypes.PASSWORD}
           id={AuthFormInputsPossibleNames.PASSWORD}
           placeholder={passwordText.placeholder}
-          icon={<PasswordIcon />}
+          icon={<PasswordIcon title={passwordText.label} />}
           register={register}
           inputName={AuthFormInputsPossibleNames.PASSWORD}
           validateOptions={handleValidationType(
@@ -157,8 +165,8 @@ const AuthForm: FunctionComponent<AuthFormProps> = ({
           <Button
             variant={ButtonVariants.PRIMARY}
             typography={TypographyVariant.poppins_l}
-            buttonTypes={ButtonTypes.SUBMIT}
             width={signUpBtnWidth}
+            type="submit"
           >
             {signUpBtn}
           </Button>
@@ -166,12 +174,13 @@ const AuthForm: FunctionComponent<AuthFormProps> = ({
           <Button
             variant={ButtonVariants.PRIMARY}
             typography={TypographyVariant.poppins_l}
-            buttonTypes={ButtonTypes.SUBMIT}
+            type="submit"
             width={signInBtnWidth}
           >
             {signInBtn}
           </Button>
         )}
+        {isLoading && <InlineLoader />}
       </Form>
       <ButtonGroup>
         <GoogleButton
@@ -212,7 +221,7 @@ const AuthForm: FunctionComponent<AuthFormProps> = ({
           {signUp ? linkToSignIn : linkToSignUp}
         </Link>
       </BottomInfoWrapper>
-    </div>
+    </>
   );
 };
 

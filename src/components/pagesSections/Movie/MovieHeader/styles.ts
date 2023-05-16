@@ -30,6 +30,7 @@ export const MovieBtnNextWrapper = styled.div`
     height: ${MovieBtnNextWrapperHeightSvg}px;
     margin-left: 15px;
     margin-top: 10px;
+    cursor: pointer;
   }
   svg path {
     fill: ${({ theme }) => theme.colors.primary};

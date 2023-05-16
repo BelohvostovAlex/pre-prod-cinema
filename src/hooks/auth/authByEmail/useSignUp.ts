@@ -4,7 +4,6 @@ import { FirebaseError } from "firebase/app";
 import { AuthFormInputProps } from "../../../components/AuthForm/interfaces";
 import { auth } from "../../../lib/firebase.prod";
 import { useErrorTranslation } from "../../errorTranslation/useErrorTranslation";
-import { useClosePortal } from "../../portal/useClosePortal";
 import { useActions } from "../../useActionts";
 import { createDocument } from "../../../api/firebase/createDocument";
 import { Gender } from "../../../constants/authForm";
@@ -13,10 +12,9 @@ import { isStrIncludesValueHandler } from "../../../helpers/isStrIncludeValueHan
 import { FirebaseErrorsTypes } from "../../../constants/errors/firebaseErrors";
 import { AlertTypes } from "../../../constants/alert";
 
-export const useSignUp = () => {
+export const useSignUp = (handlePortal: () => void) => {
   const { setUser, setLoading, setUserError, setIsAlertOpen } = useActions();
   const { emailAlreadyInUse } = useErrorTranslation();
-  const closePortal = useClosePortal();
 
   const handleSignUp = async (options: AuthFormInputProps) => {
     try {
@@ -44,7 +42,7 @@ export const useSignUp = () => {
         id: user.uid,
       });
       setUser(newUser);
-      closePortal();
+      handlePortal();
     } catch (e) {
       if (
         e instanceof FirebaseError &&

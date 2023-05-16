@@ -1,4 +1,4 @@
-import { IMovie } from "../../../models/movie/IMovie";
+import { IMovie } from "../../../interfaces/movie/IMovie";
 
 export const handleNextMovieIndex = (data: IMovie[], id: string) => {
   const itemIndex = data.findIndex((item) => item.id === id);

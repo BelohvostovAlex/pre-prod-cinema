@@ -1,5 +1,5 @@
-import { IMovie } from "../../models/movie/IMovie";
-import { IReview } from "../../models/movie/IReview";
+import { IMovie } from "../../interfaces/movie/IMovie";
+import { IReview } from "../../interfaces/movie/IReview";
 
 export interface GetMovieReviewsResponse {
   imDbId: string;

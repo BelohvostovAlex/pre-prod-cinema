@@ -4,6 +4,7 @@ import { ReactComponent as RightArrowIcon } from "../../assets/svg/tools/right.s
 
 import { DrawerProps } from "./interfaces";
 import { DrawerArrowWrapper, DrawerTitle, StyledDrawer } from "./styles";
+import { useDrawerText } from "./hooks/useDrawerText";
 
 const Drawer: FunctionComponent<DrawerProps> = ({
   children,
@@ -11,11 +12,12 @@ const Drawer: FunctionComponent<DrawerProps> = ({
   onClose,
   title,
 }) => {
+  const { closeTitle } = useDrawerText();
   return (
     <StyledDrawer isOpen={isOpen}>
       <DrawerTitle>
         <DrawerArrowWrapper>
-          <RightArrowIcon onClick={onClose} />
+          <RightArrowIcon onClick={onClose} title={closeTitle} />
         </DrawerArrowWrapper>
         {title}
       </DrawerTitle>

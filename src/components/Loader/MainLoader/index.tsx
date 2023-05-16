@@ -1,25 +1,13 @@
 import { FunctionComponent } from "react";
 
-import "./index.css";
+import Loader from "../Loader";
+
 import { StyledLoader } from "./styles";
 
 const MainLoader: FunctionComponent = () => {
   return (
     <StyledLoader>
-      <div className="lds-default">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
+      <Loader />
     </StyledLoader>
   );
 };

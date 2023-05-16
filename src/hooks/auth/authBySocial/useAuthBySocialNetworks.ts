@@ -9,9 +9,8 @@ import { FirebaseErrorsTypes } from "../../../constants/errors/firebaseErrors";
 import { FirebaseCollections } from "../../../constants/firebase/collections";
 import { isStrIncludesValueHandler } from "../../../helpers/isStrIncludeValueHandler";
 import { auth } from "../../../lib/firebase.prod";
-import { IUser } from "../../../models/IUser";
+import { IUser } from "../../../interfaces/IUser";
 import { useErrorTranslation } from "../../errorTranslation/useErrorTranslation";
-import { useClosePortal } from "../../portal/useClosePortal";
 import { useActions } from "../../useActionts";
 import { Gender } from "../../../constants/authForm";
 
@@ -19,9 +18,8 @@ import { UseAuthBySocialNetwork } from "./interfaces";
 import { mockUserData } from "./config";
 
 export const useAuthBySocialNetwork = (options: UseAuthBySocialNetwork) => {
-  const { ClassProvider, provider } = options;
+  const { ClassProvider, provider, handlePortal } = options;
   const { setUser, setUserError, setIsAlertOpen } = useActions();
-  const closePortal = useClosePortal();
   const { userAlreadyExistsViaSocialError, popupClosedByUser } =
     useErrorTranslation();
 
@@ -63,7 +61,7 @@ export const useAuthBySocialNetwork = (options: UseAuthBySocialNetwork) => {
           newDoc: newUserDoc,
         });
         setUser(newUserDoc);
-        closePortal();
+        handlePortal();
       } else {
         await createDocument({
           collection: FirebaseCollections.USERS,
@@ -72,7 +70,7 @@ export const useAuthBySocialNetwork = (options: UseAuthBySocialNetwork) => {
         });
 
         setUser(newUser);
-        closePortal();
+        handlePortal();
       }
     } catch (e) {
       if (

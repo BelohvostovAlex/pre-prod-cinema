@@ -10,7 +10,7 @@ import { AlertTypes } from "../../constants/alert";
 import { FirebaseErrorsTypes } from "../../constants/errors/firebaseErrors";
 import { FirebaseCollections } from "../../constants/firebase/collections";
 import { isStrIncludesValueHandler } from "../../helpers/isStrIncludeValueHandler";
-import { IUser } from "../../models/IUser";
+import { IUser } from "../../interfaces/IUser";
 import { useErrorTranslation } from "../errorTranslation/useErrorTranslation";
 import { useActions } from "../useActionts";
 

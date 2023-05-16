@@ -15,17 +15,23 @@ import {
   FooterSecondaryYear,
 } from "./styles";
 
+const icons = [
+  { Icon: ParamountIcon, title: "Paramount" },
+  { Icon: MarvelIcon, title: "Marvel" },
+  { Icon: DcIcon, title: "DC" },
+  { Icon: WarnerIcon, title: "Warner" },
+  { Icon: NetflixIcon, title: "Netflix" },
+  { Icon: WaltIcon, title: "Walt" },
+  { Icon: SonyIcon, title: "Sony" },
+];
+
 const FooterSecondary: FunctionComponent = () => {
   return (
     <FooterSecondaryWrapper>
       <FooterSecondaryItemsWrapper>
-        <ParamountIcon />
-        <MarvelIcon />
-        <DcIcon />
-        <WarnerIcon />
-        <NetflixIcon />
-        <WaltIcon />
-        <SonyIcon />
+        {icons.map(({ Icon, title }, idx) => (
+          <Icon key={idx} title={title} />
+        ))}
       </FooterSecondaryItemsWrapper>
       <FooterSecondaryYear>{footerSecondaryYear}</FooterSecondaryYear>
     </FooterSecondaryWrapper>

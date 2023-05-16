@@ -17,4 +17,5 @@ type ClassProviderType =
 export interface UseAuthBySocialNetwork {
   provider: ProviderType;
   ClassProvider: ClassProviderType;
+  handlePortal: () => void;
 }

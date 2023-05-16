@@ -1,6 +1,6 @@
 import { halls, seats } from "../../../../constants/booking";
 import { getCurrDay } from "../../../../helpers/date/getCurrDay";
-import { IDate } from "../../../../models/IDate";
+import { IDate } from "../../../../interfaces/IDate";
 import { CinemaInfo } from "../interfaces";
 
 export const createDefaultCinemaInfo = (

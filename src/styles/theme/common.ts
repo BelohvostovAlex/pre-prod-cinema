@@ -136,6 +136,48 @@ const commonTheme: ICommonTheme = {
     xl: 1025,
     xxl: 1281,
   },
+  sliderItems: {
+    horizontal: {
+      transform: {
+        prevLeft: "translateX(3%)",
+        left: "translateX(20%)",
+        center: "translateX(40.5%)",
+        right: "translateX(63.5%)",
+        prevRight: "translateX(83%)",
+        rest: "translateX(110%)",
+      },
+    },
+    vertical: {
+      transform: {
+        top: "translateY(0%) scale(0.8)",
+        center: "translateY(110%) scale(1.1)",
+        bot: "translateY(220%) scale(0.8)",
+        rest: "translateY(310%) scale(0)",
+      },
+    },
+    bookItemDimensions: {
+      prevRight: {
+        width: "65px",
+        height: "65px",
+      },
+      prevLeft: {
+        width: "65px",
+        height: "65px",
+      },
+      left: {
+        width: "75px",
+        height: "75px",
+      },
+      right: {
+        width: "75px",
+        height: "75px",
+      },
+      center: {
+        width: "85px",
+        height: "85px",
+      },
+    },
+  },
 };
 
 export default commonTheme;

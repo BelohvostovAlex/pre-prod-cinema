@@ -13,7 +13,7 @@ import {
   MovieScreenTitle,
   MovieScreenWrapper,
 } from "./styles";
-import { useMovieScreenText } from "./config/useMovieScreenText";
+import { useMovieScreenText } from "./hooks/useMovieScreenText";
 import MovieScreenRaw from "./MovieScreenRow";
 
 const MovieScreen: FunctionComponent = () => {

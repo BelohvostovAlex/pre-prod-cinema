@@ -92,6 +92,48 @@ export interface ICommonTheme {
     xl: number;
     xxl: number;
   };
+  sliderItems: {
+    horizontal: {
+      transform: {
+        prevLeft: string;
+        left: string;
+        center: string;
+        right: string;
+        prevRight: string;
+        rest: string;
+      };
+    };
+    vertical: {
+      transform: {
+        top: string;
+        center: string;
+        bot: string;
+        rest: string;
+      };
+    };
+    bookItemDimensions: {
+      prevRight: {
+        width: string;
+        height: string;
+      };
+      prevLeft: {
+        width: string;
+        height: string;
+      };
+      left: {
+        width: string;
+        height: string;
+      };
+      right: {
+        width: string;
+        height: string;
+      };
+      center: {
+        width: string;
+        height: string;
+      };
+    };
+  };
 }
 
 export interface ITheme {
@@ -100,6 +142,16 @@ export interface ITheme {
     primary: Colors.BLACK | Colors.WHITE;
     secondary: Colors.ORANGE;
     backgroundColor: Colors.BG_DARK | Colors.BG_LIGHT;
+  };
+  button: {
+    primary: {
+      background: string;
+      color: string;
+    };
+    secondary: {
+      background: string;
+      color: string;
+    };
   };
 }
 

@@ -47,6 +47,8 @@ const MovieSliderItem: FunctionComponent<MovieSliderItemProps> = ({
         prevRight={prevRight}
         left={left}
         right={right}
+        alt={src}
+        title={src}
       />
     </MovieSliderItemWrapperHorizontal>
   ) : (
@@ -60,7 +62,7 @@ const MovieSliderItem: FunctionComponent<MovieSliderItemProps> = ({
       right={right}
       onClick={handleId}
     >
-      <MovieSliderImgVertical src={src} />
+      <MovieSliderImgVertical src={src} alt={src} title={src} />
     </MovieSliderItemWrapperVertical>
   );
 };

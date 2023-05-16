@@ -1,6 +1,6 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
-import { IDate } from "../../../models/IDate";
+import { IDate } from "../../../interfaces/IDate";
 
 import { CinemaInfo, CinemaState, ReservePayload } from "./interfaces";
 import { createCinemaSession } from "./config.ts";

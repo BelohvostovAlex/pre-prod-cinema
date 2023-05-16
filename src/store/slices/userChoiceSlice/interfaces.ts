@@ -1,4 +1,4 @@
-import { IDate } from "../../../models/IDate";
+import { IDate } from "../../../interfaces/IDate";
 
 export interface Badge {
   time: string;

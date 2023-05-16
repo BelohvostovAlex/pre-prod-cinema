@@ -6,16 +6,18 @@ import { useSignIn } from "../../hooks/auth/authByEmail/useSignIn";
 import { SignInProps } from "./interfaces";
 
 const SignIn: FunctionComponent<SignInProps> = ({
-  onFormTypeChange,
   signUp,
+  onFormTypeChange,
+  handlePortal,
 }) => {
-  const handleSignIn = useSignIn();
+  const handleSignIn = useSignIn(handlePortal);
 
   return (
     <AuthForm
       onFormTypeChange={onFormTypeChange}
       onSubmit={handleSignIn}
       signUp={signUp}
+      handlePortal={handlePortal}
     />
   );
 };

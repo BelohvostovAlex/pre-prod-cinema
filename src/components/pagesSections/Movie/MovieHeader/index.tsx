@@ -1,6 +1,6 @@
 import { FunctionComponent } from "react";
 
-import { useMovieText } from "../../../../pages/Movie/config/useMovieText";
+import { useMovieText } from "../../../../pages/Movie/hooks/useMovieText";
 import SecondaryButton from "../../../UI/Buttons/SecondaryButton";
 import { TypographyVariant } from "../../../../constants/styles/typography";
 import { ReactComponent as ArrowRightIcon } from "../../../../assets/svg/tools/right.svg";
@@ -17,14 +17,13 @@ const MovieHeader: FunctionComponent<MovieHeaderProps> = ({
   return (
     <MovieHeaderWrapper>
       <MovieTitle>{title}</MovieTitle>
-      <MovieBtnNextWrapper>
+      <MovieBtnNextWrapper onClick={onClick}>
         <SecondaryButton
-          onClick={onClick}
           text={moveToNextMovieBtn}
           typography={TypographyVariant.poppins_sb}
           extra={secondaryButtonExtraStyles}
         />
-        <ArrowRightIcon />
+        <ArrowRightIcon title={moveToNextMovieBtn} />
       </MovieBtnNextWrapper>
     </MovieHeaderWrapper>
   );

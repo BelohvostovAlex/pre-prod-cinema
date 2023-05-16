@@ -1,5 +1,4 @@
 import { setIsAlertOpen } from "./alertSlice/alertSlice";
-import { setPortal } from "./portalSlice/portalSlice";
 import {
   changeTheme,
   removeUser,
@@ -15,7 +14,6 @@ import {
   togglePlay,
 } from "./videoSlice/videoSlice";
 import { getMoviesThunk } from "./movieSlice/thunks/getMoviesThunk";
-import { setCurrDay, setDays } from "./daysSlice/daysSlice";
 import {
   resetChoice,
   setChosenDay,
@@ -35,7 +33,6 @@ export const allActionCreators = {
   changeTheme,
   setUser,
   removeUser,
-  setPortal,
   setLoading,
   setUserError,
   setIsAlertOpen,
@@ -45,8 +42,6 @@ export const allActionCreators = {
   toggleMute,
   updateUser,
   getMoviesThunk,
-  setDays,
-  setCurrDay,
   setChosenDay,
   setChosenMovieBadge,
   setReserve,

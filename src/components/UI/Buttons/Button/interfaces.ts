@@ -1,22 +1,28 @@
-import { ReactNode } from "react";
+import { ButtonHTMLAttributes, ReactNode } from "react";
 
-import { ButtonTypes, ButtonVariants } from "../../../../constants/buttons";
+import { ButtonVariants } from "../../../../constants/buttons";
 import { TypographyVariant } from "../../../../constants/styles/typography";
 
-export interface ButtonProps {
-  children?: ReactNode;
+export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: ButtonVariants;
-  buttonTypes?: ButtonTypes;
   width?: string;
   height?: string;
   margin?: string;
   typography: TypographyVariant;
   fontSize?: string;
   backgroundColor?: string;
-  color?: string;
   icon?: ReactNode;
-
-  onClick?: () => void;
+  children?: ReactNode;
 }
 
-export type ButtonStyleProps = Omit<ButtonProps, "children" | "onClick">;
+export type ButtonStyleProps = Pick<
+  ButtonProps,
+  | "typography"
+  | "variant"
+  | "width"
+  | "height"
+  | "margin"
+  | "fontSize"
+  | "backgroundColor"
+  | "color"
+>;

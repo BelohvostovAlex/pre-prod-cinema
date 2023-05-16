@@ -10,6 +10,16 @@ const darkTheme: ITheme = {
     secondary: Colors.ORANGE,
     backgroundColor: Colors.BG_DARK,
   },
+  button: {
+    primary: {
+      background: Colors.WHITE,
+      color: Colors.ORANGE,
+    },
+    secondary: {
+      background: Colors.ORANGE,
+      color: Colors.WHITE,
+    },
+  },
 };
 
 export default darkTheme;

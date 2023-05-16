@@ -1,14 +1,15 @@
 import { FunctionComponent } from "react";
-import { Button, Divider } from "cinema-ui-belohvostov";
+import { Divider } from "cinema-ui-belohvostov";
 
 import { Colors } from "../../constants/styles/colors";
 import { ReactComponent as RatingIcon } from "../../assets/svg/tools/Star.svg";
 import { ReactComponent as TicketIcon } from "../../assets/svg/movie/ticket.svg";
 import { ReactComponent as CancelIcon } from "../../assets/svg/movie/cancel.svg";
 import { moviesImdbNew } from "../../constants/movies";
-import { useBookingText } from "../../pages/Booking/config/useBookingText";
+import { useBookingText } from "../../pages/Booking/hooks/useBookingText";
 import { useActions } from "../../hooks/useActionts";
 import { TypographyVariant } from "../../constants/styles/typography";
+import Button from "../UI/Buttons/Button";
 
 import { TicketProps } from "./interfaces";
 import {
@@ -47,22 +48,26 @@ const Ticket: FunctionComponent<TicketProps> = ({
   const cancelBooking = () => {
     removeTicket(id);
   };
+
+  const ticketDateInfo = {
+    dateInfo: `${dateText}: ${date}`,
+    timeInfo: `${timeText}: ${time}`,
+  };
+
+  const { title, image, imDbRating } = currMovie;
   return (
     <TicketWrapper>
-      <TicketImg src={currMovie.image} />
+      <TicketImg src={image} alt={title} title={title} />
       <TicketContent>
         <TicketHeader>
           <TicketTitle>{movie}</TicketTitle>
           <TicketRating>
-            {currMovie.imDbRating} <RatingIcon />
+            {imDbRating} <RatingIcon />
           </TicketRating>
         </TicketHeader>
-        <TicketDate>
-          {dateText}: {date}
-        </TicketDate>
-        <TicketDate>
-          {timeText}: {time}
-        </TicketDate>
+        {Object.values(ticketDateInfo).map((info, idx) => (
+          <TicketDate key={idx}>{info}</TicketDate>
+        ))}
         <TicketId>
           <TicketIcon /> TC{id.slice(0, 8)}
         </TicketId>

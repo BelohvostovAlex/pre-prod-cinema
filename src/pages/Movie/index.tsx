@@ -1,7 +1,7 @@
 import { FunctionComponent, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { usePalette } from "react-palette";
-import { Divider, Review } from "cinema-ui-belohvostov";
+import { Divider } from "cinema-ui-belohvostov";
 
 import MoviePageLoader from "../../components/Loader/MoviePageLoader";
 import { moviesImdbNew } from "../../constants/movies";
@@ -14,6 +14,7 @@ import { useActions } from "../../hooks/useActionts";
 import { AlertTypes } from "../../constants/alert";
 import MovieScreen from "../../components/pagesSections/Movie/MovieScreen";
 import MovieInfo from "../../components/pagesSections/Movie/MovieInfo";
+import Review from "../../components/pagesSections/Movie/Review";
 import MovieTrailer from "../../components/pagesSections/Movie/MovieTrailer";
 import MovieHeader from "../../components/pagesSections/Movie/MovieHeader";
 import MovieBadges from "../../components/pagesSections/Movie/MovieBadges";
@@ -27,7 +28,7 @@ import {
   MovieReviewWrapper,
   MovieWrapper,
 } from "./styles";
-import { useMovieText } from "./config/useMovieText";
+import { useMovieText } from "./hooks/useMovieText";
 // import { useGetMoviesReview } from "./config/useGetMovieReviews";
 import { handleNextMovieIndex } from "./config/handleNextMovieIndex";
 

@@ -50,13 +50,13 @@ export const ReviewText = styled.p<ReviewTextProps>`
   ${({ theme }) => theme.typography.nunito_l_ital};
   font-size: ${({ theme }) => theme.fontSize[14]};
   margin-bottom: ${({ theme }) => theme.margin.mb20};
-  max-height: ${({ isOpen }) => (isOpen ? "400px" : "230px")};
+  height: ${({ isOpen }) => (isOpen ? "400px" : "230px")};
   overflow-y: ${({ isOpen }) => (isOpen ? "scroll" : "hidden")};
   &::-webkit-scrollbar {
     display: none;
   }
+  transition: all 0.2s linear;
   scrollbar-width: none;
-  transition: max-height linear 0.4s;
 `;
 
 export const ReadMoreWrapper = styled.div`

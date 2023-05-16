@@ -5,7 +5,7 @@ import { v4 } from "uuid";
 import Button from "../../../UI/Buttons/Button";
 import { TypographyVariant } from "../../../../constants/styles/typography";
 import { ButtonVariants } from "../../../../constants/buttons";
-import { useMovieText } from "../../../../pages/Movie/config/useMovieText";
+import { useMovieText } from "../../../../pages/Movie/hooks/useMovieText";
 import { useAppSelector } from "../../../../hooks/useAppSelector";
 import { useActions } from "../../../../hooks/useActionts";
 import { AlertTypes } from "../../../../constants/alert";
@@ -32,12 +32,14 @@ const MovieFooter: FunctionComponent = () => {
 
   const foundChosenSeats = chosenSeats.find(
     ({ day, movie, time }) =>
-      day === chosenDay && movie === chosenMovie && time === chosenBadge.time,
+      day.date === chosenDay.date &&
+      movie === chosenMovie &&
+      time === chosenBadge.time,
   );
   const seatsAmount = foundChosenSeats?.seats?.length || 0;
 
   const handleBook = () => {
-    if (foundChosenSeats?.seats) {
+    if (foundChosenSeats?.seats && foundChosenSeats.seats.length > 0) {
       setReserve({
         day: chosenDay,
         hallNumber: chosenBadge.hallNumber,

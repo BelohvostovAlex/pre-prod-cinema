@@ -1,15 +1,14 @@
 import { FunctionComponent } from "react";
 
-import { MoviePageLoaderWrapper } from "./styles";
-import "./index.css";
+import { MovieLoader, MovieLoaderItem, MoviePageLoaderWrapper } from "./styles";
 
 const MoviePageLoader: FunctionComponent = () => {
   return (
     <MoviePageLoaderWrapper>
-      <div className="lds-ripple">
-        <div></div>
-        <div></div>
-      </div>
+      <MovieLoader>
+        <MovieLoaderItem />
+        <MovieLoaderItem />
+      </MovieLoader>
     </MoviePageLoaderWrapper>
   );
 };

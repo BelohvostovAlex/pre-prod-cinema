@@ -12,4 +12,5 @@ export interface AuthFormProps {
 
   onFormTypeChange: () => void;
   onSubmit: (options: AuthFormInputProps) => void;
+  handlePortal: () => void;
 }

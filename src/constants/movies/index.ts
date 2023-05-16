@@ -1,4 +1,4 @@
-import { IMovie } from "../../models/movie/IMovie";
+import { IMovie } from "../../interfaces/movie/IMovie";
 
 export const moviesImdbNew: IMovie[] = [
   {
