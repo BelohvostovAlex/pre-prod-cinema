@@ -4,15 +4,15 @@ import { Chip } from "cinema-ui-belohvostov";
 
 import Slider from "cinema-components-lib/Slider";
 import SliderItems from "cinema-components-lib/Slider/SliderItems";
+import MovieSliderItem from "@components/MovieSliderItem";
+import { TypographyVariant } from "@constants/styles/typography";
+import MovieInfoBlockSkeleton from "@components/Skeletons/MovieInfoBlock";
+import InTheaterBlockImageSkeleton from "@components/Skeletons/InTheaterBlock/InTheaterBlockImageSkeleton";
+import SliderSkeleton from "@components/Skeletons/InTheaterBlock/SliderSkeleton";
+import { SliderDirectionVariant } from "@constants/slider";
+import { AppPathesWithoutSlug } from "@constants/routes";
 
 import MovieInfoBlock from "../MovieInfoBlock";
-import MovieSliderItem from "../../../components/MovieSliderItem";
-import { TypographyVariant } from "../../../constants/styles/typography";
-import MovieInfoBlockSkeleton from "../../../components/Skeletons/MovieInfoBlock";
-import InTheaterBlockImageSkeleton from "../../../components/Skeletons/InTheaterBlock/InTheaterBlockImageSkeleton";
-import SliderSkeleton from "../../../components/Skeletons/InTheaterBlock/SliderSkeleton";
-import { SliderDirectionVariant } from "../../../constants/slider";
-import { AppPathesWithoutSlug } from "../../../constants/routes";
 
 import {
   InTheaterBlockWrapper,

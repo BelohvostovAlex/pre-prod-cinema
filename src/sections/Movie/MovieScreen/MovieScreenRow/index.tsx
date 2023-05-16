@@ -1,10 +1,11 @@
 import { FunctionComponent, useEffect, useState } from "react";
 
+import { useAppSelector } from "@hooks/useAppSelector";
+import { Session } from "@store/slices/cinemaSlice/interfaces";
+import { cinemaSelector } from "@store/slices/cinemaSlice/selectors";
+import { userChoiceSelector } from "@store/slices/userChoiceSlice/selectors";
+
 import MovieScreenCell from "../MovieScreenCell";
-import { useAppSelector } from "../../../../hooks/useAppSelector";
-import { Session } from "../../../../store/slices/cinemaSlice/interfaces";
-import { cinemaSelector } from "../../../../store/slices/cinemaSlice/selectors";
-import { userChoiceSelector } from "../../../../store/slices/userChoiceSlice/selectors";
 
 import { MovieScreenRawProps } from "./interfaces";
 import { MovieScreenRowWrapper } from "./styles";

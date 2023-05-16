@@ -3,17 +3,16 @@ import { BookSliderItem, Divider } from "cinema-ui-belohvostov";
 
 import Slider from "cinema-components-lib/Slider";
 import SliderItems from "cinema-components-lib/Slider/SliderItems";
-
-import { useMovieText } from "../../../pages/Movie/hooks/useMovieText";
-import { Colors } from "../../../constants/styles/colors";
-import { SliderDirectionVariant } from "../../../constants/slider";
-import { BookSliderItemWrapperWidth } from "../../../components/BookSliderItem/styles";
-import { useActions } from "../../../hooks/useActionts";
-import { useAppSelector } from "../../../hooks/useAppSelector";
-import { useMediaQuery } from "../../../hooks/style/useMediaQuery";
-import { userChoiceSelector } from "../../../store/slices/userChoiceSlice/selectors";
-import { getAvailableDates } from "../../../helpers/date/getAvailableDates";
-import { IDate } from "../../../interfaces/IDate";
+import { useMovieText } from "@pages/Movie/hooks/useMovieText";
+import { Colors } from "@constants/styles/colors";
+import { SliderDirectionVariant } from "@constants/slider";
+import { BookSliderItemWrapperWidth } from "@components/BookSliderItem/styles";
+import { useActions } from "@hooks/useActionts";
+import { useAppSelector } from "@hooks/useAppSelector";
+import { useMediaQuery } from "@hooks/style/useMediaQuery";
+import { userChoiceSelector } from "@store/slices/userChoiceSlice/selectors";
+import { getAvailableDates } from "@helpers/date/getAvailableDates";
+import { IDate } from "@interfaces/IDate";
 
 import { MovieBookingTitle, MovieBookingWrapper } from "./styles";
 import { dividerHeight, dividerWidthM, futureLimit } from "./config";

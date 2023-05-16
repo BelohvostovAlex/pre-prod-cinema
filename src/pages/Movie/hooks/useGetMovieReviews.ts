@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
-import { GetMovieReviewsResponse } from "../../../api/imdb/interfaces";
-import { getMovieReviews } from "../../../api/imdb/getMovieReviews";
+import { GetMovieReviewsResponse } from "@api/imdb/interfaces";
+import { getMovieReviews } from "@api/imdb/getMovieReviews";
 
 export const useGetMoviesReview = (id: string) => {
   const [movie, setMovie] = useState({} as GetMovieReviewsResponse);

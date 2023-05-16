@@ -4,24 +4,23 @@ import { usePalette } from "react-palette";
 import { Divider } from "cinema-ui-belohvostov";
 
 import MoviePageLoader from "cinema-components-lib/Loaders/MoviePageLoader";
-
-import { moviesImdbNew } from "../../constants/movies";
-import { AppPathesWithoutSlug } from "../../constants/routes";
-import { reviewsData } from "../../constants/movies/reviews";
-import MovieBooking from "../../sections/Movie/MovieBooking";
-import { useAppSelector } from "../../hooks/useAppSelector";
-import { isAuthSelector } from "../../store/slices/userSlice/selectors";
-import { useActions } from "../../hooks/useActionts";
-import { AlertTypes } from "../../constants/alert";
-import MovieScreen from "../../sections/Movie/MovieScreen";
-import MovieInfo from "../../sections/Movie/MovieInfo";
-import MovieReview from "../../sections/Movie/MovieReview";
-import MovieTrailer from "../../sections/Movie/MovieTrailer";
-import MovieHeader from "../../sections/Movie/MovieHeader";
-import MovieBadges from "../../sections/Movie/MovieBadges";
-import MovieFooter from "../../sections/Movie/MovieFooter";
-import { createDefaultCinemaInfo } from "../../store/slices/cinemaSlice/config.ts";
-// import { moviesSelector } from "../../store/slices/movieSlice/selectors";
+import { moviesImdbNew } from "@constants/movies";
+import { AppPathesWithoutSlug } from "@constants/routes";
+import { reviewsData } from "@constants/movies/reviews";
+import MovieBooking from "@sections/Movie/MovieBooking";
+import { useAppSelector } from "@hooks/useAppSelector";
+import { isAuthSelector } from "@store/slices/userSlice/selectors";
+import { useActions } from "@hooks/useActionts";
+import { AlertTypes } from "@constants/alert";
+import MovieScreen from "@sections/Movie/MovieScreen";
+import MovieInfo from "@sections/Movie/MovieInfo";
+import MovieReview from "@sections/Movie/MovieReview";
+import MovieTrailer from "@sections/Movie/MovieTrailer";
+import MovieHeader from "@sections/Movie/MovieHeader";
+import MovieBadges from "@sections/Movie/MovieBadges";
+import MovieFooter from "@sections/Movie/MovieFooter";
+import { createDefaultCinemaInfo } from "@/store/slices/cinemaSlice/config";
+// import { moviesSelector } from "@store/slices/movieSlice/selectors";
 
 import {
   MovieLayout,

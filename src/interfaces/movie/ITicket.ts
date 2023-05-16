@@ -1,4 +1,4 @@
-import { IDate } from "../IDate";
+import { IDate } from "@interfaces/IDate";
 
 export interface ITicket {
   id: string;

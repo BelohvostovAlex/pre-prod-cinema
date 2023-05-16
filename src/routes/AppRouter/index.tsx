@@ -2,9 +2,8 @@ import { FunctionComponent, Suspense } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 
 import MainLoader from "cinema-components-lib/Loaders/MainLoader";
-
-import { AppPathes } from "../../constants/routes";
-import PrivateRoutes from "../PrivateRoutes";
+import { AppPathes } from "@constants/routes";
+import PrivateRoutes from "@routes/PrivateRoutes";
 
 import { privateRoutes, publicRoutes } from "./routes";
 

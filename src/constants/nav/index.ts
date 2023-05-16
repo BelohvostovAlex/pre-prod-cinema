@@ -1,4 +1,4 @@
-import { AppPathes } from "../routes";
+import { AppPathes } from "@constants/routes";
 
 export const APP_NAV_MENU = [
   { text: "Home", path: AppPathes.MAIN },

@@ -1,10 +1,10 @@
 import { FunctionComponent } from "react";
 
-import { TypographyVariant } from "../../../constants/styles/typography";
-import { ButtonVariants } from "../../../constants/buttons";
-import Button from "../../../ui/Buttons/Button";
-import { ReactComponent as StarIcon } from "../../../assets/svg/tools/Star.svg";
-import { useMovieText } from "../../../pages/Movie/hooks/useMovieText";
+import { TypographyVariant } from "@constants/styles/typography";
+import { ButtonVariants } from "@constants/buttons";
+import Button from "@ui/Buttons/Button";
+import { ReactComponent as StarIcon } from "@assets/svg/tools/Star.svg";
+import { useMovieText } from "@pages/Movie/hooks/useMovieText";
 
 import { MovieInfoProps } from "./interfaces";
 import {

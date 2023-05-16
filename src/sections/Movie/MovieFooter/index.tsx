@@ -2,17 +2,17 @@ import { FunctionComponent } from "react";
 import { useNavigate } from "react-router-dom";
 import { v4 } from "uuid";
 
-import Button from "../../../ui/Buttons/Button";
-import { TypographyVariant } from "../../../constants/styles/typography";
-import { ButtonVariants } from "../../../constants/buttons";
-import { useMovieText } from "../../../pages/Movie/hooks/useMovieText";
-import { useAppSelector } from "../../../hooks/useAppSelector";
-import { useActions } from "../../../hooks/useActionts";
-import { AlertTypes } from "../../../constants/alert";
-import { AppPathes } from "../../../constants/routes";
-import { userChoiceSelector } from "../../../store/slices/userChoiceSlice/selectors";
-import { handleTicketPrice } from "../../../helpers/handleTicketPrice";
-import { userIdSelector } from "../../../store/slices/userSlice/selectors";
+import Button from "@ui/Buttons/Button";
+import { TypographyVariant } from "@constants/styles/typography";
+import { ButtonVariants } from "@constants/buttons";
+import { useMovieText } from "@pages/Movie/hooks/useMovieText";
+import { useAppSelector } from "@hooks/useAppSelector";
+import { useActions } from "@hooks/useActionts";
+import { AlertTypes } from "@constants/alert";
+import { AppPathes } from "@constants/routes";
+import { userChoiceSelector } from "@store/slices/userChoiceSlice/selectors";
+import { handleTicketPrice } from "@helpers/handleTicketPrice";
+import { userIdSelector } from "@store/slices/userSlice/selectors";
 
 import {
   MovieFooterBookingInfo,

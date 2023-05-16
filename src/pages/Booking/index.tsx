@@ -1,9 +1,9 @@
 import { FunctionComponent } from "react";
 
-import BookingTicketSection from "../../sections/Booking/BookingTicketSection";
-import BookingTitle from "../../sections/Booking/BookingTitle";
-import { useAppSelector } from "../../hooks/useAppSelector";
-import { allCategoriesTicketsSelector } from "../../store/slices/ticketsSlice/selectors";
+import BookingTicketSection from "@sections/Booking/BookingTicketSection";
+import BookingTitle from "@sections/Booking/BookingTitle";
+import { useAppSelector } from "@hooks/useAppSelector";
+import { allCategoriesTicketsSelector } from "@store/slices/ticketsSlice/selectors";
 
 import { BookingsWrapper } from "./styles";
 import { useBookingText } from "./hooks/useBookingText";

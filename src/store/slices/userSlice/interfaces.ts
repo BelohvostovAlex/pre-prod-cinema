@@ -1,5 +1,5 @@
-import { TThemeType } from "../../../constants/styles/theme";
-import { IUser } from "../../../interfaces/IUser";
+import { TThemeType } from "@constants/styles/theme";
+import { IUser } from "@interfaces/IUser";
 
 export interface UserState {
   theme: TThemeType;

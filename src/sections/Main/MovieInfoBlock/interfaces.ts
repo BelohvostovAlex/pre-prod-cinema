@@ -1,4 +1,4 @@
-import { TypographyVariant } from "../../../constants/styles/typography";
+import { TypographyVariant } from "@constants/styles/typography";
 
 export interface MovieInfoBlockProps {
   text: string;

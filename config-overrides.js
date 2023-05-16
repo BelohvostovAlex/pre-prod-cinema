@@ -17,6 +17,11 @@ module.exports = function override(config, env) {
     "@pages": path.resolve(__dirname, "src/pages"),
     "@store": path.resolve(__dirname, "src/store"),
     "@styles": path.resolve(__dirname, "src/styles"),
+    "@ui": path.resolve(__dirname, "src/ui"),
+    "@api": path.resolve(__dirname, "src/api"),
+    "@forms": path.resolve(__dirname, "src/forms"),
+    "@sections": path.resolve(__dirname, "src/sections"),
+    "@config": path.resolve(__dirname, "src/config"),
   };
 
   return config;

@@ -1,9 +1,9 @@
 import { FunctionComponent } from "react";
 
-import { useMovieText } from "../../../pages/Movie/hooks/useMovieText";
-import SecondaryButton from "../../../ui/Buttons/SecondaryButton";
-import { TypographyVariant } from "../../../constants/styles/typography";
-import { ReactComponent as ArrowRightIcon } from "../../../assets/svg/tools/right.svg";
+import { useMovieText } from "@pages/Movie/hooks/useMovieText";
+import SecondaryButton from "@ui/Buttons/SecondaryButton";
+import { TypographyVariant } from "@constants/styles/typography";
+import { ReactComponent as ArrowRightIcon } from "@assets/svg/tools/right.svg";
 
 import { MovieHeaderProps } from "./interfaces";
 import { secondaryButtonExtraStyles } from "./config";

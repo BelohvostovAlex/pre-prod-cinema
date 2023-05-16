@@ -1,7 +1,8 @@
 import { FunctionComponent } from "react";
 
+import Ticket from "@components/Ticket";
+
 import BookingTitle from "../BookingTitle";
-import Ticket from "../../../components/Ticket";
 
 import { BookingTicketSectionWrapper, TicketsWrapper } from "./styles";
 import { BookingTicketSectionProps } from "./interfaces";

@@ -1,4 +1,4 @@
-import { RootState } from "../..";
+import { RootState } from "@store/index";
 
 export const themeSelector = (state: RootState) => state.user.theme;
 export const isAuthSelector = (state: RootState) => state.user.isAuth;

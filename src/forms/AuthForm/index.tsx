@@ -13,23 +13,22 @@ import {
 } from "cinema-ui-belohvostov";
 
 import InlineLoader from "cinema-components-lib/Loaders/InlineLoader";
-
-import { ReactComponent as ProfileIcon } from "../../assets/svg/form/account.svg";
-import { ReactComponent as EmailIcon } from "../../assets/svg/form/email.svg";
-import { ReactComponent as PasswordIcon } from "../../assets/svg/form/password.svg";
-import { ReactComponent as SurnamIcon } from "../../assets/svg/form/surname.svg";
-import { AuthFormInputsPossibleNames } from "../../constants/authForm";
-import { ButtonVariants } from "../../constants/buttons";
-import { Colors } from "../../constants/styles/colors";
-import { TypographyVariant } from "../../constants/styles/typography";
-import { useAuthBySocialNetwork } from "../../hooks/auth/authBySocial/useAuthBySocialNetworks";
-import { InputTypes } from "../../components/Input/interfaces";
-import InputWithIcon from "../../components/InputWithIcon";
-import ModalTitle from "../../components/Modal/ModalTitle";
-import PasswordStrengthMeter from "../../components/PasswordStrengthMeter";
-import { useAppSelector } from "../../hooks/useAppSelector";
-import Button from "../../ui/Buttons/Button";
-import { userLoadingSelector } from "../../store/slices/userSlice/selectors";
+import { ReactComponent as ProfileIcon } from "@assets/svg/form/account.svg";
+import { ReactComponent as EmailIcon } from "@assets/svg/form/email.svg";
+import { ReactComponent as PasswordIcon } from "@assets/svg/form/password.svg";
+import { ReactComponent as SurnamIcon } from "@assets/svg/form/surname.svg";
+import { AuthFormInputsPossibleNames } from "@constants/authForm";
+import { ButtonVariants } from "@constants/buttons";
+import { Colors } from "@constants/styles/colors";
+import { TypographyVariant } from "@constants/styles/typography";
+import { useAuthBySocialNetwork } from "@hooks/auth/authBySocial/useAuthBySocialNetworks";
+import { InputTypes } from "@components/Input/interfaces";
+import InputWithIcon from "@components/InputWithIcon";
+import ModalTitle from "@components/Modal/ModalTitle";
+import PasswordStrengthMeter from "@components/PasswordStrengthMeter";
+import { useAppSelector } from "@hooks/useAppSelector";
+import Button from "@ui/Buttons/Button";
+import { userLoadingSelector } from "@store/slices/userSlice/selectors";
 
 import {
   BottomInfoWrapper,

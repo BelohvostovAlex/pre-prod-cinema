@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { passwordStrengthHandler } from "../../helpers/passwordStrengthHandler";
+import { passwordStrengthHandler } from "@helpers/passwordStrengthHandler";
 
 import { ProgressBarProps } from "./interfaces";
 
@@ -20,6 +20,6 @@ export const ProgressBar = styled.div<ProgressBarProps>`
   ${({ value }) =>
     `background: ${passwordStrengthHandler(value)?.color}; width: ${
       passwordStrengthHandler(value)?.width
-    };`}};
-    transition: width 0.3s ease;
+    };`};
+  transition: width 0.3s ease;
 `;

@@ -1,6 +1,6 @@
 import { FunctionComponent } from "react";
 
-import { rows } from "../../../constants/booking";
+import { rows } from "@constants/booking";
 
 import {
   MovieScreenCellExample,

@@ -1,16 +1,16 @@
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { FirebaseError } from "firebase/app";
 
-import { auth } from "../../../lib/firebase.prod";
-import { useErrorTranslation } from "../../errorTranslation/useErrorTranslation";
-import { useActions } from "../../useActionts";
-import { getDocument } from "../../../api/firebase/getDocument";
-import { FirebaseCollections } from "../../../constants/firebase/collections";
-import { updateDocument } from "../../../api/firebase/updateDocument";
-import { isStrIncludesValueHandler } from "../../../helpers/isStrIncludeValueHandler";
-import { FirebaseErrorsTypes } from "../../../constants/errors/firebaseErrors";
-import { AlertTypes } from "../../../constants/alert";
-import { IUser } from "../../../interfaces/IUser";
+import { auth } from "@lib/firebase.prod";
+import { useErrorTranslation } from "@hooks/errorTranslation/useErrorTranslation";
+import { useActions } from "@hooks/useActionts";
+import { getDocument } from "@api/firebase/getDocument";
+import { FirebaseCollections } from "@constants/firebase/collections";
+import { updateDocument } from "@api/firebase/updateDocument";
+import { isStrIncludesValueHandler } from "@helpers/isStrIncludeValueHandler";
+import { FirebaseErrorsTypes } from "@constants/errors/firebaseErrors";
+import { AlertTypes } from "@constants/alert";
+import { IUser } from "@interfaces/IUser";
 
 export const useSignIn = (handlePortal: () => void) => {
   const { setLoading, setUser, setUserError, setIsAlertOpen } = useActions();

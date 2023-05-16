@@ -1,10 +1,10 @@
 import { FunctionComponent, useEffect, useRef } from "react";
 
-import trailer from "../../assets/video/Inception.mp4";
-import { useAppSelector } from "../../hooks/useAppSelector";
-import { videoSelector } from "../../store/slices/videoSlice/selectors";
+import trailer from "@assets/video/Inception.mp4";
+import { useAppSelector } from "@hooks/useAppSelector";
+import { videoSelector } from "@store/slices/videoSlice/selectors";
 
-import { VidePlayerWrapper, Video, VideoLayout } from "./styles";
+import { Source, VidePlayerWrapper, Video, VideoLayout } from "./styles";
 import { VideoPlayerProps } from "./interfaces";
 import Controls from "./Controls";
 import { useVideoControl } from "./hooks/useVideoControl";
@@ -31,7 +31,7 @@ const VideoPlayer: FunctionComponent<VideoPlayerProps> = ({ src }) => {
     revert,
     elapsedTime,
     totalDuration,
-  } = useVideoControl(videoRef, isPlaying, isMuted);
+  } = useVideoControl(videoRef, isPlaying);
 
   useEffect(() => {
     const current = videoRef?.current;
@@ -61,7 +61,7 @@ const VideoPlayer: FunctionComponent<VideoPlayerProps> = ({ src }) => {
         />
       </VideoLayout>
       <Video ref={videoRef} onTimeUpdate={handleOnTimeUpdate}>
-        <source src={trailer} type="video/mp4" />
+        <Source src={trailer} type="video/mp4" />
       </Video>
     </VidePlayerWrapper>
   );

@@ -1,7 +1,7 @@
 import { FunctionComponent } from "react";
 
-import Input from "../Input";
-import { InputTypes } from "../Input/interfaces";
+import Input from "@components/Input";
+import { InputTypes } from "@components/Input/interfaces";
 
 import { InputWithIconProps } from "./interfaces";
 import { Box } from "./styles";

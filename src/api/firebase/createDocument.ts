@@ -1,6 +1,6 @@
 import { DocumentData, WithFieldValue, doc, setDoc } from "firebase/firestore";
 
-import { db } from "../../lib/firebase.prod";
+import { db } from "@lib/firebase.prod";
 
 interface CreateDocumentProps {
   collection: string;

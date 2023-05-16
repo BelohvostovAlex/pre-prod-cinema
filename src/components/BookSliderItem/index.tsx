@@ -1,6 +1,6 @@
 import { FunctionComponent } from "react";
 
-import { SliderDirectionVariant } from "../../constants/slider";
+import { SliderDirectionVariant } from "@constants/slider";
 
 import { BookSliderItemProps } from "./interfaces";
 import {

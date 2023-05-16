@@ -1,25 +1,25 @@
 import { FunctionComponent, useMemo } from "react";
 import { useForm } from "react-hook-form";
 
-import ModalTitle from "../Modal/ModalTitle";
-import PasswordStrengthMeter from "../PasswordStrengthMeter";
-import Button from "../../ui/Buttons/Button";
-import InputWithIcon from "../InputWithIcon";
-import { ReactComponent as ProfileIcon } from "../../assets/svg/form/account.svg";
-import { ReactComponent as GenderIcon } from "../../assets/svg/form/gender.svg";
-import { ReactComponent as ImageIcon } from "../../assets/svg/form/image-file.svg";
-import { ReactComponent as PasswordIcon } from "../../assets/svg/form/password.svg";
-import { ReactComponent as SurnamIcon } from "../../assets/svg/form/surname.svg";
-import { AuthFormInputsPossibleNames, Gender } from "../../constants/authForm";
-import { ButtonVariants } from "../../constants/buttons";
-import { FirebaseCollections } from "../../constants/firebase/collections";
-import { TypographyVariant } from "../../constants/styles/typography";
-import { useEditProfile } from "../../hooks/editProfile/useEditProfile";
-import { useAppSelector } from "../../hooks/useAppSelector";
-import { userSelector } from "../../store/slices/userSlice/selectors";
-import { useValidationWithTranslate } from "../../forms/AuthForm/hooks/useValidationWithTranslate";
-import { AuthFormInputProps } from "../../forms/AuthForm/interfaces";
-import { InputTypes } from "../Input/interfaces";
+import ModalTitle from "@components/Modal/ModalTitle";
+import PasswordStrengthMeter from "@components/PasswordStrengthMeter";
+import Button from "@ui/Buttons/Button";
+import InputWithIcon from "@components/InputWithIcon";
+import { ReactComponent as ProfileIcon } from "@assets/svg/form/account.svg";
+import { ReactComponent as GenderIcon } from "@assets/svg/form/gender.svg";
+import { ReactComponent as ImageIcon } from "@assets/svg/form/image-file.svg";
+import { ReactComponent as PasswordIcon } from "@assets/svg/form/password.svg";
+import { ReactComponent as SurnamIcon } from "@assets/svg/form/surname.svg";
+import { AuthFormInputsPossibleNames, Gender } from "@constants/authForm";
+import { ButtonVariants } from "@constants/buttons";
+import { FirebaseCollections } from "@constants/firebase/collections";
+import { TypographyVariant } from "@constants/styles/typography";
+import { useEditProfile } from "@hooks/editProfile/useEditProfile";
+import { useAppSelector } from "@hooks/useAppSelector";
+import { userSelector } from "@store/slices/userSlice/selectors";
+import { useValidationWithTranslate } from "@forms/AuthForm/hooks/useValidationWithTranslate";
+import { AuthFormInputProps } from "@forms/AuthForm/interfaces";
+import { InputTypes } from "@components/Input/interfaces";
 
 import {
   EditProfileForm,

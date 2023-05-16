@@ -1,4 +1,4 @@
-import { IMovieImdb } from "../../../interfaces/movie/IMovieImdb";
+import { IMovieImdb } from "@interfaces/movie/IMovieImdb";
 
 export interface TrailerBlockProps {
   movie: IMovieImdb;

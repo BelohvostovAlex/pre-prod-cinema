@@ -1,8 +1,8 @@
 import { FunctionComponent, useState } from "react";
 
-import RoundButton from "../../../ui/Buttons/RoundButton";
-import { ReactComponent as ArrowDownIcon } from "../../../assets/svg/tools/arrow-down.svg";
-import { ReactComponent as ArrowUpIcon } from "../../../assets/svg/tools/arrow-up.svg";
+import RoundButton from "@ui/Buttons/RoundButton";
+import { ReactComponent as ArrowDownIcon } from "@assets/svg/tools/arrow-down.svg";
+import { ReactComponent as ArrowUpIcon } from "@assets/svg/tools/arrow-up.svg";
 
 import { useReviewText } from "./hooks/useReviewText";
 import {

@@ -1,4 +1,4 @@
-import { SliderDirectionVariant } from "../../constants/slider";
+import { SliderDirectionVariant } from "@constants/slider";
 
 export interface BookSliderItemProps {
   center: boolean;

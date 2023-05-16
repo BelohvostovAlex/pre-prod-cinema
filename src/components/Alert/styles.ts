@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { AlertTypes } from "../../constants/alert";
+import { AlertTypes } from "@constants/alert";
 
 import { AlertWrapperStyleProps } from "./interfaces";
 

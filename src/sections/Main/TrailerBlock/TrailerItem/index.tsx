@@ -1,11 +1,11 @@
 import { FunctionComponent } from "react";
 
-import RoundButton from "../../../../ui/Buttons/RoundButton";
-import { ReactComponent as PlayIcon } from "../../../../assets/svg/tools/play.svg";
-import { usePortal } from "../../../../hooks/portal/usePortal";
-import trailer from "../../../../assets/video/Inception.mp4";
-import Modal from "../../../../components/Modal";
-import VideoPlayer from "../../../../components/VideoPlayer";
+import RoundButton from "@ui/Buttons/RoundButton";
+import { ReactComponent as PlayIcon } from "@assets/svg/tools/play.svg";
+import { usePortal } from "@hooks/portal/usePortal";
+import trailer from "@assets/video/Inception.mp4";
+import Modal from "@components/Modal";
+import VideoPlayer from "@components/VideoPlayer";
 
 import { TrailerItemImg } from "./styles";
 import { TrailerItemProps } from "./interfaces";

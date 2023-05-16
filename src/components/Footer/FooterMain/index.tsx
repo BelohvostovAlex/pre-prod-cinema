@@ -3,14 +3,14 @@ import { Link, useLocation } from "react-router-dom";
 import { SubmitHandler, useForm } from "react-hook-form";
 import emailjs from "@emailjs/browser";
 
-import { AppPathes } from "../../../constants/routes";
-import { AuthFormInputsPossibleNames } from "../../../constants/authForm";
-import { ReactComponent as LogoIcon } from "../../../assets/svg/logo/logo.svg";
-import { ReactComponent as TelegramIcon } from "../../../assets/svg/social/telegram.svg";
-import { InputTypes } from "../../Input/interfaces";
-import { useActions } from "../../../hooks/useActionts";
-import { useValidationWithTranslate } from "../../../forms/AuthForm/hooks/useValidationWithTranslate";
-import { AlertTypes } from "../../../constants/alert";
+import { AppPathes } from "@constants/routes";
+import { AuthFormInputsPossibleNames } from "@constants/authForm";
+import { ReactComponent as LogoIcon } from "@assets/svg/logo/logo.svg";
+import { ReactComponent as TelegramIcon } from "@assets/svg/social/telegram.svg";
+import { InputTypes } from "@components/Input/interfaces";
+import { useActions } from "@hooks/useActionts";
+import { useValidationWithTranslate } from "@forms/AuthForm/hooks/useValidationWithTranslate";
+import { AlertTypes } from "@constants/alert";
 
 import {
   FooterColumn,

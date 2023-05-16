@@ -1,7 +1,8 @@
 import { ChangeEvent, KeyboardEvent, RefObject, useEffect } from "react";
 
-import { KeyButtonVariant } from "../../../constants/keyboard";
-import { useActions } from "../../../hooks/useActionts";
+import { KeyButtonVariant } from "@constants/keyboard";
+import { useActions } from "@hooks/useActionts";
+
 import { formatVideoTime } from "../config/formatVideoTime";
 import {
   maxPlaybackRate,
@@ -13,7 +14,6 @@ import {
 export const useVideoControl = (
   ref: RefObject<HTMLVideoElement>,
   isPlaying: boolean,
-  isMuted: boolean,
 ) => {
   const { current } = ref;
   const { togglePlay, setProgress, toggleMute, setSpeed } = useActions();

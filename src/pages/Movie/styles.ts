@@ -8,23 +8,23 @@ const MovieWrapperWidthPercent = 100;
 const MovieWrapperMinHeight = 100;
 
 export const MovieLayout = styled.div<MovieLayoutProps>`
-width: ${MovieLayoutWidthPercent}%;
-height: ${MovieLayoutHeightPercent}%;
-background: ${({ primaryColor, secondaryColor }) =>
-  `linear-gradient(180deg, ${primaryColor} 0%, ${secondaryColor} 100%)`};
-box-shadow: ${({
-  theme,
-}) => `inset 50px 50px 100px 20px ${theme.colors.backgroundColor},
-inset -50px -50px 100px ${theme.colors.backgroundColor};`}
-filter: blur(10px);
-transition: background-color ease-in 0.2s;
+  width: ${MovieLayoutWidthPercent}%;
+  height: ${MovieLayoutHeightPercent}%;
+  background: ${({ primaryColor, secondaryColor }) =>
+    `linear-gradient(180deg, ${primaryColor} 0%, ${secondaryColor} 100%)`};
+  box-shadow: ${({
+    theme,
+  }) => `inset 50px 50px 100px 20px ${theme.colors.backgroundColor},
+inset -50px -50px 100px ${theme.colors.backgroundColor}`};
+  filter: blur(10px);
+  transition: background-color ease-in 0.2s;
 
-position: absolute;
-top: 0px;
-left: 0px;
-right: 0px;
-bottom: 0px;
-z-index: ${({ theme }) => theme.zIndex.minus1};
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  z-index: ${({ theme }) => theme.zIndex.minus1};
 `;
 
 export const MovieWrapper = styled.div`

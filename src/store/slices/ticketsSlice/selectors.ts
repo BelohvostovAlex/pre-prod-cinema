@@ -1,8 +1,8 @@
 import { createSelector } from "@reduxjs/toolkit";
 
-import { RootState } from "../..";
-import { userIdSelector } from "../userSlice/selectors";
-import { getCurrDay } from "../../../helpers/date/getCurrDay";
+import { RootState } from "@store/index";
+import { userIdSelector } from "@store/slices/userSlice/selectors";
+import { getCurrDay } from "@helpers/date/getCurrDay";
 
 export const ticketsSelector = (state: RootState) => state.tickets.tickets;
 

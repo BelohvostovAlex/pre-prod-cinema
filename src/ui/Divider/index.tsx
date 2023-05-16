@@ -1,6 +1,6 @@
 import { FunctionComponent } from "react";
 
-import { Colors } from "../../constants/styles/colors";
+import { Colors } from "@constants/styles/colors";
 
 import { DividerProps } from "./interfaces";
 import { DividerWrapper } from "./styles";

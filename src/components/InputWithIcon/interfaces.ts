@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 
-import { InputProps } from "../Input/interfaces";
+import { InputProps } from "@components/Input/interfaces";
 
 export interface InputWithIconProps extends InputProps {
   icon: ReactNode;

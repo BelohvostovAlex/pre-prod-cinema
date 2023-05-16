@@ -20,7 +20,22 @@
       "@/*": ["./*"],
       "@assets/*": ["./assets/*"],
       "@components/*": ["./components/*"],
-      "@hooks/*": ["./hooks/*"]
+      "@hooks/*": ["./hooks/*"],
+      "@routes/*": ["./routes/*"],
+      "@containers/*": ["./containers/*"],
+      "@types/*": ["./@types/*"],
+      "@constants/*": ["./constants/*"],
+      "@helpers/*": ["./helpers/*"],
+      "@interfaces/*": ["./interfaces/*"],
+      "@lib/*": ["./lib/*"],
+      "@pages/*": ["./pages/*"],
+      "@store/*": ["./store/*"],
+      "@styles/*": ["./styles/*"],
+      "@api/*": ["./api/*"],
+      "@forms/*": ["./forms/*"],
+      "@sections/*": ["./sections/*"],
+      "@ui/*": ["./ui/*"],
+      "@config/*": ["./config/*"]
     }
   },
   "include": ["src"]

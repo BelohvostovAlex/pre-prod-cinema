@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { SliderDirectionVariant } from "../../constants/slider";
+import { SliderDirectionVariant } from "@constants/slider";
 
 import { SliderItemsWrapperProps, SliderWrapperProps } from "./interfaces";
 

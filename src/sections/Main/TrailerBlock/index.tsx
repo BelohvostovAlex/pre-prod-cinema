@@ -1,9 +1,10 @@
 import { FunctionComponent } from "react";
 
+import { TypographyVariant } from "@constants/styles/typography";
+import MovieInfoBlockSkeleton from "@components/Skeletons/MovieInfoBlock";
+import TrailerBlockSkeleton from "@components/Skeletons/TrailerBlock";
+
 import MovieInfoBlock from "../MovieInfoBlock";
-import { TypographyVariant } from "../../../constants/styles/typography";
-import MovieInfoBlockSkeleton from "../../../components/Skeletons/MovieInfoBlock";
-import TrailerBlockSkeleton from "../../../components/Skeletons/TrailerBlock";
 
 import {
   TrailerBlockWrapper,

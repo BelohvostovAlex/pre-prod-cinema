@@ -1,7 +1,7 @@
 import { ButtonHTMLAttributes, ReactNode } from "react";
 
-import { ButtonVariants } from "../../../constants/buttons";
-import { TypographyVariant } from "../../../constants/styles/typography";
+import { ButtonVariants } from "@constants/buttons";
+import { TypographyVariant } from "@constants/styles/typography";
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: ButtonVariants;

@@ -48,3 +48,5 @@ export const Video = styled.video`
   width: ${VideoWidthPercent}%;
   height: ${VideoHeightPercent}%;
 `;
+
+export const Source = styled.source``;

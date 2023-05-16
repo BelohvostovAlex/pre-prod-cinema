@@ -5,7 +5,7 @@ import {
   updateDoc,
 } from "firebase/firestore";
 
-import { db } from "../../lib/firebase.prod";
+import { db } from "@lib/firebase.prod";
 
 interface UpdateDocumentProps {
   collection: string;

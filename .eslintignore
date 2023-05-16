@@ -6,3 +6,4 @@ src/react-app-env.d.ts
 node_modules
 .husky
 config-overrides.js
+jest.config.ts

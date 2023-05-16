@@ -2,9 +2,8 @@ import { FunctionComponent, useEffect } from "react";
 
 import { useActions } from "@hooks/useActionts";
 import { useAppSelector } from "@hooks/useAppSelector";
-
-import { alertSelector } from "../../store/slices/alertSlice/selectors";
-import { initialAlertValue } from "../../constants/alert";
+import { alertSelector } from "@store/slices/alertSlice/selectors";
+import { initialAlertValue } from "@constants/alert";
 
 import { AlertWrapper } from "./styles";
 import { AlertProps } from "./interfaces";

@@ -1,6 +1,6 @@
 import { FunctionComponent } from "react";
 
-import { ReactComponent as SeatIcon } from "../../../../assets/svg/movie/seat.svg";
+import { ReactComponent as SeatIcon } from "@assets/svg/movie/seat.svg";
 
 import {
   MovieHallBadgeNumber,

@@ -1,6 +1,6 @@
 import styled, { keyframes } from "styled-components";
 
-import { Colors } from "../../../constants/styles/colors";
+import { Colors } from "@constants/styles/colors";
 
 import { InlineLoaderProps } from "./interfaces";
 

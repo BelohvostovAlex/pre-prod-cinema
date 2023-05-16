@@ -1,7 +1,7 @@
 import { signOut } from "firebase/auth";
 
-import { auth } from "../../lib/firebase.prod";
-import { useActions } from "../useActionts";
+import { auth } from "@lib/firebase.prod";
+import { useActions } from "@hooks/useActionts";
 
 export const useSignOut = () => {
   const { removeUser, resetChoice } = useActions();

@@ -1,9 +1,9 @@
 import { KeyboardEvent, ReactNode, WheelEvent, useEffect, useRef } from "react";
 
-import { ReactComponent as DownIcon } from "../../assets/svg/tools/down.svg";
-import { ReactComponent as UpIcon } from "../../assets/svg/tools/up.svg";
-import { SliderDirectionVariant } from "../../constants/slider";
-import { KeyButtonVariant } from "../../constants/keyboard";
+import { ReactComponent as DownIcon } from "@assets/svg/tools/down.svg";
+import { ReactComponent as UpIcon } from "@assets/svg/tools/up.svg";
+import { SliderDirectionVariant } from "@constants/slider";
+import { KeyButtonVariant } from "@constants/keyboard";
 
 import { SliderControls, SliderItemsWrapper, SliderWrapper } from "./styles";
 import { SliderProps } from "./interfaces";

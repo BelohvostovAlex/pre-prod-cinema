@@ -1,14 +1,14 @@
 import { FunctionComponent, useState } from "react";
 
-import { ReactComponent as ProfileIcon } from "../../assets/svg/profile/profile-small.svg";
-import { usePortal } from "../../hooks/portal/usePortal";
-import { useAppSelector } from "../../hooks/useAppSelector";
-import { isAuthSelector } from "../../store/slices/userSlice/selectors";
-import Drawer from "../Drawer";
-import Modal from "../Modal";
-import Profile from "../Profile";
-import SignIn from "../SignIn";
-import SignUp from "../SignUp";
+import { ReactComponent as ProfileIcon } from "@assets/svg/profile/profile-small.svg";
+import { usePortal } from "@hooks/portal/usePortal";
+import { useAppSelector } from "@hooks/useAppSelector";
+import { isAuthSelector } from "@store/slices/userSlice/selectors";
+import Drawer from "@components/Drawer";
+import Modal from "@components/Modal";
+import Profile from "@components/Profile";
+import SignIn from "@components/SignIn";
+import SignUp from "@components/SignUp";
 
 import { HeaderWrapper, ProfileBtn, ProfileBtnText } from "./styles";
 import { useHeaderText } from "./hooks/useHeaderText";
