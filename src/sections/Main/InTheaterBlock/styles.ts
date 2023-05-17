@@ -5,7 +5,7 @@ const InTheaterImgWrapperHeightPercent = 100;
 const InTheaterImgHeight = 200;
 const InTheaterImgHeightL = 160;
 const InTheaterImgWrapperWidth = 180;
-const InTheaterImgSkeletonWrapperWidth = 140;
+const InTheaterImgSkeletonWrapperWidth = 50;
 
 export const InTheaterBlockWrapper = styled.div`
   ${({ theme }) => theme.flexAlignCenter};
@@ -41,10 +41,28 @@ export const InTheaterImgWrapper = styled.div`
 `;
 
 export const InTheaterImgSkeletonWrapper = styled.div`
+  ${({ theme }) => theme.flexAlignCenter};
   height: ${InTheaterImgWrapperHeightPercent}%;
-  width: ${InTheaterImgSkeletonWrapperWidth}px;
-  margin: 0px 90px 5px 125px;
+  width: ${InTheaterImgSkeletonWrapperWidth}%;
+
+  @media (max-width: ${({ theme }) => `${theme.breakPoints.l}px`}) {
+    width: 100%;
+    justify-content: center;
+  }
+`;
+
+export const InTheaterImgSkeletonContainer = styled.div`
+  margin: 10px 45px 5px 55px;
   align-self: end;
+
+  @media (max-width: ${({ theme }) => `${theme.breakPoints.l}px`}) {
+    margin: 5px 5px 5px 25px;
+  }
+
+  @media (max-width: ${({ theme }) => `${theme.breakPoints.m}px`}) {
+    align-self: center;
+    margin: 5px 5px 5px 0px;
+  }
 `;
 
 export const InTheaterImg = styled.img`

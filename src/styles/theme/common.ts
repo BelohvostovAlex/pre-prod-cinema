@@ -2,6 +2,7 @@ import { css } from "styled-components";
 
 import { Colors } from "@constants/styles/colors";
 import { FontFamily, FontWeight } from "@constants/styles/fonts";
+import { colorAnimation } from "@styles/animations";
 
 import { ICommonTheme } from "./interfaces";
 
@@ -135,6 +136,11 @@ const commonTheme: ICommonTheme = {
     l: 961,
     xl: 1025,
     xxl: 1281,
+  },
+  animations: {
+    skeleton: css`
+      animation: ${colorAnimation} 3s linear infinite;
+    `,
   },
   sliderItems: {
     horizontal: {

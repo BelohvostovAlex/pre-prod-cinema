@@ -1,7 +1,7 @@
 import { FunctionComponent } from "react";
 
-import MovieInfoBlockSkeleton from "@components/Skeletons/MovieInfoBlock";
-import TrailerBlockSkeleton from "@components/Skeletons/TrailerBlock";
+import MovieInfoBlockSkeleton from "@/cinema-components-lib/Skeletons/MovieInfoBlockSkeleton";
+import TrailerBlockSkeleton from "@/cinema-components-lib/Skeletons/TrailerBlockSkeleton";
 import { TypographyVariant } from "@constants/styles/typography";
 
 import MovieInfoBlock from "../MovieInfoBlock";
@@ -29,14 +29,16 @@ const TrailerBlock: FunctionComponent<TrailerBlockProps> = ({
           title={movie?.title}
         />
       )}
-      {isLoading ? (
-        <TrailerBlockSkeleton />
-      ) : (
-        <TrailerItemWrapper>
-          <TrailerItemLayout />
-          <TrailerItem image={movie?.image} title={movie?.title} />
-        </TrailerItemWrapper>
-      )}
+      <TrailerItemWrapper>
+        {isLoading ? (
+          <TrailerBlockSkeleton />
+        ) : (
+          <>
+            <TrailerItemLayout />
+            <TrailerItem image={movie?.image} title={movie?.title} />
+          </>
+        )}
+      </TrailerItemWrapper>
     </TrailerBlockWrapper>
   );
 };

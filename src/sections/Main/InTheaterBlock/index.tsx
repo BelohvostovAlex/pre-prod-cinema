@@ -3,10 +3,10 @@ import { useNavigate } from "react-router-dom";
 
 import { Chip } from "cinema-ui-belohvostov";
 
+import InTheaterBlockImageSkeleton from "@/cinema-components-lib/Skeletons/InTheaterBlockImageSkeleton";
+import MovieInfoBlockSkeleton from "@/cinema-components-lib/Skeletons/MovieInfoBlockSkeleton";
+import SliderSkeleton from "@/cinema-components-lib/Skeletons/SliderSkeleton";
 import MovieSliderItem from "@components/MovieSliderItem";
-import InTheaterBlockImageSkeleton from "@components/Skeletons/InTheaterBlock/InTheaterBlockImageSkeleton";
-import SliderSkeleton from "@components/Skeletons/InTheaterBlock/SliderSkeleton";
-import MovieInfoBlockSkeleton from "@components/Skeletons/MovieInfoBlock";
 import { AppPathesWithoutSlug } from "@constants/routes";
 import { SliderDirectionVariant } from "@constants/slider";
 import { TypographyVariant } from "@constants/styles/typography";
@@ -19,6 +19,7 @@ import { InTheaterBlockProps } from "./interfaces";
 import {
   InTheaterBlockWrapper,
   InTheaterImg,
+  InTheaterImgSkeletonContainer,
   InTheaterImgSkeletonWrapper,
   InTheaterImgWrapper,
   InTheaterSliderWrapper,
@@ -53,9 +54,11 @@ const InTheaterBlock: FunctionComponent<InTheaterBlockProps> = ({
       {isLoading ? (
         <>
           <InTheaterImgSkeletonWrapper>
-            <InTheaterBlockImageSkeleton />
+            <InTheaterImgSkeletonContainer>
+              <InTheaterBlockImageSkeleton />
+            </InTheaterImgSkeletonContainer>
+            <SliderSkeleton />
           </InTheaterImgSkeletonWrapper>
-          <SliderSkeleton />
         </>
       ) : (
         <InTheaterSliderWrapper>
@@ -104,7 +107,7 @@ const InTheaterBlock: FunctionComponent<InTheaterBlockProps> = ({
                   )}
                 />
               }
-            ></Slider>
+            />
           </SliderBox>
         </InTheaterSliderWrapper>
       )}

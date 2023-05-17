@@ -92,6 +92,9 @@ export interface ICommonTheme {
     xl: number;
     xxl: number;
   };
+  animations: {
+    skeleton: FlattenSimpleInterpolation;
+  };
   sliderItems: {
     horizontal: {
       transform: {
