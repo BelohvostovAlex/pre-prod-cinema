@@ -1,36 +1,37 @@
 import { FunctionComponent, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { usePalette } from "react-palette";
-import { Divider } from "cinema-ui-belohvostov";
 
-import MoviePageLoader from "cinema-components-lib/Loaders/MoviePageLoader";
-import { moviesImdbNew } from "@constants/movies";
-import { AppPathesWithoutSlug } from "@constants/routes";
-import { reviewsData } from "@constants/movies/reviews";
-import MovieBooking from "@sections/Movie/MovieBooking";
-import { useAppSelector } from "@hooks/useAppSelector";
-import { isAuthSelector } from "@store/slices/userSlice/selectors";
-import { useActions } from "@hooks/useActionts";
+import { Divider } from "cinema-ui-belohvostov";
+import { usePalette } from "react-palette";
+
+import { createDefaultCinemaInfo } from "@/store/slices/cinemaSlice/config";
 import { AlertTypes } from "@constants/alert";
-import MovieScreen from "@sections/Movie/MovieScreen";
+import { moviesImdbNew } from "@constants/movies";
+import { reviewsData } from "@constants/movies/reviews";
+import { AppPathesWithoutSlug } from "@constants/routes";
+import { useActions } from "@hooks/useActionts";
+import { useAppSelector } from "@hooks/useAppSelector";
+import MovieBadges from "@sections/Movie/MovieBadges";
+import MovieBooking from "@sections/Movie/MovieBooking";
+import MovieFooter from "@sections/Movie/MovieFooter";
+import MovieHeader from "@sections/Movie/MovieHeader";
 import MovieInfo from "@sections/Movie/MovieInfo";
 import MovieReview from "@sections/Movie/MovieReview";
+import MovieScreen from "@sections/Movie/MovieScreen";
 import MovieTrailer from "@sections/Movie/MovieTrailer";
-import MovieHeader from "@sections/Movie/MovieHeader";
-import MovieBadges from "@sections/Movie/MovieBadges";
-import MovieFooter from "@sections/Movie/MovieFooter";
-import { createDefaultCinemaInfo } from "@/store/slices/cinemaSlice/config";
+import { isAuthSelector } from "@store/slices/userSlice/selectors";
+import MoviePageLoader from "cinema-components-lib/Loaders/MoviePageLoader";
 // import { moviesSelector } from "@store/slices/movieSlice/selectors";
 
+import { handleNextMovieIndex } from "./config/handleNextMovieIndex";
+import { useMovieText } from "./hooks/useMovieText";
 import {
   MovieLayout,
   MovieNoReviewTitle,
   MovieReviewWrapper,
   MovieWrapper,
 } from "./styles";
-import { useMovieText } from "./hooks/useMovieText";
 // import { useGetMoviesReview } from "./config/useGetMovieReviews";
-import { handleNextMovieIndex } from "./config/handleNextMovieIndex";
 
 const Movie: FunctionComponent = () => {
   const { id } = useParams();

@@ -1,9 +1,10 @@
 import { FunctionComponent, useEffect, useState } from "react";
+
 import { MovieHallBadge } from "cinema-ui-belohvostov";
 
-import { useAppSelector } from "@hooks/useAppSelector";
-import { useActions } from "@hooks/useActionts";
 import { halls } from "@constants/booking";
+import { useActions } from "@hooks/useActionts";
+import { useAppSelector } from "@hooks/useAppSelector";
 import { Session } from "@store/slices/cinemaSlice/interfaces";
 import { cinemaSelector } from "@store/slices/cinemaSlice/selectors";
 import { userChoiceSelector } from "@store/slices/userChoiceSlice/selectors";

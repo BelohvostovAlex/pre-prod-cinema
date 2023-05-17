@@ -1,5 +1,5 @@
-import { getMonthString } from "@helpers/date/getMonthString";
 import { getCurrDay } from "@helpers/date/getCurrDay";
+import { getMonthString } from "@helpers/date/getMonthString";
 import { IDate } from "@interfaces/IDate";
 
 const date = new Date();

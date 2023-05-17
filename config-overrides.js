@@ -24,5 +24,26 @@ module.exports = function override(config, env) {
     "@config": path.resolve(__dirname, "src/config"),
   };
 
+  config.module.rules[1].oneOf[2] = {
+    test: /\.svg$/,
+    use: [
+      {
+        loader: require.resolve("@svgr/webpack"),
+        options: {
+          prettier: false,
+          svgo: false,
+          svgoConfig: {
+            plugins: [{ removeViewBox: false }],
+          },
+          titleProp: true,
+          ref: true,
+        },
+      },
+    ],
+    issuer: {
+      and: [/\.(ts|tsx|js|jsx|md|mdx)$/],
+    },
+  };
+
   return config;
 };

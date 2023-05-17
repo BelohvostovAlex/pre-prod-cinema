@@ -1,4 +1,5 @@
 import { FunctionComponent } from "react";
+
 import ContentLoader from "react-content-loader";
 
 import { Colors } from "@constants/styles/colors";

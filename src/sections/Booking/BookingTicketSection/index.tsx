@@ -4,8 +4,8 @@ import Ticket from "@components/Ticket";
 
 import BookingTitle from "../BookingTitle";
 
-import { BookingTicketSectionWrapper, TicketsWrapper } from "./styles";
 import { BookingTicketSectionProps } from "./interfaces";
+import { BookingTicketSectionWrapper, TicketsWrapper } from "./styles";
 
 const BookingTicketSection: FunctionComponent<BookingTicketSectionProps> = ({
   title,

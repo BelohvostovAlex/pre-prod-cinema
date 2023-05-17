@@ -1,6 +1,7 @@
 import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
+
+import { createRoot } from "react-dom/client";
 
 import "@config/i18n";
 import "@lib/firebase.prod";

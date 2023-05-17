@@ -15,5 +15,7 @@ export const useFooterText = () => {
     subscribeSubtext: t("Footer.subscribeSubtext"),
     subsSuccess: t("Footer.subsSuccess"),
     subsError: t("Footer.subsError"),
+    logoTitle: t("Profile.logoTitle"),
+    sendTitle: t("Footer.sendTitle"),
   };
 };

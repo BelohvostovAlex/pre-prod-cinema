@@ -1,45 +1,36 @@
-import {
-  FacebookAuthProvider,
-  GithubAuthProvider,
-  GoogleAuthProvider,
-} from "firebase/auth";
 import { FunctionComponent } from "react";
-import { SubmitHandler, useForm } from "react-hook-form";
-import { useTheme } from "styled-components";
+
 import {
   FacebookButton,
   GithubButton,
   GoogleButton,
 } from "cinema-ui-belohvostov";
+import {
+  FacebookAuthProvider,
+  GithubAuthProvider,
+  GoogleAuthProvider,
+} from "firebase/auth";
+import { SubmitHandler, useForm } from "react-hook-form";
+import { useTheme } from "styled-components";
 
-import InlineLoader from "cinema-components-lib/Loaders/InlineLoader";
-import { ReactComponent as ProfileIcon } from "@assets/svg/form/account.svg";
-import { ReactComponent as EmailIcon } from "@assets/svg/form/email.svg";
-import { ReactComponent as PasswordIcon } from "@assets/svg/form/password.svg";
-import { ReactComponent as SurnamIcon } from "@assets/svg/form/surname.svg";
+import ProfileIcon from "@assets/svg/form/account.svg";
+import EmailIcon from "@assets/svg/form/email.svg";
+import PasswordIcon from "@assets/svg/form/password.svg";
+import SurnamIcon from "@assets/svg/form/surname.svg";
+import { InputTypes } from "@components/Input/interfaces";
+import InputWithIcon from "@components/InputWithIcon";
+import ModalTitle from "@components/Modal/ModalTitle";
+import PasswordStrengthMeter from "@components/PasswordStrengthMeter";
 import { AuthFormInputsPossibleNames } from "@constants/authForm";
 import { ButtonVariants } from "@constants/buttons";
 import { Colors } from "@constants/styles/colors";
 import { TypographyVariant } from "@constants/styles/typography";
 import { useAuthBySocialNetwork } from "@hooks/auth/authBySocial/useAuthBySocialNetworks";
-import { InputTypes } from "@components/Input/interfaces";
-import InputWithIcon from "@components/InputWithIcon";
-import ModalTitle from "@components/Modal/ModalTitle";
-import PasswordStrengthMeter from "@components/PasswordStrengthMeter";
 import { useAppSelector } from "@hooks/useAppSelector";
-import Button from "@ui/Buttons/Button";
 import { userLoadingSelector } from "@store/slices/userSlice/selectors";
+import Button from "@ui/Buttons/Button";
+import InlineLoader from "cinema-components-lib/Loaders/InlineLoader";
 
-import {
-  BottomInfoWrapper,
-  ButtonGroup,
-  Form,
-  Link,
-  Typography,
-} from "./styles";
-import { AuthFormInputProps, AuthFormProps } from "./interfaces";
-import { useAuthFormText } from "./hooks/useAuthFormText";
-import { useValidationWithTranslate } from "./hooks/useValidationWithTranslate";
 import {
   lastSocialBtnMargin,
   signInBtnWidth,
@@ -47,6 +38,16 @@ import {
   socialBtnHeight,
   socialBtnWidth,
 } from "./config";
+import { useAuthFormText } from "./hooks/useAuthFormText";
+import { useValidationWithTranslate } from "./hooks/useValidationWithTranslate";
+import { AuthFormInputProps, AuthFormProps } from "./interfaces";
+import {
+  BottomInfoWrapper,
+  ButtonGroup,
+  Form,
+  Link,
+  Typography,
+} from "./styles";
 
 const AuthForm: FunctionComponent<AuthFormProps> = ({
   signUp = true,

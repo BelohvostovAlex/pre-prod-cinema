@@ -1,26 +1,30 @@
 import { FunctionComponent, useMemo } from "react";
+
 import { useForm } from "react-hook-form";
 
+import ProfileIcon from "@assets/svg/form/account.svg";
+import GenderIcon from "@assets/svg/form/gender.svg";
+import ImageIcon from "@assets/svg/form/image-file.svg";
+import PasswordIcon from "@assets/svg/form/password.svg";
+import SurnamIcon from "@assets/svg/form/surname.svg";
+import { InputTypes } from "@components/Input/interfaces";
+import InputWithIcon from "@components/InputWithIcon";
 import ModalTitle from "@components/Modal/ModalTitle";
 import PasswordStrengthMeter from "@components/PasswordStrengthMeter";
-import Button from "@ui/Buttons/Button";
-import InputWithIcon from "@components/InputWithIcon";
-import { ReactComponent as ProfileIcon } from "@assets/svg/form/account.svg";
-import { ReactComponent as GenderIcon } from "@assets/svg/form/gender.svg";
-import { ReactComponent as ImageIcon } from "@assets/svg/form/image-file.svg";
-import { ReactComponent as PasswordIcon } from "@assets/svg/form/password.svg";
-import { ReactComponent as SurnamIcon } from "@assets/svg/form/surname.svg";
 import { AuthFormInputsPossibleNames, Gender } from "@constants/authForm";
 import { ButtonVariants } from "@constants/buttons";
 import { FirebaseCollections } from "@constants/firebase/collections";
 import { TypographyVariant } from "@constants/styles/typography";
+import { useValidationWithTranslate } from "@forms/AuthForm/hooks/useValidationWithTranslate";
+import { AuthFormInputProps } from "@forms/AuthForm/interfaces";
 import { useEditProfile } from "@hooks/editProfile/useEditProfile";
 import { useAppSelector } from "@hooks/useAppSelector";
 import { userSelector } from "@store/slices/userSlice/selectors";
-import { useValidationWithTranslate } from "@forms/AuthForm/hooks/useValidationWithTranslate";
-import { AuthFormInputProps } from "@forms/AuthForm/interfaces";
-import { InputTypes } from "@components/Input/interfaces";
+import Button from "@ui/Buttons/Button";
 
+import { btnSubmitWidth } from "./config";
+import { defaultFormValue } from "./config/constants";
+import { useEditText } from "./hooks/useEditText";
 import {
   EditProfileForm,
   EditProfileWrapper,
@@ -30,9 +34,6 @@ import {
   InputUploadFile,
   InputUploadFileLabel,
 } from "./styles";
-import { useEditText } from "./hooks/useEditText";
-import { defaultFormValue } from "./config/constants";
-import { btnSubmitWidth } from "./config";
 
 const EditProfile: FunctionComponent = () => {
   const { gender, surname, username, id, photo } = useAppSelector(userSelector);

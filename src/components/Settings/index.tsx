@@ -1,25 +1,25 @@
 import { FunctionComponent } from "react";
 
-import { Locales } from "@constants/locales";
-import { useActions } from "@hooks/useActionts";
-import i18n from "@config/i18n";
+import MoonIcon from "@assets/svg/theme/moon.svg";
+import SunIcon from "@assets/svg/theme/sun.svg";
 import ModalTitle from "@components/Modal/ModalTitle";
-import RoundButton from "@ui/Buttons/RoundButton";
-import { ReactComponent as SunIcon } from "@assets/svg/theme/sun.svg";
-import { ReactComponent as MoonIcon } from "@assets/svg/theme/moon.svg";
+import i18n from "@config/i18n";
+import { Locales } from "@constants/locales";
 import { ThemeTypes } from "@constants/styles/theme";
+import { useActions } from "@hooks/useActionts";
+import RoundButton from "@ui/Buttons/RoundButton";
 
+import {
+  extraStylesRoundButtonLang,
+  extraStylesRoundButtonTheme,
+} from "./config";
+import { useSettingsText } from "./hooks/useSettingsText";
 import {
   BoxTitle,
   BoxWrapper,
   SettingsControlWrapper,
   SettingsWrapper,
 } from "./styles";
-import { useSettingsText } from "./hooks/useSettingsText";
-import {
-  extraStylesRoundButtonLang,
-  extraStylesRoundButtonTheme,
-} from "./config";
 
 const Settings: FunctionComponent = () => {
   const {

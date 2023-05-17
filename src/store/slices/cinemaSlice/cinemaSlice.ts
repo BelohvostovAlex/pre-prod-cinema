@@ -2,8 +2,8 @@ import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
 import { IDate } from "@interfaces/IDate";
 
-import { CinemaInfo, CinemaState, ReservePayload } from "./interfaces";
 import { createCinemaSession } from "./config";
+import { CinemaInfo, CinemaState, ReservePayload } from "./interfaces";
 
 const initialState: CinemaState = {
   cinema: [] as CinemaInfo[],

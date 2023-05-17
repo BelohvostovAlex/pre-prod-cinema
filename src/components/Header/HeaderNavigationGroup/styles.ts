@@ -1,5 +1,6 @@
-import styled from "styled-components";
 import { Link } from "react-router-dom";
+
+import styled from "styled-components";
 
 const logoWrapperWidth = 140;
 const logoWrapperWidthSm = 110;

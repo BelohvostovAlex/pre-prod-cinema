@@ -1,10 +1,10 @@
 import alertSliceReducer from "./alertSlice/alertSlice";
+import cinemaSliceReducer from "./cinemaSlice/cinemaSlice";
 import movieSliceReducer from "./movieSlice";
+import ticketsSliceReducer from "./ticketsSlice/ticketsSlice";
+import useChoiceSliceReducer from "./userChoiceSlice/userChoiceSlice";
 import userSliceReducer from "./userSlice/userSlice";
 import videoSliceReducer from "./videoSlice/videoSlice";
-import cinemaSliceReducer from "./cinemaSlice/cinemaSlice";
-import useChoiceSliceReducer from "./userChoiceSlice/userChoiceSlice";
-import ticketsSliceReducer from "./ticketsSlice/ticketsSlice";
 
 export const allReducers = {
   user: userSliceReducer,

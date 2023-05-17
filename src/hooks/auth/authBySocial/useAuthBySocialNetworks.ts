@@ -5,17 +5,17 @@ import { createDocument } from "@api/firebase/createDocument";
 import { getDocument } from "@api/firebase/getDocument";
 import { updateDocument } from "@api/firebase/updateDocument";
 import { AlertTypes } from "@constants/alert";
+import { Gender } from "@constants/authForm";
 import { FirebaseErrorsTypes } from "@constants/errors/firebaseErrors";
 import { FirebaseCollections } from "@constants/firebase/collections";
 import { isStrIncludesValueHandler } from "@helpers/isStrIncludeValueHandler";
-import { auth } from "@lib/firebase.prod";
-import { IUser } from "@interfaces/IUser";
 import { useErrorTranslation } from "@hooks/errorTranslation/useErrorTranslation";
 import { useActions } from "@hooks/useActionts";
-import { Gender } from "@constants/authForm";
+import { IUser } from "@interfaces/IUser";
+import { auth } from "@lib/firebase.prod";
 
-import { UseAuthBySocialNetwork } from "./interfaces";
 import { mockUserData } from "./config";
+import { UseAuthBySocialNetwork } from "./interfaces";
 
 export const useAuthBySocialNetwork = (options: UseAuthBySocialNetwork) => {
   const { ClassProvider, provider, handlePortal } = options;

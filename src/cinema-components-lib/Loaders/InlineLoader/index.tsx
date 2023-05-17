@@ -1,7 +1,7 @@
 import { FunctionComponent } from "react";
 
-import { LoaderItem, LoaderWrapper } from "./styles";
 import { InlineLoaderProps } from "./interfaces";
+import { LoaderItem, LoaderWrapper } from "./styles";
 
 const InlineLoader: FunctionComponent<InlineLoaderProps> = ({ color }) => {
   return (

@@ -50,13 +50,17 @@ export const ReviewText = styled.p<ReviewTextProps>`
   ${({ theme }) => theme.typography.nunito_l_ital};
   font-size: ${({ theme }) => theme.fontSize[14]};
   margin-bottom: ${({ theme }) => theme.margin.mb20};
-  height: ${({ isOpen }) => (isOpen ? "400px" : "230px")};
+  height: ${({ isOpen }) => (isOpen ? "310px" : "170px")};
   overflow-y: ${({ isOpen }) => (isOpen ? "scroll" : "hidden")};
   &::-webkit-scrollbar {
     display: none;
   }
   transition: all 0.2s linear;
   scrollbar-width: none;
+
+  @media (max-width: ${({ theme }) => `${theme.breakPoints.l}px`}) {
+    height: ${({ isOpen }) => (isOpen ? "250px" : "118px")};
+  }
 `;
 
 export const ReadMoreWrapper = styled.div`

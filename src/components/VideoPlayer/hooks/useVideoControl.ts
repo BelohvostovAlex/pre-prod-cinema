@@ -3,13 +3,13 @@ import { ChangeEvent, KeyboardEvent, RefObject, useEffect } from "react";
 import { KeyButtonVariant } from "@constants/keyboard";
 import { useActions } from "@hooks/useActionts";
 
-import { formatVideoTime } from "../config/formatVideoTime";
 import {
   maxPlaybackRate,
   minPlaybackRateStep,
   rewindSeconds,
   videoStartTime,
 } from "../config";
+import { formatVideoTime } from "../config/formatVideoTime";
 
 export const useVideoControl = (
   ref: RefObject<HTMLVideoElement>,

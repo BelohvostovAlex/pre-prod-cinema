@@ -2,14 +2,14 @@ import { FunctionComponent } from "react";
 
 import { ReactComponent as SeatIcon } from "@assets/svg/movie/seat.svg";
 
+import { useMovieHallBadgeText } from "./hooks/useMovieHallBadgeText";
+import { MovieHallBadgeProps } from "./interfaces";
 import {
   MovieHallBadgeNumber,
   MovieHallBadgeSeats,
   MovieHallBadgeTime,
   MovieHallBadgeWrapper,
 } from "./styles";
-import { MovieHallBadgeProps } from "./interfaces";
-import { useMovieHallBadgeText } from "./hooks/useMovieHallBadgeText";
 
 const MovieHallBadge: FunctionComponent<MovieHallBadgeProps> = ({
   isActive,

@@ -1,5 +1,5 @@
-import { ImdbUrls } from "@constants/url/imdb";
 import { imdbApi } from "@api/http/imdbApi";
+import { ImdbUrls } from "@constants/url/imdb";
 
 import { GetMoviesResponse } from "./interfaces";
 

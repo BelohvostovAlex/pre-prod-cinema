@@ -1,16 +1,16 @@
 import { FunctionComponent, useState } from "react";
 
+import Logo from "@assets/svg/logo/logo.svg";
+import BurgerIcon from "@assets/svg/tools/burger.svg";
+import Drawer from "@components/Drawer";
+import Navigation from "@components/Navigation";
 import { AppPathes } from "@constants/routes";
 import { useMediaQuery } from "@hooks/style/useMediaQuery";
-import Navigation from "@components/Navigation";
-import { ReactComponent as BurgerIcon } from "@assets/svg/tools/burger.svg";
-import { ReactComponent as Logo } from "@assets/svg/logo/logo.svg";
-import Drawer from "@components/Drawer";
 
 import { useHeaderText } from "../hooks/useHeaderText";
 
-import { BurgerWrapper, LogoWrapper, NavWrapper } from "./styles";
 import { HeaderNavigationGroupProps } from "./interfaces";
+import { BurgerWrapper, LogoWrapper, NavWrapper } from "./styles";
 
 const HeaderNavigationGroup: FunctionComponent<HeaderNavigationGroupProps> = ({
   handleAuthPortalOpen,

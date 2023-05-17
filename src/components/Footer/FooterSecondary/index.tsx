@@ -1,13 +1,13 @@
 import { FunctionComponent } from "react";
 
+import DcIcon from "@assets/svg/companies/dc.svg";
+import MarvelIcon from "@assets/svg/companies/marvel.svg";
+import NetflixIcon from "@assets/svg/companies/netflix.svg";
+import ParamountIcon from "@assets/svg/companies/paramount.svg";
+import SonyIcon from "@assets/svg/companies/sony.svg";
+import WaltIcon from "@assets/svg/companies/walt.svg";
+import WarnerIcon from "@assets/svg/companies/warner.svg";
 import { footerSecondaryYear } from "@constants/footer";
-import { ReactComponent as DcIcon } from "@assets/svg/companies/dc.svg";
-import { ReactComponent as MarvelIcon } from "@assets/svg/companies/marvel.svg";
-import { ReactComponent as NetflixIcon } from "@assets/svg/companies/netflix.svg";
-import { ReactComponent as ParamountIcon } from "@assets/svg/companies/paramount.svg";
-import { ReactComponent as SonyIcon } from "@assets/svg/companies/sony.svg";
-import { ReactComponent as WarnerIcon } from "@assets/svg/companies/warner.svg";
-import { ReactComponent as WaltIcon } from "@assets/svg/companies/walt.svg";
 
 import {
   FooterSecondaryItemsWrapper,

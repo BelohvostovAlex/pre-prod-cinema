@@ -38,5 +38,5 @@
       "@config/*": ["./config/*"]
     }
   },
-  "include": ["src"]
+  "include": ["src", "src/@types/custom.d.ts"]
 }

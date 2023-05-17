@@ -2,9 +2,9 @@ import { FunctionComponent } from "react";
 
 import { Colors } from "@constants/styles/colors";
 
+import { defaultDividerHeight, defaultDividerWidthPercent } from "./config";
 import { DividerProps } from "./interfaces";
 import { DividerWrapper } from "./styles";
-import { defaultDividerHeight, defaultDividerWidthPercent } from "./config";
 
 const Divider: FunctionComponent<DividerProps> = ({
   color = Colors.ORANGE,

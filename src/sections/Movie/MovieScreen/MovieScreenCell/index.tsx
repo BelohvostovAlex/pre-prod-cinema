@@ -4,8 +4,8 @@ import { useActions } from "@hooks/useActionts";
 import { useAppSelector } from "@hooks/useAppSelector";
 import { userChoiceSelector } from "@store/slices/userChoiceSlice/selectors";
 
-import { MovieScreenCellWrapper } from "./styles";
 import { MovieScreenCellProps } from "./interfaces";
+import { MovieScreenCellWrapper } from "./styles";
 
 const MovieScreenCell: FunctionComponent<MovieScreenCellProps> = ({
   seatNumber,

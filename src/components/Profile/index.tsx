@@ -1,16 +1,17 @@
 import { FunctionComponent } from "react";
+
 import { useTheme } from "styled-components";
 
-import { ReactComponent as LogoIcon } from "@assets/svg/logo/logo.svg";
-import { ReactComponent as ProfileIcon } from "@assets/svg/profile/profile-big.svg";
+import LogoIcon from "@assets/svg/logo/logo.svg";
+import ProfileIcon from "@assets/svg/profile/profile-big.svg";
+import EditProfile from "@components/EditProfile";
+import Modal from "@components/Modal";
+import Settings from "@components/Settings";
 import { TypographyVariant } from "@constants/styles/typography";
 import { useSignOut } from "@hooks/auth/useSignOut";
 import { usePortal } from "@hooks/portal/usePortal";
 import { useAppSelector } from "@hooks/useAppSelector";
 import SecondaryButton from "@ui/Buttons/SecondaryButton";
-import Modal from "@components/Modal";
-import EditProfile from "@components/EditProfile";
-import Settings from "@components/Settings";
 
 import { useProfileText } from "./hooks/useProfileText";
 import {

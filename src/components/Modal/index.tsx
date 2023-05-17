@@ -1,14 +1,15 @@
 import { FunctionComponent, useRef } from "react";
+
 import { RoundButton } from "cinema-ui-belohvostov";
 
-import { ReactComponent as Close } from "@assets/svg/tools/Close.svg";
+import Close from "@assets/svg/tools/Close.svg";
+import Portal from "@components/Portal";
 import { Colors } from "@constants/styles/colors";
 import useOnClickOutside from "@hooks/useOnClickOutside";
-import Portal from "@components/Portal";
 
-import { ModalButtonWrapper, ModalContainer } from "./styles";
-import { ModalProps } from "./interfaces";
 import { defaultModalWidth } from "./config";
+import { ModalProps } from "./interfaces";
+import { ModalButtonWrapper, ModalContainer } from "./styles";
 
 const Modal: FunctionComponent<ModalProps> = ({
   children,

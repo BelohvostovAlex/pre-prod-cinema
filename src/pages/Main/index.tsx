@@ -1,12 +1,12 @@
 import { FunctionComponent, useEffect } from "react";
 
-import TrailerBlock from "@sections/Main/TrailerBlock";
-import InTheaterBlock from "@sections/Main/InTheaterBlock";
 import FooterSecondary from "@components/Footer/FooterSecondary";
+import { moviesImdbNew } from "@constants/movies";
 import { useAppSelector } from "@hooks/useAppSelector";
+import InTheaterBlock from "@sections/Main/InTheaterBlock";
+import TrailerBlock from "@sections/Main/TrailerBlock";
 // import { useActions } from "@hooks/useActionts";
 import { isMoviesLoadingSelector } from "@store/slices/movieSlice/selectors";
-import { moviesImdbNew } from "@constants/movies";
 
 import { MainWrapper } from "./styles";
 

@@ -1,15 +1,15 @@
 import { FunctionComponent } from "react";
 
-import RoundButton from "@ui/Buttons/RoundButton";
-import { ReactComponent as PlayIcon } from "@assets/svg/tools/play.svg";
-import { usePortal } from "@hooks/portal/usePortal";
+import PlayIcon from "@assets/svg/tools/play.svg";
 import trailer from "@assets/video/Inception.mp4";
 import Modal from "@components/Modal";
 import VideoPlayer from "@components/VideoPlayer";
+import { usePortal } from "@hooks/portal/usePortal";
+import RoundButton from "@ui/Buttons/RoundButton";
 
-import { TrailerItemImg } from "./styles";
-import { TrailerItemProps } from "./interfaces";
 import { extraStylesForRoundBtn } from "./config";
+import { TrailerItemProps } from "./interfaces";
+import { TrailerItemImg } from "./styles";
 
 const TrailerItem: FunctionComponent<TrailerItemProps> = ({ image, title }) => {
   const [isPortalOpen, handlePortal] = usePortal();

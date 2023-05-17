@@ -1,16 +1,19 @@
 import { FunctionComponent } from "react";
+
 import { Divider } from "cinema-ui-belohvostov";
 
-import { Colors } from "@constants/styles/colors";
-import { ReactComponent as RatingIcon } from "@assets/svg/tools/Star.svg";
-import { ReactComponent as TicketIcon } from "@assets/svg/movie/ticket.svg";
-import { ReactComponent as CancelIcon } from "@assets/svg/movie/cancel.svg";
+import CancelIcon from "@assets/svg/movie/cancel.svg";
+import TicketIcon from "@assets/svg/movie/ticket.svg";
+import RatingIcon from "@assets/svg/tools/Star.svg";
 import { moviesImdbNew } from "@constants/movies";
-import { useBookingText } from "@pages/Booking/hooks/useBookingText";
-import { useActions } from "@hooks/useActionts";
+import { Colors } from "@constants/styles/colors";
 import { TypographyVariant } from "@constants/styles/typography";
+import { useActions } from "@hooks/useActionts";
+import { useBookingText } from "@pages/Booking/hooks/useBookingText";
 import Button from "@ui/Buttons/Button";
 
+import { dividerExtraStyles } from "./config";
+import { handleSeatsText } from "./config/handleSeatsText";
 import { TicketProps } from "./interfaces";
 import {
   TicketBottom,
@@ -26,8 +29,6 @@ import {
   TicketTitle,
   TicketWrapper,
 } from "./styles";
-import { handleSeatsText } from "./config/handleSeatsText";
-import { dividerExtraStyles } from "./config";
 
 const Ticket: FunctionComponent<TicketProps> = ({
   movie,

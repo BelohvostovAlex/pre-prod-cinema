@@ -1,10 +1,10 @@
 import { FunctionComponent } from "react";
 
-import { ReactComponent as RightArrowIcon } from "@assets/svg/tools/right.svg";
+import RightArrowIcon from "@assets/svg/tools/right.svg";
 
+import { useDrawerText } from "./hooks/useDrawerText";
 import { DrawerProps } from "./interfaces";
 import { DrawerArrowWrapper, DrawerTitle, StyledDrawer } from "./styles";
-import { useDrawerText } from "./hooks/useDrawerText";
 
 const Drawer: FunctionComponent<DrawerProps> = ({
   children,

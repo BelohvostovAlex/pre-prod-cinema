@@ -1,11 +1,12 @@
 import { FunctionComponent } from "react";
 
-import { TypographyVariant } from "@constants/styles/typography";
+import StarIcon from "@assets/svg/tools/Star.svg";
 import { ButtonVariants } from "@constants/buttons";
-import Button from "@ui/Buttons/Button";
-import { ReactComponent as StarIcon } from "@assets/svg/tools/Star.svg";
+import { TypographyVariant } from "@constants/styles/typography";
 import { useMovieText } from "@pages/Movie/hooks/useMovieText";
+import Button from "@ui/Buttons/Button";
 
+import { buttonWidth } from "./config";
 import { MovieInfoProps } from "./interfaces";
 import {
   MovieBookWrapper,
@@ -17,7 +18,6 @@ import {
   MovieInfoWrapper,
   MovieRating,
 } from "./styles";
-import { buttonWidth } from "./config";
 
 const MovieInfo: FunctionComponent<MovieInfoProps> = ({ movie, onClick }) => {
   const { stars, year, image, genres, directors, imDbRating, plot, title } =

@@ -1,12 +1,12 @@
 import { FunctionComponent } from "react";
 
+import { useAppSelector } from "@hooks/useAppSelector";
 import BookingTicketSection from "@sections/Booking/BookingTicketSection";
 import BookingTitle from "@sections/Booking/BookingTitle";
-import { useAppSelector } from "@hooks/useAppSelector";
 import { allCategoriesTicketsSelector } from "@store/slices/ticketsSlice/selectors";
 
-import { BookingsWrapper } from "./styles";
 import { useBookingText } from "./hooks/useBookingText";
+import { BookingsWrapper } from "./styles";
 
 const Bookings: FunctionComponent = () => {
   const { missedTitle, pastTitle, upcomingTitle, noBookingsTitle } =

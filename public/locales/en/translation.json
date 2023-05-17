@@ -138,7 +138,8 @@
     "subscribeInputPlaceholder": "Enter email",
     "subscribeSubtext": "Join our newsletter to stay up to date on features and releases.",
     "subsSuccess": "Your successfully subscribed",
-    "subsError": "Error with subscription"
+    "subsError": "Error with subscription",
+    "sendTitle": "Send"
   },
   "Errors": {
     "userAlreadyExistsViaSocial": "Account with dat email is already exists, please try another method to log in",

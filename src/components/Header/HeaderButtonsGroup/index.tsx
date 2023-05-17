@@ -1,22 +1,23 @@
 import { FunctionComponent } from "react";
+
 import { Button, RoundButton } from "cinema-ui-belohvostov";
 import { useTheme } from "styled-components";
 
-import { useMediaQuery } from "@hooks/style/useMediaQuery";
-import { Colors } from "@constants/styles/colors";
-import { ButtonVariants } from "@constants/buttons";
-import { ReactComponent as SignInIcon } from "@assets/svg/tools/sign-in.svg";
-import { ReactComponent as SettingsIcon } from "@assets/svg/tools/settings.svg";
-import { TypographyVariant } from "@constants/styles/typography";
+import SettingsIcon from "@assets/svg/tools/settings.svg";
+import SignInIcon from "@assets/svg/tools/sign-in.svg";
 import Modal from "@components/Modal";
 import Settings from "@components/Settings";
+import { ButtonVariants } from "@constants/buttons";
+import { Colors } from "@constants/styles/colors";
+import { TypographyVariant } from "@constants/styles/typography";
 import { usePortal } from "@hooks/portal/usePortal";
+import { useMediaQuery } from "@hooks/style/useMediaQuery";
 
 import { useHeaderText } from "../hooks/useHeaderText";
 
-import { HeaderButtonGroup } from "./styles";
 import { onOpenSignInModalMargin, roundBtnExtra } from "./config";
 import { HeaderButtonsGroupProps } from "./interfaces";
+import { HeaderButtonGroup } from "./styles";
 
 const HeaderButtonsGroup: FunctionComponent<HeaderButtonsGroupProps> = ({
   handleAuthPortalOpen,

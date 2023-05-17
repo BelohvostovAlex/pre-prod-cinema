@@ -1,17 +1,20 @@
 import { FunctionComponent, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { SubmitHandler, useForm } from "react-hook-form";
+
 import emailjs from "@emailjs/browser";
+import { SubmitHandler, useForm } from "react-hook-form";
 
-import { AppPathes } from "@constants/routes";
-import { AuthFormInputsPossibleNames } from "@constants/authForm";
-import { ReactComponent as LogoIcon } from "@assets/svg/logo/logo.svg";
-import { ReactComponent as TelegramIcon } from "@assets/svg/social/telegram.svg";
+import LogoIcon from "@assets/svg/logo/logo.svg";
+import TelegramIcon from "@assets/svg/social/telegram.svg";
 import { InputTypes } from "@components/Input/interfaces";
-import { useActions } from "@hooks/useActionts";
-import { useValidationWithTranslate } from "@forms/AuthForm/hooks/useValidationWithTranslate";
 import { AlertTypes } from "@constants/alert";
+import { AuthFormInputsPossibleNames } from "@constants/authForm";
+import { AppPathes } from "@constants/routes";
+import { useValidationWithTranslate } from "@forms/AuthForm/hooks/useValidationWithTranslate";
+import { useActions } from "@hooks/useActionts";
 
+import { useFooterText } from "./hooks/useFooterText";
+import { FooterFormProps } from "./interfaces";
 import {
   FooterColumn,
   FooterColumnItem,
@@ -23,8 +26,6 @@ import {
   FooterSubscribeInputWrapper,
   FooterWrapper,
 } from "./styles";
-import { useFooterText } from "./hooks/useFooterText";
-import { FooterFormProps } from "./interfaces";
 
 const FooterMain: FunctionComponent = () => {
   const formRef = useRef<HTMLFormElement>(null);
@@ -43,6 +44,8 @@ const FooterMain: FunctionComponent = () => {
     thirdColumnToMain,
     subsError,
     subsSuccess,
+    logoTitle,
+    sendTitle,
   } = useFooterText();
 
   const {
@@ -86,7 +89,7 @@ const FooterMain: FunctionComponent = () => {
   return (
     <FooterWrapper visible={isFooterVisible}>
       <FooterLogo>
-        <LogoIcon />
+        <LogoIcon title={logoTitle} />
       </FooterLogo>
       <FooterColumn>
         <FooterColumnTitle>{firstColumnTitle}</FooterColumnTitle>
@@ -127,7 +130,7 @@ const FooterMain: FunctionComponent = () => {
             )}
           />
           <FooterSubmitBtn type="submit">
-            <TelegramIcon />
+            <TelegramIcon title={sendTitle} />
           </FooterSubmitBtn>
         </FooterSubscribeInputWrapper>
         <FooterColumnSubscribeSubText>

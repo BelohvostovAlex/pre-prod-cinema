@@ -1,18 +1,18 @@
 import { FunctionComponent } from "react";
 
-import { TypographyVariant } from "@constants/styles/typography";
 import MovieInfoBlockSkeleton from "@components/Skeletons/MovieInfoBlock";
 import TrailerBlockSkeleton from "@components/Skeletons/TrailerBlock";
+import { TypographyVariant } from "@constants/styles/typography";
 
 import MovieInfoBlock from "../MovieInfoBlock";
 
+import { TrailerBlockProps } from "./interfaces";
 import {
   TrailerBlockWrapper,
   TrailerItemLayout,
   TrailerItemWrapper,
 } from "./styles";
 import TrailerItem from "./TrailerItem";
-import { TrailerBlockProps } from "./interfaces";
 
 const TrailerBlock: FunctionComponent<TrailerBlockProps> = ({
   movie,

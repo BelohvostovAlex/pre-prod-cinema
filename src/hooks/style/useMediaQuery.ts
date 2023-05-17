@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+
 import { useTheme } from "styled-components";
 
 type MediaQueries = "xs" | "s" | "sm" | "m" | "l" | "xl" | "xxl";
