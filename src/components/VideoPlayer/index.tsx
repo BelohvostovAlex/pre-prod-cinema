@@ -41,7 +41,7 @@ const VideoPlayer: FunctionComponent<VideoPlayerProps> = ({ src }) => {
   }, [isMuted, videoRef]);
 
   return (
-    <VidePlayerWrapper>
+    <VidePlayerWrapper data-cy="video-player">
       <VideoLayout onKeyDown={handleKeyDown} tabIndex={0}>
         <Controls
           title={"Batman"}
@@ -58,6 +58,7 @@ const VideoPlayer: FunctionComponent<VideoPlayerProps> = ({ src }) => {
           handleFullScreen={handleFullScreen}
           elapsedTime={elapsedTime}
           totalDuration={totalDuration}
+          data-cy="video-controls"
         />
       </VideoLayout>
       <Video ref={videoRef} onTimeUpdate={handleOnTimeUpdate}>

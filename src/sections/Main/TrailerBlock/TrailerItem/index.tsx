@@ -15,7 +15,12 @@ const TrailerItem: FunctionComponent<TrailerItemProps> = ({ image, title }) => {
   const [isPortalOpen, handlePortal] = usePortal();
   return (
     <>
-      <TrailerItemImg src={image} alt={title} title={title} />
+      <TrailerItemImg
+        src={image}
+        alt={title}
+        title={title}
+        data-cy="trailer-img"
+      />
       <RoundButton onClick={handlePortal} extra={extraStylesForRoundBtn}>
         <PlayIcon />
       </RoundButton>

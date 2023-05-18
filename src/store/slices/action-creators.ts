@@ -25,6 +25,7 @@ import {
 import {
   setProgress,
   setSpeed,
+  toggleFullscreen,
   toggleMute,
   togglePlay,
 } from "./videoSlice/videoSlice";
@@ -40,6 +41,7 @@ export const allActionCreators = {
   setProgress,
   setSpeed,
   toggleMute,
+  toggleFullscreen,
   updateUser,
   getMoviesThunk,
   setChosenDay,

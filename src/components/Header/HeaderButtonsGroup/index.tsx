@@ -1,8 +1,9 @@
 import { FunctionComponent } from "react";
 
-import { Button, RoundButton } from "cinema-ui-belohvostov";
+import { RoundButton } from "cinema-ui-belohvostov";
 import { useTheme } from "styled-components";
 
+import Button from "@/ui/Buttons/Button";
 import SettingsIcon from "@assets/svg/tools/settings.svg";
 import SignInIcon from "@assets/svg/tools/sign-in.svg";
 import Modal from "@components/Modal";
@@ -38,7 +39,7 @@ const HeaderButtonsGroup: FunctionComponent<HeaderButtonsGroupProps> = ({
   };
   return (
     <>
-      <HeaderButtonGroup>
+      <HeaderButtonGroup data-cy="header-button-group">
         {isLSize ? (
           <RoundButton
             onClick={handleAuthPortalOpen}
@@ -53,6 +54,7 @@ const HeaderButtonsGroup: FunctionComponent<HeaderButtonsGroupProps> = ({
               variant={ButtonVariants.SECONDARY}
               fontSize={fontSize[14]}
               onClick={onOpenSignUpModal}
+              data-cy="sign-up"
             >
               {signUpBtn}
             </Button>
@@ -62,6 +64,7 @@ const HeaderButtonsGroup: FunctionComponent<HeaderButtonsGroupProps> = ({
               margin={onOpenSignInModalMargin}
               fontSize={fontSize[14]}
               onClick={onOpenSignInModal}
+              data-cy="sign-in"
             >
               {signInBtn}
             </Button>
@@ -70,6 +73,7 @@ const HeaderButtonsGroup: FunctionComponent<HeaderButtonsGroupProps> = ({
         <SettingsIcon
           onClick={handleSettingsPortalOpen}
           title={settingsTitle}
+          data-cy="settings-button"
         />
       </HeaderButtonGroup>
       <Modal onClose={handleSettingsPortalOpen} isOpen={isSettingsPortalOpen}>

@@ -22,7 +22,11 @@ const Alert: FunctionComponent<AlertProps> = ({ time = 4000 }) => {
     return null;
   }
 
-  return <AlertWrapper type={type}>{text}</AlertWrapper>;
+  return (
+    <AlertWrapper type={type} data-cy="alert">
+      {text}
+    </AlertWrapper>
+  );
 };
 
 export default Alert;

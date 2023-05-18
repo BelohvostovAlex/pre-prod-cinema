@@ -2,10 +2,11 @@ import { FunctionComponent } from "react";
 
 import { Divider } from "cinema-ui-belohvostov";
 
+import { useAppSelector } from "@/hooks/useAppSelector";
+import { moviesSelector } from "@/store/slices/movieSlice/selectors";
 import CancelIcon from "@assets/svg/movie/cancel.svg";
 import TicketIcon from "@assets/svg/movie/ticket.svg";
 import RatingIcon from "@assets/svg/tools/Star.svg";
-import { moviesImdbNew } from "@constants/movies";
 import { Colors } from "@constants/styles/colors";
 import { TypographyVariant } from "@constants/styles/typography";
 import { useActions } from "@hooks/useActionts";
@@ -39,11 +40,11 @@ const Ticket: FunctionComponent<TicketProps> = ({
   time,
   isUpcoming,
 }) => {
-  // const movies = useAppSelector((state) => state.movies.data);
+  const movies = useAppSelector(moviesSelector);
   const { cancelBtn, dateText, timeText, seatText, seatsText } =
     useBookingText();
   const { removeTicket } = useActions();
-  const currMovie = moviesImdbNew.find((mov) => mov.title === movie);
+  const currMovie = movies.find((mov) => mov.title === movie);
   if (!currMovie) return null;
 
   const cancelBooking = () => {

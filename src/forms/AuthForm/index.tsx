@@ -168,6 +168,7 @@ const AuthForm: FunctionComponent<AuthFormProps> = ({
             typography={TypographyVariant.poppins_l}
             width={signUpBtnWidth}
             type="submit"
+            data-cy="enter"
           >
             {signUpBtn}
           </Button>
@@ -177,6 +178,7 @@ const AuthForm: FunctionComponent<AuthFormProps> = ({
             typography={TypographyVariant.poppins_l}
             type="submit"
             width={signInBtnWidth}
+            data-cy="enter"
           >
             {signInBtn}
           </Button>
@@ -218,7 +220,7 @@ const AuthForm: FunctionComponent<AuthFormProps> = ({
       </ButtonGroup>
       <BottomInfoWrapper>
         <Typography>{signUp ? alreadyHaveAcc : needAcc}</Typography>
-        <Link onClick={onFormTypeChange}>
+        <Link onClick={onFormTypeChange} data-cy="auth-toggle">
           {signUp ? linkToSignIn : linkToSignUp}
         </Link>
       </BottomInfoWrapper>

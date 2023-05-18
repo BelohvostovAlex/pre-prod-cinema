@@ -1,3 +1,5 @@
+import { expect } from "@jest/globals";
+
 import { getMonthString } from "@helpers/date/getMonthString";
 
 const monthIndexJan = 0;

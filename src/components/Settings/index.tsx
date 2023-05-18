@@ -42,11 +42,11 @@ const Settings: FunctionComponent = () => {
 
   const handleChangeTheme = (theme: ThemeTypes) => () => changeTheme(theme);
   return (
-    <SettingsWrapper>
+    <SettingsWrapper data-cy="settings-block">
       <ModalTitle text={title} spanText={titleSpan} />
       <SettingsControlWrapper>
-        <BoxWrapper>
-          <BoxTitle>{chooseLangText}: </BoxTitle>
+        <BoxWrapper data-cy="lang-buttons-wrapper">
+          <BoxTitle data-cy="lang-text">{chooseLangText}: </BoxTitle>
           <RoundButton
             onClick={handleLangRu}
             extra={extraStylesRoundButtonLang}
@@ -55,7 +55,7 @@ const Settings: FunctionComponent = () => {
           </RoundButton>
           <RoundButton onClick={handleLangEng}>{en}</RoundButton>
         </BoxWrapper>
-        <BoxWrapper>
+        <BoxWrapper data-cy="theme-buttons-wrapper">
           <BoxTitle>{changeThemeText}: </BoxTitle>
           <RoundButton
             onClick={handleChangeTheme(ThemeTypes.DARK)}

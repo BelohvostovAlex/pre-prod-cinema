@@ -1,3 +1,5 @@
+import { expect } from "@jest/globals";
+
 import { getMonthString } from "@helpers/date/getMonthString";
 import { handleTicketPrice } from "@helpers/handleTicketPrice";
 import { IDate } from "@interfaces/IDate";

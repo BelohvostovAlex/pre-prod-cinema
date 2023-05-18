@@ -1,3 +1,5 @@
+import { expect } from "@jest/globals";
+
 import { Colors } from "@constants/styles/colors";
 import { mergeThemes } from "@styles/theme/config";
 import darkTheme from "@styles/theme/dark";

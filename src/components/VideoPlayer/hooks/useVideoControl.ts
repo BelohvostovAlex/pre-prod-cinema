@@ -16,7 +16,8 @@ export const useVideoControl = (
   isPlaying: boolean,
 ) => {
   const { current } = ref;
-  const { togglePlay, setProgress, toggleMute, setSpeed } = useActions();
+  const { togglePlay, setProgress, toggleMute, setSpeed, toggleFullscreen } =
+    useActions();
 
   const elapsedTime = current?.currentTime
     ? formatVideoTime(current!.currentTime)
@@ -115,6 +116,7 @@ export const useVideoControl = (
   const handleFullScreen = () => {
     if (current) {
       current.requestFullscreen();
+      toggleFullscreen();
     }
   };
 

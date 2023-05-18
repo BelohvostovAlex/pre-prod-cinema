@@ -19,9 +19,9 @@ import MovieInfo from "@sections/Movie/MovieInfo";
 import MovieReview from "@sections/Movie/MovieReview";
 import MovieScreen from "@sections/Movie/MovieScreen";
 import MovieTrailer from "@sections/Movie/MovieTrailer";
+import { moviesSelector } from "@store/slices/movieSlice/selectors";
 import { isAuthSelector } from "@store/slices/userSlice/selectors";
 import MoviePageLoader from "cinema-components-lib/Loaders/MoviePageLoader";
-// import { moviesSelector } from "@store/slices/movieSlice/selectors";
 
 import { handleNextMovieIndex } from "./config/handleNextMovieIndex";
 import { useMovieText } from "./hooks/useMovieText";
@@ -31,7 +31,6 @@ import {
   MovieReviewWrapper,
   MovieWrapper,
 } from "./styles";
-// import { useGetMoviesReview } from "./config/useGetMovieReviews";
 
 const Movie: FunctionComponent = () => {
   const { id } = useParams();
@@ -41,11 +40,10 @@ const Movie: FunctionComponent = () => {
     useState<boolean>(false);
   const isAuth = useAppSelector(isAuthSelector);
   const { setIsAlertOpen, setCinemaMovie, setChosenMovie } = useActions();
-  // const movies = useAppSelector(moviesSelector);
-  // const movieReviews = useGetMoviesReview(id!);
+  const movies = useAppSelector(moviesSelector);
 
   const movie = moviesImdbNew.find((item) => item.id === id);
-  const nextMovie = handleNextMovieIndex(moviesImdbNew, id!);
+  const nextMovie = handleNextMovieIndex(movies, id!);
   const { data, loading } = usePalette(movie?.image);
 
   const navigateToNextMovie = () => {
@@ -92,13 +90,6 @@ const Movie: FunctionComponent = () => {
       <MovieTrailer image={movie.image} title={movie.title} />
       {reviewsData?.items?.length > 0 ? (
         <MovieReviewWrapper>
-          {/* {movieReviews?.items &&
-          movieReviews.items
-            .slice(0, 3)
-            .map(({ username, content, reviewLink }) => (
-              <Review author={username} text={content} key={reviewLink} />
-            ))} */}
-
           {reviewsData.items
             .slice(0, 3)
             .map(({ username, content, reviewLink }) => (

@@ -1,3 +1,5 @@
+import { expect } from "@jest/globals";
+
 import { getAvailableDates } from "@helpers/date/getAvailableDates";
 
 const startDate = new Date();

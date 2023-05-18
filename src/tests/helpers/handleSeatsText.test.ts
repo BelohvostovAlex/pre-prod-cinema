@@ -1,3 +1,5 @@
+import { expect } from "@jest/globals";
+
 import { handleSeatsText } from "@components/Ticket/config/handleSeatsText";
 
 const length1 = 1;

@@ -7,3 +7,5 @@ node_modules
 .husky
 config-overrides.js
 jest.config.ts
+cypress.config.ts
+cypress

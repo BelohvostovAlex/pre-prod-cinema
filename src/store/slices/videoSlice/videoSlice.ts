@@ -26,10 +26,18 @@ export const videoSlice = createSlice({
     toggleMute: (state) => {
       state.isMuted = !state.isMuted;
     },
+    toggleFullscreen: (state) => {
+      state.isFullScreen = !state.isFullScreen;
+    },
   },
 });
 
-export const { togglePlay, setProgress, setSpeed, toggleMute } =
-  videoSlice.actions;
+export const {
+  togglePlay,
+  setProgress,
+  setSpeed,
+  toggleFullscreen,
+  toggleMute,
+} = videoSlice.actions;
 
 export default videoSlice.reducer;

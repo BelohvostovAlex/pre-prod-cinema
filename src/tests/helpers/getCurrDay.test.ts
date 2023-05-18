@@ -1,3 +1,5 @@
+import { expect } from "@jest/globals";
+
 import { getCurrDay } from "@helpers/date/getCurrDay";
 import { getMonthString } from "@helpers/date/getMonthString";
 import { IDate } from "@interfaces/IDate";

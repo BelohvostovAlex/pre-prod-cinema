@@ -84,7 +84,7 @@ const Profile: FunctionComponent = () => {
           </ProfileId>
           <ProfileGender>{gender}</ProfileGender>
         </ProfileInfo>
-        <ProfileMenu>
+        <ProfileMenu data-cy="profile-buttons-wrapper">
           {buttons.map(({ extra, onClick, text, typography }, idx) => (
             <SecondaryButton
               key={idx}

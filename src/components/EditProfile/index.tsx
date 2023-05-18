@@ -75,7 +75,7 @@ const EditProfile: FunctionComponent = () => {
   });
 
   return (
-    <EditProfileWrapper>
+    <EditProfileWrapper data-cy="edit-modal">
       <ModalTitle text={title} spanText={titleSpan} />
       <EditProfileForm onSubmit={handleSubmit(onSubmitHandler)}>
         <InputWithIcon

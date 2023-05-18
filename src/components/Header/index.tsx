@@ -38,10 +38,10 @@ const Header: FunctionComponent = () => {
   return (
     <>
       <HeaderWrapper>
-        <HeaderNavigationGroup handleAuthPortalOpen={handleAuthPortalOpen} />
+        <HeaderNavigationGroup />
         {isAuth ? (
           <>
-            <ProfileBtn onClick={handleDrawer}>
+            <ProfileBtn onClick={handleDrawer} data-cy="profile">
               <ProfileBtnText>{profileBtnText}</ProfileBtnText>
               <ProfileIcon title={profileTitle} />
             </ProfileBtn>

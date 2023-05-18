@@ -1,3 +1,5 @@
+import { expect } from "@jest/globals";
+
 import { handleReviewText } from "@sections/Movie/MovieReview/config/handleReviewText";
 
 const tooBigString =

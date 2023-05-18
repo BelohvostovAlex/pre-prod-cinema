@@ -42,13 +42,13 @@ const Controls: FunctionComponent<ControlsProps> = ({
     <ControlsWrapper>
       <ControlsTitle>{title}</ControlsTitle>
       <MiddleControls>
-        <SpeedRightIcon onClick={revert} />
+        <SpeedRightIcon onClick={revert} data-cy="revert" />
         {isPlaying ? (
-          <PauseIcon onClick={handlePlay} />
+          <PauseIcon onClick={handlePlay} data-cy="pause" />
         ) : (
-          <PlayIcon onClick={handlePlay} />
+          <PlayIcon onClick={handlePlay} data-cy="play" />
         )}
-        <SpeedLeftIcon onClick={fastForward} />
+        <SpeedLeftIcon onClick={fastForward} data-cy="fastForward" />
       </MiddleControls>
       <BottomControls>
         {isPlaying ? (
@@ -66,9 +66,9 @@ const Controls: FunctionComponent<ControlsProps> = ({
         />
         <VideoTime>{totalDuration}</VideoTime>
         {isMuted ? (
-          <MuteIcon onClick={handleMute} />
+          <MuteIcon onClick={handleMute} data-cy="mute" />
         ) : (
-          <VolumeIcon onClick={handleMute} />
+          <VolumeIcon onClick={handleMute} data-cy="mute" />
         )}
         <Velocity value={speed} onChange={handleSpeed}>
           {speedOptions.map((item) => (
@@ -77,7 +77,7 @@ const Controls: FunctionComponent<ControlsProps> = ({
             </VelocityOption>
           ))}
         </Velocity>
-        <FullScreenIcon onClick={handleFullScreen} />
+        <FullScreenIcon onClick={handleFullScreen} data-cy="fullscreen" />
       </BottomControls>
     </ControlsWrapper>
   );

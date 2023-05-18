@@ -15,4 +15,8 @@ const ReduxProvider: FunctionComponent<ReduxProviderProps> = ({ children }) => {
   );
 };
 
+if (window.Cypress) {
+  window.store = store;
+}
+
 export default ReduxProvider;

@@ -1,14 +1,12 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
-import { getMovies } from "@api/imdb/getMovies";
+import { moviesImdbNew } from "@constants/movies";
 
 export const getMoviesThunk = createAsyncThunk(
   "movie/getMovies",
   async (_, { rejectWithValue }) => {
     try {
-      const data = await getMovies();
-
-      return data;
+      return moviesImdbNew;
     } catch (error) {
       return rejectWithValue("no");
     }

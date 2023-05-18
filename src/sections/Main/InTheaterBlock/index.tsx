@@ -39,6 +39,10 @@ const InTheaterBlock: FunctionComponent<InTheaterBlockProps> = ({
     navigate(`${AppPathesWithoutSlug.MOVIE}${data[index].id}`);
   };
 
+  if (!data[index]) {
+    return null;
+  }
+
   const { plot, title, image, genres } = data[index];
   return (
     <InTheaterBlockWrapper>

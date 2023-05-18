@@ -1,3 +1,5 @@
+import { expect } from "@jest/globals";
+
 import { isStrIncludesValueHandler } from "@helpers/isStrIncludeValueHandler";
 
 const string = "auth/firebase closed-popup";

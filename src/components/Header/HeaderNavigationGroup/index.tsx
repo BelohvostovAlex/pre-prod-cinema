@@ -9,12 +9,9 @@ import { useMediaQuery } from "@hooks/style/useMediaQuery";
 
 import { useHeaderText } from "../hooks/useHeaderText";
 
-import { HeaderNavigationGroupProps } from "./interfaces";
 import { BurgerWrapper, LogoWrapper, NavWrapper } from "./styles";
 
-const HeaderNavigationGroup: FunctionComponent<HeaderNavigationGroupProps> = ({
-  handleAuthPortalOpen,
-}) => {
+const HeaderNavigationGroup: FunctionComponent = () => {
   const { menuTitle, logoTitle } = useHeaderText();
   const [isBurgerOpen, setIsBurgerOpen] = useState<boolean>(false);
   const isSSize = useMediaQuery("s");
@@ -27,15 +24,19 @@ const HeaderNavigationGroup: FunctionComponent<HeaderNavigationGroupProps> = ({
       <LogoWrapper to={AppPathes.MAIN}>
         <Logo title={logoTitle} />
       </LogoWrapper>
-      {!isSSize && <Navigation handlePortalOpen={handleAuthPortalOpen} />}
+      {!isSSize && <Navigation />}
       <BurgerWrapper>
-        <BurgerIcon onClick={handleBurger} title={menuTitle} />
+        <BurgerIcon
+          onClick={handleBurger}
+          title={menuTitle}
+          data-cy="burger-button"
+        />
       </BurgerWrapper>
       <Drawer
         isOpen={isBurgerOpen}
         onClose={handleBurger}
         title={menuTitle}
-        children={<Navigation handlePortalOpen={handleAuthPortalOpen} />}
+        children={<Navigation />}
       />
     </NavWrapper>
   );

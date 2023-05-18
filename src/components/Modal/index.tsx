@@ -23,9 +23,9 @@ const Modal: FunctionComponent<ModalProps> = ({
 
   return (
     <Portal showContent={isOpen}>
-      <ModalContainer height={height} width={width} ref={ref}>
+      <ModalContainer height={height} width={width} ref={ref} data-cy="modal">
         {children}
-        <ModalButtonWrapper>
+        <ModalButtonWrapper data-cy="close-modal-btn-wrapper">
           <RoundButton
             children={<Close />}
             onClick={onClose}

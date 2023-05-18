@@ -1,3 +1,5 @@
+import { expect } from "@jest/globals";
+
 import { handleNextMovieIndex } from "@pages/Movie/config/handleNextMovieIndex";
 
 const mockData = [
